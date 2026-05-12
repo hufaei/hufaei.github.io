@@ -13,14 +13,14 @@ const visibleRecords = animeEntries.slice(0, 12);
 const visibleSeries = seriesEntries.slice(0, 6);
 const searchIndex = buildSearchIndex({ anime: animeEntries, series: seriesEntries });
 const heroEyebrow = {
-  zh: "Mirune / 月見冊",
-  ja: "ミルネ / 月見冊",
-  en: "Mirune / anime watch archive"
+  zh: "Mirune = 見るね",
+  ja: "ミルネ = 見るね",
+  en: "Mirune = miru ne"
 };
 const heroBody = {
-  zh: "从你的原始观看列表整理出的番剧档案。封面、简介、年份和公开评分已经预先补齐，打开页面时只留下浏览本身。",
-  ja: "元の視聴リストから整理したアニメアーカイブ。カバー、紹介、年、公開評価は事前に補完済みで、表示時に外部 API は呼びません。",
-  en: "An anime archive shaped from your original watch list. Covers, descriptions, years, and public ratings are prefilled, so the page stays static at runtime."
+  zh: "「見る」是看，「ね」像句尾轻轻落下的“呢”。Mirune 就是把看过的番、电影和系列慢慢收好，偶尔回头看一眼。",
+  ja: "「見る」に、少しやわらかい「ね」を添えて。見たアニメ、映画、シリーズを静かに残して、ふと思い出せる場所。",
+  en: "Mirune comes from miru, to watch, with the soft note of ne. A quiet place for anime, films, and series already seen."
 };
 const searchCount = {
   zh: `${searchIndex.length} 条可检索`,

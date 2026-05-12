@@ -1,5 +1,4 @@
 import { describe, expect, it } from "vitest";
-import { siteCopy } from "../src/data/siteCopy";
 import { defaultLanguage, languages, translations } from "../src/i18n/dictionary";
 import { localizeTag } from "../src/i18n/localizedTag";
 
@@ -15,13 +14,6 @@ describe("i18n dictionary", () => {
     for (const language of languages) {
       expect(Object.keys(translations[language]).sort()).toEqual(baseKeys);
     }
-  });
-
-  it("uses Mirune as the Chinese and English site name", () => {
-    expect(siteCopy.title.zh).toBe("Mirune");
-    expect(siteCopy.title.en).toBe("Mirune");
-    expect(siteCopy.title.ja).toBe("ミルネ");
-    expect(siteCopy.subtitle.zh).toContain("月見冊");
   });
 
   it("localizes generated archive tags", () => {

@@ -291,14 +291,17 @@ input:focus-visible {
 }
 
 .anime-card {
-  display: grid;
-  grid-template-columns: 128px 1fr;
-  min-height: 196px;
+  display: flex;
+  min-height: 440px;
+  flex-direction: column;
 }
 
 .cover {
   display: block;
-  min-height: 196px;
+  flex: 0 0 230px;
+  height: 230px;
+  min-height: 0;
+  overflow: hidden;
   filter: saturate(0.74) contrast(1.03);
 }
 
@@ -387,14 +390,22 @@ input:focus-visible {
 }
 
 .series-card {
+  display: flex;
+  flex-direction: column;
   min-height: 360px;
   position: relative;
   background: var(--bg-soft);
 }
 
+.anime-card .card-body,
+.series-card .card-body {
+  flex: 1;
+}
+
 .series-card .banner {
   position: relative;
   display: block;
+  flex: 0 0 180px;
   height: 180px;
   overflow: hidden;
   filter: saturate(0.65) contrast(1.04);
@@ -510,10 +521,6 @@ input:focus-visible {
     min-height: 520px;
   }
 
-  .anime-card {
-    grid-template-columns: 100px 1fr;
-  }
-
 }
 
 @media (max-width: 560px) {
@@ -557,12 +564,9 @@ input:focus-visible {
     font-size: clamp(38px, 11vw, 56px);
   }
 
-  .anime-card {
-    grid-template-columns: 1fr;
-  }
-
   .cover {
-    min-height: 280px;
+    flex-basis: 260px;
+    height: 260px;
   }
 
   .section-head {
