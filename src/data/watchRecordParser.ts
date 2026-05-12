@@ -1,9 +1,11 @@
 import type { AnimeEntry, SeriesEntry, WatchEvent } from "./types";
 import { coverVisuals } from "./coverVisuals";
+import type { ImportMetadataPart, ImportMetadataRecord } from "./importMetadata";
 
 export type ParsedWatchRecord = {
   raw: string;
   title: string;
+  parts: string[];
   aliases: string[];
   totalEpisodes?: number;
   watchedEpisodes?: number;
@@ -158,6 +160,16 @@ function cleanTitle(line: string): string {
   return withoutNotes || line.trim();
 }
 
+function splitRecordParts(line: string): string[] {
+  const title = cleanTitle(line);
+  const parts = title
+    .split(/\s*[+＋]\s*/u)
+    .map((part) => part.trim())
+    .filter(Boolean);
+
+  return parts.length ? parts : [title];
+}
+
 function detectSeries(line: string): boolean {
   return /[+＋]|二季|三季|四季|五季|两季|2季|3季|4季|5季|第二季|第三季|外传|OVA|ova|sp|SP|part|剧场版|映画|全册|系列|123456部/u.test(line);
 }
@@ -197,9 +209,106 @@ function slugify(title: string, index: number): string {
     : `watch-${String(index + 1).padStart(3, "0")}`;
 }
 
+function slugifyPart(title: string, index: number, partIndex: number, partCount: number): string {
+  const baseSlug = slugify(title, index);
+  return partCount > 1 ? `${baseSlug}-${String(partIndex + 1).padStart(2, "0")}` : baseSlug;
+}
+
+function uniqueValues(values: Array<string | undefined>): string[] {
+  return [...new Set(values.map((value) => value?.trim()).filter((value): value is string => Boolean(value)))];
+}
+
+function createFallbackDescription(title: string) {
+  return {
+    zh: `${title} 已从原始观看列表归档，公开简介仍待补充。`,
+    ja: `${title} は元の視聴リストから取り込んだ記録です。公開データの概要は未補完です。`,
+    en: `${title} was imported from the raw watch list. Public metadata is still pending.`
+  };
+}
+
+function createRatings(metadata?: ImportMetadataPart) {
+  if (!metadata?.source || typeof metadata.rating !== "number") return {};
+
+  if (metadata.source === "bangumi") {
+    return {
+      bangumi: {
+        score: metadata.rating,
+        rank: metadata.ratingRank,
+        total: metadata.ratingTotal
+      }
+    };
+  }
+
+  return {
+    anilist: {
+      averageScore: metadata.rating,
+      popularity: metadata.popularity
+    }
+  };
+}
+
+function createEntryFromPart(
+  record: ParsedWatchRecord,
+  index: number,
+  part: string,
+  partIndex: number,
+  metadata: ImportMetadataPart | undefined,
+  seriesSlug: string | undefined
+): AnimeEntry {
+  const partCount = record.parts.length;
+  const slug = slugifyPart(metadata?.titleZh ?? metadata?.matchedTitle ?? part, index, partIndex, partCount);
+  const visual = coverVisuals[index + partIndex] ?? coverVisuals[index] ?? visualPool[(index + partIndex) % visualPool.length];
+  const titleZh = metadata?.titleZh ?? metadata?.matchedTitle ?? part;
+  const titleJa = metadata?.titleJa ?? metadata?.matchedTitle ?? titleZh;
+  const titleEn = metadata?.titleEn ?? record.aliases.find((alias) => /[a-z]/i.test(alias)) ?? metadata?.matchedTitle ?? titleZh;
+  const totalEpisodes = metadata?.totalEpisodes ?? (partCount === 1 ? record.totalEpisodes : undefined);
+  const year = metadata?.year;
+  const description = metadata?.description
+    ? {
+        zh: metadata.description,
+        ja: metadata.descriptionJa ?? metadata.description,
+        en: metadata.descriptionEn ?? metadata.description
+      }
+    : createFallbackDescription(titleZh);
+
+  return {
+    slug,
+    seriesSlug,
+    title: {
+      zh: titleZh,
+      ja: titleJa,
+      en: titleEn
+    },
+    aliases: uniqueValues([
+      ...record.aliases,
+      part,
+      metadata?.matchedTitle,
+      metadata?.titleZh,
+      metadata?.titleJa,
+      metadata?.titleEn
+    ]).filter((alias) => alias !== titleZh && alias !== titleJa && alias !== titleEn),
+    status: "completed",
+    watchedParts: record.watchedParts,
+    watchedEpisodes: totalEpisodes,
+    totalEpisodes,
+    progressPercent: totalEpisodes ? 100 : record.progressPercent,
+    year,
+    source: metadata?.source,
+    sourceUrl: metadata?.sourceUrl,
+    platform: metadata?.platform ?? record.platform,
+    cover: metadata?.cover ?? visual.cover,
+    banner: metadata?.banner ?? metadata?.cover ?? visual.banner,
+    accent: metadata?.accent ?? visual.accent,
+    description,
+    tags: record.tags,
+    ratings: createRatings(metadata)
+  };
+}
+
 export function parseWatchRecordLine(line: string, _index: number): ParsedWatchRecord {
   const raw = line.trim();
   const title = cleanTitle(raw);
+  const parts = splitRecordParts(raw);
   const aliases = extractAliases(raw);
   const episodeCandidates = extractEpisodeCandidates(raw);
   const totalEpisodes = episodeCandidates.at(-1);
@@ -209,6 +318,7 @@ export function parseWatchRecordLine(line: string, _index: number): ParsedWatchR
   return {
     raw,
     title,
+    parts,
     aliases,
     totalEpisodes,
     watchedEpisodes: totalEpisodes,
@@ -220,56 +330,45 @@ export function parseWatchRecordLine(line: string, _index: number): ParsedWatchR
   };
 }
 
-export function createArchiveFromRawRecords(lines: string[]) {
+export function createArchiveFromRawRecords(lines: string[], metadataRecords: ImportMetadataRecord[] = []) {
   const records = lines.map(parseWatchRecordLine);
+  const metadataByRaw = new Map(metadataRecords.map((record) => [record.raw, record]));
 
-  const animeEntries: AnimeEntry[] = records.map((record, index) => {
-    const slug = slugify(record.title, index);
-    const visual = coverVisuals[index] ?? visualPool[index % visualPool.length];
+  const animeEntries: AnimeEntry[] = [];
+  const seriesEntries: SeriesEntry[] = [];
 
-    return {
-      slug,
-      seriesSlug: record.isSeries ? `${slug}-series` : undefined,
-      title: {
-        zh: record.title,
-        ja: record.title,
-        en: record.aliases.find((alias) => /[a-z]/i.test(alias)) ?? record.title
-      },
-      aliases: record.aliases,
-      status: "completed",
-      watchedParts: record.watchedParts,
-      watchedEpisodes: record.watchedEpisodes,
-      totalEpisodes: record.totalEpisodes,
-      progressPercent: record.progressPercent,
-      platform: record.platform,
-      cover: visual.cover,
-      banner: visual.banner,
-      accent: visual.accent,
-      description: {
-        zh: "这条记录来自你的原始观看列表。简介、封面和公开评分后续会通过 Bangumi / AniList 补全；这里不写个人短评。",
-        ja: "元の視聴リストから取り込んだ記録。概要と公開評価は後で補完する。",
-        en: "Imported from the raw watch list. Metadata and public ratings can be filled later."
-      },
-      tags: record.tags,
-      ratings: {}
-    };
-  });
+  for (const [index, record] of records.entries()) {
+    const metadata = metadataByRaw.get(record.raw);
+    const isSeries = record.isSeries || record.parts.length > 1;
+    const primaryPart = record.parts[0];
+    const primaryMetadata = metadata?.parts?.[0];
+    const seriesSlug = isSeries ? `${slugify(primaryMetadata?.titleZh ?? primaryMetadata?.matchedTitle ?? primaryPart, index)}-series` : undefined;
+    const entries = record.parts.map((part, partIndex) =>
+      createEntryFromPart(record, index, part, partIndex, metadata?.parts?.[partIndex], seriesSlug)
+    );
 
-  const seriesEntries: SeriesEntry[] = animeEntries
-    .filter((entry) => entry.seriesSlug)
-    .map((entry) => ({
-      slug: entry.seriesSlug!,
-      title: {
-        zh: `${entry.title.zh} 系列`,
-        ja: `${entry.title.ja} シリーズ`,
-        en: `${entry.title.en} Series`
-      },
-      entrySlugs: [entry.slug],
-      cover: entry.cover,
-      banner: entry.banner,
-      accent: entry.accent,
-      tags: entry.tags
-    }));
+    animeEntries.push(...entries);
+
+    if (isSeries && seriesSlug) {
+      const primaryEntry = entries[0];
+      const years = uniqueValues(entries.map((entry) => entry.year?.toString())).map(Number).filter(Boolean);
+      seriesEntries.push({
+        slug: seriesSlug,
+        title: {
+          zh: `${primaryEntry.title.zh} 系列`,
+          ja: `${primaryEntry.title.ja} シリーズ`,
+          en: `${primaryEntry.title.en} Series`
+        },
+        entrySlugs: entries.map((entry) => entry.slug),
+        year: years[0],
+        years,
+        cover: primaryEntry.cover,
+        banner: primaryEntry.banner,
+        accent: primaryEntry.accent,
+        tags: record.tags
+      });
+    }
+  }
 
   const watchEvents: WatchEvent[] = [];
 

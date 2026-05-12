@@ -1,9 +1,12 @@
 ---
 import ExternalRating from "../../components/ExternalRating.astro";
+import LocalizedText from "../../components/LocalizedText.astro";
 import ProgressBar from "../../components/ProgressBar.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { animeEntries, getSeriesBySlug } from "../../data/mockArchive";
 import { siteCopy } from "../../data/siteCopy";
+import { localizedCopy } from "../../i18n/dictionary";
+import { localizePlatform, localizeTag } from "../../i18n/localizedTag";
 import { calculateEntryProgress } from "../../lib/progress";
 
 export function getStaticPaths() {
@@ -16,6 +19,15 @@ export function getStaticPaths() {
 const { entry } = Astro.props;
 const progress = calculateEntryProgress(entry);
 const series = entry.seriesSlug ? getSeriesBySlug(entry.seriesSlug) : undefined;
+const yearLabel = entry.year ? { zh: String(entry.year), ja: String(entry.year), en: String(entry.year) } : localizedCopy("yearPending");
+const platformLabel = localizePlatform(entry.platform);
+const sourceLabel = entry.source
+  ? {
+      zh: `${localizedCopy("publicSource").zh}：${entry.source}`,
+      ja: `${localizedCopy("publicSource").ja}: ${entry.source}`,
+      en: `${localizedCopy("publicSource").en}: ${entry.source}`
+    }
+  : undefined;
 ---
 
 <BaseLayout title={`${entry.title.zh} - ${siteCopy.title.zh}`}>
@@ -25,12 +37,19 @@ const series = entry.seriesSlug ? getSeriesBySlug(entry.seriesSlug) : undefined;
         <img src={entry.banner} alt="" loading="eager" />
       </picture>
       <div class="hero-content">
-        <div class="eyebrow">{entry.year ?? "年份待补"} / {entry.platform} / {entry.status}</div>
-        <h1>{entry.title.zh}</h1>
-        <p>{entry.description.zh}</p>
+        <div class="eyebrow">
+          <LocalizedText text={yearLabel} /> / <LocalizedText text={platformLabel} /> / <span data-i18n={entry.status}>{entry.status}</span>
+        </div>
+        <h1><LocalizedText text={entry.title} /></h1>
+        <p><LocalizedText text={entry.description} /></p>
         <div class="hero-actions">
-          {series && <a class="button" href={`/series/${series.slug}/`}>所属系列：{series.title.zh}</a>}
-          <a class="button" href="/anime/">返回档案</a>
+          {series && (
+            <a class="button" href={`/series/${series.slug}/`}>
+              <LocalizedText text={localizedCopy("inSeries")} />: <LocalizedText text={series.title} />
+            </a>
+          )}
+          {entry.sourceUrl && sourceLabel && <a class="button" href={entry.sourceUrl}><LocalizedText text={sourceLabel} /></a>}
+          <a class="button" href="/anime/"><LocalizedText text={localizedCopy("backToArchive")} /></a>
         </div>
       </div>
     </section>
@@ -39,13 +58,17 @@ const series = entry.seriesSlug ? getSeriesBySlug(entry.seriesSlug) : undefined;
       <div class="detail-cover" style={`background-image:url('${entry.cover}')`}></div>
       <div>
         <div class="meta-line">
-          <span>{entry.title.ja}</span>
-          <span>{entry.title.en}</span>
+          <span data-text-zh>{entry.title.ja}</span>
+          <span data-text-zh>{entry.title.en}</span>
+          <span data-text-ja>{entry.title.zh}</span>
+          <span data-text-ja>{entry.title.en}</span>
+          <span data-text-en>{entry.title.zh}</span>
+          <span data-text-en>{entry.title.ja}</span>
         </div>
-        <h2 class="section-title">详情档案</h2>
+        <h2 class="section-title"><LocalizedText text={localizedCopy("detailArchive")} /></h2>
         {entry.aliases.length > 0 && <p>{entry.aliases.join(" / ")}</p>}
         <div class="tags">
-          {entry.tags.map((tag) => <a class="tag" href={`/tags/${encodeURIComponent(tag)}/`}>{tag}</a>)}
+          {entry.tags.map((tag) => <a class="tag" href={`/tags/${encodeURIComponent(tag)}/`}><LocalizedText text={localizeTag(tag)} /></a>)}
         </div>
         <ExternalRating ratings={entry.ratings} />
         <ProgressBar percent={progress.percent} watched={progress.watched} total={progress.total} />

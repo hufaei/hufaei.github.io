@@ -1,8 +1,10 @@
 ---
 import AnimeCard from "../../components/AnimeCard.astro";
+import LocalizedText from "../../components/LocalizedText.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { animeEntries } from "../../data/mockArchive";
 import { siteCopy } from "../../data/siteCopy";
+import { localizeTag } from "../../i18n/localizedTag";
 
 export function getStaticPaths() {
   const tags = [...new Set(animeEntries.flatMap((entry) => entry.tags))];
@@ -19,7 +21,7 @@ const { tag, entries } = Astro.props;
 <BaseLayout title={`${tag} - ${siteCopy.title.zh}`}>
   <main class="page">
     <section class="section">
-      <h1 class="page-title">{tag}</h1>
+      <h1 class="page-title"><LocalizedText text={localizeTag(tag)} /></h1>
     </section>
     <section class="section grid cards">
       {entries.map((entry) => <AnimeCard entry={entry} />)}

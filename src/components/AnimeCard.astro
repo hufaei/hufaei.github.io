@@ -1,7 +1,10 @@
 ---
 import type { AnimeEntry } from "../data/types";
+import { localizedCopy } from "../i18n/dictionary";
+import { localizePlatform, localizeTag } from "../i18n/localizedTag";
 import { calculateEntryProgress } from "../lib/progress";
 import ExternalRating from "./ExternalRating.astro";
+import LocalizedText from "./LocalizedText.astro";
 import ProgressBar from "./ProgressBar.astro";
 
 type Props = {
@@ -10,6 +13,8 @@ type Props = {
 
 const { entry } = Astro.props;
 const progress = calculateEntryProgress(entry);
+const yearLabel = entry.year ? { zh: String(entry.year), ja: String(entry.year), en: String(entry.year) } : localizedCopy("yearPending");
+const platformLabel = localizePlatform(entry.platform);
 ---
 
 <article class="card anime-card" data-search-card data-title={`${entry.title.zh} ${entry.title.ja} ${entry.title.en} ${entry.aliases.join(" ")} ${entry.tags.join(" ")}`}>
@@ -19,13 +24,13 @@ const progress = calculateEntryProgress(entry);
   <div class="card-body">
     <div class="card-kicker">
       <span class="status" data-i18n={entry.status}>{entry.status}</span>
-      <span>{entry.year ?? "年份待补"}</span>
-      <span>{entry.platform}</span>
+      <span><LocalizedText text={yearLabel} /></span>
+      <span><LocalizedText text={platformLabel} /></span>
     </div>
-    <h3><a href={`/anime/${entry.slug}/`}>{entry.title.zh}</a></h3>
-    <p>{entry.description.zh}</p>
+    <h3><a href={`/anime/${entry.slug}/`}><LocalizedText text={entry.title} /></a></h3>
+    <p><LocalizedText text={entry.description} /></p>
     <div class="tags">
-      {entry.tags.map((tag) => <a class="tag" href={`/tags/${encodeURIComponent(tag)}/`}>{tag}</a>)}
+      {entry.tags.map((tag) => <a class="tag" href={`/tags/${encodeURIComponent(tag)}/`}><LocalizedText text={localizeTag(tag)} /></a>)}
     </div>
     <ExternalRating ratings={entry.ratings} />
     <ProgressBar percent={progress.percent} watched={progress.watched} total={progress.total} />

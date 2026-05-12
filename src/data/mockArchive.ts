@@ -1,8 +1,9 @@
 import { createArchiveFromRawRecords } from "./watchRecordParser";
+import { importMetadataRecords } from "./importMetadata";
 import { rawWatchRecords } from "./watchRecords";
 import type { AnimeEntry, SeriesEntry } from "./types";
 
-const archive = createArchiveFromRawRecords(rawWatchRecords);
+const archive = createArchiveFromRawRecords(rawWatchRecords, importMetadataRecords);
 
 export const animeEntries: AnimeEntry[] = archive.animeEntries;
 export const seriesEntries: SeriesEntry[] = archive.seriesEntries;

@@ -154,8 +154,8 @@ async function readExistingMetadataRecords() {
   }
 }
 
-function bgmAliasValues(subject) {
-  const values = [subject.name, subject.name_cn, ...(subject.tags ?? []).map((tag) => tag.name)];
+function bgmAliasValues(subject, includeTags = true) {
+  const values = [subject.name, subject.name_cn];
   for (const item of subject.infobox ?? []) {
     if (item.key === "别名") {
       if (Array.isArray(item.value)) values.push(...item.value.map((entry) => entry.v));
@@ -163,7 +163,55 @@ function bgmAliasValues(subject) {
     }
     if (item.key === "中文名" && typeof item.value === "string") values.push(item.value);
   }
+  if (includeTags) values.push(...(subject.tags ?? []).map((tag) => tag.name));
   return values.filter(Boolean);
+}
+
+function parseYear(value) {
+  const year = Number(String(value ?? "").slice(0, 4));
+  return Number.isFinite(year) && year > 1900 ? year : undefined;
+}
+
+function cleanDescription(value) {
+  return String(value ?? "")
+    .replace(/<[^>]+>/gu, "")
+    .replace(/&nbsp;/gu, " ")
+    .replace(/&amp;/gu, "&")
+    .replace(/\r?\n{3,}/gu, "\n\n")
+    .trim() || undefined;
+}
+
+function pickEnglishTitle(values) {
+  return values.find((value) => {
+    const text = String(value ?? "").trim();
+    return /[a-z]/iu.test(text) && !/^\d{4}|TV|OVA|SP|A-1|MAPPA|京都|动画|日本|小说|漫画/iu.test(text);
+  });
+}
+
+function mapBangumiSubject(part, subject, score, query) {
+  const aliases = bgmAliasValues(subject, false);
+  return {
+    inputTitle: part,
+    matchedTitle: subject.name_cn || subject.name,
+    titleZh: subject.name_cn || subject.name,
+    titleJa: subject.name || subject.name_cn,
+    titleEn: pickEnglishTitle(aliases) || undefined,
+    description: cleanDescription(subject.summary),
+    cover: subject.images?.large || subject.images?.medium || subject.images?.common || undefined,
+    banner: subject.images?.large || subject.images?.medium || subject.images?.common || undefined,
+    year: parseYear(subject.date),
+    startDate: subject.date || undefined,
+    source: "bangumi",
+    sourceUrl: `https://bgm.tv/subject/${subject.id}`,
+    platform: subject.platform,
+    totalEpisodes: subject.total_episodes || subject.eps || undefined,
+    rating: subject.rating?.score || undefined,
+    ratingRank: subject.rating?.rank || undefined,
+    ratingTotal: subject.rating?.total || undefined,
+    confidence: score,
+    query,
+    metadataFetched: Boolean(subject.summary || subject.images?.large || subject.date)
+  };
 }
 
 function scoreBangumiSubject(subject, part, context, query) {
@@ -218,17 +266,7 @@ async function searchBangumi(part, context) {
 
     if (candidates[0]?.score >= confidenceThreshold) {
       const { subject, score } = candidates[0];
-      return {
-        inputTitle: part,
-        matchedTitle: subject.name_cn || subject.name,
-        source: "bangumi",
-        sourceUrl: `https://bgm.tv/subject/${subject.id}`,
-        platform: subject.platform,
-        totalEpisodes: subject.total_episodes || subject.eps || undefined,
-        rating: subject.rating?.score || undefined,
-        confidence: score,
-        query
-      };
+      return mapBangumiSubject(part, subject, score, query);
     }
 
     await sleep(220);
@@ -272,7 +310,14 @@ async function searchAniList(part, context) {
             siteUrl
             episodes
             format
+            description(asHtml: false)
+            seasonYear
             averageScore
+            meanScore
+            popularity
+            coverImage { extraLarge large color }
+            bannerImage
+            startDate { year month day }
             title { romaji english native }
           }
         }`,
@@ -289,17 +334,7 @@ async function searchAniList(part, context) {
     if (media && !media.isAdult) {
       const score = scoreAniListMedia(media, part, context, query);
       if (score >= confidenceThreshold) {
-        return {
-          inputTitle: part,
-          matchedTitle: media.title.english || media.title.romaji || media.title.native,
-          source: "anilist",
-          sourceUrl: media.siteUrl,
-          platform: media.format,
-          totalEpisodes: media.episodes || undefined,
-          rating: media.averageScore ? media.averageScore / 10 : undefined,
-          confidence: score,
-          query
-        };
+        return mapAniListMedia(part, media, score, query);
       }
     }
 
@@ -307,6 +342,125 @@ async function searchAniList(part, context) {
   }
 
   return undefined;
+}
+
+function formatAniListDate(date) {
+  if (!date?.year) return undefined;
+  return [date.year, date.month, date.day]
+    .filter(Boolean)
+    .map((value, index) => String(value).padStart(index === 0 ? 4 : 2, "0"))
+    .join("-");
+}
+
+function mapAniListMedia(part, media, score, query) {
+  return {
+    inputTitle: part,
+    matchedTitle: media.title?.english || media.title?.romaji || media.title?.native,
+    titleZh: media.title?.english || media.title?.romaji || media.title?.native,
+    titleJa: media.title?.native || media.title?.romaji || media.title?.english,
+    titleEn: media.title?.english || media.title?.romaji || undefined,
+    description: cleanDescription(media.description),
+    descriptionEn: cleanDescription(media.description),
+    cover: media.coverImage?.extraLarge || media.coverImage?.large || undefined,
+    banner: media.bannerImage || media.coverImage?.extraLarge || media.coverImage?.large || undefined,
+    accent: media.coverImage?.color || undefined,
+    year: media.startDate?.year || media.seasonYear || undefined,
+    startDate: formatAniListDate(media.startDate),
+    source: "anilist",
+    sourceUrl: media.siteUrl,
+    platform: media.format,
+    totalEpisodes: media.episodes || undefined,
+    rating: media.averageScore ? media.averageScore / 10 : undefined,
+    ratingTotal: media.meanScore || undefined,
+    popularity: media.popularity || undefined,
+    confidence: score,
+    query,
+    metadataFetched: Boolean(media.description || media.coverImage?.extraLarge || media.startDate?.year)
+  };
+}
+
+function subjectIdFromUrl(sourceUrl) {
+  return sourceUrl?.match(/bgm\.tv\/subject\/(\d+)/u)?.[1];
+}
+
+function aniListIdFromUrl(sourceUrl) {
+  return sourceUrl?.match(/anilist\.co\/anime\/(\d+)/u)?.[1];
+}
+
+function needsMetadataEnrichment(part) {
+  return Boolean(
+    part.source
+    && !part.metadataFetched
+    && (!part.titleJa || !part.cover || !part.description || !part.year)
+  );
+}
+
+async function fetchBangumiDetails(part) {
+  const id = subjectIdFromUrl(part.sourceUrl);
+  if (!id) return part;
+
+  const response = await fetch(`https://api.bgm.tv/v0/subjects/${id}`, {
+    headers: { "User-Agent": userAgent }
+  });
+  if (!response.ok) return part;
+
+  const subject = await response.json();
+  return {
+    ...part,
+    ...mapBangumiSubject(part.inputTitle, subject, part.confidence, part.query),
+    metadataFetched: true
+  };
+}
+
+async function fetchAniListDetails(part) {
+  const id = Number(aniListIdFromUrl(part.sourceUrl));
+  if (!id) return part;
+
+  const response = await fetch("https://graphql.anilist.co", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "User-Agent": userAgent
+    },
+    body: JSON.stringify({
+      query: `query ($id: Int) {
+        Media(id: $id, type: ANIME) {
+          id
+          isAdult
+          siteUrl
+          episodes
+          format
+          description(asHtml: false)
+          seasonYear
+          averageScore
+          meanScore
+          popularity
+          coverImage { extraLarge large color }
+          bannerImage
+          startDate { year month day }
+          title { romaji english native }
+        }
+      }`,
+      variables: { id }
+    })
+  });
+  if (!response.ok) return part;
+
+  const media = (await response.json()).data?.Media;
+  if (!media || media.isAdult) return part;
+
+  return {
+    ...part,
+    ...mapAniListMedia(part.inputTitle, media, part.confidence, part.query),
+    metadataFetched: true
+  };
+}
+
+async function enrichResolvedPart(part) {
+  if (!needsMetadataEnrichment(part)) return part;
+  if (part.source === "bangumi") return fetchBangumiDetails(part);
+  if (part.source === "anilist") return fetchAniListDetails(part);
+  return part;
 }
 
 async function resolvePart(part, context) {
@@ -335,6 +489,7 @@ async function main() {
   let unresolved = 0;
   let reused = 0;
   let refreshed = 0;
+  let enriched = 0;
 
   for (const [index, raw] of lines.entries()) {
     const parts = splitRecordParts(raw);
@@ -346,9 +501,14 @@ async function main() {
       const cacheContext = createCacheContext(raw, part, context, partIndex);
       const cachedPart = findCachedMetadataPart(cachedByRaw.get(raw), cacheContext);
       const reusedCachedPart = shouldReuseMetadataPart(cachedPart, cacheContext);
-      const resolved = reusedCachedPart
+      let resolved = reusedCachedPart
         ? stampMetadataCache(cachedPart, cacheContext)
         : stampMetadataCache(await resolvePart(part, context), cacheContext);
+      const needsEnrichment = needsMetadataEnrichment(resolved);
+      if (needsEnrichment) {
+        resolved = stampMetadataCache(await enrichResolvedPart(resolved), cacheContext);
+        enriched += 1;
+      }
 
       if (reusedCachedPart) {
         reused += 1;
@@ -360,7 +520,7 @@ async function main() {
       if (resolved.source) matched += 1;
       else unresolved += 1;
       resolvedParts.push(resolved);
-      if (!reusedCachedPart) await sleep(260);
+      if (!reusedCachedPart || needsEnrichment) await sleep(260);
     }
 
     records.push({ raw, parts: resolvedParts });
@@ -377,13 +537,28 @@ async function main() {
 export type ImportMetadataPart = {
   inputTitle: string;
   matchedTitle?: string;
+  titleZh?: string;
+  titleJa?: string;
+  titleEn?: string;
+  description?: string;
+  descriptionJa?: string;
+  descriptionEn?: string;
+  cover?: string;
+  banner?: string;
+  accent?: string;
+  year?: number;
+  startDate?: string;
   source?: ImportMetadataSource;
   sourceUrl?: string;
   platform?: string;
   totalEpisodes?: number;
   rating?: number;
+  ratingRank?: number;
+  ratingTotal?: number;
+  popularity?: number;
   confidence: number;
   query?: string;
+  metadataFetched?: boolean;
   cacheKey?: string;
   hintSignature?: string;
 };
@@ -397,7 +572,7 @@ export const importMetadataRecords: ImportMetadataRecord[] = ${JSON.stringify(re
 `;
 
   await writeFile(outputPath, output, "utf8");
-  console.log(`Wrote ${records.length} records (${matched} matched parts, ${unresolved} unresolved parts, ${reused} cached, ${refreshed} refreshed).`);
+  console.log(`Wrote ${records.length} records (${matched} matched parts, ${unresolved} unresolved parts, ${reused} cached, ${refreshed} refreshed, ${enriched} enriched).`);
 }
 
 main().catch((error) => {

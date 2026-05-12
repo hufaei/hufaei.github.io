@@ -1,13 +1,42 @@
 ---
 import AnimeCard from "../components/AnimeCard.astro";
+import LocalizedText from "../components/LocalizedText.astro";
 import SeriesCard from "../components/SeriesCard.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { animeEntries, getSeriesEntries, seriesEntries } from "../data/mockArchive";
 import { siteCopy } from "../data/siteCopy";
+import { localizedCopy } from "../i18n/dictionary";
+import { buildSearchIndex } from "../lib/search";
 
 const featured = animeEntries[0];
 const visibleRecords = animeEntries.slice(0, 12);
 const visibleSeries = seriesEntries.slice(0, 6);
+const searchIndex = buildSearchIndex({ anime: animeEntries, series: seriesEntries });
+const heroEyebrow = {
+  zh: "Mirune / 月見冊",
+  ja: "ミルネ / 月見冊",
+  en: "Mirune / anime watch archive"
+};
+const heroBody = {
+  zh: "从你的原始观看列表整理出的番剧档案。封面、简介、年份和公开评分已经预先补齐，打开页面时只留下浏览本身。",
+  ja: "元の視聴リストから整理したアニメアーカイブ。カバー、紹介、年、公開評価は事前に補完済みで、表示時に外部 API は呼びません。",
+  en: "An anime archive shaped from your original watch list. Covers, descriptions, years, and public ratings are prefilled, so the page stays static at runtime."
+};
+const searchCount = {
+  zh: `${searchIndex.length} 条可检索`,
+  ja: `${searchIndex.length}件を検索可能`,
+  en: `${searchIndex.length} searchable items`
+};
+const animeCount = {
+  zh: `${animeEntries.length} 部作品`,
+  ja: `${animeEntries.length}作品`,
+  en: `${animeEntries.length} works`
+};
+const seriesCount = {
+  zh: `${seriesEntries.length} 个系列`,
+  ja: `${seriesEntries.length}シリーズ`,
+  en: `${seriesEntries.length} series`
+};
 ---
 
 <BaseLayout title={siteCopy.title.zh}>
@@ -17,23 +46,39 @@ const visibleSeries = seriesEntries.slice(0, 6);
         <img src={featured.banner} alt="" loading="eager" />
       </picture>
       <div class="hero-content">
-        <div class="eyebrow">番剧观看档案 / mock demo / no runtime API</div>
-        <h1>{siteCopy.title.zh}</h1>
-        <p>
-          一个暗色二次元风格的全静态观看档案。这里已经接入你的原始观看列表，详情、封面和公开评分后续再逐步补全。
-        </p>
+        <div class="eyebrow"><LocalizedText text={heroEyebrow} /></div>
+        <h1><LocalizedText text={siteCopy.title} /></h1>
+        <p><LocalizedText text={heroBody} /></p>
         <div class="hero-actions">
-          <a class="button primary" href="/anime/">进入番剧档案</a>
-          {visibleSeries[0] && <a class="button" href={`/series/${visibleSeries[0].slug}/`}>查看系列页</a>}
-          <a class="button" href="/search/">搜索 demo</a>
+          <a class="button primary" href="/anime/"><LocalizedText text={localizedCopy("openArchive")} /></a>
+          {visibleSeries[0] && <a class="button" href={`/series/${visibleSeries[0].slug}/`}><LocalizedText text={localizedCopy("openSeries")} /></a>}
         </div>
       </div>
     </section>
 
     <section class="section">
       <div class="section-head">
-        <h2>观看清单</h2>
-        <span class="section-note">{animeEntries.length} records</span>
+        <h2><LocalizedText text={localizedCopy("search")} /></h2>
+        <span class="section-note"><LocalizedText text={searchCount} /></span>
+      </div>
+      <input class="search-box" type="search" placeholder="搜索番名、别名、系列、年份或标签..." data-i18n-placeholder="searchPlaceholder" data-home-search-input />
+      <div class="grid search-results" data-home-search-results>
+        {searchIndex.map((item) => (
+          <a class="card search-result" href={item.type === "anime" ? `/anime/${item.slug}/` : `/series/${item.slug}/`} data-search-item={item.haystack} hidden>
+            <div class="card-kicker">
+              <span><LocalizedText text={localizedCopy(item.type)} /></span>
+              {item.year && <span>{item.year}</span>}
+            </div>
+            <h3><LocalizedText text={item.localizedTitle} /></h3>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2><LocalizedText text={localizedCopy("watchList")} /></h2>
+        <span class="section-note"><LocalizedText text={animeCount} /></span>
       </div>
       <div class="grid cards">
         {visibleRecords.map((entry) => <AnimeCard entry={entry} />)}
@@ -42,12 +87,26 @@ const visibleSeries = seriesEntries.slice(0, 6);
 
     <section class="section">
       <div class="section-head">
-        <h2>系列索引</h2>
-        <span class="section-note">{seriesEntries.length} multi-part records</span>
+        <h2><LocalizedText text={localizedCopy("series")} /></h2>
+        <span class="section-note"><LocalizedText text={seriesCount} /></span>
       </div>
       <div class="grid cards">
         {visibleSeries.map((series) => <SeriesCard series={series} entries={getSeriesEntries(series)} />)}
       </div>
     </section>
   </main>
+
+  <script>
+    const input = document.querySelector("[data-home-search-input]");
+    const items = [...document.querySelectorAll("[data-search-item]")];
+    function applyHomeSearch() {
+      const query = (input as HTMLInputElement).value.trim().toLowerCase();
+      for (const item of items) {
+        const haystack = item.getAttribute("data-search-item") ?? "";
+        item.toggleAttribute("hidden", Boolean(!query || !haystack.includes(query)));
+      }
+    }
+    input?.addEventListener("input", applyHomeSearch);
+    if (input) applyHomeSearch();
+  </script>
 </BaseLayout>

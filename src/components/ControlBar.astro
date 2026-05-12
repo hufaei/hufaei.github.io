@@ -1,17 +1,17 @@
 ---
 import { translations } from "../i18n/dictionary";
 import { siteCopy } from "../data/siteCopy";
+import LocalizedText from "./LocalizedText.astro";
 ---
 
 <header class="topbar">
   <a class="brand" href="/">
-    {siteCopy.brand}
-    <span>{siteCopy.subtitle}</span>
+    <LocalizedText text={siteCopy.brand} />
+    <small><LocalizedText text={siteCopy.subtitle} /></small>
   </a>
   <nav class="nav" aria-label="Primary">
     <a href="/" data-i18n="home">首页</a>
     <a href="/anime/" data-i18n="anime">番剧</a>
-    <a href="/search/" data-i18n="search">搜索</a>
   </nav>
   <div class="controls" aria-label="Display controls">
     <div class="segmented" aria-label="Language">
@@ -41,6 +41,11 @@ import { siteCopy } from "../data/siteCopy";
       const value = translations[language]?.[key];
       if (value) element.textContent = value;
     });
+    document.querySelectorAll("[data-i18n-placeholder]").forEach((element) => {
+      const key = element.dataset.i18nPlaceholder;
+      const value = translations[language]?.[key];
+      if (value) element.setAttribute("placeholder", value);
+    });
   }
 
   function applyTheme(theme) {
@@ -59,6 +64,19 @@ import { siteCopy } from "../data/siteCopy";
     button.addEventListener("click", () => applyTheme(button.dataset.setTheme));
   });
 
-  applyLanguage(localStorage.getItem("language") || "zh");
-  applyTheme(localStorage.getItem("theme") || "dark");
+  function preferredLanguage() {
+    return localStorage.getItem("language") || "zh";
+  }
+
+  function preferredTheme() {
+    return localStorage.getItem("theme") || "dark";
+  }
+
+  applyLanguage(preferredLanguage());
+  applyTheme(preferredTheme());
+
+  document.addEventListener("DOMContentLoaded", () => {
+    applyLanguage(preferredLanguage());
+    applyTheme(preferredTheme());
+  });
 </script>

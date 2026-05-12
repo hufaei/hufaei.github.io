@@ -3,13 +3,28 @@ export type ImportMetadataSource = "bangumi" | "anilist";
 export type ImportMetadataPart = {
   inputTitle: string;
   matchedTitle?: string;
+  titleZh?: string;
+  titleJa?: string;
+  titleEn?: string;
+  description?: string;
+  descriptionJa?: string;
+  descriptionEn?: string;
+  cover?: string;
+  banner?: string;
+  accent?: string;
+  year?: number;
+  startDate?: string;
   source?: ImportMetadataSource;
   sourceUrl?: string;
   platform?: string;
   totalEpisodes?: number;
   rating?: number;
+  ratingRank?: number;
+  ratingTotal?: number;
+  popularity?: number;
   confidence: number;
   query?: string;
+  metadataFetched?: boolean;
   cacheKey?: string;
   hintSignature?: string;
 };
@@ -34,7 +49,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 133,
         "query": "金色时光(青春纪行)",
         "cacheKey": "import-metadata-v1:79c2eeb7b7f87c4677a2",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "青春纪行",
+        "titleJa": "ゴールデンタイム",
+        "titleEn": "Golden Time",
+        "description": "东京的某私立大学的法学院的入学生主人公・多田万里在前往新生入学说明会的路上迷了路，遇上同样迷路的柳泽光央，并成为朋友。之后在要前往新生入学说明会的路上时，遇上了一位手持一大束玫瑰花的美女。她将手上的那束玫瑰花殴打万里与光央的脸，并将花束丢给光央，告诉他“恭喜入学”后离开。原来她是光央的青梅竹马・加贺香子，并且与光央有婚约（香子单方面决定）。但光央却很讨厌香子。而过去高中时光央正是为了逃脱她，悄悄地、在香子不知道的情况下去报考这所大学。但事后还是被香子查觉，并报考与光央同样报考这所大学的法学系。 而这也成了万里与香子认识的契机。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/6a/05/68031_kz04Q.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/6a/05/68031_kz04Q.jpg",
+        "year": 2013,
+        "startDate": "2013-10-03",
+        "ratingRank": 5457,
+        "ratingTotal": 3493,
+        "metadataFetched": true
       }
     ]
   },
@@ -47,12 +73,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/266147",
         "platform": "TV",
-        "totalEpisodes": 11,
+        "totalEpisodes": 12,
         "rating": 6.2,
         "confidence": 133,
         "query": "达尔文游戏",
         "cacheKey": "import-metadata-v1:bedb5c8a63d1c4dda9b4",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "达尔文游戏",
+        "titleJa": "ダーウィンズゲーム",
+        "titleEn": "Darwin's Game",
+        "description": "——不可预测的极限异能力战斗——平凡高中生须藤要收到了陌生APP“达尔文游戏”发来的邀请讯息。开启这个APP的须藤要，被卷入了玩家们驱使异能进行的战斗之中。尚未搞清状况的须藤要，必须在突然袭来的强大玩家的战斗中杀出重围，他究竟能否生存下来！？",
+        "cover": "https://lain.bgm.tv/pic/cover/l/18/a4/266147_kQR5x.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/18/a4/266147_kQR5x.jpg",
+        "year": 2020,
+        "startDate": "2020-01-03",
+        "ratingRank": 7018,
+        "ratingTotal": 3280,
+        "metadataFetched": true
       }
     ]
   },
@@ -70,7 +107,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "刀剑神域",
         "cacheKey": "import-metadata-v1:035ffbf9bd9d38f2ed5e",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "刀剑神域",
+        "titleJa": "ソードアート・オンライン",
+        "titleEn": "SAO",
+        "description": "2022年，人类实现了现实世界和假想空间的融合，电子制造商开发了名为《刀剑神域（Sword Art Online）》的在线电子游戏。SAO甫一面世便大受好评，限量一万份的名额在发售当天的短时间内便被抢购一空。通过联网，玩家可以身临其境进入充满想象力和异域风情的游戏世界——浮游城市艾恩葛朗特。玩家在这里可以生活、练武、升级、经商、探险，与真实世界别无二致，却拥有无上的乐趣。曾是少数封测玩家的桐人也是这一万名幸运者中的一员。最初的兴奋过后，玩家们却发现根本无法顺利登出游戏，更为恐怖的是，一旦玩家的HP归零，现实世界中他们的肉体也将死亡。他们被SAO的开发者茅场晶彦困在游戏中，顺利逃脱的方法似乎只有一个，那就是完成困难重重的攻略任务……",
+        "cover": "https://lain.bgm.tv/pic/cover/l/2e/c8/23686_e36x9.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/2e/c8/23686_e36x9.jpg",
+        "year": 2012,
+        "startDate": "2012-07-07",
+        "ratingRank": 1184,
+        "ratingTotal": 24972,
+        "metadataFetched": true
       },
       {
         "inputTitle": "爱丽丝篇",
@@ -78,12 +126,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/225604",
         "platform": "TV",
-        "totalEpisodes": 24,
+        "totalEpisodes": 26,
         "rating": 6.2,
         "confidence": 135,
         "query": "爱丽丝篇",
         "cacheKey": "import-metadata-v1:badcfb764ea31f40c636",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "刀剑神域 爱丽丝篇",
+        "titleJa": "ソードアート・オンライン アリシゼーション",
+        "titleEn": "刀剑神域 Alicization篇",
+        "description": "“这里……是哪儿……”\r\n察觉到的时候，桐人不知为什么陷入了庞大的幻想风格虚拟世界。登录前的记忆模糊不清，只得在周围徘徊寻找线索。\r\n之后，来到漆黑的巨树“基家斯西达”旁边的他，同一名少年相遇了。“我的名字是尤吉欧。请多关照，桐人君。”少年是在虚拟世界的居民――即“NPC”，但是却如同人类一样拥有“丰富感情”。\r\n在和尤吉欧加深交往的同时，桐人也在摸索着登出这个世界的方法。在桐人的脑海中，某一个记忆苏醒了。那是幼年时的桐人和尤吉欧在山野奔跑的记忆――原本，不可能存在的记忆。而在那个回忆中，除了尤吉欧还有一个金发少女的身影。她的名字，是爱丽丝。绝对不应该忘记的、重要的名字。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/4a/5d/225604_97yaR.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/4a/5d/225604_97yaR.jpg",
+        "year": 2018,
+        "startDate": "2018-10-06",
+        "ratingRank": 7076,
+        "ratingTotal": 9550,
+        "metadataFetched": true
       },
       {
         "inputTitle": "ggo剧场版",
@@ -91,12 +150,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/226750",
         "platform": "TV",
-        "totalEpisodes": 12,
+        "totalEpisodes": 13,
         "rating": 6.5,
         "confidence": 135,
         "query": "ggo剧场版",
         "cacheKey": "import-metadata-v1:6b05adeabfbe43ef9b2e",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "刀剑神域外传 Gun Gale Online",
+        "titleJa": "ソードアート・オンライン オルタナティブ ガンゲイル・オンライン",
+        "titleEn": "刀剑神域外传 Gun Gale Online",
+        "description": "在枪与钢铁的世界“Gun Gale Online”享受着单人游戏的女性玩家·莲。喜欢可爱事物的她，全身清一色的粉红色装备，不断累积游戏经验，并逐渐增强实力。之后，由于某件事而对于PK（玩家狩猎）觉醒了兴趣的莲沉迷于PK中，并终于到达被人称作“粉红恶魔”的地步。\r\n这样的莲，与神秘的美女玩家·Pitohui相遇，并和她意气相投。莲按照她所说的，参加了小队作战活动“特攻强袭”。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/29/40/226750_3fW9q.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/29/40/226750_3fW9q.jpg",
+        "year": 2018,
+        "startDate": "2018-04-07",
+        "ratingRank": 5257,
+        "ratingTotal": 4962,
+        "metadataFetched": true
       },
       {
         "inputTitle": "无星之夜的咏叹调",
@@ -109,7 +179,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "刀剑神域 进击篇 无星之夜的咏叹调",
         "cacheKey": "import-metadata-v1:354b56a3341e72e6606f",
-        "hintSignature": "[\"刀剑神域 进击篇 无星之夜的咏叹调\"]"
+        "hintSignature": "[\"刀剑神域 进击篇 无星之夜的咏叹调\"]",
+        "titleZh": "剧场版 刀剑神域 进击篇 无星之夜的咏叹调",
+        "titleJa": "劇場版 ソードアート・オンライン プログレッシブ 星なき夜のアリア",
+        "titleEn": "Gekijouban Sword Art Online: Progressive - Hoshinaki Yoru no Aria",
+        "description": "这是“闪光”与“黑衣剑士”在被如此称呼之前的故事——\r\n某一天，偶然戴上\"NERvGear\"的结城明日奈，原本是与网络游戏无缘的初中三年级少女。\r\n游戏管理员告知。“这虽然是游戏，但可不是闹着玩的。”在游戏中的死亡，与现实中的死亡直接相关。\r\n听到这一消息的所有玩家都很混乱，游戏内到处都是凄惨的叫声。其中之一的亚丝娜，在不了解世界的规则的情况下，踏上了看不到顶的钢铁浮游城“艾恩葛朗特”的攻略之路。\r\n在和死亡作伴的世界里生存下去的过程中，亚丝娜遇见了命运般的“邂逅”。以及，“离别”——\r\n虽然被“眼前的现实”玩弄，但在拼命战斗的她面前出现的，是孤傲的剑士——桐人。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/63/24/315375_1ivNC.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/63/24/315375_1ivNC.jpg",
+        "year": 2021,
+        "startDate": "2021-10-30",
+        "ratingRank": 2498,
+        "ratingTotal": 5533,
+        "metadataFetched": true
       },
       {
         "inputTitle": "序列之争",
@@ -117,12 +198,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/148099",
         "platform": "剧场版",
-        "totalEpisodes": 1,
+        "totalEpisodes": 2,
         "rating": 6.8,
         "confidence": 135,
         "query": "刀剑神域 序列之争",
         "cacheKey": "import-metadata-v1:10fbe981d9d732c35a45",
-        "hintSignature": "[\"刀剑神域 序列之争\"]"
+        "hintSignature": "[\"刀剑神域 序列之争\"]",
+        "titleZh": "刀剑神域 序列之争",
+        "titleJa": "劇場版 ソードアート・オンライン -オーディナル・スケール-",
+        "titleEn": "Gekijouban Sword Art Online: Ordinal Scale",
+        "description": "2022年，天才编程者茅场晶彦所开发的世界最早的完全潜行专用装备设备《NERvGear》。\r\n这个革命性的机器给VR（假想现实）世界带来了无限的可能性。那之后经过了4年——\r\n《NERvGear》的后继品VR机为了对抗《AmuSphere》（第二代民用完全潜行机），发售了一个次世代的可穿戴设备《Augma》\r\n替换了完全潜行机能，是一个对AR（增强现实）功能进行了最大限度扩大的最先进机种。\r\n由于《Augma》在觉醒状态下也可以安全和便利地使用，因此一瞬间便在玩家当中传开了。\r\n这个杀手级内容，被叫做《Ordinal Scale序列之争（OS）》，是《Augma》专用的ARMMO RPG。\r\n亚斯娜和伙伴们会玩的这个游戏，桐人也准备参战了……",
+        "cover": "https://lain.bgm.tv/pic/cover/l/a7/db/148099_EPbSE.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/a7/db/148099_EPbSE.jpg",
+        "year": 2017,
+        "startDate": "2017-02-18",
+        "ratingRank": 3275,
+        "ratingTotal": 10964,
+        "metadataFetched": true
       },
       {
         "inputTitle": "extra edition",
@@ -130,12 +222,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/84866",
         "platform": "TV",
-        "totalEpisodes": 1,
+        "totalEpisodes": 2,
         "rating": 6.3,
         "confidence": 133,
         "query": "extra edition",
         "cacheKey": "import-metadata-v1:5ec20974e3b79adbd751",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "刀剑神域 Extra Edition",
+        "titleJa": "ソードアート・オンライン Extra Edition",
+        "titleEn": "ソードアート・オンライン Extra Edition",
+        "description": "为了想看一看鲸鱼的结衣，桐人等一行开始挑战ALO中的水中任务。然而令人没想到的是，莉法——直叶居然完全不会游泳。亚丝娜等女生们在现实世界的游泳池中帮直叶开始了特训，而与此同时，桐人也与“某个人”相遇了——",
+        "cover": "https://lain.bgm.tv/pic/cover/l/6e/53/84866_yQ6Kq.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/6e/53/84866_yQ6Kq.jpg",
+        "year": 2013,
+        "startDate": "2013-12-31",
+        "ratingRank": 6482,
+        "ratingTotal": 3481,
+        "metadataFetched": true
       },
       {
         "inputTitle": "进击篇暮色黄昏",
@@ -148,7 +251,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "刀剑神域 进击篇 暮色黄昏",
         "cacheKey": "import-metadata-v1:4db57a987c252df0c05d",
-        "hintSignature": "[\"刀剑神域 进击篇 暮色黄昏\"]"
+        "hintSignature": "[\"刀剑神域 进击篇 暮色黄昏\"]",
+        "titleZh": "剧场版 刀剑神域 进击篇 黯淡黄昏的谐谑曲",
+        "titleJa": "劇場版 ソードアート・オンライン プログレッシブ 冥き夕闇のスケルツォ",
+        "titleEn": "Gekijouban Sword Art Online: Progressive - Kuraki Yuuyami no Scherzo",
+        "description": "世界首个VRMMORPG游戏《Sword Art Online》成为了“死亡游戏”。距1万名用户被困在游戏中一事发生，已有一个多月。攻略了钢铁浮游城“艾恩葛朗特”第一层后，亚丝娜继续与桐人搭档，以最顶层为目标继续着旅程。然而，带领玩家攻略游戏的两大精英公会“ALS”（艾恩葛朗特解放队）和“DKB”（龙骑士团）之间爆发了冲突，这背后，有一名神秘人物在暗中行动。在命悬一线的危险战斗中，继“攻略”压力后的另一重“威胁”将桐人和亚丝娜卷入其中。影片根据川原砾同名人气小说改编。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/6d/a5/355004_UYgN4.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/6d/a5/355004_UYgN4.jpg",
+        "year": 2022,
+        "startDate": "2022-10-22",
+        "ratingRank": 5728,
+        "ratingTotal": 4017,
+        "metadataFetched": true
       },
       {
         "inputTitle": "外传Gun Gale Online",
@@ -156,12 +270,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/226750",
         "platform": "TV",
-        "totalEpisodes": 12,
+        "totalEpisodes": 13,
         "rating": 6.5,
         "confidence": 135,
         "query": "Gun Gale Online",
         "cacheKey": "import-metadata-v1:491c340a207deedecfe7",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "刀剑神域外传 Gun Gale Online",
+        "titleJa": "ソードアート・オンライン オルタナティブ ガンゲイル・オンライン",
+        "titleEn": "刀剑神域外传 Gun Gale Online",
+        "description": "在枪与钢铁的世界“Gun Gale Online”享受着单人游戏的女性玩家·莲。喜欢可爱事物的她，全身清一色的粉红色装备，不断累积游戏经验，并逐渐增强实力。之后，由于某件事而对于PK（玩家狩猎）觉醒了兴趣的莲沉迷于PK中，并终于到达被人称作“粉红恶魔”的地步。\r\n这样的莲，与神秘的美女玩家·Pitohui相遇，并和她意气相投。莲按照她所说的，参加了小队作战活动“特攻强袭”。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/29/40/226750_3fW9q.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/29/40/226750_3fW9q.jpg",
+        "year": 2018,
+        "startDate": "2018-04-07",
+        "ratingRank": 5257,
+        "ratingTotal": 4962,
+        "metadataFetched": true
       }
     ]
   },
@@ -179,7 +304,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "缘之空",
         "cacheKey": "import-metadata-v1:9f4540d66baf38ec0341",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "缘之空",
+        "titleJa": "ヨスガノソラ",
+        "titleEn": "Yosuga no Sora",
+        "description": "远离都市的乡间、奥木染。春日野悠带着他的妹妹·春日野穹来到了这里。\r\n兄妹俩幼时暑假期间曾来过多次奥木染，这里有着祖父的家，是个令人怀念的地方。\r\n因为意外事故而失去了双亲与去处的兄妹，决定移居至现在没有人居住的祖父家，在此开始新的生活。\r\n\r\n觉得自小以来就没怎么变化的街道与居民、教人怀念的回忆与静谧的环境，让悠倍感舒适。但徐徐地，变化来到了。\r\n阳光日渐变得强烈的初夏天空之下，故事开始了。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/6e/01/7157_hF46A.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/6e/01/7157_hF46A.jpg",
+        "year": 2010,
+        "startDate": "2010-10-04",
+        "ratingRank": 4593,
+        "ratingTotal": 14338,
+        "metadataFetched": true
       }
     ]
   },
@@ -192,12 +328,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/179949",
         "platform": "TV",
-        "totalEpisodes": 14,
+        "totalEpisodes": 21,
         "rating": 7.4,
         "confidence": 135,
         "query": "小林家的龙女仆",
         "cacheKey": "import-metadata-v1:4f7d485a758a83ec5c01",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "小林家的龙女仆",
+        "titleJa": "小林さんちのメイドラゴン",
+        "titleEn": "Miss Kobayashi's Dragon Maid",
+        "description": "在单身的辛苦OL小林身边突然出现的女仆装束的美少女托尔。\r\n长着角和尾巴的她的身姿正是所谓的龙娘。\r\n在醉酒的小林邀请下说要到家里去的托尔，鬼使神差地开始以小林家女仆的身份工作……！？\r\n“女仆”+“龙”=“女仆龙”有着笨手笨脚的可爱之处！\r\n龙娘与人类之间基本上很温暖、偶尔有些黑暗的异种族间交流喜剧！！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/e9/15/179949_c2j50.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/e9/15/179949_c2j50.jpg",
+        "year": 2017,
+        "startDate": "2017-01-11",
+        "ratingRank": 1068,
+        "ratingTotal": 22160,
+        "metadataFetched": true
       }
     ]
   },
@@ -215,7 +362,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "转生成蜘蛛又怎样",
         "cacheKey": "import-metadata-v1:cad10035dd3d74c73bab",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "转生成蜘蛛又怎样！",
+        "titleJa": "蜘蛛ですが、なにか?",
+        "titleEn": "Kumo Desu ga, Nanika?",
+        "description": "曾经是一名女高中生的“我”，突然转生变成了幻想世界中的蜘蛛魔物。\r\n而且，出生地点还是各种凶恶魔物所盘踞的大迷宫。\r\n“我”以人类的智慧和非同寻常的积极心态为武器，使用蜘蛛的丝网以及陷阱打倒比自己等级高得多的敌人，从而存活下来……\r\n身为种族链底端的，拥有最强精神力的这位少女的迷宫生存剧，现在开幕！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/83/73/252782_aWyEn.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/83/73/252782_aWyEn.jpg",
+        "year": 2021,
+        "startDate": "2021-01-08",
+        "ratingRank": 7649,
+        "ratingTotal": 6409,
+        "metadataFetched": true
       }
     ]
   },
@@ -233,7 +391,17 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "打工吧魔王大人",
         "cacheKey": "import-metadata-v1:5df26be8c266d4a60c30",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "打工吧！魔王大人",
+        "titleJa": "はたらく魔王さま!",
+        "description": "管你是魔王还是勇者，想填饱肚子就得工作！\r\n原本即将征服世界的魔王撒旦却遭勇者击败，被迫漂流到异世界“日本”。为了赚取生活费，魔王将三坪大的公寓当成临时魔王城，开始过着打工族的生活。没想到勇者竟追随他的脚步穿越时空而来……一出平民路线的奇幻故事就此展开！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/4a/9f/50814_B44q8.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/4a/9f/50814_B44q8.jpg",
+        "year": 2013,
+        "startDate": "2013-04-04",
+        "ratingRank": 2258,
+        "ratingTotal": 12562,
+        "metadataFetched": true
       }
     ]
   },
@@ -246,12 +414,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/277554",
         "platform": "TV",
-        "totalEpisodes": 11,
+        "totalEpisodes": 12,
         "rating": 7.9,
         "confidence": 135,
         "query": "无职转生",
         "cacheKey": "import-metadata-v1:ef643e8fff2294b60aec",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "无职转生～到了异世界就拿出真本事～",
+        "titleJa": "無職転生 ～異世界行ったら本気だす～",
+        "titleEn": "Jobless Reincarnation ~I Will Seriously Try If I Go to Another World~",
+        "description": "“我要在这个异世界拿出真本事！”\r\n34岁童贞且无职的家里蹲男子，在父母的葬礼当天被赶出家门后，在路上被一辆卡车所撞死。意识清醒后，他发现自己居然作为一个刚出生的婴儿转生到了剑与魔法的异世界！像废物一样活过了前世的男子，发誓要作为少年·鲁迪乌斯在异世界以认真的态度好好活下去！\r\n等待着鲁迪乌斯的是，与娇小魔术师、有着精灵长耳又很男孩子气的美少女、凶暴的傲娇大小姐以及其他性格各异的人们之间的邂逅，当然也还有残酷的冒险与战斗。\r\n新的人生就要开始了！“人生重来型”幻想冒险谭，在此开幕！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/8b/00/277554_z999u.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/8b/00/277554_z999u.jpg",
+        "year": 2021,
+        "startDate": "2021-01-10",
+        "ratingRank": 266,
+        "ratingTotal": 25257,
+        "metadataFetched": true
       }
     ]
   },
@@ -269,7 +448,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 127,
         "query": "终末的女武神",
         "cacheKey": "import-metadata-v1:18ba6ad420d8f35dd99a",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "终末的女武神",
+        "titleJa": "終末のワルキューレ",
+        "titleEn": "Shuumatsu no Walkure",
+        "description": "今、700万年続く人類の歴史が、幕を閉じようとしている──。\r\n1000年に一度、全世界の神々が一堂に介し、天界で開催される「人類存亡会議」。\r\n\r\n人類が冒してきた愚かな行いにより、全会一致で「終末」の判決が下される直前、\r\n半神半人の戦乙女の一人、ブリュンヒルデが異議を唱える。\r\n\r\n「ただ滅ぼすのでは芸がない。人類を試してみては？」\r\n\r\n彼女が提案したのは、神 vs 人類最終闘争、通称「ラグナロク」\r\n全世界の神々と、歴史上の全人類から選ばれた代表者たちが\r\n一対一のタイマン勝負をする。\r\n全13番勝負、先に7勝した方が勝利となる。\r\n\r\nしかし、人類が神に勝つことなど絶対不可能。\r\n神々が嘲笑する中、ブリュンヒルデはなおも挑発する。\r\n\r\n「もしかして、ビビってるんですかァ？」\r\n\r\nその言葉は神の逆鱗に触れ、\r\n怒りのままに、神々はラグナロクを承諾。\r\nかくして、ブリュンヒルデたちは、\r\n700万年の人類史から最強の13人を選びラグナロクへと挑む。\r\n\r\n果たして人類は神を超え、終末を阻止できるのか？\r\n\r\n超絶怒涛の真剣勝負バトル、開幕！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/38/0c/322900_V56Ny.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/38/0c/322900_V56Ny.jpg",
+        "year": 2021,
+        "startDate": "2021-06-17",
+        "ratingRank": 9142,
+        "ratingTotal": 1779,
+        "metadataFetched": true
       }
     ]
   },
@@ -287,7 +477,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "剃须然后捡到女高中生",
         "cacheKey": "import-metadata-v1:0cedd1544158589c4bcb",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "剃须。然后捡到女高中生。",
+        "titleJa": "ひげを剃る。そして女子高生を拾う。",
+        "titleEn": "Hige wo Soru. Soshite Joshikousei wo Hirou.",
+        "description": "被单恋5年的对方爽快地甩了的上班族吉田。 \r\n在喝着酒回家的路上，看见蹲在路边的女高中生—— \r\n“陪你睡一晚，让我住下吧” “那种玩笑不是随便开的” “那就免费让我住下吧” \r\n顺势开始的与少女沙优的同居生活。 \r\n“早上好” “味增汤好喝吗？” “太慢啦” “打起精神了吗” “一起睡吧” “……快点回来” \r\n离家出走的JK与26岁上班族，微妙距离的两人编织的日常爱情喜剧。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/e9/78/297254_kdK52.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/e9/78/297254_kdK52.jpg",
+        "year": 2021,
+        "startDate": "2021-04-05",
+        "ratingRank": 9447,
+        "ratingTotal": 5502,
+        "metadataFetched": true
       }
     ]
   },
@@ -305,7 +506,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "打了300年的史莱姆，不知不觉就练到了满级",
         "cacheKey": "import-metadata-v1:b9c47dbbfdfb51b6cb00",
-        "hintSignature": "[\"打了300年的史莱姆，不知不觉就练到了满级\"]"
+        "hintSignature": "[\"打了300年的史莱姆，不知不觉就练到了满级\"]",
+        "titleZh": "打了300年的史莱姆，不知不觉就练到了满级",
+        "titleJa": "スライム倒して300年、知らないうちにレベルMAXになってました",
+        "titleEn": "スライム倒して300年、知らないうちにレベルMAXになってました",
+        "description": "非常平凡的上班族相泽梓，因为工作过度而过劳死。成为了不老不死的魔女亚梓莎转生到了异世界。\r\n鉴于前世的经验，她在边境的高原开始悠闲的慢活。打倒史来姆赚取金钱，像个魔女般制作药物照顾山脚下的村庄。此外变无所事事。她就持续过着这样的生活，被昵称为「高原的魔女大人」。\r\n时间来到300年后。持续打倒史来姆累积的经验值，亚梓莎在不知不觉间成为LV99，也就是世界最强。这个传闻传开后，除了对自己有自信的冒险者外，前来决斗的龙族少女，还有称呼亚梓莎薇妈妈的怪物少女都一一出现了！\r\n\r\n\r\n\r\n[简介原文]\r\nごく普通のOL・相沢梓は働き過ぎが原因で過労死し、不老不死の魔女アズサとして異世界に転生した。前世での反省から、辺境の高原でのんびりスローライフを始めた彼女。\r\nスライムを倒して小銭を稼ぎ、魔女らしく薬を作って麓の村のお世話をする。あとはとくに何もしない。そんな暮らしを続けるうち彼女は「高原の魔女さま」と親しまれるようになっていた――。\r\nところが300年後。スライムを倒し続けた経験値で、いつの間にやらレベル99＝世界最強となってしまっていたアズサ。その噂は広まり、腕に自信のある冒険者はもちろん、決闘を挑んでくるドラゴン娘や、アズサを母と呼ぶ謎のモンスター娘まで押し掛けて来るようになってしまい――！？",
+        "cover": "https://lain.bgm.tv/pic/cover/l/01/e4/292969_RLbg9.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/01/e4/292969_RLbg9.jpg",
+        "year": 2021,
+        "startDate": "2021-04-10",
+        "ratingRank": 6632,
+        "ratingTotal": 6001,
+        "metadataFetched": true
       }
     ]
   },
@@ -318,12 +530,22 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/100205",
         "platform": "TV",
-        "totalEpisodes": 12,
+        "totalEpisodes": 18,
         "rating": 5.8,
         "confidence": 135,
         "query": "新妹魔王的契约者 12",
         "cacheKey": "import-metadata-v1:0ea0bfef66b285866174",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "新妹魔王的契约者",
+        "titleJa": "新妹魔王の契約者",
+        "description": "“你曾说过想要妹妹对吧”，向高中生东城刃更宣布再婚的父亲，带了两个成为他继妹的女孩回家同住，结果自己却跑到国外出差。澪与万理亚两名少女在父亲离开以后，态度一百八十度大转变，还打算征服刃更。想不到两人的真正身分，分别是新科魔王与梦魔。但是在跟刃更缔结主从契约的时候，居然出槌变成逆契约，刃更反而变成主人了。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/84/98/100205_vVRzI.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/84/98/100205_vVRzI.jpg",
+        "year": 2015,
+        "startDate": "2015-01-07",
+        "ratingRank": 8297,
+        "ratingTotal": 4554,
+        "metadataFetched": true
       }
     ]
   },
@@ -336,12 +558,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/330054",
         "platform": "TV",
-        "totalEpisodes": 12,
+        "totalEpisodes": 13,
         "rating": 5.8,
         "confidence": 132,
         "query": "魔王学院的不适任者",
         "cacheKey": "import-metadata-v1:791c4910070c5a0a5a5f",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "魔王学院的不适任者～史上最强的魔王始祖，转生就读子孙们的学校～ 第二季",
+        "titleJa": "魔王学院の不適合者 ～史上最強の魔王の始祖、転生して子孫たちの学校へ通う～ Ⅱ",
+        "titleEn": "Maou Gakuin no Futekigousha II: Shijou Saikyou no Maou no Shiso, Tensei Shite Shison-tachi no Gakkou e Kayou",
+        "description": "尽管具备能毁灭人类、精灵，甚至是众神的力量，暴虐魔王阿诺斯却厌倦了永无止尽的斗争，梦想着和平的世界进行转生。然而在两千年后，转生后的他所迎来的，却是适应和平生活而变得过于弱小的子孙们，以及各种衰退至极的魔法。阿诺斯虽然进入了把被认定是魔王转生者的人召集起来「魔王学院」就读，学院却无法看出他的实力，使他被盖上不适任者的烙印。在众人都瞧不起他的环境里，他将唯一亲切对待自己的少女米夏纳为部下，不适任者（魔王）在魔族的阶级制度上迈向巅峰。\r\n经历过各种事件后，接着将进入下一篇章《大精灵篇》！在阻止了魔族与人类的战争后，出现在阿诺斯面前的是打算毁灭暴虐魔王的新「神之子」……面对各种不讲道理的情况也一派轻松的《不适任者》将面临全新挑战！「转生到这个和平的时代，我也学会如何手下留情了呢。」",
+        "cover": "https://lain.bgm.tv/pic/cover/l/5e/85/330054_86gc8.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/5e/85/330054_86gc8.jpg",
+        "year": 2023,
+        "startDate": "2023-01-07",
+        "ratingRank": 8503,
+        "ratingTotal": 2928,
+        "metadataFetched": true
       }
     ]
   },
@@ -359,7 +592,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "JOJO的奇妙冒险",
         "cacheKey": "import-metadata-v1:d83d17dc3d3341b7fb71",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "JOJO的奇妙冒险",
+        "titleJa": "ジョジョの奇妙な冒険",
+        "titleEn": "JOJO的奇妙冒险",
+        "description": "在古代墨西哥繁盛一时的太阳的子民阿兹特克，他们流传着一枚奇妙的「石鬼面」。那是一枚奇迹的面具，能让人拥有一种力量，能获得永远的生命并成为真正的掌控者。然而从某个时候开始，就从历史中消失了踪影。\r\n\r\n时光飞逝，来到了19世纪末的英国。在这个人们的思想与生活产生激烈变化的时代，乔纳森·乔斯达与迪奥·布兰度相遇。二人一同渡过了少年时代到青年时代，最后因为「石鬼面」，而步上了奇特怪异的命运。\r\n\r\n以及在1938年的美国，乔纳森·乔斯达的孙子——乔瑟夫·乔斯达长大成人后的故事。为了守护他重视的人们，与苏醒的超级生物柱之男不停的战斗。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/23/5d/43558_ECoSc.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/23/5d/43558_ECoSc.jpg",
+        "year": 2012,
+        "startDate": "2012-10-05",
+        "ratingRank": 472,
+        "ratingTotal": 18285,
+        "metadataFetched": true
       }
     ]
   },
@@ -372,12 +616,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/49131",
         "platform": "TV",
-        "totalEpisodes": 12,
+        "totalEpisodes": 13,
         "rating": 6.7,
         "confidence": 135,
         "query": "约会大作战",
         "cacheKey": "import-metadata-v1:16e9de73f0185c9a2133",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "约会大作战",
+        "titleJa": "デート・ア・ライブ",
+        "titleEn": "DATE A LIVE",
+        "description": "故事是讲述一名普通的高中二年级生五河士道，突然在某一天遇上了一场大爆炸，而在这场大爆炸之中竟然出现一名身穿盔甲手持大剑的神秘美少女。原来这名少女的真正身份是“精灵”，是会给世界带来毁灭性灾难的存在，她的再次出现，将会给地球带来毁灭性的未来！然而主人公士道却有方法阻止世界毁灭，这个唯一能够阻止世界毁灭的方法就是——要与她约会！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/99/08/49131_CIPjC.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/99/08/49131_CIPjC.jpg",
+        "year": 2013,
+        "startDate": "2013-04-05",
+        "ratingRank": 4259,
+        "ratingTotal": 15289,
+        "metadataFetched": true
       },
       {
         "inputTitle": "狂三外传",
@@ -390,7 +645,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 132,
         "query": "狂三外传",
         "cacheKey": "import-metadata-v1:f29e9b73f246827a1ecc",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "约会大作战 赤黑新章：虚或实",
+        "titleJa": "デート・ア・バレット デッド・オア・バレット",
+        "titleEn": "约战狂三外传 Dead or Bullet",
+        "description": "〈最悪の精霊〉時崎狂三　顕界——\r\n \r\nこの世界とは異なる隣界より顕現し、地上に厄災をもたらす精霊と呼ばれる少女たち——\r\n\r\n或る者は無垢であり、或る者は救いを求め、そして或る少女は己の目的のため、自らの心を殺し続けた——\r\n\r\n第３の精霊、コードネーム。\r\n\r\n時間を操る規格外に強大な天使を行使し、その行動、思想、そして目的に至るまで数多の謎を抱えた最悪の精霊・時崎狂三——\r\n\r\n彼女が舞い降りたのは、人間も、精霊すらも存在しない隣界の片隅だった……\r\n\r\n全世界シリーズ累計発行部数６００万部の大人気ライトノベル『デート・ア・ライブ』。\r\n\r\nその中でも異色の存在感を誇る時崎狂三のスピンオフ作品が新作アニメ化！\r\n\r\n彼女の左眼に刻まれる狂三だけの戦争(デート)の引鉄が今、引かれる——",
+        "cover": "https://lain.bgm.tv/pic/cover/l/b6/8f/291171_PA7pA.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/b6/8f/291171_PA7pA.jpg",
+        "year": 2021,
+        "startDate": "2021-03-24",
+        "ratingRank": 6893,
+        "ratingTotal": 2540,
+        "metadataFetched": true
       }
     ]
   },
@@ -408,7 +674,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "我想吃掉你的胰脏",
         "cacheKey": "import-metadata-v1:c13f40fac63a89a9f904",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "我想吃掉你的胰脏",
+        "titleJa": "君の膵臓をたべたい",
+        "titleEn": "Kimi no Suizou o Tabetai",
+        "description": "她如此说了。\r\n“我想吃掉你的胰脏”\r\n\r\n春。\r\n晚开的樱花仍在绽放的4月。\r\n对他人毫无兴趣，总是独自一人读书的高中生“我”，在医院的等候室捡到了一册文库本。\r\n这本用手写的文字写着《共病文库》这一标题的书，是天真烂漫的班上人气王·山内樱良私下记录的日记本。\r\n樱良将自己身患胰脏的疾病、已经时日无多这件事，告诉了看到日记内容的“我”。\r\n对于她而言，那是对除了家人和医生以外的人隐藏病情的她，获得了唯一一位共享秘密之人的瞬间。\r\n樱良想要在临终之日到来之前，一边尽量过着一如既往的日常生活，一边去做想要做的事情，竭尽全力享受人生。\r\n在被她那奔放的行动牵着鼻子走的同时，“我”的内心也逐渐产生了变化。\r\n\r\n——那是，“我”的春日回忆。\r\n她的一生回忆。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/23/17/221736_hm0HO.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/23/17/221736_hm0HO.jpg",
+        "year": 2018,
+        "startDate": "2018-09-01",
+        "ratingRank": 3075,
+        "ratingTotal": 9087,
+        "metadataFetched": true
       }
     ]
   },
@@ -426,7 +703,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "天气之子",
         "cacheKey": "import-metadata-v1:65bf7a4b77cb2b15e262",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "天气之子",
+        "titleJa": "天気の子",
+        "titleEn": "Tenki no Ko",
+        "description": "「想要试着去往那道光芒当中」\r\n\r\n高中一年级的夏天。从离岛离家出走，来到东京的帆高。\r\n他的生活立刻变得困窘，在度过孤独的每一天之后终于找到的工作，\r\n是为古怪的超自然杂志撰稿。\r\n\r\n如同预示着他接下来的命运一般，连日不断降下雨水。\r\n此时，在人潮熙熙攘攘的都市一角，帆高遇到了一位少女。\r\n\r\n由于某些缘故，和弟弟两个人一起坚强生活的少女·阳菜。\r\n她拥有不可思议的能力。\r\n\r\n「呐，现在开始就要放晴了哦」\r\n\r\n雨水逐渐停止，街道笼罩在美丽的光芒中。\r\n那是，仅仅在心中祈祷，就能让天空放晴的力量——",
+        "cover": "https://lain.bgm.tv/pic/cover/l/00/e8/269235_Dg6gZ.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/00/e8/269235_Dg6gZ.jpg",
+        "year": 2019,
+        "startDate": "2019-07-19",
+        "ratingRank": 1987,
+        "ratingTotal": 18561,
+        "metadataFetched": true
       }
     ]
   },
@@ -444,7 +732,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "你的名字",
         "cacheKey": "import-metadata-v1:bb9fa6d39eef7249ecfb",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "你的名字。",
+        "titleJa": "君の名は。",
+        "titleEn": "Kimi no Na wa.",
+        "description": "在每千年回归一次的彗星造访过一个月之后的日本。\r\n　　某个深山的乡下小镇，女高中生三叶每天都过着忧郁的生活。\r\n　　而她烦恼的不光有担任镇长的父亲所举行的选举运动，还有家传神社的古老习俗。\r\n　　在这个小小的城镇，周围都只是些爱瞎操心的老人。为此三叶对于大都市充满了憧憬。\r\n　　“下辈子就让我成为东京的帅哥吧……！！！”\r\n　　然而某一天，自己做了一个变成男孩子的梦。\r\n　　这儿有着陌生的房间、陌生的朋友。而眼前出现的则是东京的街道。\r\n　　三叶虽然感到困惑，但是能够来到朝思暮想的都市生活，让她觉得神清气爽。\r\n　　“不可思议的梦……”\r\n　　另一方面在东京生活的男高中生·泷也做了个奇怪的梦。\r\n　　他在一个从未去过的深山小镇中，变成了女高中生……\r\n　　那么他们体验的梦境到底有什么秘密呢？\r\n　　原本不会相遇的两人由此相逢。\r\n　　少女和少年奇迹的故事，开始了。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/20/15/160209_2UzU8.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/20/15/160209_2UzU8.jpg",
+        "year": 2016,
+        "startDate": "2016-08-26",
+        "ratingRank": 190,
+        "ratingTotal": 33596,
+        "metadataFetched": true
       }
     ]
   },
@@ -462,7 +761,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "漆黑的子弹",
         "cacheKey": "import-metadata-v1:ea8f688a8314c712115b",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "漆黑的子弹",
+        "titleJa": "ブラック・ブレット",
+        "titleEn": "BLACK BULLET",
+        "description": "西元二零二一年，人类在与病毒性寄生生物“原肠动物”的战争中败北，被驱逐至狭窄的领土，带着恐惧与绝望苟且偷生。\r\n\r\n至此过了十年，人类在能控制原肠动物病毒的少女们“受诅之子”力量下得以找到对抗怪物的最后希望，然而过去的伤痛却使两者之间出现难以填平的代沟，看似得到和平的人类社会正悄悄变质，暗潮越见汹涌。\r\n\r\n居住于东京的高中生少年里见莲太郎，是一位专门对抗原肠动物的“民警”中其中一份子，与自己的搭挡蓝原延珠一起从事许多危险的工作，就在某天接获政府的特别命令，内容竟是避免东京毁灭的高度机密任务……",
+        "cover": "https://lain.bgm.tv/pic/cover/l/b3/32/84873_8NvN2.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/b3/32/84873_8NvN2.jpg",
+        "year": 2014,
+        "startDate": "2014-04-08",
+        "ratingRank": 5338,
+        "ratingTotal": 7502,
+        "metadataFetched": true
       }
     ]
   },
@@ -480,7 +790,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "魔女之旅",
         "cacheKey": "import-metadata-v1:16fb145ae4642ac982a0",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "魔女之旅",
+        "titleJa": "魔女の旅々",
+        "titleEn": "Wandering Witch: The Journey of Elaina",
+        "description": "在某个地方有一位旅人。她的名字叫伊蕾娜。\r\n她是年纪轻轻就成为了最上位的“魔女”的才女。\r\n憧憬着小时候读过的旅行的故事，\r\n顺其自然地持续着随心所欲的长途旅行。\r\n在广大的世界里自由地穿行 ，遇见莫名其妙、可笑的人，\r\n或是见证到某人的美丽的日常，\r\n她作为旅人，也没有什么目的，\r\n重复着和各种各样的国家和人的相遇。\r\n以及相同数量的——\r\n\r\n“请别管我。我就是个旅人，\r\n必须赶路了。”\r\n这样的魔女伊蕾娜所编织的离别的物语。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/99/17/292970_mxMxx.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/99/17/292970_mxMxx.jpg",
+        "year": 2020,
+        "startDate": "2020-10-02",
+        "ratingRank": 1798,
+        "ratingTotal": 16527,
+        "metadataFetched": true
       }
     ]
   },
@@ -493,12 +814,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/43557",
         "platform": "TV",
-        "totalEpisodes": 13,
+        "totalEpisodes": 14,
         "rating": 6.4,
         "confidence": 85,
         "query": "青梅竹马不会输的恋爱喜剧",
         "cacheKey": "import-metadata-v1:f442174bc75986fdd1fa",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "我女友与青梅竹马的惨烈修罗场",
+        "titleJa": "俺の彼女と幼なじみが修羅場すぎる",
+        "titleEn": "Ore no Kanojo to Osananajimi ga Shuraba Sugiru",
+        "description": "主人公季堂锐太是个成绩优秀的高中一年级学生，同时也是个恋爱反对派。本来是和像自己妹妹一般的青梅竹马一起过着普通的高中生活的，但某天却被校内公认的第一美人，归国子女夏川真凉表白了。然而真凉的真实意图却是为了骗过众人而需要锐太与她假扮情侣。被真凉掌握了自己的某个“秘密”的锐太被迫假扮“男友”这一角色……之后“前女友”姬香、“未婚妻”爱衣也加了进来，围绕锐太的壮烈修罗场就此拉开帷幕！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/c2/38/43557_jUaQk.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/c2/38/43557_jUaQk.jpg",
+        "year": 2013,
+        "startDate": "2013-01-05",
+        "ratingRank": 6033,
+        "ratingTotal": 8632,
+        "metadataFetched": true
       }
     ]
   },
@@ -511,12 +843,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/266157",
         "platform": "TV",
-        "totalEpisodes": 12,
+        "totalEpisodes": 13,
         "rating": 6.9,
         "confidence": 85,
         "query": "这个勇者明明超强却过分慎重",
         "cacheKey": "import-metadata-v1:1b45ede6c6abbfb80a55",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "慎重勇者 ～这个勇者明明超强却过分慎重～",
+        "titleJa": "慎重勇者 ～この勇者が俺TUEEEくせに慎重すぎる～",
+        "titleEn": "慎重勇者 ～この勇者が俺TUEEEくせに慎重すぎる～",
+        "description": "废柴女神莉丝塔要负责拯救超难模式的世界。\r\n虽然成功召唤出能力值高到犯规的勇者圣哉，\r\n没想到他却谨慎到超乎想像……\r\n「我要三副盔甲。一副拿来穿，一副备用，还有一副是备用不见时的备用。」\r\n不仅囤积异常的库存，还自主训练到满等为止，\r\n谨慎到连打史莱姆都全力以赴！\r\n如此谨慎的勇者和被他耍得团团转的女神，即将展开冒险旅程！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/02/3c/266157_1FVwV.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/02/3c/266157_1FVwV.jpg",
+        "year": 2019,
+        "startDate": "2019-10-02",
+        "ratingRank": 2981,
+        "ratingTotal": 12457,
+        "metadataFetched": true
       }
     ]
   },
@@ -534,7 +877,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "为美好的世界献上祝福",
         "cacheKey": "import-metadata-v1:bcdf001a9691815379c6",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "为美好的世界献上祝福！",
+        "titleJa": "この素晴らしい世界に祝福を！",
+        "titleEn": "Kono Subarashii Sekai ni Shukufuku o!",
+        "description": "热爱游戏的家里蹲少年·佐藤和真的人生，因交通事故（!?）而轻易闭幕……本该是这样，但当他醒来之时，眼前有一位自称是女神的美少女。“喂，我有点好事要告诉你。要去异世界吗？只带一样你喜欢的东西没问题喔。”“那，我就带着你好了。”由此开始，在异世界转生的和真的魔王讨伐大冒险开始了……虽然是这么想的，但他却为了获得衣食住行而开始劳动！想要平稳度日的和真，却由于女神引起的各种问题，而终于被魔王军盯上了!?",
+        "cover": "https://lain.bgm.tv/pic/cover/l/56/de/135275_G3liq.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/56/de/135275_G3liq.jpg",
+        "year": 2016,
+        "startDate": "2016-01-13",
+        "ratingRank": 569,
+        "ratingTotal": 22619,
+        "metadataFetched": true
       },
       {
         "inputTitle": "红传说",
@@ -547,7 +901,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "为美好的世界献上祝福 红传说",
         "cacheKey": "import-metadata-v1:9814ee0b46e89138a23f",
-        "hintSignature": "[\"为美好的世界献上祝福 红传说\",\"この素晴らしい世界に祝福を 紅伝説\"]"
+        "hintSignature": "[\"为美好的世界献上祝福 红传说\",\"この素晴らしい世界に祝福を 紅伝説\"]",
+        "titleZh": "电影 为美好的世界献上祝福！红传说",
+        "titleJa": "映画 この素晴らしい世界に祝福を！紅伝説",
+        "titleEn": "Kono Subarashii Sekai ni Shukufuku o! Kurenai Densetsu",
+        "description": "異世界に転生した主人公の珍道中を描いた人気ライトノベルを原作に、テレビアニメが第2期まで放送されたファンタジーコメディ「この素晴らしい世界に祝福を！」の劇場版。交通事故によりあっけなく人生を終えたはずの引きこもり高校生・佐藤和馬（カズマ）は、ひょんなことから女神アクアを道連れに異世界に転生。何かとトラブルを引き起こすダメ女神のアクアと、中二病をこじらせた魔法使いのめぐみん、妄想が止まらない女騎士ダグラスの3人とパーティを組み、波乱万丈の冒険を繰り広げていた。そんなある日、彼らの前に紅魔女の少女ゆんゆんが現れ、彼女の故郷である「紅魔の里」の危機を訴える。生まれ故郷を救うため旅立ったゆんゆんを追い、カズマたちも紅魔の里へ向かうが……。監督の金崎貴臣、脚本の上江洲誠ら主要スタッフはテレビシリーズから続投。アニメーション制作を新たにJ.C.STAFFが手がける。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/d0/61/220631_2nNMt.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/d0/61/220631_2nNMt.jpg",
+        "year": 2019,
+        "startDate": "2019-08-30",
+        "ratingRank": 630,
+        "ratingTotal": 12047,
+        "metadataFetched": true
       }
     ]
   },
@@ -560,12 +925,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/385209",
         "platform": "TV",
-        "totalEpisodes": 12,
+        "totalEpisodes": 13,
         "rating": 7,
         "confidence": 135,
         "query": "为美好的世界献上爆炎",
         "cacheKey": "import-metadata-v1:4a2d76e306df91526b3f",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "为美好的世界献上爆焰！",
+        "titleJa": "この素晴らしい世界に爆焔を！",
+        "titleEn": "Kono Subarashii Sekai ni Bakuen wo!",
+        "description": "红魔之乡——那里是天生拥有高魔力和智力，作为魔法使的高适应性，以及红眼睛的红魔族居住的土地。\r\n这个红魔之乡有个乡训，那就是“只有学会高级魔法才能独当一面。爆裂魔法是梗魔法。”\r\n但是，就在“魔法学园Red Prison”的同学们期待着学习高级魔法的时候，红魔族的少女·惠惠，独自一个人为了掌握爆裂魔法而努力学习。\r\n为了追上小时候看到的那个情景还有那个人——\r\n这是憧憬最强魔法的，一名少女的故事。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/c7/89/385209_hWE7n.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/c7/89/385209_hWE7n.jpg",
+        "year": 2023,
+        "startDate": "2023-04-05",
+        "ratingRank": 2495,
+        "ratingTotal": 9816,
+        "metadataFetched": true
       }
     ]
   },
@@ -583,7 +959,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 85,
         "query": "妖狐X仆SS",
         "cacheKey": "import-metadata-v1:51d5ab5886d8da50d59e",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "妖狐×仆SS",
+        "titleJa": "妖狐×僕SS",
+        "titleEn": "妖狐×僕SS",
+        "description": "在这个世界中，除了人类和妖怪外，还存在着另一个物种——人类和妖怪结合产生的返祖妖怪。由于其不纯正的血统，返祖妖怪经常会被同类驱逐甚至追杀，因此，一间专门为返祖妖怪提供庇护的“妖馆”应运而生。在妖馆中，每一个返祖妖怪都会配有一位被称为SS的护卫，白鬼院凛凛蝶和御狐神双炽的故事就由此开始。\r\n　　在妖馆中，还居住着另一些有趣的住客。性格优哉游哉但其实有着意外细腻内心的反之冢连胜和他的护卫雪小路野蔷薇；不良正太渡狸卍里和他的护卫夏目残夏；狂放不羁甚至有些变态的青鬼院蜻蛉和他天然呆的护卫髅髅宫歌留多。在和这些同类相处的过程中，凛凛蝶找回了久违的快乐，同时，返祖妖怪们丢失的记忆也逐渐的浮出了水面。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/d9/7d/20582_6vGg9.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/d9/7d/20582_6vGg9.jpg",
+        "year": 2012,
+        "startDate": "2012-01-12",
+        "ratingRank": 3955,
+        "ratingTotal": 5328,
+        "metadataFetched": true
       }
     ]
   },
@@ -596,12 +983,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/43557",
         "platform": "TV",
-        "totalEpisodes": 13,
+        "totalEpisodes": 14,
         "rating": 6.4,
         "confidence": 135,
         "query": "我女友与青梅竹马的惨烈修罗场",
         "cacheKey": "import-metadata-v1:25cd8fd8a714398879e5",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "我女友与青梅竹马的惨烈修罗场",
+        "titleJa": "俺の彼女と幼なじみが修羅場すぎる",
+        "titleEn": "Ore no Kanojo to Osananajimi ga Shuraba Sugiru",
+        "description": "主人公季堂锐太是个成绩优秀的高中一年级学生，同时也是个恋爱反对派。本来是和像自己妹妹一般的青梅竹马一起过着普通的高中生活的，但某天却被校内公认的第一美人，归国子女夏川真凉表白了。然而真凉的真实意图却是为了骗过众人而需要锐太与她假扮情侣。被真凉掌握了自己的某个“秘密”的锐太被迫假扮“男友”这一角色……之后“前女友”姬香、“未婚妻”爱衣也加了进来，围绕锐太的壮烈修罗场就此拉开帷幕！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/c2/38/43557_jUaQk.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/c2/38/43557_jUaQk.jpg",
+        "year": 2013,
+        "startDate": "2013-01-05",
+        "ratingRank": 6033,
+        "ratingTotal": 8632,
+        "metadataFetched": true
       }
     ]
   },
@@ -614,12 +1012,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/112151",
         "platform": "TV",
-        "totalEpisodes": 12,
+        "totalEpisodes": 16,
         "rating": 5.7,
         "confidence": 135,
         "query": "终结的炽天使",
         "cacheKey": "import-metadata-v1:8ba04ce3dbe8d0a2ff53",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "终结的炽天使",
+        "titleJa": "終わりのセラフ",
+        "titleEn": "Owari no Seraph",
+        "description": "在不知什么时候，整个世界被突如其来的未知病毒攻袭，几乎彻底毁灭。但是只有13岁以下的孩子不被病毒所感染，侥幸活了下来。可是这些孩子们却被从地底出现的吸血鬼所统治，并作为提供血液的家畜饲养。故事的主人公——百夜优一郎和百夜米迦尔就是被抓住的孤儿们之一，而面对不堪的命运，他们没有屈服，开始计划逃亡与复仇……",
+        "cover": "https://lain.bgm.tv/pic/cover/l/3c/bd/112151_qJg8v.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/3c/bd/112151_qJg8v.jpg",
+        "year": 2015,
+        "startDate": "2015-04-04",
+        "ratingRank": 8865,
+        "ratingTotal": 6811,
+        "metadataFetched": true
       },
       {
         "inputTitle": "名古屋决战",
@@ -627,12 +1036,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/112151",
         "platform": "TV",
-        "totalEpisodes": 12,
+        "totalEpisodes": 16,
         "rating": 5.7,
         "confidence": 135,
         "query": "终结的炽天使 名古屋决战",
         "cacheKey": "import-metadata-v1:681bd339fd1829d1779a",
-        "hintSignature": "[\"终结的炽天使 名古屋决战\"]"
+        "hintSignature": "[\"终结的炽天使 名古屋决战\"]",
+        "titleZh": "终结的炽天使",
+        "titleJa": "終わりのセラフ",
+        "titleEn": "Owari no Seraph",
+        "description": "在不知什么时候，整个世界被突如其来的未知病毒攻袭，几乎彻底毁灭。但是只有13岁以下的孩子不被病毒所感染，侥幸活了下来。可是这些孩子们却被从地底出现的吸血鬼所统治，并作为提供血液的家畜饲养。故事的主人公——百夜优一郎和百夜米迦尔就是被抓住的孤儿们之一，而面对不堪的命运，他们没有屈服，开始计划逃亡与复仇……",
+        "cover": "https://lain.bgm.tv/pic/cover/l/3c/bd/112151_qJg8v.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/3c/bd/112151_qJg8v.jpg",
+        "year": 2015,
+        "startDate": "2015-04-04",
+        "ratingRank": 8865,
+        "ratingTotal": 6811,
+        "metadataFetched": true
       }
     ]
   },
@@ -650,7 +1070,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "五等分的花嫁",
         "cacheKey": "import-metadata-v1:05aa17b3ff09524cede5",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "五等分的新娘",
+        "titleJa": "五等分の花嫁",
+        "titleEn": "Go-Toubun no Hanayome",
+        "description": "一直过着贫困生活的高中二年级学生·上杉风太郎，找到了一份条件非常好的家庭教师兼职。然而，要教导的学生居然是同级生！而且还是五胞胎！！虽然都是美少女，但同时也是“将要留级”、“讨厌学习”的问题学生们！最开始的任务就是要取得这些女孩们的信任……！？每天都热闹喧嚣！\r\n中野家的五姐妹所带来的可爱度500%的五个不一样的恋爱喜剧，就此开幕！！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/fd/cd/256114_mvRVq.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/fd/cd/256114_mvRVq.jpg",
+        "year": 2019,
+        "startDate": "2019-01-10",
+        "ratingRank": 7599,
+        "ratingTotal": 10941,
+        "metadataFetched": true
       },
       {
         "inputTitle": "剧场版",
@@ -663,7 +1094,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "剧场版",
         "cacheKey": "import-metadata-v1:f0b00271dc54319e2af0",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "剧场版 空之境界 第一章 俯瞰风景",
+        "titleJa": "劇場版 空の境界 第一章 俯瞰風景",
+        "titleEn": "Gekijouban Kara no Kyoukai: The Garden of Sinners",
+        "description": "“去吧、去吧、去吧、去吧——”\r\n　　我只是这样期望着，\r\n　　期望着这个窗外的世界。\r\n　　只是期望被他带走而已。\r\n　　这是一个发生在夏末，少女们不断飞落跳下相继自杀的故事。少女们，毫无征兆突发性的从废墟大楼的屋顶\r\n　　上跳向天空，随后落下。等待她们的只有死。\r\n　　这些女孩在学校也并无异常，相互间也并非朋友关系。这些一切毫无关联性，连自杀的理由都找不到，完全无法解释的自杀事件逐一被不断报道。但是唯一只有一个人看出了这事件其中的关联性。\r\n　　这个人就是最高位的人偶师、也是一位没有成为魔法使的魔术师 —— 苍崎澄子。\r\n　　或许……“没有理由”就是他们的共通点，其次就是浮游与飞行的差别。\r\n　　而搜索调查这个连续自杀事件的人就是拥有能看见事间万物之死线能力“直死之魔眼”的两仪式。\r\n　　对她而言，有一个与此事件不得不关联起来的理由——\r\n　　与其说自身这种并不想要获得的能力（直死之魔眼），更令她在意的是用她的眼睛就这样捕捉到了在虚空中飞舞的少女们的幽灵，而这些幽灵到底又在想什么呢？\r\n　　假设，这或许是到达相同道路同胞们的哀怜，也或者是同族的嫌恶。\r\n　　假设，这或许是来自威胁某种重要存在之人的敌意。\r\n　　换句话说，这是明确的杀意。\r\n　　式就这样前往了那个可怜的大楼现场，而那里等着她的是谁都不知道的，展开着重重包围圈套的序章。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/e1/65/233_x22mT.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/e1/65/233_x22mT.jpg",
+        "year": 2007,
+        "startDate": "2007-12-01",
+        "ratingRank": 309,
+        "ratingTotal": 11824,
+        "metadataFetched": true
       }
     ]
   },
@@ -681,7 +1123,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "斩赤红之瞳",
         "cacheKey": "import-metadata-v1:728a562924749be3accb",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "斩·赤红之瞳！",
+        "titleJa": "アカメが斬る!",
+        "titleEn": "Akame ga Kill!",
+        "description": "为了解救贫穷的村子而与两位同伴一起来到帝都打拼的少年剑士——塔兹米，在抵达帝都的第一天就被骗光了钱，幸好被“好心”的富家大小姐——艾莉亚收留回家。隔天晚上便遭到帝都最凶恶的杀手集团——Night Raid的袭击，塔兹米在下决心保护艾莉亚的时候，却发现了帝都的真相......\r\n就如同人会腐朽一样，国家总有一天也会走向毁灭，就连千年繁荣的帝都，也不过只是个腐败的人间地狱，披着人皮的魑魅魍魉，嚣张跋扈的四处横行——天若无能制裁邪恶，我等将会于黑暗之中给予消逝——\r\n我等全员，职业杀手团——",
+        "cover": "https://lain.bgm.tv/pic/cover/l/5e/e3/94244_aCTut.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/5e/e3/94244_aCTut.jpg",
+        "year": 2014,
+        "startDate": "2014-07-06",
+        "ratingRank": 4658,
+        "ratingTotal": 11163,
+        "metadataFetched": true
       }
     ]
   },
@@ -694,12 +1147,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/290426",
         "platform": "TV",
-        "totalEpisodes": 12,
+        "totalEpisodes": 17,
         "rating": 7,
         "confidence": 135,
         "query": "在魔王城说晚安",
         "cacheKey": "import-metadata-v1:9585f62b023550af95a9",
-        "hintSignature": "[\"在魔王城说晚安\"]"
+        "hintSignature": "[\"在魔王城说晚安\"]",
+        "titleZh": "在魔王城说晚安",
+        "titleJa": "魔王城でおやすみ",
+        "titleEn": "Maou-jou de Oyasumi",
+        "description": "过去，在人与魔相互来往、共存的时代。\r\n魔王抓走了人类的公主，囚禁在自己的城堡中——。\r\n被囚禁的栖夜莉丝公主，在牢笼之中低语。\r\n「…除了睡觉…无事可做」 \r\n她偷偷逃出牢狱，为追求更优质的安眠而在魔王城中……探索！？\r\n自由任性的人质公主，随心所欲地将魔物们一起拉下水！！新感觉睡眠奇幻喜剧！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/b1/c3/290426_165P5.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/b1/c3/290426_165P5.jpg",
+        "year": 2020,
+        "startDate": "2020-10-05",
+        "ratingRank": 2504,
+        "ratingTotal": 6410,
+        "metadataFetched": true
       }
     ]
   },
@@ -712,12 +1176,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/27364",
         "platform": "TV",
-        "totalEpisodes": 22,
+        "totalEpisodes": 26,
         "rating": 8.2,
         "confidence": 135,
         "query": "冰菓",
         "cacheKey": "import-metadata-v1:6f2b4ad8951289e2165f",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "冰菓",
+        "titleJa": "氷菓",
+        "titleEn": "Hyouka",
+        "description": "以节能为座右铭的高中生折木奉太郎， 为一个小小的原因而加入了濒临废社的“古典文学部”。古典文学部的社员，包括他在社里认识的好奇宝宝，也就是女主角千反田爱瑠，还有他从国中就认识的伊原摩耶花和福部里志。这是他们四人以神山高中为舞台，对一桩桩事件展开推理的青春学园推理剧。“我很好奇！”奉太郎平静的灰色高中生活，因为千反田的这一句话而为之一变！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/cd/38/27364_1ZFmr.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/cd/38/27364_1ZFmr.jpg",
+        "year": 2012,
+        "startDate": "2012-04-22",
+        "ratingRank": 150,
+        "ratingTotal": 32407,
+        "metadataFetched": true
       }
     ]
   },
@@ -730,12 +1205,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/218711",
         "platform": "TV",
-        "totalEpisodes": 24,
+        "totalEpisodes": 27,
         "rating": 6.2,
         "confidence": 85,
         "query": "Darling in Frankxx(国家队)",
         "cacheKey": "import-metadata-v1:9b41d82ff67f5d60fdc2",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "DARLING in the FRANXX",
+        "titleJa": "ダーリン・イン・ザ・フランキス",
+        "titleEn": "DARLING in the FRANXX",
+        "description": "遥远的未来，因人类过度抽取地球资源，地球变得荒芜，不再适合居住，人类只好居住在移动要塞都市内，但时常需要外出获取无法产出的资源「熔岩燃料」，「熔岩燃料」的开采会吸引来半机械生命体「叫龙」，此时就轮到人类操对抗叫龙的「FranXX」机械人的出场了。究竟这些「叫龙」是敌是友，无从得知。\r\n少年阿广，驾驶部队代号016。他在少年时期被称作神童，如今却因无法驾驶「FranXX」，驾驶员生涯跌落谷底，是不被人需要的存在。在这样的广面前，某天，一位被称作02的神秘少女出现了。她的额头，长着两根艳丽的角。少女对广说：「终于找到你了，我的DARLING」。以此次偶遇为契机，广对驾驶机械人重新燃起了信心。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/77/dd/218711_5Z5t1.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/77/dd/218711_5Z5t1.jpg",
+        "year": 2018,
+        "startDate": "2018-01-13",
+        "ratingRank": 7036,
+        "ratingTotal": 14449,
+        "metadataFetched": true
       }
     ]
   },
@@ -753,7 +1239,17 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 130,
         "query": "星刻的龙骑士",
         "cacheKey": "import-metadata-v1:988c217466a487fea4f1",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "星刻的龙骑士",
+        "titleJa": "星刻の竜騎士",
+        "description": "这是一个龙族与人类共生的世界，藉由某种特殊仪式，人类与龙族缔造亲密的主从关系。亚修是一个人称天才驯龙师的少年，然而他的龙伴侣却迟迟未出现，让他成为同学眼中的笑柄。在一个偶发事件当中，亚修的龙伴侣终于诞生了，偏偏看起来不像龙族，而是一个人类的美少女……！亚修将如何跟这个力大无穷又蛮横泼辣的龙伴侣相处？",
+        "cover": "https://lain.bgm.tv/pic/cover/l/7f/59/79225_5LzK7.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/7f/59/79225_5LzK7.jpg",
+        "year": 2014,
+        "startDate": "2014-04-05",
+        "ratingRank": 9436,
+        "ratingTotal": 1799,
+        "metadataFetched": true
       }
     ]
   },
@@ -766,12 +1262,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/79227",
         "platform": "TV",
-        "totalEpisodes": 12,
+        "totalEpisodes": 18,
         "rating": 7.8,
         "confidence": 135,
         "query": "游戏人生",
         "cacheKey": "import-metadata-v1:04a2d09f2fdbf06c5d7e",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "游戏人生",
+        "titleJa": "ノーゲーム・ノーライフ",
+        "titleEn": "NO GAME NO LIFE 游戏人生",
+        "description": "“听说游戏玩家兄妹要征服幻想世界”空与白既是尼特族又是家里蹲，但是在网路上却是被奉为都市传说的天才游戏玩家兄妹。称世界为「烂游戏」的两人，某一天被自称是“神”的少年召唤至异世界，那是个战争为神所禁止，“游戏决定一切”的世界──没错，甚至连国界也一样。\r\n被其他种族逼至绝境，只剩下最后都市的『人类种』，空与白这两个废人兄妹能够成为异世界的『人类救世主』吗？“──来吧，游戏开始了。”",
+        "cover": "https://lain.bgm.tv/pic/cover/l/54/bd/79227_052R3.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/54/bd/79227_052R3.jpg",
+        "year": 2014,
+        "startDate": "2014-04-09",
+        "ratingRank": 466,
+        "ratingTotal": 24743,
+        "metadataFetched": true
       },
       {
         "inputTitle": "剧场版",
@@ -784,7 +1291,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "剧场版",
         "cacheKey": "import-metadata-v1:bdda4b9b9586e968bbbc",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "剧场版 空之境界 第一章 俯瞰风景",
+        "titleJa": "劇場版 空の境界 第一章 俯瞰風景",
+        "titleEn": "Gekijouban Kara no Kyoukai: The Garden of Sinners",
+        "description": "“去吧、去吧、去吧、去吧——”\r\n　　我只是这样期望着，\r\n　　期望着这个窗外的世界。\r\n　　只是期望被他带走而已。\r\n　　这是一个发生在夏末，少女们不断飞落跳下相继自杀的故事。少女们，毫无征兆突发性的从废墟大楼的屋顶\r\n　　上跳向天空，随后落下。等待她们的只有死。\r\n　　这些女孩在学校也并无异常，相互间也并非朋友关系。这些一切毫无关联性，连自杀的理由都找不到，完全无法解释的自杀事件逐一被不断报道。但是唯一只有一个人看出了这事件其中的关联性。\r\n　　这个人就是最高位的人偶师、也是一位没有成为魔法使的魔术师 —— 苍崎澄子。\r\n　　或许……“没有理由”就是他们的共通点，其次就是浮游与飞行的差别。\r\n　　而搜索调查这个连续自杀事件的人就是拥有能看见事间万物之死线能力“直死之魔眼”的两仪式。\r\n　　对她而言，有一个与此事件不得不关联起来的理由——\r\n　　与其说自身这种并不想要获得的能力（直死之魔眼），更令她在意的是用她的眼睛就这样捕捉到了在虚空中飞舞的少女们的幽灵，而这些幽灵到底又在想什么呢？\r\n　　假设，这或许是到达相同道路同胞们的哀怜，也或者是同族的嫌恶。\r\n　　假设，这或许是来自威胁某种重要存在之人的敌意。\r\n　　换句话说，这是明确的杀意。\r\n　　式就这样前往了那个可怜的大楼现场，而那里等着她的是谁都不知道的，展开着重重包围圈套的序章。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/e1/65/233_x22mT.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/e1/65/233_x22mT.jpg",
+        "year": 2007,
+        "startDate": "2007-12-01",
+        "ratingRank": 309,
+        "ratingTotal": 11824,
+        "metadataFetched": true
       }
     ]
   },
@@ -802,7 +1320,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "re 0 从零开始的异世界生活",
         "cacheKey": "import-metadata-v1:5103177ed9681cc0abab",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "Re：从零开始的异世界生活 第三季 袭击篇",
+        "titleJa": "Re:ゼロから始める異世界生活 3rd season 襲擊編",
+        "titleEn": "Re:ゼロから始める異世界生活 3rd season 襲擊編",
+        "description": "抵挡艾尔莎等人的猛攻，并在与大兔的战斗中和碧翠丝结下契约解放「圣域」之后，已经过了一年。\r\n爱蜜莉雅阵营为了即将到来的王选团结一致，菜月昴每天都过得相当充实。这段平稳时光，却因使者送来的一封书信而告终。\r\n那是王选候补者之一，安娜塔西亚寄给爱蜜莉雅的一封邀请函，招待她们前往鲁格尼卡五大都市之一──水门都市朴利斯提拉。\r\n昴一行人接受邀请前往朴利斯提拉，等待着他们的是各种重逢。\r\n有的是意外，有的是不经意，有的则是无可避免。台面下蠢蠢欲动的恶意与前所未有的危机逐渐浮现。\r\n少年即将再次面对残酷的命运。\r\n\r\n\r\n\r\n[简介原文]\r\n襲い来るエルザたちの猛攻を退け、大兎との戦いでベアトリスとの契約を果たした「聖域」の解放から1年が過ぎた。\r\n王選に臨むエミリア陣営は一致団結、充実した日々を送っていたナツキ・スバルだったが、平穏は使者によって届けられた一枚の書状によって終わりを告げる。\r\nそれは王選候補者の一人、アナスタシアがエミリアへ宛てたルグニカの五大都市に数えられる水門都市プリステラへの招待状だった。\r\n招待を受け、プリステラへ向かうスバルたち一行を待っていたのは様々な再会。\r\n一つは意外な、一つは意図せぬ、そして一つは来るべき。水面下で蠢く悪意の胎動と降りかかる未曾有の危機。\r\n少年は再び過酷な運命に立ち向かう。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/26/d6/425998_dnzr8.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/26/d6/425998_dnzr8.jpg",
+        "year": 2024,
+        "startDate": "2024-10-02",
+        "ratingRank": 1931,
+        "ratingTotal": 7847,
+        "metadataFetched": true
       },
       {
         "inputTitle": "剧场版2部",
@@ -815,7 +1344,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 84,
         "query": "剧场版2部",
         "cacheKey": "import-metadata-v1:da222a9385906936b2b7",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "机动警察剧场版2 和平保卫战",
+        "titleJa": "機動警察パトレイバー 2 the Movie",
+        "titleEn": "機動警察パトレイバー 2 the Movie",
+        "description": "若干年前，陆上自卫队某战车小队在东南亚某处遭遇袭击，除队长柘植行人外，全军覆没。\r\n时间又回到今天，海湾大桥突然爆炸，民间一度陷入恐慌。一位名叫荒川茂树，自称是自卫队调查部的人找到后藤与南云，告诉他本次事件的真实情况是由不明身份的战斗机发射导弹袭击大桥所致，同时他认为已经失踪许久的柘植行人是最大的嫌疑犯。正当后藤他们拜托松井协助调查的时候，日本各地却纷纷出现空袭的虚假警报，其目的大都是东京圈。为此军队与警察等部门也陷入了彼此对立、不知所措的困境中。为了防范未然，政府调动部分忠于自己的自卫队进驻东京。\r\n在松井不懈的努力下，终于查到柘植行人的蛛丝马迹，南云亦已察觉到这个昔日的恋人正是此次动乱的策划人。不过由于荒川的参入，柘植行人没有再与南云接触，他彻底消失在了夜幕中。\r\n恐怖的前兆终于发生：东京的通讯系统突然完全瘫痪，驻扎在市内各处的部队也变成了如盲人般，根本无法有效行动。而此时，满载着毒气的巨大飞艇正在接近这个不设防的城市.....",
+        "cover": "https://lain.bgm.tv/pic/cover/l/ca/f1/321_j3YWy.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/ca/f1/321_j3YWy.jpg",
+        "year": 1993,
+        "startDate": "1993-08-07",
+        "ratingRank": 12,
+        "ratingTotal": 3932,
+        "metadataFetched": true
       }
     ]
   },
@@ -833,7 +1373,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 129,
         "query": "禁忌咒纹",
         "cacheKey": "import-metadata-v1:e296a36d347b071b5259",
-        "hintSignature": "[\"禁忌咒纹\"]"
+        "hintSignature": "[\"禁忌咒纹\"]",
+        "titleZh": "禁忌咒纹",
+        "titleJa": "タブー・タトゥー",
+        "titleEn": "TABOO TATTOO",
+        "description": "“咒纹”是通过装填每人固有的物质“Trigger”来启动，使被称为“印者”的操纵者的身体能力飞跃性提升，并引发超常现象的超古代兵器——。\r\n赤冢正义（通称：正义）在帮助了被不良纠缠的男性之时，在拿到作为谢礼的神秘石头的瞬间，手掌上刻下了不可思议的刺青。\r\n“这个咒纹，你是在何处得到的？”次日，在放学回家的路上，被身穿不合季节的大衣的少女“伊姬”突然袭击的正义，使用祖父传授的柔术反击，却被压倒性的力量差压制，遭遇性命攸关的危机……。\r\n以偶然得到“咒纹”的赤冢正义为中心，各种各样人们的心思风起云涌的争斗，现在开始。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/8b/e9/123178_eF0PC.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/8b/e9/123178_eF0PC.jpg",
+        "year": 2016,
+        "startDate": "2016-07-04",
+        "ratingRank": 9891,
+        "ratingTotal": 1342,
+        "metadataFetched": true
       }
     ]
   },
@@ -846,12 +1397,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/294993",
         "platform": "TV",
-        "totalEpisodes": 24,
+        "totalEpisodes": 25,
         "rating": 7.1,
         "confidence": 135,
         "query": "咒术回战",
         "cacheKey": "import-metadata-v1:0a2ae579ceaf70c782ce",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "咒术回战",
+        "titleJa": "呪術廻戦",
+        "titleEn": "Jujutsu Kaisen",
+        "description": "少年战斗着——「为寻求正确的死亡」\r\n辛酸·后悔·耻辱人类产生的负面情感，化为诅咒，潜入日常生活诅咒是蔓延于世界的祸源，最糟糕的情况下，会让人类踏入死亡，并且诅咒只能以诅咒拔除。\r\n虎杖悠仁是一位体育万能的高中生，某天他为了从“咒物”危机中解救学姐，而吞下了被诅咒的手指“两面宿傩之指”，让“宿傩”这种诅咒跟自己合而为一。\r\n在最强咒术师五条悟的指引下，进入对诅咒专门机关「东京都立咒术高等专门学校」，并遇到了伏黑惠与钉崎野蔷薇这两位同学。\r\n某日，突然出现“特级咒物”，他们三人就奉命到现场支援。为了实现爷爷要他“助人”的遗言，虎杖将会继续与“诅咒”奋斗下去。\r\n为了祓除诅咒而成为诅咒的少年，无法回头的壮阔故事开始了——",
+        "cover": "https://lain.bgm.tv/pic/cover/l/60/fe/294993_JrrzK.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/60/fe/294993_JrrzK.jpg",
+        "year": 2020,
+        "startDate": "2020-10-02",
+        "ratingRank": 2196,
+        "ratingTotal": 16532,
+        "metadataFetched": true
       },
       {
         "inputTitle": "剧场版",
@@ -864,7 +1426,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "剧场版",
         "cacheKey": "import-metadata-v1:9a3927f37734514766c5",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "剧场版 空之境界 第一章 俯瞰风景",
+        "titleJa": "劇場版 空の境界 第一章 俯瞰風景",
+        "titleEn": "Gekijouban Kara no Kyoukai: The Garden of Sinners",
+        "description": "“去吧、去吧、去吧、去吧——”\r\n　　我只是这样期望着，\r\n　　期望着这个窗外的世界。\r\n　　只是期望被他带走而已。\r\n　　这是一个发生在夏末，少女们不断飞落跳下相继自杀的故事。少女们，毫无征兆突发性的从废墟大楼的屋顶\r\n　　上跳向天空，随后落下。等待她们的只有死。\r\n　　这些女孩在学校也并无异常，相互间也并非朋友关系。这些一切毫无关联性，连自杀的理由都找不到，完全无法解释的自杀事件逐一被不断报道。但是唯一只有一个人看出了这事件其中的关联性。\r\n　　这个人就是最高位的人偶师、也是一位没有成为魔法使的魔术师 —— 苍崎澄子。\r\n　　或许……“没有理由”就是他们的共通点，其次就是浮游与飞行的差别。\r\n　　而搜索调查这个连续自杀事件的人就是拥有能看见事间万物之死线能力“直死之魔眼”的两仪式。\r\n　　对她而言，有一个与此事件不得不关联起来的理由——\r\n　　与其说自身这种并不想要获得的能力（直死之魔眼），更令她在意的是用她的眼睛就这样捕捉到了在虚空中飞舞的少女们的幽灵，而这些幽灵到底又在想什么呢？\r\n　　假设，这或许是到达相同道路同胞们的哀怜，也或者是同族的嫌恶。\r\n　　假设，这或许是来自威胁某种重要存在之人的敌意。\r\n　　换句话说，这是明确的杀意。\r\n　　式就这样前往了那个可怜的大楼现场，而那里等着她的是谁都不知道的，展开着重重包围圈套的序章。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/e1/65/233_x22mT.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/e1/65/233_x22mT.jpg",
+        "year": 2007,
+        "startDate": "2007-12-01",
+        "ratingRank": 309,
+        "ratingTotal": 11824,
+        "metadataFetched": true
       }
     ]
   },
@@ -882,7 +1455,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "东京喰种",
         "cacheKey": "import-metadata-v1:8bb2ce43c60e35bc9162",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "东京喰种",
+        "titleJa": "東京喰種トーキョーグール",
+        "titleEn": "Tokyo Ghoul",
+        "description": "在纷乱嘈杂的现代化城市——东京，蔓延着一种吞食死尸的怪人，人们称之为喰种。那一日，金木研——上井大学的一名普通学生——遇上了某位神秘女子，进而卷入了一场迷之事故。自此，充满波折的命运齿轮开始转动了……",
+        "cover": "https://lain.bgm.tv/pic/cover/l/12/ab/93714_r1U22.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/12/ab/93714_r1U22.jpg",
+        "year": 2014,
+        "startDate": "2014-07-03",
+        "ratingRank": 3662,
+        "ratingTotal": 13944,
+        "metadataFetched": true
       }
     ]
   },
@@ -900,7 +1484,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "鬼灭之刃",
         "cacheKey": "import-metadata-v1:522fdbf862f06f1881d4",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "鬼灭之刃",
+        "titleJa": "鬼滅の刃",
+        "titleEn": "Demon Slayer: Kimetsu no Yaiba",
+        "description": "大正时期、日本。\r\n卖炭的心地善良的少年·炭治郎，有一天被鬼杀死了家人。\r\n而唯一幸存下来的妹妹祢豆子变成了鬼。\r\n被绝望的现实打垮的炭治郎，为了让妹妹变回人类并讨伐杀害家人的鬼，决心沿着“鬼杀队”的道路前进。\r\n人与鬼交织的悲哀的兄妹的故事，现在开始！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/9d/d1/245665_5an54.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/9d/d1/245665_5an54.jpg",
+        "year": 2019,
+        "startDate": "2019-04-06",
+        "ratingRank": 1531,
+        "ratingTotal": 21191,
+        "metadataFetched": true
       }
     ]
   },
@@ -913,12 +1508,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/120187",
         "platform": "TV",
-        "totalEpisodes": 12,
+        "totalEpisodes": 24,
         "rating": 6.8,
         "confidence": 135,
         "query": "干物妹小埋",
         "cacheKey": "import-metadata-v1:9cc1f58d0c73937220eb",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "干物妹！小埋",
+        "titleJa": "干物妹! うまるちゃん",
+        "titleEn": "Himouto! Umaru-chan",
+        "description": "我的妹妹小埋16岁，完美的妹妹，完美的高中生，但在家里却是个超懒的干物妹。\r\n然而妹妹在家的一切她生活中的朋友并不知道，居住在同一栋楼的天然少女，以及无意间来到我家的冷酷少女，她们会发现小埋的真实面目吗？",
+        "cover": "https://lain.bgm.tv/pic/cover/l/41/2c/120187_nXjYb.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/41/2c/120187_nXjYb.jpg",
+        "year": 2015,
+        "startDate": "2015-07-08",
+        "ratingRank": 3594,
+        "ratingTotal": 16474,
+        "metadataFetched": true
       },
       {
         "inputTitle": "ova",
@@ -931,7 +1537,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "ova",
         "cacheKey": "import-metadata-v1:2ee13cf4e0ebfa405761",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "皇家国教骑士团 OVA",
+        "titleJa": "HELLSING OVA",
+        "titleEn": "Hellsing Ultimate",
+        "description": "在一次对治某村庄食尸鬼的超自然事件时，平凡女警女警西洛斯·维多利亚遭到袭击，奄奄一息，关键时刻吸血鬼杀手阿尔卡特出现，铲除食尸鬼，并将西洛斯变成了吸血鬼的一员，她顺理成章也接触到了阿尔卡特背后的神秘组织，即为维护英国基督新教、与反基督怪物作战的皇家国教骑士团（Hellsing），在现任当家伊塔古拉·方布鲁克·维英格茨·赫尔辛的率领下，他们接手一桩桩危险且阴谋重重的任务。在这一过程中，与食尸鬼有关的事件层出不穷，死后背后有另一个神秘组织正在策划惊天阴谋。梵蒂冈特务局第十三课Iscariot机关局长安利哥·马克斯威尔、安德鲁森神父等重要人物相继现身，为了保护英国本土和基督新教，第九次十字军成立，而他们的对手则是纳粹余孽少校所率领的1000头食尸鬼组建的千禧年大军。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/2f/55/493_zK3f5.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/2f/55/493_zK3f5.jpg",
+        "year": 2006,
+        "startDate": "2006-02-10",
+        "ratingRank": 151,
+        "ratingTotal": 6954,
+        "metadataFetched": true
       }
     ]
   },
@@ -944,12 +1561,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/45842",
         "platform": "TV",
-        "totalEpisodes": 12,
+        "totalEpisodes": 25,
         "rating": 6.8,
         "confidence": 135,
         "query": "变态王子与不笑猫",
         "cacheKey": "import-metadata-v1:dfd69f0823cde8177cc1",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "变态王子与不笑猫。",
+        "titleJa": "変態王子と笑わない猫。",
+        "titleEn": "The HENTAI prince and the stony cat.",
+        "description": "整天脑中都只想着女孩子的横寺阳人，被田径社社长钢铁之王指定为下任社长。阳人加入社团，纯粹是为了偷看游泳社的泳装，因此认为自己不适合担任社长，却又说不出真心话，一直没办法拒绝。 某天，小学以来的死党朋太告诉阳人，自从向不笑猫像许愿后，自己满脑子的桃色烦恼便消失无踪。阳人向他仔细询问后得知，只要把供品献给不笑猫像，就能够把自己不需要的东西，转送给需要的人。\r\n　　阳人在半信半疑下，抱着死马当活马医的心态，前往猫像所在的一本杉丘陵，打算把自己的“表面工夫”丢掉。到达目的地时，碰见了名为筒隐月子的少女。两人一聊才发现，原来月子也是要向猫像许愿，把自己的“真心话”送出去。两人一同许愿后，阳人用来绑供品的皮带和月子供奉的肉包突然消失不见，同时阳人的表面工夫与月子的真心话也就此消失。\r\n　　阳人失去表面工夫后，常不自觉的把自己内心的想法说出来，使得全校师生都认为他是变态而避着他，还被取了变态王子这个绰号。失去真心话的月子，则再也无法表现任何情绪。阳人和月子联手，为了取回彼此失去的能力而四处奔走。这部爽朗变态×冷淡少女的青春困惑爱情喜剧就这样正式拉开帷幕。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/9c/1e/45842_ZF94F.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/9c/1e/45842_ZF94F.jpg",
+        "year": 2013,
+        "startDate": "2013-04-13",
+        "ratingRank": 3264,
+        "ratingTotal": 9932,
+        "metadataFetched": true
       }
     ]
   },
@@ -967,7 +1595,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 85,
         "query": "不正经的魔法讲师",
         "cacheKey": "import-metadata-v1:30c779e385a5eb978eff",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "不正经的魔术讲师与禁忌教典",
+        "titleJa": "ロクでなし魔術講師と禁忌教典",
+        "titleEn": "Rokudenashi Majutsu Koushi to Akashic Records",
+        "description": "厌恶魔术的魔术讲师所展开的叛逆英雄幻想剧！\r\n魔术与科学共同发展的世界——卢瓦佛斯。\r\n位于魔导大国·阿尔扎诺帝国南部的“阿尔扎诺帝国魔法学院”，是学习世界最先端魔术的最高学舍。\r\n拥有约四百年历史的这所学院，是所有有志于魔术之道人们的憧憬，学院的讲师和学生们也因自己的身份而自豪。\r\n突然来到这所正统学院赴任的非常勤讲师，格伦·勒达斯。\r\n“我来教给你们真正的魔术吧”\r\n被称作“不正经”的这个男人的破天荒授课，就此开始。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/b2/af/174138_0BOO7.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/b2/af/174138_0BOO7.jpg",
+        "year": 2017,
+        "startDate": "2017-04-04",
+        "ratingRank": 7054,
+        "ratingTotal": 5752,
+        "metadataFetched": true
       }
     ]
   },
@@ -985,7 +1624,17 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 85,
         "query": "只要可爱即使是变态",
         "cacheKey": "import-metadata-v1:faecb76416c1d5189e38",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "只要可爱即使是变态你也会喜欢我吧？",
+        "titleJa": "可愛ければ変態でも好きになってくれますか？",
+        "description": "没有女朋友的履历=年龄的普通高中生桐生慧辉，突然收到一封情书。\r\n他因为终于能交到女朋友而感到欢喜，但情书上却没有寄信人的名字，而且不知为何里面还附带一条纯白胖次……???\r\n他周围的那些可爱女孩们每个都很可疑，而且似乎都各有内情的样子\r\n究竟“掉了胖次的灰姑娘”会是谁呢？\r\n谜团接连浮现，甚至将变态招至身旁的新感觉变态涌现系恋爱喜剧开始……!!",
+        "cover": "https://lain.bgm.tv/pic/cover/l/54/bb/275371_naGaN.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/54/bb/275371_naGaN.jpg",
+        "year": 2019,
+        "startDate": "2019-07-08",
+        "ratingRank": 7203,
+        "ratingTotal": 4556,
+        "metadataFetched": true
       }
     ]
   },
@@ -998,12 +1647,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/120925",
         "platform": "TV",
-        "totalEpisodes": 14,
+        "totalEpisodes": 15,
         "rating": 6.4,
         "confidence": 135,
         "query": "夏洛特",
         "cacheKey": "import-metadata-v1:c8d89168f72a86c7cae1",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "夏洛特",
+        "titleJa": "Charlotte",
+        "titleEn": "Charlotte",
+        "description": "思春期的少年少女中极少部分人会发作的特殊能力。\r\n驱使着无人知晓的能力，过着顺风顺水学园生活的乙坂有宇。\r\n突然出现在这样的他的面前的少女，友利奈绪。\r\n从与她相遇之日起，被揭露出来的特殊能力者的宿命。\r\n这是由麻枝准所描绘的，特殊能力者们奔跑着的青春物语——。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/9b/d6/120925_Zp040.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/9b/d6/120925_Zp040.jpg",
+        "year": 2015,
+        "startDate": "2015-07-04",
+        "ratingRank": 5980,
+        "ratingTotal": 19742,
+        "metadataFetched": true
       }
     ]
   },
@@ -1021,7 +1681,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 134,
         "query": "贤者之孙",
         "cacheKey": "import-metadata-v1:a3046e92f6145aafa6d1",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "贤者之孙",
+        "titleJa": "賢者の孫",
+        "titleEn": "Kenja no Mago",
+        "description": "因意外过世的青年，转生到剑与魔法世界──强到破天荒！？\r\n理应意外身亡的青年，以婴儿姿态转世到了异世界！？\r\n接着他被称为「贤者」的男人──梅林捡回家收养，取名为「西恩」。\r\n西恩在贤者身边学习魔法，并顺利地成长，然而，他有一个致命的问题……没错，西恩十五岁时，梅林说了──「老夫忘记教常识了」！？\r\n「毫无常识」且「规格外」的主角所呈献，异世界奇幻生活开幕！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/dc/81/226256_dZdQ2.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/dc/81/226256_dZdQ2.jpg",
+        "year": 2019,
+        "startDate": "2019-04-10",
+        "ratingRank": 9871,
+        "ratingTotal": 3958,
+        "metadataFetched": true
       }
     ]
   },
@@ -1039,7 +1710,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 129,
         "query": "高校之神",
         "cacheKey": "import-metadata-v1:da330f47d43c9abca1ce",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "高校之神",
+        "titleJa": "THE GOD OF HIGH SCHOOL ゴッド・オブ・ハイスクール",
+        "titleEn": "THE GOD OF HIGH SCHOOL ゴッド・オブ・ハイスクール",
+        "description": "自称最強の高校生「ジン･モリ」。\r\n彼の人生は、最強の高校生を決める大会、「ゴッドオブハイスクール」に招待されることで一変する。\r\n優勝すればどんな願いも叶えられるという・・・それぞれの願いを胸に出場する強敵手たち。\r\n闘いの果てに待ち受けるものとは？\r\nハンパない高校生たちのハチャメチャバトル開幕!!",
+        "cover": "https://lain.bgm.tv/pic/cover/l/83/94/305511_U7Ndh.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/83/94/305511_U7Ndh.jpg",
+        "year": 2020,
+        "startDate": "2020-07-06",
+        "ratingRank": 7614,
+        "ratingTotal": 1251,
+        "metadataFetched": true
       }
     ]
   },
@@ -1057,7 +1739,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "青春笨蛋少年不做兔女郎学姐的梦",
         "cacheKey": "import-metadata-v1:efaf889514b451e66e46",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "青春猪头少年不会梦到兔女郎学姐",
+        "titleJa": "青春ブタ野郎はバニーガール先輩の夢を見ない",
+        "titleEn": "Seishun Buta Yarou wa Bunny Girl Senpai no Yume o Minai",
+        "description": "思春期症候群——这是一种只发生在易敏感和不稳定的青春期的、不可思议的现象。\r\n例如，在梓川咲太面前出现的野生兔女郎。\r\n她的真实身份是高中高年级学生，明星活动休止的女演员樱岛麻衣。她迷人的身姿，不知为何在周围的人眼里看不出来。\r\n咲太决定解开这一谜题。在于麻衣一起度过的时间里，咲太知道了她秘密的想法……\r\n女主人公们一个接一个地出现在咲太的周围，她们都有着“青春期症候群”。在天空和大海都很闪耀的小镇上，开始了令人激动的故事。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/b9/45/240038_b5j7g.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/b9/45/240038_b5j7g.jpg",
+        "year": 2018,
+        "startDate": "2018-10-03",
+        "ratingRank": 1056,
+        "ratingTotal": 23983,
+        "metadataFetched": true
       }
     ]
   },
@@ -1075,7 +1768,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "青春笨蛋少年不做怀梦美少女的梦",
         "cacheKey": "import-metadata-v1:21bb7b027517f001a25a",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "青春猪头少年不会梦到怀梦美少女",
+        "titleJa": "青春ブタ野郎はゆめみる少女の夢を見ない",
+        "titleEn": "Rascal Does Not Dream of a Dreaming Girl",
+        "description": "居住在天空与海洋辉映的城镇“藤泽”的梓川咲太，就读高中二年级。 \r\n他与既是学姐又是恋人的樱岛麻衣所度过的令人雀跃的日常，随着初恋对象牧之原翔子的出现而改变。 \r\n不知为何，存在着“中学生”和“大人”两个翔子。 \r\n出于无奈开始和翔子住在一起的咲太，受到“大人翔子”的捉弄，和麻衣的关系也变得尴尬。\r\n此时，“中学生翔子”身患重病的事实被发现，咲太的伤痕开始隐隐作痛——。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/10/19/260680_Sx2HP.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/10/19/260680_Sx2HP.jpg",
+        "year": 2019,
+        "startDate": "2019-06-15",
+        "ratingRank": 1163,
+        "ratingTotal": 12699,
+        "metadataFetched": true
       }
     ]
   },
@@ -1093,7 +1797,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "青春笨蛋少年不做娇怜外出妹的梦",
         "cacheKey": "import-metadata-v1:481e56927d86da6cc995",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "青春猪头少年不会梦到娇怜外出妹",
+        "titleJa": "青春ブタ野郎はおでかけシスターの夢を見ない",
+        "titleEn": "Seishun Buta Yarou wa Odekake Sister no Yume o Minai",
+        "description": "梓川咲太迎来高中二年级的第三学期。\r\n和三年级学姐女友樱岛麻衣在峰原高中共度的学生生活也仅剩不久。\r\n在这样的日子中，长年热爱看家的妹妹花枫，向梓川咲太说出没对任何人透露过的秘密。\r\n「我想上哥哥上的高中。」\r\n这对于花枫来说是一大决心。\r\n咲太明知这是极为困难的选择，还是决定成为花枫的助力。\r\n「枫」托付给「花枫」的心意。\r\n两人一起迈向未来的故事。\r\n\r\n\r\n\r\n[简介原文]\r\n高校二年生の三学期を迎えた梓川咲太。\r\n三年生の先輩であり恋人の桜島麻衣と、峰ヶ原高校で一緒に過ごせる学生生活も残り僅かとなった。\r\nそんななか、長年おうち大好きだった妹の花楓は、誰にも明かしたことのない胸の内を咲太に打ち明ける。\r\n「お兄ちゃんが行ってる高校に行きたい」\r\nそれは花楓にとって大きな決意。\r\n極めて難しい選択と知りながらも、咲太は優しく花楓の背中を押すことを決める。\r\n『かえで』から『花楓』へ託された想い。二人で踏み出す未来への物語。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/c4/bf/402656_SXThf.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/c4/bf/402656_SXThf.jpg",
+        "year": 2023,
+        "startDate": "2023-06-23",
+        "ratingRank": 4793,
+        "ratingTotal": 5068,
+        "metadataFetched": true
       }
     ]
   },
@@ -1111,7 +1826,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "青春笨蛋少年不做小学美少女的梦",
         "cacheKey": "import-metadata-v1:db19301efcd541228cc8",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "青春猪头少年不会梦到红书包女孩",
+        "titleJa": "青春ブタ野郎はランドセルガールの夢を見ない",
+        "titleEn": "Seishun Buta Yarou wa Randoseru Girl no Yume wo Minai",
+        "description": "进入三月，第三学期也只剩一个月的时间。梓川咲太迎来了他的恋人樱岛麻衣的毕业典礼。\r\n当他在七里滨的海岸等麻衣的时候，眼前出现了一个和童星时代的麻衣长得一模一样的小学生。\r\n「叔叔，你是谁？」\r\n正当咲太回想着这段不知这是梦境还是幻觉的不可思议体验时，他的父亲打电话给他。\r\n「你妈妈说想和花枫见面」\r\n那是，无法接受发生在花枫身上的事情而长期住院的母亲「想见面」的心愿。\r\n为了回应母亲的心愿，咲太和花枫决定一起去探望母亲。然而许久没有和母亲见面，两人难掩紧张的情绪。\r\n而这时，咲太的身上出现了陌生的伤痕。这是不是新的思春期症候群出现的前兆呢。\r\n\r\n\r\n\r\n[简介原文]\r\n三月に入り、三学期も残り１ヶ月。恋人の桜島麻衣の卒業式を迎えた梓川咲太。\r\n七里ヶ浜の海岸で麻衣を待っていると、彼の目の前に子役時代の麻衣にそっくりな小学生が現れる―。\r\n「おじさん、だぁれ？」\r\nこれは夢か幻か、不可思議な体験を思い返していた咲太のところに父親から電話がかかってくる。\r\n「母さんのことなんだが、花楓に会いたいと言っててな」\r\nそれは、花楓に起きた出来事を受け止めきれず、長いこと入院していた母親から届いた「会いたい」という願い。\r\n母の願いに応え、花楓と共に母親と会うことを決めるも久しぶりの対面の機会に緊張を隠し切れない。\r\nそんな咲太の体には見慣れない傷跡が現れる。これは新たな思春期症候群の前触れか―。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/37/af/426239_1D3s9.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/37/af/426239_1D3s9.jpg",
+        "year": 2023,
+        "startDate": "2023-12-01",
+        "ratingRank": 2963,
+        "ratingTotal": 4504,
+        "metadataFetched": true
       }
     ]
   },
@@ -1129,7 +1855,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "青春笨蛋少年不做圣诞服女郎的梦",
         "cacheKey": "import-metadata-v1:8f9ccc3c027624b6ab6c",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "青春猪头少年不会梦到圣诞服女郎",
+        "titleJa": "青春ブタ野郎はサンタクロースの夢を見ない",
+        "titleEn": "Seishun Buta Yarou wa Santa Claus no Yume wo Minai",
+        "description": "思春期症候群――\r\n不安定な精神状態によって引き起こされると噂の不思議現象。\r\n\r\n高校時代に様々な思春期症候群を発症した少女たちに出会ってきた\r\n“梓川咲太”も大学生になった。\r\n\r\n国民的人気女優であり、恋人の“桜島麻衣”と共に\r\n金沢八景にある大学に進学した彼は、\r\n校内で季節外れのミニスカサンタを見つけた。\r\n\r\n驚いた。わたしのこと見えてるんだ。\r\n\r\nどこかで聞いたような台詞。\r\n思春期症候群をプレゼントしていると話すミニスカサンタは、咲太に告げる。\r\n\r\n……わたしはね、霧島透子って言うの\r\n\r\nＳＮＳで流行する予知夢、正体不明のネットシンガー、ポルターガイスト、\r\n謎めく現象と共に、心揺れる少女たちとの不可思議な物語が再び始まる。\r\n\r\n思春期は終わらない――\r\n\r\n\r\n\r\n[中文简介]\r\n思春期症候群──\r\n据说这是一种由不安定的精神状态引发的不可思议现象。\r\n\r\n在高中时期与许多出现思春期症候群的少女们相遇的「梓川咲太」，如今也成为大学生了。咲太与国民级人气女演员、同时也是他的恋人的「樱岛麻衣」都考上了位于金泽八景的大学。他在校园内，发现了一名穿着不合时节的迷你裙圣诞女郎。\r\n\r\n「真让人惊讶。原来你看得见我啊。」\r\n\r\n她说出了这句似曾相识的台词。声称自己正在「赠送思春期症候群」的迷你裙圣诞女郎，对咲太说道——「……我的名字叫雾岛透子。」\r\n社群网站流行的预知梦、身份不明的网络歌手、骚灵现象，随着一个个充满谜团的现象的发生，与心绪荡漾的少女们之间不可思议的故事将再度开始。\r\n\r\n思春期不会结束──",
+        "cover": "https://lain.bgm.tv/pic/cover/l/d3/a3/467930_jH4s4.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/d3/a3/467930_jH4s4.jpg",
+        "year": 2025,
+        "startDate": "2025-07-05",
+        "ratingRank": 3261,
+        "ratingTotal": 4496,
+        "metadataFetched": true
       }
     ]
   },
@@ -1142,12 +1879,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/207573",
         "platform": "TV",
-        "totalEpisodes": 12,
+        "totalEpisodes": 14,
         "rating": 7.9,
         "confidence": 135,
         "query": "月色真美",
         "cacheKey": "import-metadata-v1:acac48a438f9956d28f8",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "月色真美",
+        "titleJa": "月がきれい",
+        "titleEn": "as the moon, so beautiful.",
+        "description": "茜与小太郎。\r\n初三时第一次被分到同班，相识的两人。\r\n同班同学、社团伙伴、教师、父母……与周围的关联，自己的成长。\r\n在那个一边被变化与不安追着，一边慌慌张张地向前飞奔的季节之中，稚嫩而又令人眩目的青春期之恋。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/a8/41/207573_95N29.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/a8/41/207573_95N29.jpg",
+        "year": 2017,
+        "startDate": "2017-04-06",
+        "ratingRank": 314,
+        "ratingTotal": 16382,
+        "metadataFetched": true
       }
     ]
   },
@@ -1165,7 +1913,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "樱花庄的宠物女孩",
         "cacheKey": "import-metadata-v1:c5c60ae2ec04c20ef463",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "樱花庄的宠物女孩",
+        "titleJa": "さくら荘のペットな彼女",
+        "titleEn": "Sakura-sou no Pet na Kanojo",
+        "description": "就读水明艺术大学附属高中的神田空太，一年级夏天时在宿舍养猫，而被校长叫去问话，并要他把猫赶走，不然就搬出宿舍。身为爱猫一族的空太，企图反抗权威，结果被撵出宿舍，流落到恶名昭彰的“樱花庄”。 隔年春天，随着世界级天才画家椎名真白搬进了樱花庄，空太开始过著被这名缺乏常识的少女耍得团团转的日子",
+        "cover": "https://lain.bgm.tv/pic/cover/l/01/a2/41488_qw09G.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/01/a2/41488_qw09G.jpg",
+        "year": 2012,
+        "startDate": "2012-10-08",
+        "ratingRank": 1083,
+        "ratingTotal": 18485,
+        "metadataFetched": true
       }
     ]
   },
@@ -1178,12 +1937,22 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/49278",
         "platform": "TV",
-        "totalEpisodes": 13,
+        "totalEpisodes": 20,
         "rating": 6.8,
         "confidence": 135,
         "query": "境界的彼方",
         "cacheKey": "import-metadata-v1:4088a4d43c2c2b603dad",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "境界的彼方",
+        "titleJa": "境界の彼方",
+        "description": "一个偶然的契机，人类和妖梦之间出生的少年——神原秋人，有一天与在学校屋顶看上去要跳楼的少女——栗山未来相遇了。\r\n　　有着即使在异界士中也很特殊的“血”之能力的少女，在孤独中战斗着。\r\n　　“我看着像——普通的人类吗?”\r\n　　少年决心帮助这个命运与自己重叠的少女。由此，围绕在少年身边险恶的战斗开始发生……",
+        "cover": "https://lain.bgm.tv/pic/cover/l/0e/32/49278_mo7EP.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/0e/32/49278_mo7EP.jpg",
+        "year": 2013,
+        "startDate": "2013-10-02",
+        "ratingRank": 3384,
+        "ratingTotal": 13881,
+        "metadataFetched": true
       },
       {
         "inputTitle": "过去未来篇",
@@ -1191,12 +1960,22 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/49278",
         "platform": "TV",
-        "totalEpisodes": 13,
+        "totalEpisodes": 20,
         "rating": 6.8,
         "confidence": 135,
         "query": "境界的彼方 过去篇",
         "cacheKey": "import-metadata-v1:768b2c0031665fda3c0d",
-        "hintSignature": "[\"境界的彼方 过去篇\",\"境界的彼方 未来篇\"]"
+        "hintSignature": "[\"境界的彼方 过去篇\",\"境界的彼方 未来篇\"]",
+        "titleZh": "境界的彼方",
+        "titleJa": "境界の彼方",
+        "description": "一个偶然的契机，人类和妖梦之间出生的少年——神原秋人，有一天与在学校屋顶看上去要跳楼的少女——栗山未来相遇了。\r\n　　有着即使在异界士中也很特殊的“血”之能力的少女，在孤独中战斗着。\r\n　　“我看着像——普通的人类吗?”\r\n　　少年决心帮助这个命运与自己重叠的少女。由此，围绕在少年身边险恶的战斗开始发生……",
+        "cover": "https://lain.bgm.tv/pic/cover/l/0e/32/49278_mo7EP.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/0e/32/49278_mo7EP.jpg",
+        "year": 2013,
+        "startDate": "2013-10-02",
+        "ratingRank": 3384,
+        "ratingTotal": 13881,
+        "metadataFetched": true
       }
     ]
   },
@@ -1214,7 +1993,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 131,
         "query": "武装少女",
         "cacheKey": "import-metadata-v1:8e74a86e9028cd65b026",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "武装少女",
+        "titleJa": "武装少女マキャヴェリズム",
+        "titleEn": "武装少女 Machiavellism",
+        "description": "在热爱自由的高中生·纳村不道所转入的爱地共生学园，以护身为名武装起来的女生们正在对男生施行毫不留情的支配！\r\n　　男生在与女生“共生”的名义下，被“强制”要求舍弃男人身份而生活。纳村刚一转学过来，就引起统率学园的“天下五剑”之一、“鹿岛神传直心影流”的好手·鬼瓦轮的注意，并被当成新的“矫正”对象，受到一决胜负的挑战……。\r\n　　以“无手”对抗武装少女们，追求自由的纳村不道的命运将会！？",
+        "cover": "https://lain.bgm.tv/pic/cover/l/c6/8c/185562_2DkVC.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/c6/8c/185562_2DkVC.jpg",
+        "year": 2017,
+        "startDate": "2017-04-05",
+        "ratingRank": 7548,
+        "ratingTotal": 2451,
+        "metadataFetched": true
       }
     ]
   },
@@ -1232,7 +2022,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "中二病也要谈恋爱",
         "cacheKey": "import-metadata-v1:8ecff5343734f2f932b0",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "中二病也要谈恋爱！",
+        "titleJa": "中二病でも恋がしたい！",
+        "titleEn": "Regardless of My Adolescent Delusions of Grandeur, I Want a Date!",
+        "description": "富㭴勇太于初中毕业的时候，决定同时为自己举办中二病毕业的仪式。打算顺利渡过高中生活的他，在开学日以最后的中二语录完全封锁这段黑历史。可惜天意弄人，勇太遇上了现任中二病患者暨同班同学小鸟游六花，更被对方看出中二病的残余症状。六花于是以此威逼勇太与她“立下契约”。对方的行为举止惹来了不少同学、家人、甚至青梅竹马的注目，使勇太在享受“现充”的生活同时，又充满著难言之隐……",
+        "cover": "https://lain.bgm.tv/pic/cover/l/3d/fd/29648_LOcOx.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/3d/fd/29648_LOcOx.jpg",
+        "year": 2012,
+        "startDate": "2012-10-03",
+        "ratingRank": 1135,
+        "ratingTotal": 25632,
+        "metadataFetched": true
       },
       {
         "inputTitle": "take on me剧场",
@@ -1240,12 +2041,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/215425",
         "platform": "剧场版",
-        "totalEpisodes": 1,
+        "totalEpisodes": 4,
         "rating": 7.5,
         "confidence": 135,
         "query": "take on me剧场",
         "cacheKey": "import-metadata-v1:c6576e58ecb775f4daad",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "电影 中二病也要谈恋爱！ -Take On Me-",
+        "titleJa": "映画 中二病でも恋がしたい！ -Take On Me-",
+        "titleEn": "映画 中二病でも恋がしたい！ -Take On Me-",
+        "description": "“18岁，高中的最后一年。但六花却……依然是中二病！”\r\n在大学考试逼近的高三的春假，勇太与六花依然在一起生活，但看起来至今依然尚未缔结上级契约。就在某天，十花突然说要带六花去意大利生活：因为工作已经稳定下来，所以想要全家一起搬过去住。虽然勇太对此感到焦急，但也很同意十花“不能放着很有可能考不进大学的六花不管”的看法。再这样下去，两人的关系很有可能出现裂痕。对此感到担心的丹生谷等人，竟对勇太提出“私奔”的提案。\r\n就这样，以日本全国为舞台，两人的逃亡剧就此展开。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/d4/3b/215425_i1V31.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/d4/3b/215425_i1V31.jpg",
+        "year": 2018,
+        "startDate": "2018-01-06",
+        "ratingRank": 881,
+        "ratingTotal": 9304,
+        "metadataFetched": true
       },
       {
         "inputTitle": "恋 lite",
@@ -1258,7 +2070,17 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 132,
         "query": "恋 lite",
         "cacheKey": "import-metadata-v1:9deae96e5fb1cfecbafa",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "中二病也要谈恋爱！恋 Lite",
+        "titleJa": "中二病でも恋がしたい！戀 Lite",
+        "titleEn": "中二病でも恋がしたい！戀 Lite",
+        "cover": "https://lain.bgm.tv/pic/cover/l/41/83/91651_vpgN9.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/41/83/91651_vpgN9.jpg",
+        "year": 2013,
+        "startDate": "2013-12-26",
+        "ratingRank": 3092,
+        "ratingTotal": 4339,
+        "metadataFetched": true
       }
     ]
   },
@@ -1271,12 +2093,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/235612",
         "platform": "TV",
-        "totalEpisodes": 14,
+        "totalEpisodes": 19,
         "rating": 6.9,
         "confidence": 135,
         "query": "工作细胞",
         "cacheKey": "import-metadata-v1:cb68a60099dfbf2b2052",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "工作细胞",
+        "titleJa": "はたらく細胞",
+        "titleEn": "Cells at Work!",
+        "description": "这是一个关于你自身的故事。你体内的故事——。\r\n人的细胞数量，约为37兆2千亿个。\r\n细胞们在名为身体的世界中，今天也精神满满、无休无眠地在工作着。\r\n运送着氧气的红细胞，与细菌战斗的白细胞……！\r\n这里，有着细胞们不为人知的故事。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/84/fc/235612_EHO4Q.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/84/fc/235612_EHO4Q.jpg",
+        "year": 2018,
+        "startDate": "2018-07-07",
+        "ratingRank": 2909,
+        "ratingTotal": 13068,
+        "metadataFetched": true
       },
       {
         "inputTitle": "black",
@@ -1289,7 +2122,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 85,
         "query": "black",
         "cacheKey": "import-metadata-v1:cc62092b5a710f4940ea",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "黑礁",
+        "titleJa": "BLACK LAGOON",
+        "titleEn": "BLACK LAGOON",
+        "description": "在一次护送公司机密文件的途中，旭日重工的普通职员冈岛绿郎遭到了名叫黑礁商会的神秘组织的袭击和绑架，机密文件亦被夺走。为了保证秘密不被泄露，旭日重工采取了消抹行动——包括文件和冈岛绿郎本人。在得知了自己被公司抛弃的消息之后，冈岛决定用自己的方式为自己谋得一条生路。冈岛向黑礁商会提出了入会的要求，并通过实际行动证明了自己的能力，之后以“洛克”之名开始全新的生活。\r\n精明冷静的首领达奇，个性刚强的双枪手莱薇，开朗淡泊的机械师本尼，在这些神秘人物的围绕下，洛克逐渐找到了同伴的感觉，同时，一条充满了危机与冒险的道路也在他的面前展开了。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/c3/2d/979_Pw5W0.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/c3/2d/979_Pw5W0.jpg",
+        "year": 2006,
+        "startDate": "2006-04-08",
+        "ratingRank": 434,
+        "ratingTotal": 5939,
+        "metadataFetched": true
       }
     ]
   },
@@ -1307,7 +2151,17 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 129,
         "query": "昴宿七星",
         "cacheKey": "import-metadata-v1:d449ebb2ab75511bd2cd",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "昴宿七星",
+        "titleJa": "七星のスバル",
+        "description": "在曾经博得全世界高人气的MMORPG《Union》中成为传说的小学生队伍“昴星团”。然而，在游戏中战死的旭姬，在现实中也同时死亡了。《Union》也因此而停止运营，“昴星团”的成员们也各奔东西。\r\n在这6年后——。登录进新生《Reunion》的高中生阳翔，在那里与本应已经死去的青梅竹马·旭姬重逢了。她到底是电子的幽灵，还是……？这是在网络游戏中编织而成的儿时好友们的“约定”的故事。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/42/ad/225843_u3LRB.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/42/ad/225843_u3LRB.jpg",
+        "year": 2018,
+        "startDate": "2018-07-05",
+        "ratingRank": 9892,
+        "ratingTotal": 1093,
+        "metadataFetched": true
       }
     ]
   },
@@ -1325,7 +2179,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "辉夜大小姐",
         "cacheKey": "import-metadata-v1:4b6eeb13fbad638f752c",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "辉夜大小姐想让我告白～天才们的恋爱头脑战～",
+        "titleJa": "かぐや様は告らせたい～天才たちの恋愛頭脳戦～",
+        "titleEn": "Kaguya-sama wa Kokurasetai: Tensai-tachi no Ren`ai Zunousen",
+        "description": "家庭背景与人品都很棒！！一大群有前途的秀才所聚集的秀知院学园！！在那里的学生会相遇的副会长·四宫辉夜与会长·白银御行原本应该是彼此受到了对方吸引…但想不到都过半年了却仍然什么事情也没发生！！最麻烦的是这两个自尊心超强、无法坦率的家伙，居然开始想着要“设法让对方向自己告白”！？\r\n直到恋情有下落之前会很欢乐的故事！！新感觉“斗智”爱情喜剧、就此开战！！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/2a/f7/248175_2w4zT.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/2a/f7/248175_2w4zT.jpg",
+        "year": 2019,
+        "startDate": "2019-01-12",
+        "ratingRank": 358,
+        "ratingTotal": 26930,
+        "metadataFetched": true
       },
       {
         "inputTitle": "初吻不会结束(剧场版)",
@@ -1338,7 +2203,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "初吻不会结束(剧场版)",
         "cacheKey": "import-metadata-v1:f422cf6f45a3a99898d3",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "辉夜大小姐想让我告白-初吻不会结束- 电影",
+        "titleJa": "かぐや様は告らせたい-ファーストキッスは終わらない- 映画",
+        "titleEn": "Kaguya-sama wa Kokurasetai: First Kiss wa Owaranai",
+        "description": "两人冻结的内心，在没有下雪的东京夜空渐渐融化。\r\n\r\n爱情喜剧，在特别却又平凡的圣诞节，重新归来 —\r\n\r\n副会长・四宫辉夜与学生会长・白银御行在秀知院学园的学生会相遇，两名天才在历经了漫长的恋爱头脑战后，终于向对方表达了自己的心意，在“奉心祭”首度接吻。\r\n\r\n然而两人还是没有做出明确的告白，原以为就要成为恋人了，但却依然维持著暧昧关係，反而变得更加在意彼此。\r\n\r\n两人就这么迎向了圣诞节，“渴望变得完美”的白银，与追求他的“不完美”的辉夜，这是天才们极其“普通”的恋爱故事。\r\n\r\n初吻，永不结束 —",
+        "cover": "https://lain.bgm.tv/pic/cover/l/ca/b6/389474_tzbrl.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/ca/b6/389474_tzbrl.jpg",
+        "year": 2022,
+        "startDate": "2022-12-17",
+        "ratingRank": 231,
+        "ratingTotal": 7351,
+        "metadataFetched": true
       },
       {
         "inputTitle": "通往大人的阶梯",
@@ -1351,7 +2227,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "辉夜大小姐 通往大人的阶梯",
         "cacheKey": "import-metadata-v1:0bd1dbfe6fdf21ff23f3",
-        "hintSignature": "[\"辉夜大小姐 通往大人的阶梯\"]"
+        "hintSignature": "[\"辉夜大小姐 通往大人的阶梯\"]",
+        "titleZh": "辉夜大小姐想让我告白 通往大人的阶梯",
+        "titleJa": "かぐや様は告らせたい 大人への階段",
+        "titleEn": "Kaguya-sama wa Kokurasetai: Otona e no Kaidan",
+        "description": "\"每一处都令人怀念，而所有的一切都是无可替代的重要回忆。\" 这里是聚集秀才的精英学校——秀知院学园。在该校学生会相遇的副会长四宫辉夜与学生会长白银御行，在经历了漫长的恋爱头脑战后，终于确定了彼此关系……。时光流逝——辉夜独自在房间里翻阅着一本相册。相册中的每一张照片，都记录着她与白银，以及在秀知院学园共度的伙伴们之间点点滴滴的回忆。随着她沉浸在思念之中，一页接一页地翻过。而辉夜的回忆也再次鲜明地浮现在心头……。\r\n\r\n\r\n\r\n[简介原文]\r\n「どれも懐かしくて、全てがかけがえのない大切な思い出。」 \r\n\r\n秀才たちが集うエリート校・秀知院学園 \r\nその生徒会で出会った副会長・四宮かぐやと生徒会長・白銀御行。 \r\n2人は長きにわたる恋愛頭脳戦の末、交際することに…… \r\n\r\n月日は流れ、部屋でひとりアルバムを眺めるかぐや。 \r\nそこには、白銀や秀知院学園の仲間と過ごした思い出を収めた写真が並んでいる。 \r\n\r\n懐かしさに浸りページをめくる度、かぐやの思い出が蘇る。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/9b/f5/565802_PRfRL.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/9b/f5/565802_PRfRL.jpg",
+        "year": 2025,
+        "startDate": "2025-12-31",
+        "ratingRank": 96,
+        "ratingTotal": 8673,
+        "metadataFetched": true
       }
     ]
   },
@@ -1364,12 +2251,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/272510",
         "platform": "TV",
-        "totalEpisodes": 12,
+        "totalEpisodes": 16,
         "rating": 7.5,
         "confidence": 135,
         "query": "街角魔族",
         "cacheKey": "import-metadata-v1:08ed1524d0ec8d473074",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "街角魔族",
+        "titleJa": "まちカドまぞく",
+        "titleEn": "The Demon Girl Next Door",
+        "description": "某日突然觉醒暗之力的女子高中生 吉田优子，为着解除施加在暗之一族身上的诅咒，为打倒魔法少女不懈努力。竟对曾经的救命恩人下手？！\r\n但是却完全没有胜算！\r\n废柴贫穷魔族与沉稳肌肉魔法少女之间的日常魔法喜剧，就此开幕！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/af/22/272510_BZ00p.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/af/22/272510_BZ00p.jpg",
+        "year": 2019,
+        "startDate": "2019-07-11",
+        "ratingRank": 938,
+        "ratingTotal": 11225,
+        "metadataFetched": true
       }
     ]
   },
@@ -1387,7 +2285,17 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 132,
         "query": "关于我女友是个一本正经的碧池这件事",
         "cacheKey": "import-metadata-v1:63b273d08e6f77b06215",
-        "hintSignature": "[\"关于我女友是个一本正经的碧池这件事\"]"
+        "hintSignature": "[\"关于我女友是个一本正经的碧池这件事\"]",
+        "titleZh": "关于我女友是个一本正经的碧池这件事",
+        "titleJa": "僕の彼女がマジメ過ぎるしょびっちな件",
+        "description": "度过普通的学校生活，分到普通的班级，普通地恋爱，下定决心告白……讴歌着这种正经到极点的青春的篠崎遥。\r\n但只有他恋爱的对象并不“普通”——\r\n满溢而出的种种粗鄙之语！\r\n无所顾虑地涌出的刺激的性知识！\r\n但，一切都是为了成为健全而圆满的恋人——\r\n没错，这是毋庸置疑的纯爱物语！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/5b/97/216570_cPpsi.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/5b/97/216570_cPpsi.jpg",
+        "year": 2017,
+        "startDate": "2017-10-11",
+        "ratingRank": 9026,
+        "ratingTotal": 2622,
+        "metadataFetched": true
       }
     ]
   },
@@ -1405,7 +2313,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "笨女孩",
         "cacheKey": "import-metadata-v1:831ea15ca5c12ca351c9",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "笨女孩",
+        "titleJa": "アホガール",
+        "titleEn": "Aho-girl",
+        "description": "空前绝后的笨蛋，就在这里！ 笨到无可救药的女高中生·花畑佳子。 非常喜欢香蕉。 非常喜欢青梅竹马的阿君。 以上！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/bf/83/208450_0l5MJ.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/bf/83/208450_0l5MJ.jpg",
+        "year": 2017,
+        "startDate": "2017-07-04",
+        "ratingRank": 4880,
+        "ratingTotal": 10264,
+        "metadataFetched": true
       }
     ]
   },
@@ -1418,12 +2337,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/127563",
         "platform": "TV",
-        "totalEpisodes": 12,
+        "totalEpisodes": 18,
         "rating": 8,
         "confidence": 135,
         "query": "一拳超人",
         "cacheKey": "import-metadata-v1:030fd78276224fc60748",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "一拳超人",
+        "titleJa": "ワンパンマン",
+        "titleEn": "One Punch Man",
+        "description": "因为兴趣而开始当英雄的男人「埼玉」，在经过三年特训之後，得到了无敌的力量。\r\n　　然而，他实在是强过了头，所以无论多厉害的对手，都被他一拳解决。「绝对强势的力量，实在是很无聊。」在这种普通热血的最强英雄面前，今天也出现新的敌踪。今天可以让他拿出认真的态度吗！？",
+        "cover": "https://lain.bgm.tv/pic/cover/l/8c/a2/127563_nl66u.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/8c/a2/127563_nl66u.jpg",
+        "year": 2015,
+        "startDate": "2015-10-04",
+        "ratingRank": 210,
+        "ratingTotal": 21271,
+        "metadataFetched": true
       }
     ]
   },
@@ -1436,12 +2366,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/301541",
         "platform": "TV",
-        "totalEpisodes": 12,
+        "totalEpisodes": 13,
         "rating": 6.3,
         "confidence": 135,
         "query": "总之就是非常可爱",
         "cacheKey": "import-metadata-v1:a5586f627a2fb2119d78",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "总之就是非常可爱",
+        "titleJa": "トニカクカワイイ",
+        "titleEn": "TONIKAWA: Over The Moon For You",
+        "description": "由崎星空对神秘美少女——司一见钟情。\r\n面对星空决死的告白，她的回答是“如果你愿意和我结婚，那我就跟你交往”？！\r\n充满了星空与司的爱，可爱&高贵的新婚生活开始了！！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/66/50/301541_p2z4K.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/66/50/301541_p2z4K.jpg",
+        "year": 2020,
+        "startDate": "2020-10-02",
+        "ratingRank": 6361,
+        "ratingTotal": 10705,
+        "metadataFetched": true
       },
       {
         "inputTitle": "制服篇",
@@ -1454,7 +2395,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 127,
         "query": "制服篇",
         "cacheKey": "import-metadata-v1:c45350107e8bda8fe95d",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "总之就是非常可爱 ～制服～",
+        "titleJa": "トニカクカワイイ ～制服～",
+        "titleEn": "Tonikaku Kawaii: Seifuku",
+        "description": "有栖川家で幸せな新婚生活を送る司とナサ。運命的な出会いを果たした一方、普通の高校生の恋愛、制服デートの経験もなかった 2人だったが、綾の手引きで司は制服を着ることになる。普段見ることのない制服姿の司に、ナサはドキドキを隠せず・・・。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/d2/c7/376708_Hznbs.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/d2/c7/376708_Hznbs.jpg",
+        "year": 2022,
+        "startDate": "2022-11-22",
+        "ratingRank": 5720,
+        "ratingTotal": 1523,
+        "metadataFetched": true
       },
       {
         "inputTitle": "女子高中篇",
@@ -1467,7 +2419,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 127,
         "query": "女子高中篇",
         "cacheKey": "import-metadata-v1:876b9fe6f8f51a9f6d0a",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "总之就是非常可爱 女子高中篇",
+        "titleJa": "トニカクカワイイ 女子高編",
+        "titleEn": "Tonikaku Kawaii: Joshikou Hen",
+        "description": "中学時代の恩師である柳先生の頼みで高校のプログラムの授業を任されることになったナサ。その着任先は、なんと女子高だった。青春無限大な女子高生たちに囲まれるナサに、冷静を装いつつも内心落ち着かない司。\r\n移り気な彼氏、密かに憧れるあの人への想い、プログラムでは解けない恋愛相談の数々――ナサは恋の数式を解けるのか!? 　全世界にカワイイとトウトイを拡散した大ヒットシリーズ、女子高を舞台に贈る完全新作エピソード全4話！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/5a/24/441233_nJ7Do.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/5a/24/441233_nJ7Do.jpg",
+        "year": 2023,
+        "startDate": "2023-07-12",
+        "ratingRank": 5499,
+        "ratingTotal": 1603,
+        "metadataFetched": true
       }
     ]
   },
@@ -1480,12 +2443,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/231414",
         "platform": "TV",
-        "totalEpisodes": 13,
+        "totalEpisodes": 17,
         "rating": 5,
         "confidence": 135,
         "query": "平凡职业造就世界最强",
         "cacheKey": "import-metadata-v1:47d4098b33283f1f96b2",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "平凡职业造就世界最强",
+        "titleJa": "ありふれた職業で世界最強",
+        "titleEn": "Arifureta Shokugyou de Sekai Saikyou",
+        "description": "经常被同学欺凌的南云始，与同班同学一起被召唤到了异世界。与接连着发现了自己的那作弊般的能力的同班同学们相反的是，始却得到了炼成师这个平凡职业。即使在异世界也是最弱的他，被某个同班同学陷害后掉进了迷宫的深处——！？\r\n就在找不到逃脱方法而陷入了绝望深渊的始，凭借着炼成师这个职业踏上了通往最强的道路，并与吸血鬼·月相遇了——。\r\n“我保护月，月保护我，这样的话我们就是最强了。让我们一起横扫一切直至超越整个世界吧。”\r\n迷宫深处的少年与在那里的吸血鬼之间的“最强”异世界幻想曲，开幕！\r\n——然后，少年超越了“最强”。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/d8/51/231414_8I56c.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/d8/51/231414_8I56c.jpg",
+        "year": 2019,
+        "startDate": "2019-07-08",
+        "ratingRank": 9689,
+        "ratingTotal": 5741,
+        "metadataFetched": true
       }
     ]
   },
@@ -1503,7 +2477,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 129,
         "query": "吸血鬼马上死",
         "cacheKey": "import-metadata-v1:9d12e2c6aabfe5ebddd9",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "吸血鬼马上死",
+        "titleJa": "吸血鬼すぐ死ぬ",
+        "titleEn": "Kyuuketsuki Sugu Shinu",
+        "description": "在人烟稀少的郊区，坐落着一栋城堡。这里是令人畏惧的、具有不死之身的吸血鬼——德拉尔克的地盘。一日，一名小孩行踪不明。其家人四处打听之后，得知他去了德拉尔克的城堡……为了营救小孩，吸血鬼驱鬼人罗纳多挺身而出，只身前往德拉尔克的城池！然而，令罗纳多诧异万分的是，传说中的无敌真祖德拉尔克竟然是一个频频化为尘土的史上最弱吸血鬼？！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/f4/48/305579_wzNr1.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/f4/48/305579_wzNr1.jpg",
+        "year": 2021,
+        "startDate": "2021-10-04",
+        "ratingRank": 4980,
+        "ratingTotal": 1039,
+        "metadataFetched": true
       }
     ]
   },
@@ -1521,7 +2506,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "Hello World！",
         "cacheKey": "import-metadata-v1:1e6958615d7ecb29c7cf",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "你好 世界",
+        "titleJa": "HELLO WORLD",
+        "titleEn": "HELLO WORLD",
+        "description": "「お前は今日から三か月後、一行瑠璃と恋人同士になる」\r\n\r\n京都に暮らす内気な男子高校生・直実の前に、\r\n10年後の未来から来た自分を名乗る青年・ナオミが突然現れる。\r\nナオミによれば、同級生の瑠璃は直実と結ばれるが、\r\nその後事故によって命を落としてしまうと言う。\r\n「頼む、力を貸してくれ。」 彼女を救う為、\r\n大人になった自分自身を「先生」と呼ぶ、奇妙なバディが誕生する。\r\nしかしその中で直実は、瑠璃に迫る運命、ナオミの真の目的、\r\nそしてこの現実世界に隠された大いなる秘密を知ることになる。\r\n\r\n世界がひっくり返る、\r\n新機軸のハイスピードSF青春ラブストーリー。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/14/a6/269090_600EK.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/14/a6/269090_600EK.jpg",
+        "year": 2019,
+        "startDate": "2019-09-20",
+        "ratingRank": 3391,
+        "ratingTotal": 8263,
+        "metadataFetched": true
       }
     ]
   },
@@ -1539,7 +2535,17 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 132,
         "query": "重来吧，魔王大人",
         "cacheKey": "import-metadata-v1:1fd7e68dbebbf7a0c55a",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "重来吧、魔王大人！",
+        "titleJa": "魔王様、リトライ！",
+        "description": "大野晶在登录着自己运营的游戏当中的最终BOSS“魔王·九内伯斗”的账号时， 突然被转移到了异世界中。\r\n他与在那里遇到的腿脚不便的少女一起开始旅行，但周边的人们不会把拥有压倒性力量的“魔王”这一存在放任不管。\r\n他被意图讨伐魔王的国家和圣女所盯上，一行人在旅途中不断引发了各种骚动……！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/3b/6e/260407_9InP0.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/3b/6e/260407_9InP0.jpg",
+        "year": 2019,
+        "startDate": "2019-07-03",
+        "ratingRank": 9505,
+        "ratingTotal": 2673,
+        "metadataFetched": true
       }
     ]
   },
@@ -1557,7 +2563,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "Clannad",
         "cacheKey": "import-metadata-v1:4136c51060186983a22b",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "CLANNAD",
+        "titleJa": "CLANNAD -クラナド-",
+        "titleEn": "CLANNAD -クラナド-",
+        "description": "故事发生在一个小镇上，冈崎朋也是光坂高中在校生，因为家庭原因他一直过着浑浑噩噩的生活。他不参加任何社团活动，唯一的朋友是春原阳平。\r\n某天的上学途中，在樱花飞舞的坡道上，他邂逅了一名少女——古河渚，从此他的生活发生改变。渚因病休学一年，重返校园的她对周围环境感到相当不适应。她想加入戏剧部，然而戏剧部早已休部。朋也决定帮助她一起开展戏剧部的活动，二人关系变得越发亲密。随后不久朋也在图书馆中结识了一名天才少女一之濑琴美。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/28/38/51_z0Ly8.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/28/38/51_z0Ly8.jpg",
+        "year": 2007,
+        "startDate": "2007-10-04",
+        "ratingRank": 75,
+        "ratingTotal": 27620,
+        "metadataFetched": true
       },
       {
         "inputTitle": "ova2部",
@@ -1570,7 +2587,17 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 129,
         "query": "ova2部",
         "cacheKey": "import-metadata-v1:2b05f06faf48e7f44f37",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "猎人 OVA2 贪婪大陆",
+        "titleJa": "HUNTER×HUNTER OVA 第2期 GREED ISLAND",
+        "description": "富樫義博原作の人気アニメの続編オリジナルビデオアニメの第二弾。幻のゲーム・グリードアイランドの中でのストーリーが展開される。\r\n主人公の少年・ゴンは仲間のキルアとともに、念能力者にしかプレイすることができないゲーム・グリードアイランドの中へと入っていく。そこは不思議な力を秘めた様々なカードを、プレイヤーたちが奪い合うという世界。ゴンとキルアは、そこで出会ったビスケという少女に師事し、大きく成長していくのだった。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/f5/21/10357_ly3FJ.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/f5/21/10357_ly3FJ.jpg",
+        "year": 2003,
+        "startDate": "2003-02-05",
+        "ratingRank": 500,
+        "ratingTotal": 1304,
+        "metadataFetched": true
       }
     ]
   },
@@ -1588,7 +2615,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "回复术士的重启人生",
         "cacheKey": "import-metadata-v1:af4ecb5b689f701ca992",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "回复术士的重来人生",
+        "titleJa": "回復術士のやり直し",
+        "titleEn": "Kaifuku Jutsushi no Yarinaoshi",
+        "description": "觉醒了“愈”之勇者的素质，开始与勇者们一同踏上拯救世界冒险之旅的少年·克亚路。\r\n然而，身为没有战斗能力的回复术士，等待着他的是能力遭到勇者们榨取，饱受虐待的每一天。\r\n自由和尊严被剥夺，连自我都快要失去的克亚路，某天恢复了理智，并抵达了“回复“的真实。\r\n“回复“并非仅仅是治愈。“回复“是从根源动摇世界与人类的力量。\r\n克亚路“回复“了世界本身，下定决心从四年前开始“重启”一切。并且，他也为能报复勇者们而激动不已……\r\n“来吧，派对（复仇）要开始了——”",
+        "cover": "https://lain.bgm.tv/pic/cover/l/c7/3f/295017_90As6.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/c7/3f/295017_90As6.jpg",
+        "year": 2021,
+        "startDate": "2021-01-13",
+        "ratingRank": 6627,
+        "ratingTotal": 12450,
+        "metadataFetched": true
       }
     ]
   },
@@ -1606,7 +2644,17 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 134,
         "query": "滑头鬼之孙",
         "cacheKey": "import-metadata-v1:be5967cbe9433a43a404",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "滑头鬼之孙",
+        "titleJa": "ぬらりひょんの孫",
+        "description": "自古以来人类就对妖怪心怀畏惧。在这些妖怪面前领导着百鬼夜行的男人，人们将他称为妖怪的总帅并赐予他一个别名——魑魅魍魉之主“滑头鬼”\r\n　　奴良陆生从小就十分仰慕自己的爷爷——百鬼首领“奴良滑瓢”，也与爷爷领导下的百鬼们十分亲近。在一次自由研究发表会时，有一名同学“清继”所讲述的妖怪与陆生认识的不同，陆生无意间讲述了自己的爷爷是滑瓢鬼并且反驳了清继，却招来了同学们的冷眼和疏远。此时爷爷准备把三代目的位置授予陆生，要成为魑魅魍魉的主人，就必须成为令人畏惧的“妖怪”，这让一直作为人类成长的陆生感到不解和迷茫。并且这一决定招来了梦想成为滑头鬼的妖怪元同寺……一天，元同寺为了报复陆生袭击了陆生没有乘坐的校车，着急的陆生为了救伙伴，拥有四分之一“滑头鬼”之血的他觉醒了……",
+        "cover": "https://lain.bgm.tv/pic/cover/l/4d/ea/5474_A8w8F.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/4d/ea/5474_A8w8F.jpg",
+        "year": 2010,
+        "startDate": "2010-07-05",
+        "ratingRank": 3626,
+        "ratingTotal": 3832,
+        "metadataFetched": true
       }
     ]
   },
@@ -1624,7 +2672,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "Little Busters!",
         "cacheKey": "import-metadata-v1:b4bc6ee49b0ee06f61fa",
-        "hintSignature": "[\"Little Busters!\"]"
+        "hintSignature": "[\"Little Busters!\"]",
+        "titleZh": "Little Busters!",
+        "titleJa": "リトルバスターズ！",
+        "titleEn": "Little Busters!",
+        "description": "幼年时，主人公直枝理树因双亲去世而陷入自闭。某日，在时常被痛苦所萦绕的少年面前出现了四个孩子——自称名为“Little Busters”的少年们：枣恭介、枣铃、井之原真人、宫泽谦吾，他们宣布由于世界面临巨大的危机，不得不借助理树的力量来对抗强敌。随即，他们来到了近处的蜜蜂巢穴，与蜜蜂们展开了搏斗，最终弄得浑身被蜇伤，又引起了火灾，召唤来了救火车和无数大人……而后孩子们被校长狠狠地训斥了一顿。但也由此，他们带领着理树走到了外面的世界。虽然理树经常被卷入他们所造成的骚动，却也渐渐忘记了自己的寂寞和伤痛。\r\n“Little Busters”不停地尝试各种新活动，经历了许许多多成败。虽然像傻瓜一样尽做蠢事，但却过得非常快乐。理树也渴望着“这样的时光能永远延续下去就好了”。\r\n长大后五人一同进了全宿制高中。如今已是二年级生的他们，依然过着快乐而温馨的每一天。某日，三年级的恭介提议组建棒球队。在恭介的提案下，为了凑够人数大家开始寻找队员。\r\n随后，理树和铃在一只名为列侬的猫身上找到一张纸条，上面写着这样的讯息：请找出这个世界的秘密……",
+        "cover": "https://lain.bgm.tv/pic/cover/l/46/ea/38040_KFMP9.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/46/ea/38040_KFMP9.jpg",
+        "year": 2012,
+        "startDate": "2012-10-06",
+        "ratingRank": 1927,
+        "ratingTotal": 5880,
+        "metadataFetched": true
       },
       {
         "inputTitle": "refrain",
@@ -1637,7 +2696,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 85,
         "query": "refrain",
         "cacheKey": "import-metadata-v1:b54a471f10465eeaddb6",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "Little Busters! 〜Refrain〜",
+        "titleJa": "リトルバスターズ! 〜Refrain〜",
+        "titleEn": "リトルバスターズ! 〜Refrain〜",
+        "description": "幼时曾深陷绝望深渊的直枝理树，与4位少年少女相遇了。\r\n在那之后数年，理树作为Little Busters的一员，喧闹地过着快乐的每一天。 \r\n这样的时间能够一直持续就好了。理树所期望的只有这样。 \r\n某日，恭介突然表示要成立一支棒球队伍， 理树则开始了寻找成员的任务。 \r\n在这样的过程中，理树邂逅了新的成员们。 \r\n和大家一起参加试胆大会，潜入女生宿舍时被换上女装，一起演人偶剧……。 \r\n经历了许多快乐的事情， 同时也在大家的帮助下解决了各自拥有的烦恼。 \r\n最后在棒球比赛中，理树确认了和最好的朋友们之间的牵绊。 \r\n——然而，这并不是结束。 \r\n和来谷唯湖之间的故事。 \r\n理树与铃的故事。 \r\n以及，理树和铃终于知晓的“世界的秘密”。 \r\nLittle Busters真正的物语，自此开始——。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/e8/98/69484_47lg4.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/e8/98/69484_47lg4.jpg",
+        "year": 2013,
+        "startDate": "2013-10-05",
+        "ratingRank": 435,
+        "ratingTotal": 4833,
+        "metadataFetched": true
       }
     ]
   },
@@ -1655,7 +2725,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "侦探已经死了",
         "cacheKey": "import-metadata-v1:4ccaca15e6a3cbd7e1e3",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "侦探已经死了。",
+        "titleJa": "探偵はもう、死んでいる。",
+        "titleEn": "La detective esta muerta.",
+        "description": "“你来做我的助手吧。”\r\n有着被卷入事件体质的少年・君冢君彦，在高空一万米的飞机中成为了自称是侦探的天使般的美丽少女・希耶丝塔的助手。两个人为了同世界各地的敌人战斗，三年来在世界各地飞来飞去，展开了令人目眩的冒险旅程。——不久之后，侦探就去世了。\r\n动荡的日子已经过去了一年。已成为高中三年级学生的君冢也沉溺在了名为日常的温水中，过着极其普通的学生生活。在这样的君冢身边出现了一个委托人。\r\n“你是名侦探？”\r\n以和同年级的少女夏凪渚相遇为契机，连接过去和现在的壮大故事再次开始了——",
+        "cover": "https://lain.bgm.tv/pic/cover/l/e0/8e/325727_U1eEj.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/e0/8e/325727_U1eEj.jpg",
+        "year": 2021,
+        "startDate": "2021-07-04",
+        "ratingRank": 9699,
+        "ratingTotal": 4242,
+        "metadataFetched": true
       }
     ]
   },
@@ -1673,7 +2754,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 83,
         "query": "立于百万生命之上",
         "cacheKey": "import-metadata-v1:695ee2a58f8e2155f0f6",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "我立于百万生命之上",
+        "titleJa": "100万の命の上に俺は立っている",
+        "titleEn": "I'M STANDING ON 1,000,000 LIVES.",
+        "description": "重视合理、喜欢单独行动的中学3年生四谷友助，某天穿越到了游戏风格的异世界——\r\n他与同样穿越到异世界的同班同学新堂衣宇、箱崎红末一起行动，作为第3名玩家，开始挑战赌上性命的游戏任务。四谷舍弃感情论，对所有要素一视同仁，有时甚至将同伴的性命当作棋子来使用。这样的他能否从袭来的魔物、棘手的事件以及暗中活跃的强敌手中避免队伍全灭，并成功通关这个游戏呢？",
+        "cover": "https://lain.bgm.tv/pic/cover/l/08/01/301469_cPTHi.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/08/01/301469_cPTHi.jpg",
+        "year": 2020,
+        "startDate": "2020-10-02",
+        "ratingRank": 8133,
+        "ratingTotal": 3368,
+        "metadataFetched": true
       }
     ]
   },
@@ -1691,7 +2783,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "女友成双",
         "cacheKey": "import-metadata-v1:324f64529229061b165f",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "女友成堆",
+        "titleJa": "カノジョも彼女",
+        "titleEn": "KanoKano",
+        "description": "主人公向井直也，是一名高中一年级学生。在向一直很喜欢的佐木咲告白以后，顺利让她成为了女朋友。如今正处于幸福的顶端。\r\n但是，此时美少女水濑渚向直也搭话。突然间渚对直也告白，希望能和他交往。\r\n因渚的好人性格而心生动摇的直也，做出了某个决定……\r\n从令人意外的选择开始，新基准的恋爱喜剧。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/37/5e/319513_yGTQq.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/37/5e/319513_yGTQq.jpg",
+        "year": 2021,
+        "startDate": "2021-07-02",
+        "ratingRank": 7733,
+        "ratingTotal": 4071,
+        "metadataFetched": true
       }
     ]
   },
@@ -1709,7 +2812,17 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "在下坂本有何贵干",
         "cacheKey": "import-metadata-v1:d2918856e0415dd13126",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "在下坂本，有何贵干？",
+        "titleJa": "坂本ですが？",
+        "description": "酷、很酷、最最酷的高中生登场了！\r\n本故事是某个很酷，不，是最酷的高中生坂本的校园生活的集锦。\r\n刚入学不久，就出现一位被全班，不是被全校瞩目的学生。\r\n他名为坂本。\r\n一旦与他扯上关系，普通的反复横跳就会升级为秘技“Repetition Side Step”\r\n他把上级生强加于他的“跑腿活”华丽升格为“尽心尽责的服务”。\r\n这样炫酷的他，一举手一投足都摄人心魄。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/7c/01/165829_cwSZV.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/7c/01/165829_cwSZV.jpg",
+        "year": 2016,
+        "startDate": "2016-04-07",
+        "ratingRank": 5175,
+        "ratingTotal": 13662,
+        "metadataFetched": true
       }
     ]
   },
@@ -1722,12 +2835,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/308936",
         "platform": "TV",
-        "totalEpisodes": 24,
+        "totalEpisodes": 25,
         "rating": 5.6,
         "confidence": 130,
         "query": "东京复仇者",
         "cacheKey": "import-metadata-v1:eb483de629d9e5fa1679",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "东京复仇者",
+        "titleJa": "東京リベンジャーズ",
+        "titleEn": "Tokyo Revengers",
+        "description": "人生どん底のダメフリーター花垣武道（タケミチ）。\r\n中学時代に付き合っていた人生唯一の恋人・橘日向（ヒナタ）が、最凶最悪の悪党連合”東京卍會”に殺されたことを知る。\r\n事件を知った翌日、駅のホームにいたタケミチは何者かに背中を押され線路に転落し死を覚悟したが、目を開けると何故か12年前にタイムリープしていた。\r\n人生のピークだった12年前の中学時代にタイムリープし、恋人を救うため、逃げ続けた自分を変えるため、人生のリベンジを開始する！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/a2/a5/308936_NgIh4.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/a2/a5/308936_NgIh4.jpg",
+        "year": 2021,
+        "startDate": "2021-04-10",
+        "ratingRank": 8904,
+        "ratingTotal": 1552,
+        "metadataFetched": true
       },
       {
         "inputTitle": "圣夜决战篇",
@@ -1740,7 +2864,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 128,
         "query": "圣夜决战篇",
         "cacheKey": "import-metadata-v1:c47682b9d5f50bf06144",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "东京复仇者 圣夜决战篇",
+        "titleJa": "東京リベンジャーズ 聖夜決戦編",
+        "titleEn": "Tokyo Revengers: Christmas Showdown",
+        "description": "突如目覚めたタイムリープ能力で12年前に戻り、\r\n過去に起きた東京卍會の危機を救ってきた花垣武道（タケミチ）。\r\n芭流覇羅との抗争を終えて現代に帰ってくると、\r\n自分が東京卍會の最高幹部になっていることを知る。\r\n\r\nしかし喜びも束の間、\r\n現代の東京卍會は変わらず諸悪の根源・稀咲鉄太に支配され、\r\n事態は一向に解決していなかった。\r\n\r\n人生唯一の恋人・橘日向（ヒナタ）を救うため、\r\n逃げ続けた自分を変えるため、\r\n人生のリベンジは終わらない！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/77/de/360783_Psbo0.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/77/de/360783_Psbo0.jpg",
+        "year": 2023,
+        "startDate": "2023-01-07",
+        "ratingRank": 8527,
+        "ratingTotal": 644,
+        "metadataFetched": true
       },
       {
         "inputTitle": "天竺篇",
@@ -1753,7 +2888,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 127,
         "query": "天竺篇",
         "cacheKey": "import-metadata-v1:06d80319bcfe8a0e1aef",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "东京复仇者 天竺篇",
+        "titleJa": "東京リベンジャーズ 天竺編",
+        "titleEn": "Tokyo Revengers: Tenjiku Hen",
+        "description": "変わり果てた東京卍會を救うため、\r\n12年前にタイムリープして黒龍との\r\n聖夜決戦を勝利に導いた花垣武道（タケミチ）。\r\n裏切り者の稀咲鉄太を除名することにも成功したが、\r\nなぜか現代の状況は悪化する一方だった。\r\n\r\n決意を新たに再びタイムリープしたある日、\r\n東京卍會は天竺と名乗るチームの襲撃を受けてしまう。\r\n混乱するタケミチの前に現れたのは、\r\n天竺の特攻服を纏った稀咲だった。\r\n\r\n東卍史上最大にして“最後”の抗争に向けて、\r\n人生のリベンジは続く！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/77/a7/427329_Nbznb.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/77/a7/427329_Nbznb.jpg",
+        "year": 2023,
+        "startDate": "2023-10-03",
+        "ratingRank": 8719,
+        "ratingTotal": 478,
+        "metadataFetched": true
       }
     ]
   },
@@ -1766,12 +2912,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/296870",
         "platform": "TV",
-        "totalEpisodes": 12,
+        "totalEpisodes": 13,
         "rating": 6.4,
         "confidence": 135,
         "query": "我们的重制人生",
         "cacheKey": "import-metadata-v1:003f746e44454f68f809",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "我们的重制人生",
+        "titleJa": "ぼくたちのリメイク",
+        "titleEn": "Bokutachi no Remake",
+        "description": "突然醒来后，我发现自己回到了10年前的今天。\r\n我，桥场恭也是前途黯淡途的游戏导演。公司破产，企划也夭折了，于是回到了老家……\r\n不想再看到明星创作者们的亮眼表现，我闷闷不乐地睡着之后再醒来，发现自己不知为什么回到了十年前大学入学的时刻！？\r\n选择了当时没有选择的道路，迎接向往的艺大生活，甚至还过着男女四人一起分租的同居生活，玫瑰色的每一天就此展开！我的人生道路将从这里开始重新塑造——\r\n与未来将会超有名的创作者一起度过的新生活就要开始了！\r\n尽管如此自信满满地跨出第一步，事情却似乎没有那么顺利……",
+        "cover": "https://lain.bgm.tv/pic/cover/l/1d/ea/296870_gtFm2.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/1d/ea/296870_gtFm2.jpg",
+        "year": 2021,
+        "startDate": "2021-07-03",
+        "ratingRank": 6113,
+        "ratingTotal": 5918,
+        "metadataFetched": true
       }
     ]
   },
@@ -1784,12 +2941,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/309668",
         "platform": "TV",
-        "totalEpisodes": 12,
+        "totalEpisodes": 16,
         "rating": 6.7,
         "confidence": 135,
         "query": "异世界迷宫黑心企业",
         "cacheKey": "import-metadata-v1:ba4e5629c6a07e402661",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "异世界迷宫黑心企业",
+        "titleJa": "迷宮ブラックカンパニー",
+        "titleEn": "Meikyuu Black Company",
+        "description": "“不想工作！”\r\n在这样的想法下不断努力，靠着不劳而获的收入成为了“上流家里蹲”的二之宫锦司。正在他打算到死为止都要这样懒惰地生活下去时，出于某种原因突然穿越到异世界。那里是一个“迷宫就是职场”的超级黑心企业。\r\n优雅的生活突然改变，每天都要在曾经被称作“地下城”的地方不断劳动，过着流血流汗又流泪的日子。恶劣的工作环境、长时间的劳动、低薪。更过分的是上司的职权骚扰、洗脑、榨取人力价值。天天过着被各种瞧不起的“社畜”生活。\r\n哪怕这样锦司也没有放弃。为了要夺回最强的家里蹲生活，有时就要不择手段、有时还要用一些阴谋诡计来让自己成功暴富……\r\n这就是，唯我独尊又善用邪门歪道的青年不屈不挠奋斗的故事。“异世界迷宫”×“黑心企业”的社畜幻想故事，开幕。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/cd/25/309668_i1qWh.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/cd/25/309668_i1qWh.jpg",
+        "year": 2021,
+        "startDate": "2021-07-09",
+        "ratingRank": 4304,
+        "ratingTotal": 6925,
+        "metadataFetched": true
       }
     ]
   },
@@ -1802,12 +2970,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/319286",
         "platform": "TV",
-        "totalEpisodes": 12,
+        "totalEpisodes": 13,
         "rating": 5.6,
         "confidence": 83,
         "query": "见面之后五秒开始战斗",
         "cacheKey": "import-metadata-v1:9dfddabe0bba0a3081f3",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "见面之后5秒开始战斗",
+        "titleJa": "出会って5秒でバトル",
+        "titleEn": "Deatte 5-byou de Battle",
+        "description": "故事始于一个与平常并无区别的早晨。最喜欢游戏和金平糖的高中生白柳启，因为一名自称魅音的神秘少女而突然被卷入战场之中。对着被聚集此处的人们，魅音如此说道，“各位的户籍已经不存在了”，“你们将成为实验的观测器”还有“你们已经被赋予了能力”。启决定要利用获得的能力不断赢得游戏，最终击溃这个组织。用谁都不可能猜到的能力，以及极其稀少的“脑”能力作为武器，新时代的头脑派能力战斗开始。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/4b/34/319286_Yt9hb.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/4b/34/319286_Yt9hb.jpg",
+        "year": 2021,
+        "startDate": "2021-07-12",
+        "ratingRank": 9006,
+        "ratingTotal": 3288,
+        "metadataFetched": true
       }
     ]
   },
@@ -1825,7 +3004,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 133,
         "query": "月光下的异世界之旅",
         "cacheKey": "import-metadata-v1:3bf716d6030837238eec",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "月光下的异世界之旅",
+        "titleJa": "月が導く異世界道中",
+        "titleEn": "Tsuki ga Michibiku Isekai Douchuu",
+        "description": "曾经是平凡高中生的深澄真，因为某种缘由被召唤到异世界成为了“勇者”。然而世界的女神却因为“长得太丑了”而立刻剥夺了他的“勇者”称号，发配到了世界尽头的荒野上。在荒野上彷徨的真遇到了龙与蜘蛛、半兽人和矮人族等等非人种族。与原本的世界环境过于不同、不管是在魔法还是战斗中都发挥出超出常识的力量的真，能否通过各种各样的邂逅，在这个世界生活下去……\r\n被神和人族抛弃的男人的异世界改造奇幻剧开幕！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/26/ea/317275_t23SU.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/26/ea/317275_t23SU.jpg",
+        "year": 2021,
+        "startDate": "2021-07-07",
+        "ratingRank": 7739,
+        "ratingTotal": 3175,
+        "metadataFetched": true
       }
     ]
   },
@@ -1843,7 +3033,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 133,
         "query": "死神少爷与黑女仆",
         "cacheKey": "import-metadata-v1:26e7b057ad05b610226f",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "死神少爷与黑女仆",
+        "titleJa": "死神坊ちゃんと黒メイド",
+        "titleEn": "The Duke of Death and His Maid",
+        "description": "原本出身高贵的贵族少爷，在年幼时突然被魔女诅咒附加“只要触碰到生物就会夺走其生命”的能力，不得不远离家人和朋友，遭受周遭的惧怕和忌讳。孑然一身的他，一度决意隐居在森林深处的别墅孤独终老。很多年后，他身边突然出现了一位主动请缨，希望可以照顾少爷起居的黑衣女仆“爱丽丝”。不知为何，明明知道与少爷一同生活相处会因为他的能力或而丢掉性命，女仆爱丽丝却依旧像是和对待常人一般与其相处，并表明自己对少爷的心意。想要触碰却无法触碰——世界上最悲伤的两情相悦。两人的感情能够最终修成正果吗？",
+        "cover": "https://lain.bgm.tv/pic/cover/l/21/99/327055_s19V6.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/21/99/327055_s19V6.jpg",
+        "year": 2021,
+        "startDate": "2021-07-04",
+        "ratingRank": 4813,
+        "ratingTotal": 3372,
+        "metadataFetched": true
       }
     ]
   },
@@ -1861,7 +3062,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "我的青春恋爱物语果然有问题",
         "cacheKey": "import-metadata-v1:07c2ef229432b08874a5",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "我的青春恋爱物语果然有问题",
+        "titleJa": "やはり俺の青春ラブコメはまちがっている。",
+        "titleEn": "Yahari Ore no Seishun Lovecome wa Machigatte Iru.",
+        "description": "别扭的，没有朋友，没有女朋友，对着那些讴歌青春的同学吐槽着“他们都是骗子，都在说谎，快点爆发把我”的男主角的爱情物语，将来的梦想是“不工作”——\r\n　　这样的高中生八幡被生活指导老师的带到了学校第一美少女雪乃所属的“侍奉部”，与美少女意想不到的相遇……怎么想都是恋爱故事的展开吧！？\r\n　　但是雪乃却无论如何都原谅不了八幡那令人残念的糟糕性格！\r\n　　不断轮回着的充满问题的青春——我的青春，到底怎么了！？",
+        "cover": "https://lain.bgm.tv/pic/cover/l/1e/f1/54433_JZ99l.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/1e/f1/54433_JZ99l.jpg",
+        "year": 2013,
+        "startDate": "2013-04-04",
+        "ratingRank": 832,
+        "ratingTotal": 23800,
+        "metadataFetched": true
       }
     ]
   },
@@ -1879,7 +3091,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 81,
         "query": "开挂药师的异世界生活",
         "cacheKey": "import-metadata-v1:9ab174a6a3e93cfab69c",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "从Lv2开始开挂的原勇者候补悠闲的异世界生活",
+        "titleJa": "Lv2からチートだった元勇者候補のまったり異世界ライフ",
+        "titleEn": "Lv2からチートだった元勇者候補のまったり異世界ライフ",
+        "description": "巴那萨是个每天勤奋工作的商人，有一天突然被以“勇者候补”的身份召唤到库莱洛德魔法国这个从来没听过的异世界。然而，因为他在等级1时只有相当于一般市民的能力，被盖上了失格勇者的烙印，还因为国家的失误，让他无法回到原本的世界。\r\n巴那萨从王都被流放到边境之后，为了努力活下去，在森林里打败了来袭的史莱姆。就在升到等级2时，他的能力值全都变成没见过的“∞”符号。\r\n这是个选择隐姓埋名、改头换面在异世界活下去的“超越者”，与爱上了敌对人族的“魔族”之间轰轰烈烈的新婚故事。\r\n牵连所有种族，以和平的慢活人生为目标。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/ed/46/459725_Ur6Ap.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/ed/46/459725_Ur6Ap.jpg",
+        "year": 2024,
+        "startDate": "2024-04-08",
+        "ratingRank": 9034,
+        "ratingTotal": 2433,
+        "metadataFetched": true
       }
     ]
   },
@@ -1897,7 +3120,17 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 129,
         "query": "刃牙",
         "cacheKey": "import-metadata-v1:265288147f3e0ad26c23",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "刃牙",
+        "titleJa": "バキ",
+        "description": "格鬥冠軍範馬刃牙為了超越擁有傳奇地位的父親，而接受嚴格的訓練時，五位暴力的死刑犯抵達東京，要他好看。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/d3/27/199373_y6WZ4.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/d3/27/199373_y6WZ4.jpg",
+        "year": 2018,
+        "startDate": "2018-07-01",
+        "ratingRank": 6815,
+        "ratingTotal": 1318,
+        "metadataFetched": true
       },
       {
         "inputTitle": "范马刃牙",
@@ -1910,7 +3143,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 125,
         "query": "范马刃牙",
         "cacheKey": "import-metadata-v1:5709f3adbe2afdd689ef",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "范马刃牙",
+        "titleJa": "範馬刃牙",
+        "titleEn": "Hanma Baki: Son of Ogre",
+        "description": "《范马刃牙》为《刃牙》系列第三部作品，故事描述父子斗争如今化为战争，人称地上最强生物的父亲范马勇次郎与人称世界第一高中生的儿子范马刃牙，两人的命运线终于交错在一起，史上最壮烈的父子打架即将爆发。\r\n\r\nアニメ『バキ』大擂台賽編の続編となる、「刃牙」シリーズ第3部『範馬刃牙』がNetflixオリジナルアニメシリーズとして制作決定!!\r\n\r\nアニメ『バキ』大擂台賽編 第12話にて、範馬刃牙が“地上最強の生物”の名を持つ父・範馬勇次郎に挑戦状を叩きつけ、対する勇次郎も刃牙の成長を認め、自らの対戦相手として相応しいとこれを受諾。\r\n物語は遂に因縁の二人が全身全霊で激突する展開へと突入。原作で“史上最強の親子喧嘩”を描き切った「刃牙」シリーズのクライマックス『範馬刃牙』が待望のアニメ化!\r\nアニメで描かれる苛烈さを増す激闘、最強の決戦をお楽しみに!",
+        "cover": "https://lain.bgm.tv/pic/cover/l/e6/be/317852_Hz0qo.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/e6/be/317852_Hz0qo.jpg",
+        "year": 2021,
+        "startDate": "2021-09-30",
+        "ratingRank": 6923,
+        "ratingTotal": 926,
+        "metadataFetched": true
       }
     ]
   },
@@ -1928,7 +3172,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "末日三问",
         "cacheKey": "import-metadata-v1:5451e5999abbdf5b4613",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "末日时在做什么？有没有空？可以来拯救吗？",
+        "titleJa": "終末なにしてますか？ 忙しいですか？ 救ってもらっていいですか？",
+        "titleEn": "Shuumatsu Nani Shitemasuka? Isogashii Desuka? Sukutte Moratte Ii Desuka?",
+        "description": "被称作妖精兵器的少女们与残存的准勇者之间的虚幻而痛切的物语。\r\n       地上遭到正体不明的怪物“兽”的蹂躏，包括人类在内的多种族被毁灭之后的世界。\r\n       勉强残存的种族离开地面，移居到名为浮游大陆群（Regulu Ere）的空中群岛上生活。\r\n       在500年后的空中醒来的威廉·克梅修，在无法守护自己本欲守护之物，甚至仅剩自己一人的绝望之中度过着与世隔绝的生活，但在出乎意料地开展的兵器管理工作当中，他与少女们相遇了。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/a0/5f/185943_VDh22.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/a0/5f/185943_VDh22.jpg",
+        "year": 2017,
+        "startDate": "2017-04-11",
+        "ratingRank": 669,
+        "ratingTotal": 13412,
+        "metadataFetched": true
       }
     ]
   },
@@ -1941,12 +3196,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/306429",
         "platform": "TV",
-        "totalEpisodes": 12,
+        "totalEpisodes": 14,
         "rating": 3.9,
         "confidence": 135,
         "query": "成神之日",
         "cacheKey": "import-metadata-v1:c51201c3a2a16bb2a507",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "成神之日",
+        "titleJa": "神様になった日",
+        "titleEn": "The Day I Became a God",
+        "description": "在她成为神的那天，世界开始走向终结——\r\n高中最后的暑假，在成神阳太的眼前，突然有一天，自称“知晓一切的神”的少女雏出现了。\r\n“30天后，这个世界就会结束。”\r\n阳太对告知这样的消息感到困惑，但是看到神一样的预知能力，确信那个力量是真的。\r\n与超常的力量相反，天真烂漫、天真无邪的小雏，不知为何决定寄居在阳太的家中，两人共同生活。\r\n向着“世界末日”，喧闹的一个夏天开始了。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/10/d5/306429_2Me50.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/10/d5/306429_2Me50.jpg",
+        "year": 2020,
+        "startDate": "2020-10-10",
+        "ratingRank": 10003,
+        "ratingTotal": 7237,
+        "metadataFetched": true
       }
     ]
   },
@@ -1964,7 +3230,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "伤物语",
         "cacheKey": "import-metadata-v1:7c0f1c48baf36bdd8b75",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "伤物语Ⅰ铁血篇",
+        "titleJa": "傷物語Ⅰ鉄血篇",
+        "titleEn": "Kizumonogatari",
+        "description": "樱花飞舞的三月二十五日，散学典礼那天下午。\r\n高中二年级的阿良良木历，与编着三股辫的戴眼镜的优等生，羽川翼相遇了。\r\n历从羽川那里听说了“这个小镇上出现了吸血鬼”的流言。\r\n这天夜里，上街买东西的历，在地铁站中遇到了血流满地，失去四肢，绝望地请求救助的女人。这个女人，有着和羽川所描述的相同的，金色的秀发，美丽的面庞……令人寒颤冻僵的冰冷眼神。\r\n欢迎，来到黑夜的世界——\r\n传说中的吸血鬼——Kissshot Acerolaorion Heartunderblade 与 阿良良木历，两人的《物语》，由此开幕。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/bf/9c/7707_4370B.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/bf/9c/7707_4370B.jpg",
+        "year": 2016,
+        "startDate": "2016-01-08",
+        "ratingRank": 273,
+        "ratingTotal": 9196,
+        "metadataFetched": true
       },
       {
         "inputTitle": "化物语",
@@ -1972,12 +3249,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/1671",
         "platform": "TV",
-        "totalEpisodes": 15,
+        "totalEpisodes": 16,
         "rating": 8.4,
         "confidence": 135,
         "query": "化物语",
         "cacheKey": "import-metadata-v1:a911015e679591ec0878",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "化物语",
+        "titleJa": "化物語",
+        "titleEn": "Bakemonogatari",
+        "description": "所谓怪异——是因为世界上没有那种东西的存在。\r\n与生物有所不同——但与世界紧紧相连。\r\n故事主人公阿良良木历，因为知道了同班同学战场原的某个“秘密”，从此被卷入一连串的怪异事件中……。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/64/7c/1671_vQ2W9.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/64/7c/1671_vQ2W9.jpg",
+        "year": 2009,
+        "startDate": "2009-07-03",
+        "ratingRank": 63,
+        "ratingTotal": 24380,
+        "metadataFetched": true
       },
       {
         "inputTitle": "花物语5",
@@ -1990,7 +3278,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "花物语5",
         "cacheKey": "import-metadata-v1:f08ec25e8d79b925a701",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "花物语",
+        "titleJa": "花物語",
+        "titleEn": "Hanamonogatari: Suruga Devil",
+        "description": "阿良良木毕业半年后，神原骏河听到奇怪传闻时，遇上了名叫蜡花的女生，故事由此开始。神原骏河终于摆脱了她以为在二十岁之前都无法摆脱的“恶魔之手”，没想到却是通过一种未曾预料的方式……",
+        "cover": "https://lain.bgm.tv/pic/cover/l/24/f3/82322_pUPLZ.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/24/f3/82322_pUPLZ.jpg",
+        "year": 2014,
+        "startDate": "2014-08-16",
+        "ratingRank": 1345,
+        "ratingTotal": 7368,
+        "metadataFetched": true
       },
       {
         "inputTitle": "恋物语6",
@@ -2003,7 +3302,17 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 77,
         "query": "恋物语6",
         "cacheKey": "import-metadata-v1:81373563d30fed6f3cac",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "英国恋物语艾玛",
+        "titleJa": "英國戀物語エマ",
+        "description": "偶然的相遇带来了一份恋情，随时间流逝，两颗心的距离更接近。但是，在两人的面前所立的现实——叫做“阶级”的一面墙壁。\r\n19世纪末的英国，以伦敦为舞台相遇的女佣与上流阶级的恋爱故事。于过着俭省生活的艾玛对照，威廉所置身的地方是多么华丽的舞台。即使两个人知道互相之间的感情是得不到允许的，却还是互相吸引，慢慢地积累起属于两个人的时间。\r\n随后，印度的王族哈奇姆、子爵家的三女爱蕾诺的登场也为艾玛和威廉之间的故事增添了不少色彩。\r\n在这革新的时代中。不被传统所束缚，努力地对抗，越过这一困难的艾玛与威廉的恋爱故事开始了。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/39/dc/1964_bBIqU.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/39/dc/1964_bBIqU.jpg",
+        "year": 2005,
+        "startDate": "2005-04-02",
+        "ratingRank": 1737,
+        "ratingTotal": 322,
+        "metadataFetched": true
       },
       {
         "inputTitle": "猫物语（黑4",
@@ -2011,12 +3320,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/56117",
         "platform": "TV",
-        "totalEpisodes": 4,
+        "totalEpisodes": 5,
         "rating": 7.7,
         "confidence": 135,
         "query": "猫物语（黑4",
         "cacheKey": "import-metadata-v1:97041acba17e0ce8a629",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "猫物语（黑）",
+        "titleJa": "猫物語（黒）",
+        "titleEn": "Nekomonogatari (Kuro): Tsubasa Family",
+        "description": "美しき吸血鬼に出逢った春休みの後、 \r\n空から女の子が降ってくる少し前。 \r\n\r\nゴールデンウィーク最初の日、 \r\n主人公・阿良々木暦は委員長・羽川翼とともに \r\n車に轢かれた、尾のない猫を埋葬する。 \r\n\r\n些細でありふれたはずの出来事。 \r\nしかし、ここから\"悪夢の九日間\"が幕を開ける。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/f1/d6/56117_o7a7a.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/f1/d6/56117_o7a7a.jpg",
+        "year": 2012,
+        "startDate": "2012-12-31",
+        "ratingRank": 531,
+        "ratingTotal": 10890,
+        "metadataFetched": true
       },
       {
         "inputTitle": "白5）",
@@ -2029,7 +3349,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 85,
         "query": "白5）",
         "cacheKey": "import-metadata-v1:385ff4305958e99e4841",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "白圣女与黑牧师",
+        "titleJa": "白聖女と黒牧師",
+        "titleEn": "Shiro Seijo to Kuro Bokushi",
+        "description": "某国的教会住着长相可爱但有着懒洋洋小毛病的圣女——塞西莉亚，以及外表严肃却十分温柔，对圣女过度保护、家务全能的牧师——劳伦斯，两人一起度过的每一天，无时无刻都在不自觉地放闪。\r\n圣女×牧师×同居=奇迹般令人心焦！在幻想世界中展开的“不自觉的爱情喜剧”，开幕！！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/0f/0b/387822_nHUhn.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/0f/0b/387822_nHUhn.jpg",
+        "year": 2023,
+        "startDate": "2023-07-12",
+        "ratingRank": 4155,
+        "ratingTotal": 5009,
+        "metadataFetched": true
       },
       {
         "inputTitle": "忍物语",
@@ -2042,7 +3373,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "伤物语 忍物语",
         "cacheKey": "import-metadata-v1:b8c31cada2e5e5ee3d11",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "伤物语Ⅰ铁血篇",
+        "titleJa": "傷物語Ⅰ鉄血篇",
+        "titleEn": "Kizumonogatari",
+        "description": "樱花飞舞的三月二十五日，散学典礼那天下午。\r\n高中二年级的阿良良木历，与编着三股辫的戴眼镜的优等生，羽川翼相遇了。\r\n历从羽川那里听说了“这个小镇上出现了吸血鬼”的流言。\r\n这天夜里，上街买东西的历，在地铁站中遇到了血流满地，失去四肢，绝望地请求救助的女人。这个女人，有着和羽川所描述的相同的，金色的秀发，美丽的面庞……令人寒颤冻僵的冰冷眼神。\r\n欢迎，来到黑夜的世界——\r\n传说中的吸血鬼——Kissshot Acerolaorion Heartunderblade 与 阿良良木历，两人的《物语》，由此开幕。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/bf/9c/7707_4370B.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/bf/9c/7707_4370B.jpg",
+        "year": 2016,
+        "startDate": "2016-01-08",
+        "ratingRank": 273,
+        "ratingTotal": 9196,
+        "metadataFetched": true
       },
       {
         "inputTitle": "怪物语 （14）",
@@ -2055,7 +3397,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "伤物语 怪物语 （14）",
         "cacheKey": "import-metadata-v1:816191d9eac013e52d6a",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "伤物语Ⅰ铁血篇",
+        "titleJa": "傷物語Ⅰ鉄血篇",
+        "titleEn": "Kizumonogatari",
+        "description": "樱花飞舞的三月二十五日，散学典礼那天下午。\r\n高中二年级的阿良良木历，与编着三股辫的戴眼镜的优等生，羽川翼相遇了。\r\n历从羽川那里听说了“这个小镇上出现了吸血鬼”的流言。\r\n这天夜里，上街买东西的历，在地铁站中遇到了血流满地，失去四肢，绝望地请求救助的女人。这个女人，有着和羽川所描述的相同的，金色的秀发，美丽的面庞……令人寒颤冻僵的冰冷眼神。\r\n欢迎，来到黑夜的世界——\r\n传说中的吸血鬼——Kissshot Acerolaorion Heartunderblade 与 阿良良木历，两人的《物语》，由此开幕。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/bf/9c/7707_4370B.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/bf/9c/7707_4370B.jpg",
+        "year": 2016,
+        "startDate": "2016-01-08",
+        "ratingRank": 273,
+        "ratingTotal": 9196,
+        "metadataFetched": true
       },
       {
         "inputTitle": "终？伪",
@@ -2068,7 +3421,17 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 85,
         "query": "终？伪",
         "cacheKey": "import-metadata-v1:c12a6892aa2bef89acb8",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "终物语",
+        "titleJa": "終物語",
+        "description": "高三的十月下旬，神原骏河向高中三年级的阿良良木历介绍一位转校生——忍野扇。放学后，忍野扇开始说一些奇怪的事情。她曾转学过很多次，并将每一次到过的校舍都画成地图。他发现三楼的视听室被拉长，也许有隐藏的房间。扇和历发现隐藏的房间，进去之后里面停止的时钟和推不动的门窗，一切就像停止了一样…这是解开阿良良木历构成之谜的物语，是知晓一切起点的物语。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/b0/4d/138829_QtBqr.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/b0/4d/138829_QtBqr.jpg",
+        "year": 2015,
+        "startDate": "2015-10-03",
+        "ratingRank": 454,
+        "ratingTotal": 8612,
+        "metadataFetched": true
       }
     ]
   },
@@ -2086,7 +3449,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "宿命回响",
         "cacheKey": "import-metadata-v1:131f5acd52bc2ecf54f4",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "宿命回响：命运节拍",
+        "titleJa": "takt op.Destiny",
+        "titleEn": "takt op.Destiny",
+        "description": "“贯穿苦恼、抵达喜悦。”\r\n――L.V.贝多芬\r\n\r\n音乐是照亮人心的光――\r\n突然之间，那份“光”被世界给夺走，自黑色陨石“黑夜陨铁”从天空中降下的那晚，世界样貌因此改变。黑色陨石当中出现了异形的怪物“D2”，开始将大地与人们蹂躏。D2被人们演奏的歌曲所吸引，最终“音乐”被视作为禁忌。\r\n但是，反抗那些怪物的反抗者挺身而出。\r\n以音乐作为力量的少女们――“奏者”。她们的身上寄宿着人类史上残留的伟大歌剧、歌曲的乐谱，利用这股力量击败D2。然而，指挥并引导她们的便是“指挥家”。\r\n2047年，美国因为与D2之间的抗争而荒废。作为指挥家的“磔人”与奏者“命运”一同向着纽约展开旅途。在失去音乐的世界当中，渴求音乐的“磔人”期望歼灭D2的奏者“命运”，两名的少年与少女创作出的旋律，会是喜悦还是绝望呢――",
+        "cover": "https://lain.bgm.tv/pic/cover/l/93/b0/331535_i2s69.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/93/b0/331535_i2s69.jpg",
+        "year": 2021,
+        "startDate": "2021-10-05",
+        "ratingRank": 9559,
+        "ratingTotal": 4399,
+        "metadataFetched": true
       }
     ]
   },
@@ -2104,7 +3478,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 85,
         "query": "世界顶尖的暗杀者转生成异世界贵族",
         "cacheKey": "import-metadata-v1:811866e70ace7a1799ba",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "世界顶尖的暗杀者转生为异世界贵族",
+        "titleJa": "世界最高の暗殺者、異世界貴族に転生する",
+        "titleEn": "The World's Finest Assassin Gets Reincarnated in Another World as an Aristocrat",
+        "description": "世界第一的暗杀者投胎成暗杀世家的长男重生了。作为能够转生到异世界的条件，他接下了女神给下达的唯一一项任务。\r\n那就是“杀了被预言会带给人类灾厄的‘勇者’”。\r\n这是曾经世界上最强暗杀者在新的人生中必须要完成的使命。在现代曾让万般暗杀方式变得可行的广泛知识及经验，还有暗杀者家族被誉为异世界最强的秘术与魔法。一切都相辅相成，使他逐步成为史上无人能及的暗杀者——\r\n“有意思，真没想到转生后还要继续从事暗杀工作啊”\r\n得以转生的“传说中的暗杀者”向更高境界进发！突破极限的冒险幻想谭，现在开幕！！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/49/32/328313_oQlyW.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/49/32/328313_oQlyW.jpg",
+        "year": 2021,
+        "startDate": "2021-10-06",
+        "ratingRank": 7250,
+        "ratingTotal": 8208,
+        "metadataFetched": true
       }
     ]
   },
@@ -2122,7 +3507,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 129,
         "query": "大正少女御伽话",
         "cacheKey": "import-metadata-v1:c4d0ce86978d1fa56500",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "大正处女御伽话",
+        "titleJa": "大正オトメ御伽話",
+        "titleEn": "Taisho Otome Fairy Tale",
+        "description": "时值日本大正时期，出生在有钱人家衣食无忧的志磨珠彦，遭遇重大事故后失去了右手、父亲的期待，还有母亲。\r\n随后以养病的名义被遣送到乡下，不知不觉成了讨厌世间一切的厌世家。\r\n此时一个叫夕月的少女来到了他的身边，她是父亲为了照顾珠彦而安排的妻子。\r\n起初珠彦对夕月感到很厌烦，但渐渐对那个笑容和温柔敞开心扉——。\r\n\r\n两人到底能不能成为真正的夫妻?\r\n大正怀旧爱情故事开演!",
+        "cover": "https://lain.bgm.tv/pic/cover/l/a1/7d/323158_MbmZ4.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/a1/7d/323158_MbmZ4.jpg",
+        "year": 2021,
+        "startDate": "2021-10-08",
+        "ratingRank": 5541,
+        "ratingTotal": 1331,
+        "metadataFetched": true
       }
     ]
   },
@@ -2140,7 +3536,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "关于前辈很烦人的事",
         "cacheKey": "import-metadata-v1:aeaa6d567bcdd465e608",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "关于前辈很烦人的事",
+        "titleJa": "先輩がうざい後輩の話",
+        "titleEn": "Senpai ga Uzai Kouhai no Hanashi",
+        "description": "五十岚双叶，是入职丝卷商社刚到第二年，想要尽快独当一面的新人。武田晴海，则是个性有些粗犷，但很会照顾人的前辈。双叶虽然觉得武田前辈比较烦人，但有时也会觉得温馨，后来还是觉得很烦人……就这样摇摆不定。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/68/a5/309670_SCMw3.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/68/a5/309670_SCMw3.jpg",
+        "year": 2021,
+        "startDate": "2021-10-09",
+        "ratingRank": 3700,
+        "ratingTotal": 4934,
+        "metadataFetched": true
       }
     ]
   },
@@ -2158,7 +3565,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "秒速五厘米",
         "cacheKey": "import-metadata-v1:c4641bc10b768482c2ec",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "秒速5厘米",
+        "titleJa": "秒速5センチメートル",
+        "titleEn": "5 Centimeters Per Second",
+        "description": "时间是1990年代的日本，远野贵树与筱原明里原本是同班同学的好朋友，自从小学毕业之后，两人都没有再见一次面。分隔两地的两个人，靠着书信往来保持联络，直到贵树知道即将跟随家人搬到鹿儿岛，距离明里更远的地方，于是两人约定了再见面的时间。计划好的行程，却遇上了暴风雪……。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/1f/44/927_J2Q9a.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/1f/44/927_J2Q9a.jpg",
+        "year": 2007,
+        "startDate": "2007-03-03",
+        "ratingRank": 298,
+        "ratingTotal": 24659,
+        "metadataFetched": true
       }
     ]
   },
@@ -2176,7 +3594,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "龙王的工作",
         "cacheKey": "import-metadata-v1:be018da050f447c42ee1",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "龙王的工作！",
+        "titleJa": "りゅうおうのおしごと！",
+        "titleEn": "Ryuuou no Oshigoto!",
+        "description": "玄关门一打开，眼前冒出了一位小学女生——\r\n“我依照约定来了，请收我为弟子！”\r\n年仅十六岁便拥有将棋界最高头衔“龙王”的九头龙八一家里，出现一位名叫雏鹤爱的小学三年级生，九岁。\r\n“什么？……弟子？你在说什么？”\r\n“……您不记得了吗？”\r\n八一对自己答应过的事情完全没有印象，却展开了与小学女生同居的生活。受到爱直率的热情影响，八一也逐渐取回险些丧失的热忱——",
+        "cover": "https://lain.bgm.tv/pic/cover/l/58/d3/219658_Reey1.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/58/d3/219658_Reey1.jpg",
+        "year": 2018,
+        "startDate": "2018-01-08",
+        "ratingRank": 6187,
+        "ratingTotal": 10744,
+        "metadataFetched": true
       }
     ]
   },
@@ -2194,7 +3623,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "徒然喜欢你",
         "cacheKey": "import-metadata-v1:5f8e42ceb626db7769be",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "徒然喜欢你",
+        "titleJa": "徒然チルドレン",
+        "titleEn": "Tsurezure Children",
+        "description": "故事讲述了青梅竹马之间、学生会长与不良少女之间、前辈与后辈之间、同学之间等多种不同角色的恋爱群像剧。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/79/ae/208754_JyZ00.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/79/ae/208754_JyZ00.jpg",
+        "year": 2017,
+        "startDate": "2017-07-04",
+        "ratingRank": 2127,
+        "ratingTotal": 10379,
+        "metadataFetched": true
       }
     ]
   },
@@ -2207,12 +3647,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/1851",
         "platform": "TV",
-        "totalEpisodes": 13,
+        "totalEpisodes": 15,
         "rating": 7.6,
         "confidence": 135,
         "query": "天使的心跳(Angel Beats)",
         "cacheKey": "import-metadata-v1:391b34b32cd9914d4297",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "天使的心跳！",
+        "titleJa": "Angel Beats!",
+        "titleEn": "Angel Beats!",
+        "description": "故事从男主角死亡之后从“死后的世界”醒来开始，在“死后的世界”中的学校里，他与一位名为由利(ゆり)、在“死后的世界”率领着一个名为“死んだ(Shinda)世界(Sekai)战线(Sensen)”简称“SSS”的组织的少女相遇了。“SSS”成立的主要目的是与赐予他们生前悲哀命运的神以及神之使者——天使交战，在天使超乎常理的异能面前，“SSS”只能用枪来反抗。就这样一场发生在“死后的世界”的学校里的超能大战物语开始了……",
+        "cover": "https://lain.bgm.tv/pic/cover/l/ff/14/1851_ZFEg7.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/ff/14/1851_ZFEg7.jpg",
+        "year": 2010,
+        "startDate": "2010-04-02",
+        "ratingRank": 773,
+        "ratingTotal": 23021,
+        "metadataFetched": true
       }
     ]
   },
@@ -2230,7 +3681,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 133,
         "query": "田中君总是如此慵懒",
         "cacheKey": "import-metadata-v1:a69a496f390bfcb74b3b",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "田中君总是如此慵懒",
+        "titleJa": "田中くんはいつもけだるげ",
+        "titleEn": "Tanaka-kun wa Itsumo Kedaruge",
+        "description": "某所高中的教室一角。一副睡眼惺忪、撑起手肘模样的男高中生·田中，总是显得懒懒散散。上课的时候睡觉。体育课上也完全不动。上下学时尽可能地不走路。想要悠闲地度过毫无变化的每一天。明明是这样，但田中的身边却意外地热闹。\r\n外表可怕却很会照顾人的太田。全力全开鲁莽前行的宫野。才色兼备（？）的委员长白石。憧憬不良的越前。十分可靠的妹妹……etc。\r\n在这些个性丰富的人们包围之中，仍然我行我素地犯懒。描绘这样的田中的慵懒日常的无感觉青春喜剧缓缓开幕……大概如此吧。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/cc/1d/155704_uU755.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/cc/1d/155704_uU755.jpg",
+        "year": 2016,
+        "startDate": "2016-04-09",
+        "ratingRank": 2966,
+        "ratingTotal": 3043,
+        "metadataFetched": true
       }
     ]
   },
@@ -2248,7 +3710,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "这个美术社大有问题",
         "cacheKey": "import-metadata-v1:8177b4863483bcdf900c",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "这个美术社大有问题！",
+        "titleJa": "この美術部には問題がある！",
+        "titleEn": "Kono Bijutsubu ni wa Mondai ga Aru!",
+        "description": "存在于平凡无奇的普通学校“月杜中学”的普通美术部。那里有着虽有绘画才能却只为了描绘理想的“二次元新娘”而燃起使命的内卷昴同学，以及对无可救药的内卷同学感到在意的宇佐美瑞希同学。以及，对两人似乎关注又似乎没有关注、总在睡觉的部长，和总带着不可思议气息的神秘部员柯莱特同学。这样稍微有些遗憾的人们所集中的美术部，今天也在发生着什么问题——。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/b6/fb/150746_AAL5A.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/b6/fb/150746_AAL5A.jpg",
+        "year": 2016,
+        "startDate": "2016-07-07",
+        "ratingRank": 1585,
+        "ratingTotal": 11302,
+        "metadataFetched": true
       }
     ]
   },
@@ -2266,7 +3739,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "黑社会的超能力女儿",
         "cacheKey": "import-metadata-v1:6c92c84b85432ee6bc9e",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "黑社会的超能力女儿",
+        "titleJa": "ヒナまつり",
+        "titleEn": "Hinamatsuri (2018)",
+        "description": "支持着芦川组的年轻智力型黑道新田义史，过着被喜欢的壶所包围的悠然自得单身生活。但某一天，随着装在神秘物体里的少女雏来到他家，他的生活为之一变。他被能使用念动力的雏所胁迫，迫不得已开始和她同居！\r\n容易暴走的雏，不论在组里还是在学校都为所欲为。新田为此头痛不已，但由于自己那老好人的性格而陷入总是要照顾她的境地。究竟这种生活会变得怎样呢？\r\n老好人不法之徒与任性超能力少女的危险而热闹的日常开始了！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/11/f9/225631_0p0sS.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/11/f9/225631_0p0sS.jpg",
+        "year": 2018,
+        "startDate": "2018-04-06",
+        "ratingRank": 1903,
+        "ratingTotal": 9457,
+        "metadataFetched": true
       }
     ]
   },
@@ -2284,7 +3768,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 134,
         "query": "妖精森林的小不点",
         "cacheKey": "import-metadata-v1:4b3e715c1cb8c92fb007",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "妖精森林的小不点",
+        "titleJa": "ハクメイとミコチ",
+        "titleEn": "Tiny little life in the woods",
+        "description": "哈库梅伊与蜜珂析。\r\n住在绿意盎然的森林中的，两位小小的女孩子。\r\n在树洞里建造家、把树叶当做伞、坐在昆虫或鸟的背上……\r\n身高9厘米的话，这种事情也是能做得到的。\r\n不去悄悄地偷看一下吗？\r\n她们那安详而愉快，十分可爱的生活。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/7f/25/221726_3J2ko.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/7f/25/221726_3J2ko.jpg",
+        "year": 2018,
+        "startDate": "2018-01-12",
+        "ratingRank": 325,
+        "ratingTotal": 3603,
+        "metadataFetched": true
       }
     ]
   },
@@ -2297,12 +3792,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/188091",
         "platform": "TV",
-        "totalEpisodes": 12,
+        "totalEpisodes": 14,
         "rating": 7.1,
         "confidence": 135,
         "query": "珈百璃的堕落",
         "cacheKey": "import-metadata-v1:bad872e7f834cb3e69c7",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "珈百璃的堕落",
+        "titleJa": "ガヴリールドロップアウト",
+        "titleEn": "Gabriel DropOut",
+        "description": "天使学校的首席天使来到了地球！\r\n……但是，住惯了地球的她，开始过起整天逃学打网游的自甘堕落生活。\r\n化身为怠惰的废柴天使，简称“废天使”的加百列，早就把让全部人类幸福的目标抛到九霄云外，并发誓要充分享受娱乐——。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/39/3d/188091_IDY33.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/39/3d/188091_IDY33.jpg",
+        "year": 2017,
+        "startDate": "2017-01-09",
+        "ratingRank": 2185,
+        "ratingTotal": 12081,
+        "metadataFetched": true
       }
     ]
   },
@@ -2315,12 +3821,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/330973",
         "platform": "TV",
-        "totalEpisodes": 12,
+        "totalEpisodes": 14,
         "rating": 6.8,
         "confidence": 135,
         "query": "看得见的女孩",
         "cacheKey": "import-metadata-v1:6fcd56ad7ee8fd906e14",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "看得见的女孩",
+        "titleJa": "見える子ちゃん",
+        "titleEn": "Mieruko-chan",
+        "description": "看见应该看不见的东西时，看见不应该看见的东西时，换作是你会怎么做呢……？\r\n要是“那些东西”和你讲话，亦或是朝着你走过来的话，你又会怎么做呢……？\r\n会拔腿就跑吗？还是会学习可疑的法术？又或者是会拜托灵媒师，选择战斗呢？女高中生‧四谷见子所采取的行动是——彻底的无视。\r\n什么也没看见，什么也没察觉到。这是拥有着钢铁般的精神的女高中生靠着她的无视技能，回避那些异形般的可怕家伙们的故事。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/bc/6b/330973_HpbMw.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/bc/6b/330973_HpbMw.jpg",
+        "year": 2021,
+        "startDate": "2021-10-03",
+        "ratingRank": 3658,
+        "ratingTotal": 4905,
+        "metadataFetched": true
       }
     ]
   },
@@ -2338,7 +3855,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "Air",
         "cacheKey": "import-metadata-v1:203c85076e229e4a1543",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "AIR",
+        "titleJa": "AIR",
+        "titleEn": "AIR",
+        "description": "我的孩子，仔细听好\r\n接下来我说的，是一件非常重要的事\r\n已经忘了从何时开始\r\n由上代讲给下代，代代传下来的故事\r\n一个关于长久的旅程的故事……\r\n\r\n夏天，在靠近海边小小的街道上\r\n一位青年从公共汽车站下车了\r\n青年一直在旅行中\r\n这样的小镇他无心久留\r\n在赚足了路费后，他会去那些更繁华的地方\r\n他的旅伴，是母亲留给他的小小的人偶\r\n他不用手接触，人偶就能动起来\r\n从母亲那里继承了这种魔法\r\n靠着表演人偶维生，他的旅途才一直能继续着\r\n青年给孩子们表演着人偶戏\r\n然而，简陋的人偶无法吸引孩子们\r\n没有得到报酬的他\r\n无力地站在夏天的烈日下\r\n迷迷糊糊地睡着了……\r\n就在这条海边的街上，青年和命运中的少女相遇了……",
+        "cover": "https://lain.bgm.tv/pic/cover/l/28/9d/234_hIMht.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/28/9d/234_hIMht.jpg",
+        "year": 2005,
+        "startDate": "2005-01-06",
+        "ratingRank": 265,
+        "ratingTotal": 13275,
+        "metadataFetched": true
       }
     ]
   },
@@ -2351,12 +3879,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/909",
         "platform": "TV",
-        "totalEpisodes": 25,
+        "totalEpisodes": 26,
         "rating": 8,
         "confidence": 135,
         "query": "龙与虎",
         "cacheKey": "import-metadata-v1:a0c385f19f3993598379",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "龙与虎",
+        "titleJa": "とらドラ！",
+        "titleEn": "TIGER×DRAGON！",
+        "description": "因眼神凶恶而被班里同学看作不良少年的高须龙儿，进入了高中二年级，并幸运地和暗恋的少女栉枝实乃梨同班，对崭新的校园生活满怀希望。\r\n　　开学典礼后龙儿与校内最恐怖的有“掌上老虎”之称的逢坂大河狭路相逢，周围人一同陷入了惊恐状态。然而他意外地发现，逢坂同时也是实乃梨的闺蜜。\r\n　　在二人相遇的当晚，龙儿知道了原来她暗恋的是自己的好友北村祐作，而自己暗恋实乃梨的事也被大河知道了！互相了解对方情况的两人结成了“恋爱同盟战线”，开始了半共同生活……",
+        "cover": "https://lain.bgm.tv/pic/cover/l/a4/30/909_e5zhk.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/a4/30/909_e5zhk.jpg",
+        "year": 2008,
+        "startDate": "2008-10-01",
+        "ratingRank": 241,
+        "ratingTotal": 27121,
+        "metadataFetched": true
       }
     ]
   },
@@ -2374,7 +3913,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "地缚少年花子君",
         "cacheKey": "import-metadata-v1:ad95dbf23be7eab465de",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "地缚少年花子君",
+        "titleJa": "地縛少年花子くん",
+        "titleEn": "Jibaku Shounen Hanako-kun",
+        "description": "呐，你知道吗？这所学园的七大不可思议故事……。这是海鸥学园流传的七大不可思议中最有名的一则传说。\r\n旧校舍三楼的女厕第三间厕所中有「花子小姐」的存在。据说她能够实现呼唤她出来的人的任何愿望。呼唤她的方法很简单，那就是先敲三下门，接着…\r\n「花子小姐，花子小姐，请问你在吗？」\r\n「我—在—这……」\r\n为了请花子小姐实现自己的心愿，热衷神秘学的少女八寻宁宁叫出了花子小姐。然而，出现在她面前的却是一位幽灵男孩，「花子君」。\r\n花子君身为妖怪却是个虐待狂，而且还有点好色，宁宁总是被他耍得团团转，并且时常被卷入各式各样的怪谈中。宁宁究竟能否平安度过她的学园生活呢？前所未见的厕所喜剧，现在即将开始。\r\n\r\n\r\n[简介原文]\r\nねえ、知ってる？この学園にある七不思議の話……かもめ学園に伝わる一番有名な七不思議の噂。\r\n旧校舎３階女子トイレ３番目には花子さんがいて、呼び出した人の願いをなんでも叶えてくれるんだって。呼び出し方は簡単、ノックを３回。それから————\r\n「花子さん、花子さん、いらっしゃいますか？」\r\n「はーあーい……」\r\n自分の願いを叶えてもらうため、花子さんを呼び出したオカルト少女の八尋寧々。しかし、彼女の前に現れたのは男の子の幽霊、“花子くん”だった。\r\nおばけなのにドSでちょっとエッチな花子くんに振りまわされて様々な怪談に巻き込まれていく寧々。果たして寧々は無事に学園生活を送れるのか!？誰も見たことのないハートフル便所コメディが今、始まる——",
+        "cover": "https://lain.bgm.tv/pic/cover/l/10/34/277551_nlGL0.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/10/34/277551_nlGL0.jpg",
+        "year": 2020,
+        "startDate": "2020-01-09",
+        "ratingRank": 5804,
+        "ratingTotal": 4429,
+        "metadataFetched": true
       }
     ]
   },
@@ -2387,12 +3937,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/9912",
         "platform": "TV",
-        "totalEpisodes": 26,
+        "totalEpisodes": 43,
         "rating": 8.5,
         "confidence": 135,
         "query": "日常",
         "cacheKey": "import-metadata-v1:c766f50136ffd58a50a2",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "日常",
+        "titleJa": "日常",
+        "titleEn": "Nichijou",
+        "description": "故事的主角机器人——东云名乃，一直憧憬成为一名普通的女生，却因为背上的发条而感到自卑，在被自称为博士的8岁萝莉胡乱改造之后，每次都无可奈何地感到自己与“普通女生”的距离越来越远了。除了萝莉博士外，故事还出现了很多非日常角色，如年龄为20岁且戴上博士制作的项圈能说话的黑猫、活泼且天然呆的吐槽女、擅长绘画的腐女、黑发眼镜女、外表看似不良少年实质很乖巧的男生、热爱麻糬的爆炸头男、被枪或火箭炮打到都不会死的演剧社社长等等。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/0e/14/9912_vHEd6.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/0e/14/9912_vHEd6.jpg",
+        "year": 2011,
+        "startDate": "2011-04-02",
+        "ratingRank": 49,
+        "ratingTotal": 24942,
+        "metadataFetched": true
       }
     ]
   },
@@ -2405,12 +3966,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/10440",
         "platform": "TV",
-        "totalEpisodes": 11,
+        "totalEpisodes": 12,
         "rating": 7.6,
         "confidence": 135,
         "query": "未闻花名",
         "cacheKey": "import-metadata-v1:a787eee86e37dba4f630",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "我们仍未知道那天所看见的花的名字。",
+        "titleJa": "あの日見た花の名前を僕達はまだ知らない。",
+        "titleEn": "Ano Hi Mita Hana no Namae wo Bokutachi wa Mada Shiranai.",
+        "description": "从小时候起一直青梅竹马的6人，却在升上高中之后彼此有了距离。不太与人们接触的主角宿海仁太、有点被小太妹熏染的安城鸣子、进入重点高中的松雪集与鹤见知利子、放弃读高中而展开旅行的久川铁道、只有幼年死去的本间芽衣子（灵魂，只有仁太能看见）还是一如从前。有一天，芽衣子对仁太说：“帮我实现一个愿望吧”。仁太虽然有点为难，却还是答应帮助面码实现愿望。以此为契机，为了实现芽衣子的愿望，分散在各处的大家又再次地聚集在一起。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/6c/e8/10440_8HP6O.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/6c/e8/10440_8HP6O.jpg",
+        "year": 2011,
+        "startDate": "2011-04-14",
+        "ratingRank": 793,
+        "ratingTotal": 26767,
+        "metadataFetched": true
       }
     ]
   },
@@ -2423,12 +3995,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/148281",
         "platform": "TV",
-        "totalEpisodes": 12,
+        "totalEpisodes": 13,
         "rating": 6.3,
         "confidence": 132,
         "query": "羁绊者",
         "cacheKey": "import-metadata-v1:7f63623197d978071032",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "羁绊者",
+        "titleJa": "キズナイーバー",
+        "titleEn": "Kiznaiver",
+        "description": "以伤痛相连的羁绊物语——。\r\n少年少女们分享“疼痛”的青春群像剧，现在开始！！\r\n舞台是在废弃的土地上建造的城镇·洲笼市。住在这座曾以未来型都市而繁荣的城镇的高中生·阿形胜平，不知为何拥有着感觉不到疼痛的不可思议身体。在暑假近在眼前的某天，胜平在谜之少女·园崎法子的引领下，被选为共享疼痛的同伴“羁绊者”之一。以及，同样以“羁绊者”身份被联系起来的同班同学们。但，他们原本各自属于从未交流过的集团。园崎说“这是，将充满纷争的世界导向和平的实验。”与这番话语同时，众多的试炼降临到他们的身上。\r\n背负着各自的伤痛，少年少女们的夏日物语由此开始！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/85/c3/148281_8czuA.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/85/c3/148281_8czuA.jpg",
+        "year": 2016,
+        "startDate": "2016-04-09",
+        "ratingRank": 6273,
+        "ratingTotal": 2536,
+        "metadataFetched": true
       }
     ]
   },
@@ -2445,7 +4028,15 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 77,
         "query": "天使降临我身边",
         "cacheKey": "import-metadata-v1:eb09ae0d26b5b843f337",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "天使",
+        "titleJa": "L'Ange",
+        "titleEn": "L'Ange",
+        "description": "A surreal art film of seemingly unrelated scenes in which characters go through repeated motions. These scenes taks place upwards along a staircase which appears to be more mythical than literal.",
+        "cover": "https://lain.bgm.tv/pic/cover/l/6b/1d/431539_1spZ8.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/6b/1d/431539_1spZ8.jpg",
+        "ratingTotal": 4,
+        "metadataFetched": true
       },
       {
         "inputTitle": "剧场版",
@@ -2458,7 +4049,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "剧场版",
         "cacheKey": "import-metadata-v1:4d2055632b862fbde22c",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "剧场版 空之境界 第一章 俯瞰风景",
+        "titleJa": "劇場版 空の境界 第一章 俯瞰風景",
+        "titleEn": "Gekijouban Kara no Kyoukai: The Garden of Sinners",
+        "description": "“去吧、去吧、去吧、去吧——”\r\n　　我只是这样期望着，\r\n　　期望着这个窗外的世界。\r\n　　只是期望被他带走而已。\r\n　　这是一个发生在夏末，少女们不断飞落跳下相继自杀的故事。少女们，毫无征兆突发性的从废墟大楼的屋顶\r\n　　上跳向天空，随后落下。等待她们的只有死。\r\n　　这些女孩在学校也并无异常，相互间也并非朋友关系。这些一切毫无关联性，连自杀的理由都找不到，完全无法解释的自杀事件逐一被不断报道。但是唯一只有一个人看出了这事件其中的关联性。\r\n　　这个人就是最高位的人偶师、也是一位没有成为魔法使的魔术师 —— 苍崎澄子。\r\n　　或许……“没有理由”就是他们的共通点，其次就是浮游与飞行的差别。\r\n　　而搜索调查这个连续自杀事件的人就是拥有能看见事间万物之死线能力“直死之魔眼”的两仪式。\r\n　　对她而言，有一个与此事件不得不关联起来的理由——\r\n　　与其说自身这种并不想要获得的能力（直死之魔眼），更令她在意的是用她的眼睛就这样捕捉到了在虚空中飞舞的少女们的幽灵，而这些幽灵到底又在想什么呢？\r\n　　假设，这或许是到达相同道路同胞们的哀怜，也或者是同族的嫌恶。\r\n　　假设，这或许是来自威胁某种重要存在之人的敌意。\r\n　　换句话说，这是明确的杀意。\r\n　　式就这样前往了那个可怜的大楼现场，而那里等着她的是谁都不知道的，展开着重重包围圈套的序章。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/e1/65/233_x22mT.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/e1/65/233_x22mT.jpg",
+        "year": 2007,
+        "startDate": "2007-12-01",
+        "ratingRank": 309,
+        "ratingTotal": 11824,
+        "metadataFetched": true
       }
     ]
   },
@@ -2476,7 +4078,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "杀戮天使",
         "cacheKey": "import-metadata-v1:c381f176dfb103aa2949",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "杀戮天使",
+        "titleJa": "殺戮の天使",
+        "titleEn": "X的天使",
+        "description": "在一栋大楼最底层苏醒的13岁少女，瑞吉儿·加德纳。\r\n她没有任何记忆，不知道自己为何在这里，而为了回到地面，她开始试着逃出去。\r\n但是，突然在她面前出现了脸上缠满绷带、拿着有如死神般的镰刀的杀人鬼。\r\n“拜托你，杀了我。”\r\n“帮我一起从这里出去吧。那样的话，我就会杀了你。”\r\n两人之间的奇妙羁绊，随着那“荒诞的约定”而逐渐加深。\r\n这里究竟是什么地方？两人为何被囚禁于此？等待着两人的命运又是如何？\r\n为了从密闭大楼逃出的抱死觉悟之行揭开了序幕。\r\n两人最终是否能够坚守约定，并且安全地逃出这栋大楼呢？",
+        "cover": "https://lain.bgm.tv/pic/cover/l/1a/b7/220566_0CMxK.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/1a/b7/220566_0CMxK.jpg",
+        "year": 2018,
+        "startDate": "2018-07-06",
+        "ratingRank": 6019,
+        "ratingTotal": 8014,
+        "metadataFetched": true
       }
     ]
   },
@@ -2489,12 +4102,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/305390",
         "platform": "TV",
-        "totalEpisodes": 10,
+        "totalEpisodes": 12,
         "rating": 5.8,
         "confidence": 132,
         "query": "女神宿舍的宿管君",
         "cacheKey": "import-metadata-v1:390e657b5e6c626350ec",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "女神宿舍的宿管君。",
+        "titleJa": "女神寮の寮母くん。",
+        "titleEn": "Mother of the Goddess’ Dormitory",
+        "description": "房子被烧掉、爸爸失踪、也没有储蓄。初中男生南云孝士在城市中一个人走着倒下了。偶然相遇的女大学生和知音流向他提案，让孝士去她住的大学生宿舍来担任管理员。\r\n在女生宿舍相遇的有，对男性没有耐性的超纯情少女早乙女天奈、一害羞就会拳脚相向的武斗派少女战咲桐谷、喜欢让人COSPLAY的失控型COSER芙蕾、怠惰的运动裤电波少女八月朔日濑玲音、以及做着诡异实验的疯狂科学家和知音流，全都是特异独行的美少女们。\r\n他将担任管理员和她们一同度过每天，在逐渐认识的过程中加深羁绊。孝士被大姐姐们耍得团团转的日常开始了。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/b1/bc/305390_KH6W1.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/b1/bc/305390_KH6W1.jpg",
+        "year": 2021,
+        "startDate": "2021-07-14",
+        "ratingRank": 8379,
+        "ratingTotal": 2897,
+        "metadataFetched": true
       }
     ]
   },
@@ -2507,12 +4131,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/2585",
         "platform": "TV",
-        "totalEpisodes": 24,
+        "totalEpisodes": 26,
         "rating": 7.5,
         "confidence": 135,
         "query": "某科学的超电磁炮",
         "cacheKey": "import-metadata-v1:1b6837a49cb6a7191a16",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "某科学的超电磁炮",
+        "titleJa": "とある科学の超電磁砲",
+        "titleEn": "Toaru Kagaku no Railgun",
+        "description": "故事发生在面积占据东京都的三分之一，居住着230万名人口且其中八成人口是学生的巨大都市“学园都市”。学园都市的所有学生均会接受超能力开发，借由药物、催眠术与通电刺激等方式取得超能力。能力者以范围和威力分为LV0至LV5。\r\n\r\n主角御坂美琴是学园都市中仅七位LV5（超能力者）的其中一人，排行第三。她是拥有操纵电击能力的“电击使”，站在电击能力的顶峰，因而被称为“超电磁炮”。\r\n\r\n本作不但通过美琴的视角来描绘学园都市的平常而不平凡的日常生活，也叙述了学园都市秘密进行非人道性质的实验，从而使大家对于本作及本篇《魔法禁书目录》的背景（世界观）的认识也慢慢变得清楚。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/36/e7/2585_pn2eP.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/36/e7/2585_pn2eP.jpg",
+        "year": 2009,
+        "startDate": "2009-10-02",
+        "ratingRank": 837,
+        "ratingTotal": 22748,
+        "metadataFetched": true
       }
     ]
   },
@@ -2525,12 +4160,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/262939",
         "platform": "TV",
-        "totalEpisodes": 12,
+        "totalEpisodes": 13,
         "rating": 5.2,
         "confidence": 135,
         "query": "某科学的一方通行",
         "cacheKey": "import-metadata-v1:f85be8872e046f60275e",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "某科学的一方通行",
+        "titleJa": "とある科学の一方通行",
+        "titleEn": "Toaru Kagaku no Accelerator",
+        "description": "東京西部に位置する巨大な『学園都市』。\r\n総人口230万人を数え、その約８割を学生が占めるこの都市では、超能力開発のための特殊なカリキュラムが実施され、学生たちの能力は『無能力レベル０』から『超能力レベル５』までの六段階で評価されていた。\r\n\r\nそんな学園都市で、能力者たちの頂点に君臨する最強の能力者・アクセラレータ。 ７人しかいない『超能力者』の中でも、飛び抜けた能力を誇る第一位は、その力ゆえに殺伐とした日常を送っていた。繰り返される常軌を逸した『実験』と、絶対的な力を求めた末に経験した敗北。その先に待っていた、とある少女――ラストオーダーとの出会いによって、運命が大きく変わることになる。\r\n\r\n最強にして最凶の『悪』 ――アクセラレータが、\r\n学園都市の『闇』をなぎ払う!!",
+        "cover": "https://lain.bgm.tv/pic/cover/l/3f/11/262939_ZhtWQ.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/3f/11/262939_ZhtWQ.jpg",
+        "year": 2019,
+        "startDate": "2019-07-12",
+        "ratingRank": 9548,
+        "ratingTotal": 5572,
+        "metadataFetched": true
       }
     ]
   },
@@ -2548,7 +4194,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "古见同学有交流障碍症",
         "cacheKey": "import-metadata-v1:7dd41437c5d9d367412d",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "古见同学有交流障碍症",
+        "titleJa": "古見さんは、コミュ症です。",
+        "titleEn": "Komi Can’t Communicate",
+        "description": "所谓的“交流障碍症”——\r\n是不擅于与人交流的症状，亦或有该症状的人。\r\n应该注意的是——这种情况只是自我觉得不擅长，不想和别人有接触。\r\n樱花烂漫的高中1年级，有着极度的交流障碍症的古见遇到了“过于普通”的同班同学・只野。\r\n面对人群会感到紧张的古见的梦想是“能够交到100个朋友”。\r\n在个性派所云集的高中，古见能实现她的梦想吗？\r\n想要传达，但是却传达不到…心神不宁，忐忑不安，不由自主地冷笑。\r\n但是有时却如刺入胸膛？\r\n沉默的美少女·古见的交流障碍症喜剧。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/e4/44/335225_UmKwl.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/e4/44/335225_UmKwl.jpg",
+        "year": 2021,
+        "startDate": "2021-10-06",
+        "ratingRank": 2618,
+        "ratingTotal": 6379,
+        "metadataFetched": true
       }
     ]
   },
@@ -2566,7 +4223,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 129,
         "query": "心灵代码",
         "cacheKey": "import-metadata-v1:00c53ec63353319480fb",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "心灵代码",
+        "titleJa": "クオリディア・コード",
+        "titleEn": "QUALIDEA CODE",
+        "description": "故事发生在在人类与敌人“Unknown”持续战争的世界。数十年前“Unknown”侵略时被送往冷冻睡眠设施避难的孩子们，从沉睡中醒来之时，得知自己的身体中被发现了超自然的力量——世界。为了从出现在东京湾的“Unknown”手中保护国家，少年少女们在东京、神奈川、千叶的各防卫都市展开战斗。东京由相乐总、神奈川由橘公司、千叶由渡航担当，创造出“QUALIDEA”的世界。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/7b/ee/161704_lX140.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/7b/ee/161704_lX140.jpg",
+        "year": 2016,
+        "startDate": "2016-07-09",
+        "ratingRank": 8855,
+        "ratingTotal": 1386,
+        "metadataFetched": true
       }
     ]
   },
@@ -2579,12 +4247,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/293648",
         "platform": "TV",
-        "totalEpisodes": 12,
+        "totalEpisodes": 13,
         "rating": 5.7,
         "confidence": 80,
         "query": "弩级战队H",
         "cacheKey": "import-metadata-v1:c13f50264456cd54bb48",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "弩级战队HXEROS",
+        "titleJa": "ド級編隊エグゼロス",
+        "titleEn": "弩级战队HXEROS",
+        "description": "HERO是由H与ERO所组成的——\r\n夺取并规制色情，企图使人类缓慢灭绝的侵略种族·规制虫。\r\n而面对这些恐怖怪人的，是“最色的！？”5名高中生！\r\n青少年·炎城烈人与美少女们所带来的青春期“H”ERO喜剧，开幕！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/be/48/293648_87fQL.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/be/48/293648_87fQL.jpg",
+        "year": 2020,
+        "startDate": "2020-07-03",
+        "ratingRank": 8705,
+        "ratingTotal": 1579,
+        "metadataFetched": true
       }
     ]
   },
@@ -2597,12 +4276,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/115780",
         "platform": "TV",
-        "totalEpisodes": 12,
+        "totalEpisodes": 13,
         "rating": 6.1,
         "confidence": 135,
         "query": "没有黄段子的无聊世界",
         "cacheKey": "import-metadata-v1:e01aac21898673cb8bb7",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "没有黄段子存在的无聊世界",
+        "titleJa": "下ネタという概念が存在しない退屈な世界",
+        "titleEn": "Shimoneta to Iu Gainen ga Sonzai Shinai Taikutsu na Sekai",
+        "description": "故事描述日本在16年前成立名为《公序良俗健全育成法》的法规，自此所有与“性”有关的文句都遭到禁止。某日，高中生奥间狸吉终于如愿进入崇拜的学姐安娜担任学生会长的风纪优良名校就读，但刚入学就遭到名为“雪原之青”的下流梗恐怖份子抓住把柄，被迫成为下流梗恐怖组织“SOX”一员。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/13/84/115780_P3a76.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/13/84/115780_P3a76.jpg",
+        "year": 2015,
+        "startDate": "2015-07-04",
+        "ratingRank": 7279,
+        "ratingTotal": 8876,
+        "metadataFetched": true
       }
     ]
   },
@@ -2620,7 +4310,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 133,
         "query": "为什么老师会在这里！？",
         "cacheKey": "import-metadata-v1:ff7ba5ebe79dff0c90e7",
-        "hintSignature": "[\"为什么老师会在这里！？\"]"
+        "hintSignature": "[\"为什么老师会在这里！？\"]",
+        "titleZh": "为什么老师会在这里！？",
+        "titleJa": "なんでここに先生が!?",
+        "titleEn": "Nande Koko ni Sensei ga!?",
+        "description": "为什么老师会在这里!?——\r\n不分场所地接连引发，由老师与男子高中生带来的紧张感满载的突发事件的连续。\r\n充满大人魅力的老师们所展现的种种表情，了解得越多就越觉得可爱！\r\n通过过激的情景描绘出来的“甜甜蜜蜜”而又“摇摇晃晃”的可爱老师们的高中生活！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/ef/65/262111_Qczq5.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/ef/65/262111_Qczq5.jpg",
+        "year": 2019,
+        "startDate": "2019-04-07",
+        "ratingRank": 7100,
+        "ratingTotal": 3063,
+        "metadataFetched": true
       }
     ]
   },
@@ -2638,7 +4339,17 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "魔法禁书目录",
         "cacheKey": "import-metadata-v1:4e00025c5693cc5d5ca0",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "魔法禁书目录",
+        "titleJa": "とある魔術の禁書目録",
+        "description": "自己的阳台栏杆上出现了像被单一样挂在上面的少女，这种非现实的情节出现在了上条当麻的眼前。虽然在这个城市——最先进科学引导的学院都市中，超能力已经可以通过科学技术创造出来，但是眼前这位自称“茵蒂克丝”的少女还是把上条当麻吓了一跳。茵蒂克丝自称因拥有十万三千本魔导书而被魔法师追杀，而上条当麻靠自己的超能力也认定了少女的魔法。少女以危险为由离开上条家，上条如往日一般去学校学习，但放学回家，却发现茵蒂克丝倒在血泊之中。在科学与魔术交叉的世界中，上条当麻与茵蒂克丝的故事开始了。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/76/6d/1014_nqAH8.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/76/6d/1014_nqAH8.jpg",
+        "year": 2008,
+        "startDate": "2008-10-04",
+        "ratingRank": 3854,
+        "ratingTotal": 15462,
+        "metadataFetched": true
       },
       {
         "inputTitle": "剧场版",
@@ -2651,7 +4362,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "剧场版",
         "cacheKey": "import-metadata-v1:3d92258f66050a2cd339",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "剧场版 空之境界 第一章 俯瞰风景",
+        "titleJa": "劇場版 空の境界 第一章 俯瞰風景",
+        "titleEn": "Gekijouban Kara no Kyoukai: The Garden of Sinners",
+        "description": "“去吧、去吧、去吧、去吧——”\r\n　　我只是这样期望着，\r\n　　期望着这个窗外的世界。\r\n　　只是期望被他带走而已。\r\n　　这是一个发生在夏末，少女们不断飞落跳下相继自杀的故事。少女们，毫无征兆突发性的从废墟大楼的屋顶\r\n　　上跳向天空，随后落下。等待她们的只有死。\r\n　　这些女孩在学校也并无异常，相互间也并非朋友关系。这些一切毫无关联性，连自杀的理由都找不到，完全无法解释的自杀事件逐一被不断报道。但是唯一只有一个人看出了这事件其中的关联性。\r\n　　这个人就是最高位的人偶师、也是一位没有成为魔法使的魔术师 —— 苍崎澄子。\r\n　　或许……“没有理由”就是他们的共通点，其次就是浮游与飞行的差别。\r\n　　而搜索调查这个连续自杀事件的人就是拥有能看见事间万物之死线能力“直死之魔眼”的两仪式。\r\n　　对她而言，有一个与此事件不得不关联起来的理由——\r\n　　与其说自身这种并不想要获得的能力（直死之魔眼），更令她在意的是用她的眼睛就这样捕捉到了在虚空中飞舞的少女们的幽灵，而这些幽灵到底又在想什么呢？\r\n　　假设，这或许是到达相同道路同胞们的哀怜，也或者是同族的嫌恶。\r\n　　假设，这或许是来自威胁某种重要存在之人的敌意。\r\n　　换句话说，这是明确的杀意。\r\n　　式就这样前往了那个可怜的大楼现场，而那里等着她的是谁都不知道的，展开着重重包围圈套的序章。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/e1/65/233_x22mT.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/e1/65/233_x22mT.jpg",
+        "year": 2007,
+        "startDate": "2007-12-01",
+        "ratingRank": 309,
+        "ratingTotal": 11824,
+        "metadataFetched": true
       }
     ]
   },
@@ -2669,7 +4391,17 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "欢迎来到实力至上主义的教室",
         "cacheKey": "import-metadata-v1:86f9f6e8fee7a39a4d53",
-        "hintSignature": "[\"欢迎来到实力至上主义的教室\"]"
+        "hintSignature": "[\"欢迎来到实力至上主义的教室\"]",
+        "titleZh": "欢迎来到实力至上主义的教室",
+        "titleJa": "ようこそ実力至上主義の教室へ",
+        "description": "这个社会是否平等呢。真正的“实力”是什么——。\r\n东京都高度育成高等学校。那是宣扬彻底的实力至上主义，以升学率·就业率100%而引以为豪的升学学校。升入那里，被分配到1年D班的绫小路清隆，却发现学校与实力至上主义的招牌相反，学生每个月会得到相当于10万日元、与现金同等价值的分数，在授课和生活态度方面也贯彻放任主义。在梦幻般的高中生活当中，不断地挥金如土、过着自甘堕落日子的同班同学们。但，不久他就得知了学校系统的真面目，并被打入绝望的深渊……！\r\n来自吊车尾聚集的D班的少年少女们所发现的，是世界的矛盾，还是正当的实力社会？",
+        "cover": "https://lain.bgm.tv/pic/cover/l/87/01/214272_vlcWz.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/87/01/214272_vlcWz.jpg",
+        "year": 2017,
+        "startDate": "2017-07-12",
+        "ratingRank": 7073,
+        "ratingTotal": 15339,
+        "metadataFetched": true
       }
     ]
   },
@@ -2687,7 +4419,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "因为太怕痛就全点防御力了",
         "cacheKey": "import-metadata-v1:57f8013b458ee5d4f867",
-        "hintSignature": "[\"因为太怕痛就全点防御力了\",\"痛いのは嫌なので防御力に極振りしたいと思います\"]"
+        "hintSignature": "[\"因为太怕痛就全点防御力了\",\"痛いのは嫌なので防御力に極振りしたいと思います\"]",
+        "titleZh": "因为太怕痛就全点防御力了。",
+        "titleJa": "痛いのは嫌なので防御力に極振りしたいと思います。",
+        "titleEn": "BOFURI: I Don't Want to Get Hurt, so I'll Max Out My Defense.",
+        "description": "本条枫在好友白峰理沙推荐下开始游玩游戏“NewWorld Online”，创建了名为“梅普露”的角色。然而作为游戏初学者，梅普露选择了不受欢迎的大盾当武器，同时因为怕痛而把所有状态点加到防御力的极限加点。虽然在游戏初期因此吃了不少苦，但因为梅普露无视规则又异想天开的行动方式学到各种特殊技能，更以其奇特方式通关地城获得了罕见装备，令防御进一步提升。最强初学者化身“移动要塞”在游戏中尽情胡闹的冒险故事。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/c7/35/268545_yPJHc.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/c7/35/268545_yPJHc.jpg",
+        "year": 2020,
+        "startDate": "2020-01-08",
+        "ratingRank": 7029,
+        "ratingTotal": 9390,
+        "metadataFetched": true
       }
     ]
   },
@@ -2705,7 +4448,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "death note",
         "cacheKey": "import-metadata-v1:2d527b266776be963333",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "死亡笔记",
+        "titleJa": "DEATH NOTE",
+        "titleEn": "DEATH NOTE",
+        "description": "高三生夜神月意外捡到一本名《DEATH NOTE》的笔记本，并且发现只要写下想要杀死的人的名字，就会变成现实。\r\n月开始利用死亡笔记制裁那些他认为该死的人。接着，笔记的原主人：死神也以旁观者的姿态出现在月面前。\r\n另一方面越来越多的罪犯离奇死亡事件引起了各国政府的关注，在国际刑事警察机构会议（ICPO）上他们委托神秘人士L来调查此事。社会上则称这个神秘的杀手为“基拉”，不同的人有不同的反应。  \r\n到底谁才是正义的一方，谁又会取得最后的胜利呢？一场斗智斗勇的较量就此展开……",
+        "cover": "https://lain.bgm.tv/pic/cover/l/4a/be/1773_rldoC.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/4a/be/1773_rldoC.jpg",
+        "year": 2006,
+        "startDate": "2006-10-04",
+        "ratingRank": 65,
+        "ratingTotal": 24976,
+        "metadataFetched": true
       }
     ]
   },
@@ -2723,7 +4477,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "我被逐出队伍后过上慢生活",
         "cacheKey": "import-metadata-v1:7068a534dead92ff5cd1",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "因为不是命中注定的同伴而被赶出了勇者的队伍、从此以后过上了悠闲的隐居生活",
+        "titleJa": "真の仲間じゃないと勇者のパーティーを追い出されたので、辺境でスローライフすることにしました",
+        "titleEn": "Shin no Nakama ja Nai to Yuusha no Party o Oidasareta node, Henkyou de Slow Life Suru Koto ni Shimashita",
+        "description": "「你不是真正的伙伴——」\r\n已经不能在前线战斗的英雄·雷德，被队伍里的贤者判断不再是战力后逐出了勇者队伍。\r\n「唉——那段日子可真难熬啊」因为雷德离开了队伍，贤者一行人陷入了大混乱中，而当事人却一无所知的在边境开了一家药店，兴致满满地度过每一天。\r\n「我也可以在这家店工作吗？需要包住！」曾经是伙伴的公主突然到来？！\r\n\r\n“悠闲愉快地经营药店”、“和冒失鬼公主的超甜生活”、没有得到回报的英雄上演的美妙第二人生即将开幕！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/00/6d/319739_BJNJC.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/00/6d/319739_BJNJC.jpg",
+        "year": 2021,
+        "startDate": "2021-10-06",
+        "ratingRank": 8726,
+        "ratingTotal": 4593,
+        "metadataFetched": true
       }
     ]
   },
@@ -2741,7 +4506,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "家有女友",
         "cacheKey": "import-metadata-v1:f4f7782319390fa553e2",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "家有女友",
+        "titleJa": "ドメスティックな彼女",
+        "titleEn": "Domestic na Kanojo",
+        "description": "幼年丧母的高中男生・藤井夏生，默默暗恋着高中老师・橘阳菜。\r\n无法实现的思念涌入心中，突然被邀请参加联谊的夏生，与在那里遇到的橘瑠衣一起进行了首次体验。\r\n这时，父亲打算再婚。作为父亲再婚对象出现在夏生面前的，是阳菜和瑠衣……\r\n在同一屋檐下生活的3个人，形成了禁断的三角关系。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/33/f9/253628_F42y2.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/33/f9/253628_F42y2.jpg",
+        "year": 2019,
+        "startDate": "2019-01-11",
+        "ratingRank": 6910,
+        "ratingTotal": 5630,
+        "metadataFetched": true
       }
     ]
   },
@@ -2754,12 +4530,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/285482",
         "platform": "TV",
-        "totalEpisodes": 12,
+        "totalEpisodes": 13,
         "rating": 7.7,
         "confidence": 85,
         "query": "异种族风俗娘评选指南",
         "cacheKey": "import-metadata-v1:fceba4905316c153b56a",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "异种族风俗娘评鉴指南",
+        "titleJa": "異種族レビュアーズ",
+        "titleEn": "Ishuzoku Reviewers",
+        "description": "ここは人間だけではなく、エルフ、獣人、悪魔に天使と、あらゆる異種族が混在し、暮らしている世界。そこには当然、あらゆる異種族のスケベなお店もあるわけで…。\r\n\r\n足しげくムフフなサービスをしてくれるお店に通う人間の冒険者・スタンクは、ある日種族間の（性的な意味での）感性の違いで悪友のエロエルフ・ゼルと衝突する。\r\n\r\n決着の方法は……嬢のレビュー!?　あらゆる異種族娘のサービスをクロスレビュー方式で採点し、他の仲間達への“お役勃ち”情報として提供していくスタンクたちの活躍は、まさに性戦士のごとし！\r\n\r\n今日もレビュアーズたちは新たな快楽を求めて旅勃って行く……。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/dc/8a/285482_c5RRj.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/dc/8a/285482_c5RRj.jpg",
+        "year": 2020,
+        "startDate": "2020-01-11",
+        "ratingRank": 536,
+        "ratingTotal": 13883,
+        "metadataFetched": true
       }
     ]
   },
@@ -2772,12 +4559,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/158316",
         "platform": "TV",
-        "totalEpisodes": 12,
+        "totalEpisodes": 19,
         "rating": 7.8,
         "confidence": 135,
         "query": "灵能百分百",
         "cacheKey": "import-metadata-v1:0a264288779af1706696",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "灵能百分百",
+        "titleJa": "モブサイコ100",
+        "titleEn": "Mob Psycho 100",
+        "description": "平凡的中学二年级少年影山茂夫，因其微弱的存在感与名字茂夫的谐音被周遭人称为龙套（モブ），但不起眼的他其实是强大的天生超能力者。历经每一次的成长，龙套开始认为自己的超能力是危险的存在，为了不让超能力失控，龙套无意识的压抑著情感。虽然只想平凡的度过每一天，但各种麻烦却接二连三找上他，随着被压抑的情感在内心一点点膨胀，龙套体内积累的力量似乎也正蠢蠢欲动......",
+        "cover": "https://lain.bgm.tv/pic/cover/l/2b/85/158316_gz1mM.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/2b/85/158316_gz1mM.jpg",
+        "year": 2016,
+        "startDate": "2016-07-11",
+        "ratingRank": 372,
+        "ratingTotal": 16600,
+        "metadataFetched": true
       }
     ]
   },
@@ -2795,7 +4593,17 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "宇崎学妹想要玩",
         "cacheKey": "import-metadata-v1:3dadd0b37aec225cecc5",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "宇崎学妹想要玩！",
+        "titleJa": "宇崎ちゃんは遊びたい!",
+        "description": "性格有些孤僻喜爱安静的大学三年级生，樱井真一。总是被小一届，同高中毕业的学妹宇崎花，以各种照顾爱耍孤僻的学长的名义为由，进行各种无厘头的纠缠。虽然一开始觉得有点困扰，但却逐渐习惯起来……",
+        "cover": "https://lain.bgm.tv/pic/cover/l/5a/42/299498_PNyTT.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/5a/42/299498_PNyTT.jpg",
+        "year": 2020,
+        "startDate": "2020-07-10",
+        "ratingRank": 7408,
+        "ratingTotal": 4176,
+        "metadataFetched": true
       }
     ]
   },
@@ -2813,7 +4621,16 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 124,
         "query": "真理面具",
         "cacheKey": "import-metadata-v1:28c2970de35fbd11ff94",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "真理面具 动态漫",
+        "titleJa": "真理面具 动态漫",
+        "description": "高中生无免偶然获得了一副戴上后无论做什么都会被人绝对认同的面具，然而即便如此他也没能鼓起勇气向暗恋的女生告白。直到发生那个将他的生活完全颠覆的事件……",
+        "cover": "https://lain.bgm.tv/pic/cover/l/c3/14/331782_JRsXo.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/c3/14/331782_JRsXo.jpg",
+        "year": 2020,
+        "startDate": "2020-10-28",
+        "ratingTotal": 12,
+        "metadataFetched": true
       }
     ]
   },
@@ -2826,12 +4643,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/58949",
         "platform": "剧场版",
-        "totalEpisodes": 1,
+        "totalEpisodes": 2,
         "rating": 7.4,
         "confidence": 135,
         "query": "言叶之庭",
         "cacheKey": "import-metadata-v1:35bf223ff46fba28eee1",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "言叶之庭",
+        "titleJa": "言の葉の庭",
+        "titleEn": "kotonohanoniwa",
+        "description": "作品以爱情来临前的孤独——“孤悲”来呈现“恋爱”的主题。梅雨时节，以成为鞋匠为目标的高中生孝雄与神秘的女性百香里，在雨中的日本庭园中相遇。以女性留给少年的一篇万叶集为契机，故事就此开展……。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/bc/43/58949_rCnOB.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/bc/43/58949_rCnOB.jpg",
+        "year": 2013,
+        "startDate": "2013-05-31",
+        "ratingRank": 1046,
+        "ratingTotal": 16195,
+        "metadataFetched": true
       }
     ]
   },
@@ -2848,7 +4676,14 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 127,
         "query": "百妖谱",
         "cacheKey": "import-metadata-v1:ae47ffabdcd6b6090e12",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "百妖谱",
+        "titleJa": "百妖谱",
+        "description": "贫穷少女桃夭意外收留了离家出走的“大小姐”抱抱，盘算着能找到她的家人要一笔钱。没想到自己的老爸竟然被抱抱变成了狗，抱抱居然是妖！为把老爸变回人，桃夭踏上寻找抱抱之路，并揭开关于百妖谱的巨大秘密……",
+        "cover": "https://lain.bgm.tv/pic/cover/l/f1/4e/562310_WqK09.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/f1/4e/562310_WqK09.jpg",
+        "ratingTotal": 2,
+        "metadataFetched": true
       },
       {
         "inputTitle": "京师篇",
@@ -2861,7 +4696,17 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 124,
         "query": "京师篇",
         "cacheKey": "import-metadata-v1:faf3905223464311ad67",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "百妖谱·京师篇",
+        "titleJa": "百妖谱·京师篇",
+        "description": "围绕桃夭、柳公子、磨牙一行在京师的游历，展示了人与人，人与妖之间的距离或许并没有想象中的那么难以逾越。 无论是桃夭与丁三四的互动，还是老张带给柳公子跨越人生和厨艺的指点，亦或是磨牙面对傒囊时的左右为难，都让一行人各自获得新的成长。而同时，封无乐，陈白水等人也获得各自的救赎，或许人生旅途就是这般互相影响，五味杂陈。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/cf/63/350795_01Sg4.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/cf/63/350795_01Sg4.jpg",
+        "year": 2022,
+        "startDate": "2022-07-25",
+        "ratingRank": 2562,
+        "ratingTotal": 272,
+        "metadataFetched": true
       }
     ]
   },
@@ -2879,7 +4724,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "野良神",
         "cacheKey": "import-metadata-v1:7c9f0339f1788834047d",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "野良神",
+        "titleJa": "ノラガミ",
+        "titleEn": "Noragami",
+        "description": "没有神社供奉、缺少香火的落魄神明夜斗，因为性格缺陷，导致手下的神器纷纷跳槽。怀抱“受万民景仰”这个伟大理想的他，只好只身在此岸与彼岸间徘徊，为五块钱的香油钱（五斗米）折腰，接受上至斩妖除魔，下至修东修西的各类委托……",
+        "cover": "https://lain.bgm.tv/pic/cover/l/ee/de/82572_PNW44.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/ee/de/82572_PNW44.jpg",
+        "year": 2014,
+        "startDate": "2014-01-05",
+        "ratingRank": 2061,
+        "ratingTotal": 12132,
+        "metadataFetched": true
       }
     ]
   },
@@ -2897,7 +4753,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 85,
         "query": "异度入侵",
         "cacheKey": "import-metadata-v1:a631134ba7a2d9ff0ff6",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "异度侵入",
+        "titleJa": "ID:INVADED イド：インヴェイデッド",
+        "titleEn": "ID:INVADED イド：インヴェイデッド",
+        "description": "利用检测杀意的系统“罔象女”搜查犯罪事件的组织，通称“仓”。\r\n然后，神探·酒井户身为“罔象女”的驾驶员进入犯人的深层心理“杀意世界（井）”，对事件进行推理。\r\n他不断追寻着频繁发生、谜团重重的凶恶事件，以及在其中若隐若现的连续杀人鬼制造者“约翰·沃克”的影子。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/73/90/285776_57c5p.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/73/90/285776_57c5p.jpg",
+        "year": 2020,
+        "startDate": "2020-01-05",
+        "ratingRank": 936,
+        "ratingTotal": 15375,
+        "metadataFetched": true
       }
     ]
   },
@@ -2915,7 +4782,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "多罗罗",
         "cacheKey": "import-metadata-v1:e337af9c12e6c098ccac",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "多罗罗",
+        "titleJa": "どろろ",
+        "titleEn": "dororo",
+        "description": "时为战国。\r\n醍醐之国主景光，在某所寺院的大堂中，向12尊鬼神像许愿领土繁荣。作为交换而诞生的景光之后嗣，身体各处都有所欠缺，被视作不祥之子而抛弃到河川之中。时光流逝，鬼神实现了与景光的约定，国家迎来了平安。这样的某天，名为“多罗罗”的年幼盗贼，与某个男人相遇。\r\n那是鬼，还是人——\r\n两臂装有刀剑，全身皆为人造的男人“百鬼丸”，用他那无神光的双瞳紧紧盯着袭来的妖魔。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/d3/da/240838_5Ax95.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/d3/da/240838_5Ax95.jpg",
+        "year": 2019,
+        "startDate": "2019-01-07",
+        "ratingRank": 4715,
+        "ratingTotal": 6018,
+        "metadataFetched": true
       }
     ]
   },
@@ -2928,12 +4806,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/297954",
         "platform": "TV",
-        "totalEpisodes": 20,
+        "totalEpisodes": 21,
         "rating": 6.6,
         "confidence": 135,
         "query": "致不灭的你",
         "cacheKey": "import-metadata-v1:1225e9f17fb63d714702",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "致不灭的你",
+        "titleJa": "不滅のあなたへ",
+        "titleEn": "Fumetsu no Anata e",
+        "description": "不死起初是一个被投放到人世间的“球”。\r\n它具有“幻化为刺激源形态的能力”和“死后重生的能力”。虽然不死不断变换着自己的姿态，先后从球体变成小石块、狼以及少年，但却像一无所知的新生儿一样迷茫、徘徊。\r\n逐渐地，不死从相知相遇的人们那里学到了生存技能，体味到人间温情，于是踏上了人类那样的成长之路。\r\n等待不死的是与宿敌·敲门人的壮烈战斗，与深爱之人的离别……不死忍受着痛苦摸索前进方向，在永恒的旅途中一步一步坚定地走下去。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/5c/9c/297954_NyA7J.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/5c/9c/297954_NyA7J.jpg",
+        "year": 2021,
+        "startDate": "2021-04-12",
+        "ratingRank": 4517,
+        "ratingTotal": 5537,
+        "metadataFetched": true
       }
     ]
   },
@@ -2951,7 +4840,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "堀与宫村",
         "cacheKey": "import-metadata-v1:4f1744280caa05a82cfd",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "堀与宫村",
+        "titleJa": "ホリミヤ",
+        "titleEn": "Horimiya",
+        "description": "堀京子既是美人又成绩优秀，在学校是班上的中心。但实际上，她代替忙碌的双亲，在放学后直接回家，专注于家务和照顾年幼的弟弟，是个持家型的高中生。某天，受伤的弟弟创太被陌生的男性送回了堀的家里。\r\n“堀同学”被这样称呼后和他交谈才发现，他实际上是自己的同班同学——班上头号人气女子与阴沉男子相遇后会怎样！？\r\n恋爱、友情。充满青春气息的超微碳酸系校园生活，就此开幕！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/23/a2/315069_2zYW6.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/23/a2/315069_2zYW6.jpg",
+        "year": 2021,
+        "startDate": "2021-01-09",
+        "ratingRank": 3555,
+        "ratingTotal": 13178,
+        "metadataFetched": true
       }
     ]
   },
@@ -2969,7 +4869,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "虚构推理",
         "cacheKey": "import-metadata-v1:631356433f0c20e665d3",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "虚构推理",
+        "titleJa": "虚構推理",
+        "titleEn": "Kyokou Suiri",
+        "description": "成为“怪异”们的智慧之神，每天都在解决着“怪异”们带来的麻烦的少女·岩永琴子，她一见钟情的对象·樱川九郎，是个让“怪异”都感到畏惧的男人！？\r\n这样毫不普通的两人，迎战“怪异”们引发的神秘事件的［恋爱×传奇×推理］！！\r\n两人所面临的诡异事件，以及恋情将会迎来怎样的结局——！？",
+        "cover": "https://lain.bgm.tv/pic/cover/l/6c/3b/271687_1326P.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/6c/3b/271687_1326P.jpg",
+        "year": 2020,
+        "startDate": "2020-01-11",
+        "ratingRank": 6637,
+        "ratingTotal": 10409,
+        "metadataFetched": true
       }
     ]
   },
@@ -2987,7 +4898,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "碧蓝之海",
         "cacheKey": "import-metadata-v1:021c205608ee3690e9dd",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "碧蓝之海",
+        "titleJa": "ぐらんぶる",
+        "titleEn": "GRAND BLUE",
+        "description": "北原伊织升入大学后，开始寄住在伊豆的叔父所经营的潜水用具店“Grand Blue”。传入耳中的波涛声、炽烈照射的太阳、开始一起生活的可爱表姐妹……青春的大学生活！\r\n这样的伊织所面临的却是——除了野球拳以外的猜拳一概不知的强壮男人们！！\r\n刚一入学就被大学潜水社团“Peek a Boo”所盯上了的伊织，在会长时·田信治和三年级学生·寿龙次郎的怂恿下，不知不觉已经身为社团的一员加入了他们的愚蠢喧嚣中。在大学中认识的虽然长得帅但性格却很遗憾的宅男——今村耕平也加入其中，他们的青春向着越来越奇怪的方向转进。\r\n明明在寄住的地方有着可爱的表姐妹——古手川姐妹，但自己却被妹妹千纱当成垃圾看待，而姐姐奈奈华又是重度妹控，根本无法成为对象。\r\n在可爱的全裸笨蛋们的包围之下，伊织的大学生活究竟会变得如何……。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/1f/13/235130_suy3s.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/1f/13/235130_suy3s.jpg",
+        "year": 2018,
+        "startDate": "2018-07-13",
+        "ratingRank": 327,
+        "ratingTotal": 17495,
+        "metadataFetched": true
       }
     ]
   },
@@ -3005,7 +4927,17 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 85,
         "query": "理科生坠入情网",
         "cacheKey": "import-metadata-v1:1aecf33ab68c6e7205df",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "理科生坠入情网，故尝试证明。",
+        "titleJa": "理系が恋に落ちたので証明してみた。",
+        "description": "如果对研究充满热情的科学女孩和科学男孩坠入爱河怎么办？彩玉大学理科研究生的才女，冰室菖蒲向同一实验室雪村心夜告白。当然“喜欢”是没有逻辑根据的！但是，作为理工学专业的学生，“如果不能用逻辑证明自己的喜好，就不能说是喜欢，作为理科也不合格！”以那个信念为基础，两人卷进研究室的成员关于“恋”的定义的证明实验即将开始！约会实验，了解喜欢的构成要素，测量心率实验，情绪值的测量……个性过强的理科生们用逻辑证明“恋爱”有笑有心跳的理科爱情喜剧！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/35/bb/271145_e4LNZ.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/35/bb/271145_e4LNZ.jpg",
+        "year": 2020,
+        "startDate": "2020-01-10",
+        "ratingRank": 6765,
+        "ratingTotal": 5522,
+        "metadataFetched": true
       }
     ]
   },
@@ -3023,7 +4955,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "日在校园",
         "cacheKey": "import-metadata-v1:43747bb5c57471cb774e",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "日在校园",
+        "titleJa": "School Days",
+        "titleEn": "School Days",
+        "description": "主人公『伊藤诚』已经有了心上人，并偷偷地把那个女孩子的照片作为手机的待机图片一直带在身边。她就是隔壁班级的『桂言叶』。她一直与诚经过同样的铁路沿线，乘坐同一时刻的电车，因而诚渐渐地喜欢上了她。所以每天的上学、放学时间成了诚的唯一乐趣。\r\n\r\n但是某天，诚的手机待机图片被同桌『西园寺世界』看见了。此时学校正流行着一种说法，那就是把心上人的照片作为手机的待机图片3个星期并且不被别人看见，就可以实现梦想（成为恋人）等等诸如此类的说法。诚正是偶然听到了这些话才偷偷地许下了这个愿望。\r\n\r\n围绕校园展开的三角恋即将开始。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/fa/3a/827_hh7ot.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/fa/3a/827_hh7ot.jpg",
+        "year": 2007,
+        "startDate": "2007-07-03",
+        "ratingRank": 6826,
+        "ratingTotal": 9667,
+        "metadataFetched": true
       }
     ]
   },
@@ -3036,12 +4979,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/264089",
         "platform": "TV",
-        "totalEpisodes": 12,
+        "totalEpisodes": 13,
         "rating": 6.6,
         "confidence": 135,
         "query": "转生成为了只有乙女游戏破灭flag的邪恶大小姐",
         "cacheKey": "import-metadata-v1:a6db6e782c490ccb4803",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "转生成为了只有乙女游戏破灭Flag的邪恶大小姐",
+        "titleJa": "乙女ゲームの破滅フラグしかない悪役令嬢に転生してしまった…",
+        "titleEn": "转生成为了只有乙女游戏破灭Flag的邪恶大小姐",
+        "description": "公爵千金卡塔莉娜·克拉艾斯在脑袋撞到石头上时取回了前世的记忆 ，发现这里是前世所迷恋的乙女游戏“FORTUNE LOVER”的世界，自己成为了妨碍游戏主人公恋情的邪恶大小姐！\r\n在游戏里，克拉艾斯被准备的好的结局是流放国外，最差的是被杀死。无论如何都要回避这个破灭Flag，一定要取得幸福的未来给你看！！\r\n没错吧？万人迷的爱情喜剧拉开了帷幕。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/12/db/264089_1BMQc.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/12/db/264089_1BMQc.jpg",
+        "year": 2020,
+        "startDate": "2020-04-04",
+        "ratingRank": 4940,
+        "ratingTotal": 7598,
+        "metadataFetched": true
       }
     ]
   },
@@ -3054,12 +5008,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/262943",
         "platform": "TV",
-        "totalEpisodes": 12,
+        "totalEpisodes": 16,
         "rating": 6.1,
         "confidence": 135,
         "query": "喜欢本大爷的竟然就你一个？",
         "cacheKey": "import-metadata-v1:0e726eca4e1ae95a547f",
-        "hintSignature": "[\"喜欢本大爷的竟然就你一个？\"]"
+        "hintSignature": "[\"喜欢本大爷的竟然就你一个？\"]",
+        "titleZh": "喜欢本大爷的竟然就你一个？",
+        "titleJa": "俺を好きなのはお前だけかよ",
+        "titleEn": "Oresuki: Are You the Only One Who Loves Me?",
+        "description": "题目来了。如果你有兴趣的对象邀你去约会，你会怎么做？ \r\n而且对象不只一个，有冰山美人型学姊和可爱型儿时玩伴葵花这两大美少女！ \r\n这种时候当然会意气风发地前往碰面地点吧？ \r\n结果她们向我表明的「心意」是！……要找我「恋爱谘商」怎么追我的好友啊哈哈哈……\r\n 我不干了！不干不干！\r\n我终于从「迟钝型无害角色」变回原来的本大爷啦，可是本大爷不会在这种时候怨天尤人。 因为只要帮她们做这恋爱谘商，说不定她们就会喜欢上本大爷啊！ 然而，有一名少女从旁看著本大爷这种悲哀的孤军奋战。 \r\n她是绑辫子戴眼镜的阴沉女──三色院堇子。 该怎么说，本大爷讨厌这女的，偏偏……喜欢本大爷的竟然就你一个？",
+        "cover": "https://lain.bgm.tv/pic/cover/l/22/d7/262943_L1Vld.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/22/d7/262943_L1Vld.jpg",
+        "year": 2019,
+        "startDate": "2019-10-02",
+        "ratingRank": 7412,
+        "ratingTotal": 4745,
+        "metadataFetched": true
       }
     ]
   },
@@ -3077,7 +5042,17 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 131,
         "query": "极主夫道-",
         "cacheKey": "import-metadata-v1:42835986727ae1e22f81",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "极主夫道",
+        "titleJa": "極主夫道",
+        "description": "离开黑社会后，人称“不死之身的阿龙”的传奇黑道大佬以尽职尽责的家庭主夫身份重出江湖。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/18/51/317691_SiTJ2.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/18/51/317691_SiTJ2.jpg",
+        "year": 2021,
+        "startDate": "2021-04-08",
+        "ratingRank": 6344,
+        "ratingTotal": 3821,
+        "metadataFetched": true
       }
     ]
   },
@@ -3090,12 +5065,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/8402",
         "platform": "TV",
-        "totalEpisodes": 13,
+        "totalEpisodes": 21,
         "rating": 8,
         "confidence": 135,
         "query": "吊带袜天使",
         "cacheKey": "import-metadata-v1:aa6a4606bdc4e85c4992",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "吊带袜天使",
+        "titleJa": "Panty & Stocking with Garterbelt",
+        "titleEn": "Panty & Stocking with Garterbelt",
+        "description": "在天堂和地狱的裂缝之间有一座城市—堕天城（Daten City），在那里人们一直饱受“恶灵（Ghost）”的袭击。\r\n腐蚀人心的黑暗，至今仍在悄悄地侵蚀这个城市，有人正试图以超自然力，消灭这些由欲望产生的恶灵，担负了这驱逐黑暗的使命。\r\n因行为不检而被踢出天堂的天使姐妹——Panty与Stocking，必须在Garterbelt的指示下歼灭恶灵，并得到代表功绩的天堂金币（Heaven Coins）作为回报，达成目标即可回到天堂。\r\n然而天使姐妹对在堕天使城的日常生活，显然有相当程度的病态兴趣……",
+        "cover": "https://lain.bgm.tv/pic/cover/l/a7/49/8402_Q9mLv.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/a7/49/8402_Q9mLv.jpg",
+        "year": 2010,
+        "startDate": "2010-10-01",
+        "ratingRank": 253,
+        "ratingTotal": 13769,
+        "metadataFetched": true
       }
     ]
   },
@@ -3108,12 +5094,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/116461",
         "platform": "TV",
-        "totalEpisodes": 24,
+        "totalEpisodes": 33,
         "rating": 7.2,
         "confidence": 135,
         "query": "食戟之灵",
         "cacheKey": "import-metadata-v1:aa526b138c5fc174f58e",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "食戟之灵",
+        "titleJa": "食戟のソーマ",
+        "titleEn": "Shokugeki no Souma",
+        "description": "《食戟之灵》描述男主角幸平创真梦想在国中毕业後能够继承父亲经营的幸平餐馆，却在父亲指示下来到东京都内的料理名校远月学园中就读。料理技术高超的创真，却在插班考试中被拥有神之舌的少女薙切绘里奈评为不及格!?在学园长帮助下，创真依然成功入学，并立誓要让绘里奈认同他所作的料理。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/96/99/116461_zl6M2.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/96/99/116461_zl6M2.jpg",
+        "year": 2015,
+        "startDate": "2015-04-03",
+        "ratingRank": 1846,
+        "ratingTotal": 8978,
+        "metadataFetched": true
       }
     ]
   },
@@ -3131,7 +5128,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "石纪元（新石纪）",
         "cacheKey": "import-metadata-v1:c7140641e027f35325e4",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "石纪元",
+        "titleJa": "Dr.STONE",
+        "titleEn": "Dr.STONE",
+        "description": "全人类被神奇的现象一瞬间石化后过了几千年——\r\n拥有超人般头脑、天生的科学少年·千空苏醒了。\r\n在文明遭到毁灭的石头世界（STONE WORLD）里，千空决定要用科学的力量复原整个世界。而与此同时苏醒过来的有，以有着过人体力的儿时玩伴·大木大树为首的伙伴们，从零开始创造文明——\r\n从石器时代到现代文明，一定要赶上这科学史的200万年差距！\r\n前所未闻的创世冒险谭，就此开幕！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/08/3a/266794_imVve.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/08/3a/266794_imVve.jpg",
+        "year": 2019,
+        "startDate": "2019-07-05",
+        "ratingRank": 1651,
+        "ratingTotal": 8789,
+        "metadataFetched": true
       },
       {
         "inputTitle": "特别篇",
@@ -3139,12 +5147,22 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/221020",
         "platform": "WEB",
-        "totalEpisodes": 3,
+        "totalEpisodes": 6,
         "rating": 6.5,
         "confidence": 126,
         "query": "特别篇",
         "cacheKey": "import-metadata-v1:ee36a68997d621ca872d",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "全职高手 特别篇",
+        "titleJa": "全职高手 特别篇",
+        "description": "根据蝴蝶蓝同名电子游戏竞技小说改编，一个被战队驱逐的超级职业选手离开老东家，进入网吧自行组建战队，结识了形形色色的优秀队员，打挑战赛杀回了《荣耀》的职业联盟，并获得了最高的荣誉重回巅峰。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/64/a1/221020_52l25.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/64/a1/221020_52l25.jpg",
+        "year": 2018,
+        "startDate": "2018-04-27",
+        "ratingRank": 5405,
+        "ratingTotal": 1337,
+        "metadataFetched": true
       }
     ]
   },
@@ -3162,7 +5180,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "四月是你的谎言",
         "cacheKey": "import-metadata-v1:77d602a47a85414c201a",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "四月是你的谎言",
+        "titleJa": "四月は君の嘘",
+        "titleEn": "Shigatsu wa Kimi no Uso",
+        "description": "有马公生的母亲一心想把有马培育成举世闻名的钢琴家，而有马也不负母亲的期望，在念小学时就赢得许多钢琴比赛的大奖。11岁的秋天，有马的母亲过世，从此他再也听不见自己弹奏的钢琴声，沮丧的他也只好放弃演奏，但在14岁那年，经由儿时玩伴的介绍，有马认识了小提琴手宫园薰，并被薰的自由奔放吸引，没想到薰竟开口邀请公生在比赛时担任她的伴奏…",
+        "cover": "https://lain.bgm.tv/pic/cover/l/ec/c7/100444_96r3J.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/ec/c7/100444_96r3J.jpg",
+        "year": 2014,
+        "startDate": "2014-10-09",
+        "ratingRank": 240,
+        "ratingTotal": 22935,
+        "metadataFetched": true
       }
     ]
   },
@@ -3180,7 +5209,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "全员恶玉",
         "cacheKey": "import-metadata-v1:ba7bf93ca3a6e341cab5",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "全员恶玉",
+        "titleJa": "アクダマドライブ",
+        "titleEn": "恶玉DRIVE",
+        "description": "全·员·恶·人\r\n犯罪者们的犯罪动作剧开幕！\r\n遥远的过去，关东和关西之间爆发战争，世界分裂了。\r\n关西成为关东的属国，并实现了独立的发展。\r\n但相对地，其政治与警力衰退，犯罪横行。\r\n这些犯罪者，被称作恶棍——。\r\n本作品的舞台，是高度发达却又高度扭曲的社会。\r\n在这样的社会中，恶棍们将会如何以自己的风格生存呢。\r\n齐聚一堂的恶棍们的美学，彼此发生碰撞。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/87/96/302076_18361.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/87/96/302076_18361.jpg",
+        "year": 2020,
+        "startDate": "2020-10-08",
+        "ratingRank": 9848,
+        "ratingTotal": 5085,
+        "metadataFetched": true
       }
     ]
   },
@@ -3198,7 +5238,17 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "未来日记",
         "cacheKey": "import-metadata-v1:63f4645d57bf27e07dcd",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "未来日记",
+        "titleJa": "未来日記",
+        "description": "国中二年级学生天野雪辉习惯远离所有人，以一个旁观者的角度把亲眼所见的事记录在自己的手机中。一天，时空之神宙斯把未来日记植入他的手机中，这日记记录的是他未来90天发生的事，包括考试内容、遇到的危险等。但这个“日记”一旦被破坏，持有者的未来将会同时消失，也就是持有者会立刻消失。宙斯已选定十二位未来日记持有者，而最后生存的人将会成为宙斯的继承者，掌握支配时空的“神之座”。他跟同样拥有未来日记的其余11人，展开你死我活斗争的杀人游戏。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/0a/3d/16235_5GJQH.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/0a/3d/16235_5GJQH.jpg",
+        "year": 2011,
+        "startDate": "2011-10-09",
+        "ratingRank": 1853,
+        "ratingTotal": 15235,
+        "metadataFetched": true
       }
     ]
   },
@@ -3216,7 +5266,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "擅长捉弄的高木同学",
         "cacheKey": "import-metadata-v1:0bac1129e178a918a6ad",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "擅长捉弄的高木同学",
+        "titleJa": "からかい上手の高木さん",
+        "titleEn": "Karakai Jouzu no Takagi-san",
+        "description": "“今天一定要捉弄高木同学，让她害羞！”\r\n某所中学，在各种方面都被邻座的女生高木同学捉弄的男生西片。\r\n他为了对此反击而每天奋斗，但……？\r\n这样的高木同学与西片带来的全力“捉弄”青春大战开始了！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/09/16/219200_wFT9i.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/09/16/219200_wFT9i.jpg",
+        "year": 2018,
+        "startDate": "2018-01-08",
+        "ratingRank": 857,
+        "ratingTotal": 11300,
+        "metadataFetched": true
       },
       {
         "inputTitle": "剧场版",
@@ -3229,7 +5290,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "剧场版",
         "cacheKey": "import-metadata-v1:eaaa731d6ba99bc7bf74",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "剧场版 空之境界 第一章 俯瞰风景",
+        "titleJa": "劇場版 空の境界 第一章 俯瞰風景",
+        "titleEn": "Gekijouban Kara no Kyoukai: The Garden of Sinners",
+        "description": "“去吧、去吧、去吧、去吧——”\r\n　　我只是这样期望着，\r\n　　期望着这个窗外的世界。\r\n　　只是期望被他带走而已。\r\n　　这是一个发生在夏末，少女们不断飞落跳下相继自杀的故事。少女们，毫无征兆突发性的从废墟大楼的屋顶\r\n　　上跳向天空，随后落下。等待她们的只有死。\r\n　　这些女孩在学校也并无异常，相互间也并非朋友关系。这些一切毫无关联性，连自杀的理由都找不到，完全无法解释的自杀事件逐一被不断报道。但是唯一只有一个人看出了这事件其中的关联性。\r\n　　这个人就是最高位的人偶师、也是一位没有成为魔法使的魔术师 —— 苍崎澄子。\r\n　　或许……“没有理由”就是他们的共通点，其次就是浮游与飞行的差别。\r\n　　而搜索调查这个连续自杀事件的人就是拥有能看见事间万物之死线能力“直死之魔眼”的两仪式。\r\n　　对她而言，有一个与此事件不得不关联起来的理由——\r\n　　与其说自身这种并不想要获得的能力（直死之魔眼），更令她在意的是用她的眼睛就这样捕捉到了在虚空中飞舞的少女们的幽灵，而这些幽灵到底又在想什么呢？\r\n　　假设，这或许是到达相同道路同胞们的哀怜，也或者是同族的嫌恶。\r\n　　假设，这或许是来自威胁某种重要存在之人的敌意。\r\n　　换句话说，这是明确的杀意。\r\n　　式就这样前往了那个可怜的大楼现场，而那里等着她的是谁都不知道的，展开着重重包围圈套的序章。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/e1/65/233_x22mT.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/e1/65/233_x22mT.jpg",
+        "year": 2007,
+        "startDate": "2007-12-01",
+        "ratingRank": 309,
+        "ratingTotal": 11824,
+        "metadataFetched": true
       }
     ]
   },
@@ -3247,7 +5319,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "国王排名",
         "cacheKey": "import-metadata-v1:182e9b8237bd49b8bf7d",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "国王排名",
+        "titleJa": "王様ランキング",
+        "titleEn": "Ranking of Kings",
+        "description": "国家的丰饶程度，拥有的强者数量，以及国王本人是否像勇者一样强大，将这些综合起来进行的排名就是“国王排名”。\r\n主人公波吉，是国王排名第7名的伯斯王所统治的王国的第一王子。然而，波吉生来就失聪，身体孱弱得举不起剑，不光家臣，就连民众都蔑视他“不是当国王的料”。这样的波吉交到了第一个朋友，卡克。\r\n随着与卡克的相遇，以及一点点小小的勇气，波吉的人生迈出一大步——",
+        "cover": "https://lain.bgm.tv/pic/cover/l/9a/c1/296109_8GeaM.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/9a/c1/296109_8GeaM.jpg",
+        "year": 2021,
+        "startDate": "2021-10-14",
+        "ratingRank": 9829,
+        "ratingTotal": 6891,
+        "metadataFetched": true
       }
     ]
   },
@@ -3265,7 +5348,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "战斗员派遣中",
         "cacheKey": "import-metadata-v1:ac691743c47ee2cc6ad7",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "派遣战斗员！",
+        "titleJa": "戦闘員、派遣します！",
+        "titleEn": "Sentouin, Hakenshimasu!",
+        "description": "秘密結社キサラギ。 今や地球上の誰もが知る大企業は、自ら悪の組織と名乗ってさまざまな悪事に手を染め、\r\nヒーローたちを打ち倒し、ついに世界征服を成し遂げようとしていた。  しかし、世界を手に入れれば大勢の戦闘員たちは不要になってしまう。 このリストラ問題を解決すべく、キサラギの最高幹部たちは\r\n新たな侵略先として宇宙に狙いを定める。  そして地球によく似た環境の惑星へ、 「戦闘員六号」と美少女型アンドロイドの「キサラギ＝アリス」を派遣するが、 現地の人々は“魔王軍”の侵略を受けていて――。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/99/dc/302190_1NJ2Z.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/99/dc/302190_1NJ2Z.jpg",
+        "year": 2021,
+        "startDate": "2021-04-04",
+        "ratingRank": 6158,
+        "ratingTotal": 4308,
+        "metadataFetched": true
       }
     ]
   },
@@ -3283,7 +5377,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "约定的梦幻岛",
         "cacheKey": "import-metadata-v1:fd58ad3c06f6aa65279c",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "约定的梦幻岛",
+        "titleJa": "約束のネバーランド",
+        "titleEn": "Yakusoku no Nebārando",
+        "description": "仰慕的母亲并非亲生母亲。一起生活的他们并非兄弟。\r\nGrace=Field House是没有父母的孩子们居住的地方。虽然没有血缘关系，但妈妈和38个兄弟都度过了幸福的每一天，这是不可替代的家。\r\n但是，他们的日常在某一天突然宣告结束……",
+        "cover": "https://lain.bgm.tv/pic/cover/l/ff/49/243916_XXJsd.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/ff/49/243916_XXJsd.jpg",
+        "year": 2019,
+        "startDate": "2019-01-10",
+        "ratingRank": 764,
+        "ratingTotal": 12000,
+        "metadataFetched": true
       }
     ]
   },
@@ -3301,7 +5406,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "盾之勇者成名录",
         "cacheKey": "import-metadata-v1:ff3acd383537f767558b",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "盾之勇者成名录",
+        "titleJa": "盾の勇者の成り上がり",
+        "titleEn": "Tate no Yuusha no Nariagari",
+        "description": "极为平凡的御宅族大学生·岩谷尚文，受到在图书馆发现的一本书所引导，被召唤到了异世界。他被赋予的使命，是作为装备着剑、枪、弓、盾的四圣勇者之一“盾之勇者”，驱逐给世界带来混沌的灾害“波”。因为大冒险而心潮澎湃，和同伴一同踏上旅程的尚文。但，他刚出发没几天就遭到背叛，金钱和立场全都失去。变得无法相信他人的尚文，驱使着奴隶少女·拉芙塔莉雅，向波和世界发起对抗——。究竟他能否打破这种绝望的状况？失去一切的男人的成名奇幻故事，开幕。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/b9/9b/217660_h3554.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/b9/9b/217660_h3554.jpg",
+        "year": 2019,
+        "startDate": "2019-01-09",
+        "ratingRank": 8878,
+        "ratingTotal": 8074,
+        "metadataFetched": true
       }
     ]
   },
@@ -3319,7 +5435,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 85,
         "query": "阿宅的恋爱有点难",
         "cacheKey": "import-metadata-v1:a991c512bc60bf91abcc",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "宅男腐女恋爱真难",
+        "titleJa": "ヲタクに恋は難しい",
+        "titleEn": "Wotaku ni Koi wa Muzukashii",
+        "description": "桃濑成海是一个深藏腐女属性的OL，不过在情场上十分失意。 而二藤宏嵩是桃濑的青梅竹马，虽然是个彻头彻尾的死宅，但是长着一副英俊的面孔带着酷冷的形象。 在桃濑情场失意时作为青梅竹马的二藤迅速拉近了与桃濑的感情距离，一脸淡然的告白之后正式交往……",
+        "cover": "https://lain.bgm.tv/pic/cover/l/65/a5/220312_ErRl1.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/65/a5/220312_ErRl1.jpg",
+        "year": 2018,
+        "startDate": "2018-04-12",
+        "ratingRank": 4533,
+        "ratingTotal": 5528,
+        "metadataFetched": true
       }
     ]
   },
@@ -3337,7 +5464,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "我，不是说了能力要平均值么！",
         "cacheKey": "import-metadata-v1:831249784f21fbd405cb",
-        "hintSignature": "[\"我，不是说了能力要平均值么！\"]"
+        "hintSignature": "[\"我，不是说了能力要平均值么！\"]",
+        "titleZh": "我，不是说了能力要平均值么！",
+        "titleJa": "私、能力は平均値でって言ったよね！",
+        "titleEn": "Watashi, Nouryoku wa Heikinchi de tte Itta yo ne!",
+        "description": "因为是个比普通人稍显优秀的孩子，而无法过上理想生活的、孤独的女高中生栗原海里。\r\n在一次事故中转生到异世界的她，想普通地交朋友，想过上普通的生活，怀着这样的心愿，向神许下了一个愿望。\r\n“能力的话，请给我这个世界的平均值！”\r\n可是，被神授予的并不是“平均的能力”……。\r\n在魔法存在的世界里，获得新生的少女追求“普通的幸福”而大奋斗！\r\n魔法师烈娜、想要成为剑士的梅维丝、以及商人的女儿珀琳，从与她们的相遇起，少女麦露的新异世界生活开始了！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/2e/97/238962_JPj2j.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/2e/97/238962_JPj2j.jpg",
+        "year": 2019,
+        "startDate": "2019-10-07",
+        "ratingRank": 8020,
+        "ratingTotal": 4719,
+        "metadataFetched": true
       }
     ]
   },
@@ -3355,7 +5493,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 131,
         "query": "好比是最终迷宫前的少年到新手村生活一般的故事",
         "cacheKey": "import-metadata-v1:e39de186ccb4dc7357cf",
-        "hintSignature": "[\"好比是最终迷宫前的少年到新手村生活一般的故事\"]"
+        "hintSignature": "[\"好比是最终迷宫前的少年到新手村生活一般的故事\"]",
+        "titleZh": "好比是最终迷宫前的少年到新手村生活一般的故事",
+        "titleJa": "たとえばラストダンジョン前の村の少年が序盤の街で暮らすような物語",
+        "titleEn": "Tatoeba Last Dungeon Mae no Mura no Shounen ga Joban no Machi de Kurasu Youna Monogatari",
+        "description": "在离都市很远很远的村庄生活的少年·罗伊德。\r\n怀有成为军人的梦想的他，不用隐瞒，是“村里最弱的男人”。\r\n对于这样的他却以军人为目标，周围的村民很反对。\r\n然而罗伊德的决意很坚定，踏上了前往王都的旅途。\r\n可是，包括他在内的村里的许多人都不知道某个重要的事实。\r\n自己是过去拯救了世界的英雄的后裔，\r\n全员都拥有远超普通人类的力量。\r\n而“村里最弱”的罗伊德也基本上可以说是超越常理地强大……。\r\n\r\n身体能力出众超群！\r\n    也通晓古代魔法！\r\n        就连家务也样样精通！\r\n\r\n不知自己的强大的村民们带来的\r\n    无自觉最强幻想故事，在这里开幕！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/98/e5/293193_39LES.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/98/e5/293193_39LES.jpg",
+        "year": 2021,
+        "startDate": "2021-01-04",
+        "ratingRank": 9545,
+        "ratingTotal": 2457,
+        "metadataFetched": true
       }
     ]
   },
@@ -3368,12 +5517,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/40339",
         "platform": "TV",
-        "totalEpisodes": 12,
+        "totalEpisodes": 18,
         "rating": 5.9,
         "confidence": 135,
         "query": "就算是哥哥只要有爱就没问题对吧",
         "cacheKey": "import-metadata-v1:10177214c7678d0ae2d8",
-        "hintSignature": "[\"就算是哥哥只要有爱就没问题对吧\"]"
+        "hintSignature": "[\"就算是哥哥只要有爱就没问题对吧\"]",
+        "titleZh": "就算是哥哥只要有爱就没问题对吧",
+        "titleJa": "お兄ちゃんだけど愛さえあれば関係ないよねっ",
+        "titleEn": "OniAi",
+        "description": "原本因为家庭因素而不得不分居的姬小路家兄妹，如今终于能重逢并住在同一屋檐下。面对恋兄情结严重的妹妹秋子强势相逼，身为哥哥的秋人到底该怎么处理呢？\r\n　　除此之外，绰号『捕食者』的学生会长、冰山美人的副会长竟然也加入了争夺秋人的行列，看来未来于新学校的校园生活也不可能平静度过。一场激烈的男主角争夺战即发！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/87/0c/40339_8c78Q.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/87/0c/40339_8c78Q.jpg",
+        "year": 2012,
+        "startDate": "2012-10-05",
+        "ratingRank": 7985,
+        "ratingTotal": 4528,
+        "metadataFetched": true
       }
     ]
   },
@@ -3391,7 +5551,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "更衣人偶坠入爱河",
         "cacheKey": "import-metadata-v1:99e1d3a14394a39f2c0e",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "更衣人偶坠入爱河",
+        "titleJa": "その着せ替え人形は恋をする",
+        "titleEn": "Sono Kisekae Ningyou wa Koi wo suru",
+        "description": "制作着女儿节娃娃，以成为娃娃工匠为目标的男高中生五条新菜。\r\n他专心一志地制作女儿娃娃，却也因此疏离的同世代的流行，迟迟无法融入班级。\r\n对这样的新菜来说，总是身处班上团体的中心，大受欢迎的喜多川海梦就像是不同世界的人一样。\r\n但就在某天，以意想不到的事情为契机，与海梦拥有了共同的秘密。\r\n原以为两人绝对不会有交集的世界开始转动了起来。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/9c/4d/333158_PA0F4.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/9c/4d/333158_PA0F4.jpg",
+        "year": 2022,
+        "startDate": "2022-01-08",
+        "ratingRank": 1696,
+        "ratingTotal": 16593,
+        "metadataFetched": true
       }
     ]
   },
@@ -3404,12 +5575,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/239816",
         "platform": "TV",
-        "totalEpisodes": 24,
+        "totalEpisodes": 25,
         "rating": 6.6,
         "confidence": 85,
         "query": "关于我转生史莱姆",
         "cacheKey": "import-metadata-v1:725c03ec26cc0fa323e6",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "关于我转生变成史莱姆这档事",
+        "titleJa": "転生したらスライムだった件",
+        "titleEn": "Tensei Shitara Suraimu datta Ken",
+        "description": "史莱姆生活，开始了。\r\n上班族的三上悟在道路上被歹徒给刺杀身亡后，回过神来发现自己转生到了异世界。\r\n不过，自己居然是“史莱姆”！\r\n他在得到利姆露这个名字后开始了自己的史莱姆人生，随着与各个种族相处交流的过程中，他定下了一个目标——那就是“建立一个任何种族都能愉快地一起生活的国家”！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/7b/d6/239816_BbNdb.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/7b/d6/239816_BbNdb.jpg",
+        "year": 2018,
+        "startDate": "2018-10-01",
+        "ratingRank": 4408,
+        "ratingTotal": 14074,
+        "metadataFetched": true
       },
       {
         "inputTitle": "剧场版 红莲之绊",
@@ -3422,7 +5604,17 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 85,
         "query": "剧场版 红莲之绊",
         "cacheKey": "import-metadata-v1:957364a6a30627466673",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "天元突破红莲螺岩 螺岩篇",
+        "titleJa": "劇場版 天元突破グレンラガン 螺巌篇",
+        "description": "剧场版第2部。2009年4月25日上映。主要剧情为TV第15-27话的总集编，并对大红莲团对战反螺旋族的部分进行了重新演绎。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/43/e0/3996_YC2Qp.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/43/e0/3996_YC2Qp.jpg",
+        "year": 2009,
+        "startDate": "2009-04-25",
+        "ratingRank": 152,
+        "ratingTotal": 4098,
+        "metadataFetched": true
       },
       {
         "inputTitle": "彩叶草之梦",
@@ -3435,7 +5627,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 126,
         "query": "关于我转生变成史莱姆这档事 彩叶草之梦",
         "cacheKey": "import-metadata-v1:b57d67583512fd2732a9",
-        "hintSignature": "[\"关于我转生变成史莱姆这档事 彩叶草之梦\"]"
+        "hintSignature": "[\"关于我转生变成史莱姆这档事 彩叶草之梦\"]",
+        "titleZh": "关于我转生变成史莱姆这档事 柯里乌斯之梦",
+        "titleJa": "転生したらスライムだった件 コリウスの夢",
+        "titleEn": "Tensei Shitara Slime Datta Ken: Coleus no Yume",
+        "description": "時間線回到第一季特別篇與第二季之間，在成功拯救英格拉西亞的孩子們之後，利姆路繼續過著短暫的教師生活。某一天，自由公會的公會長優樹向利姆路提出了一項委託。委託的內容是調查，被夾在英格拉西亞王國及神聖法皇國魯貝利歐斯之間的「柯里烏斯王國」中，所爆發的王位繼承之爭的內情。利姆路以「阿悟」這個名字潛入柯里烏斯王國展開搜查。然而，事件的內情並非單純的王位繼承之爭，其中更牽扯到惡魔及吸血鬼的陰謀，情況變得愈發混亂——！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/fc/78/421174_nlx3z.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/fc/78/421174_nlx3z.jpg",
+        "year": 2023,
+        "startDate": "2023-11-01",
+        "ratingRank": 8030,
+        "ratingTotal": 1283,
+        "metadataFetched": true
       }
     ]
   },
@@ -3453,7 +5656,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "夏日幻魂",
         "cacheKey": "import-metadata-v1:7fa916256fa59990ac19",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "夏日幽灵",
+        "titleJa": "サマーゴースト",
+        "titleEn": "Summer Ghost",
+        "description": "「サマーゴーストって知ってる？」\r\n\r\nネットを通じて知り合った高校生、友也・あおい・涼。\r\n都市伝説として囁かれる“通称：サマーゴースト”は若い女性の幽霊で、花火をすると姿を現すという。\r\n\r\n自身が望む人生へ踏み出せない\"友也\"\r\n居場所を見つけられない\"あおい\"\r\n輝く未来が突然閉ざされた\"涼\"\r\n彼等にはそれぞれ、サマーゴーストに会わなくてはならない理由があった。生と死が交錯する夏の夜、各々の想いが向かう先はー。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/7a/60/328674_5EIi5.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/7a/60/328674_5EIi5.jpg",
+        "year": 2021,
+        "startDate": "2021-11-12",
+        "ratingRank": 2969,
+        "ratingTotal": 4466,
+        "metadataFetched": true
       }
     ]
   },
@@ -3471,7 +5685,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 131,
         "query": "终末的后宫",
         "cacheKey": "import-metadata-v1:45dcd14c867b2e9b6606",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "终末的后宫",
+        "titleJa": "終末のハーレム",
+        "titleEn": "World's End Harem",
+        "description": "时间在不远的未来——2040年的日本东京。\r\n患有某种疑难杂症的青年·怜人发誓要与儿时的玩伴绘理沙再会，为了治病而进行“冷冻睡眠”。\r\n5年后醒来，世界发生了巨大的变化。\r\nMK (Male Killer)病毒导致地球上99.9%的男性死亡。\r\n地球上每5个男人就有50亿女性存在，成为超级后宫。\r\n拥有MK病毒抵抗力的男性“号码”只有5人。\r\n作为其中一人的怜人，被要求和剩下的女性们为了人类的存续而“交配”。\r\n在大流行性感染病后的世界的后宫生活。\r\n同时，怜人被卷入了一场围绕“号码”的全球性阴谋。\r\n能克服蜂拥而至的诱惑，拯救世界吗？\r\n\r\n*MK (Male Killer)病毒，其名字来源于在1999年出版的电影《灭绝杀阵/The Last Man On Planet Earth》（地球上最后一个男人）。\r\n劇中因為戰爭的緣故，美國使用專門針對Y染色體製造的生化武器，原本只是想消滅敵國的男人，沒想到生化武器的效果太強，擴散到全世界，殺死了全世界97%的男人。事後女人開始掌權，她們認為男人是社會亂源、戰爭製造者，迫害和追殺倖存的男人。\r\n女生可以運用生物科技單體繁殖，女性掌權者只允許女同性戀存在的世界。\r\n------------------------------------------------------\r\nLINK老師(漫畫劇本原作者)應該有參考這部電影，差別在於讓男人開後宮。\r\n在單行本第2集，女主角遺留給男主角的影音檔案提到，MK病毒有可能是人為災害。\r\n\r\n個人推測MK病毒可能是女人、男人、外星人發明的。\r\n女人發明的推測原因：\r\n1.從小被男人家暴、性侵、霸凌，長大後被男人外遇、家暴，對男人非常痛恨。\r\n2.極端的女同性戀團體覺得男人很礙眼。\r\n男人發明的推測原因：\r\n1.如電影《滅絕殺陣/The Last Man On Planet Earth》。\r\n2.沒異性緣的男人，想把其他男人殺光獨佔女人，結果卻弄巧成拙。\r\n外星人發明的推測原因：\r\n為了佔領地球，先消滅人類，但是生化武器是瑕疵品。\r\n\r\n怜人(男主角)之後的遭遇，很有可能被神秘組織綁架和追殺，話說怜人為了心愛的青梅竹馬而守身，遲遲不肯交配，女性掌權組織直接暗中對他下春藥，問題不就解決了！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/f3/0b/306559_e2B8b.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/f3/0b/306559_e2B8b.jpg",
+        "year": 2022,
+        "startDate": "2022-01-07",
+        "ratingRank": 9665,
+        "ratingTotal": 2303,
+        "metadataFetched": true
       }
     ]
   },
@@ -3489,7 +5714,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 131,
         "query": "双星之阴阳师",
         "cacheKey": "import-metadata-v1:59bad6ab8a69bc4e03bb",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "双星之阴阳师",
+        "titleJa": "双星の陰陽師",
+        "titleEn": "Sousei no Onmyouji",
+        "description": "存在于现代另一侧的祸野，是异形的怪物“污秽”栖息之地。将其祓除并保护人类的，则是阴阳师。拥有才能却拒绝成为阴阳师的焰魔堂辘轳，在神的谕示下获得了被授予阴阳师夫妇的“双星”之称号。同样成为双星的化野红绪，是以祓除全部污秽为理想的少女。在身为双星而被卷入战斗的同时，将一心希望变强而持续战斗的红绪一直看在眼里的辘轳，也开始正视自己从“雏月之悲剧”以来不断逃离战斗的那份软弱。在红绪的刺激下，辘轳直面自己一直逃避的过去，并决定再次以阴阳师的身份战斗，两人共同以“双星之阴阳师”的身份，向强大的污秽发起挑战！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/c7/e0/155778_SgSmS.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/c7/e0/155778_SgSmS.jpg",
+        "year": 2016,
+        "startDate": "2016-04-06",
+        "ratingRank": 8462,
+        "ratingTotal": 2186,
+        "metadataFetched": true
       }
     ]
   },
@@ -3507,7 +5743,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "声之形",
         "cacheKey": "import-metadata-v1:25a268f405c4436ff357",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "声之形",
+        "titleJa": "聲の形",
+        "titleEn": "Eiga Koe no Katachi",
+        "description": "无比厌恶“无聊”的少年，石田将也。\r\n　　小学时期是个孩子王的他，对转校而来的少女西宫硝子产生了兴趣。\r\n　　在她到来后，少年无聊的日子得到了解放。\r\n　　然而，以硝子身上的某件事为契机，将也被周围孤立了起来。\r\n　　而后经过了五年的时间，两人在不同的高中各自成长。\r\n　　机缘巧合之下，紧紧封闭自己内心的将也再次见到了硝子。\r\n　　这是一个少年，试图接受少女、周围的人们，并接受自己的故事。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/7c/b9/117777_R8hhl.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/7c/b9/117777_R8hhl.jpg",
+        "year": 2016,
+        "startDate": "2016-09-17",
+        "ratingRank": 2275,
+        "ratingTotal": 16202,
+        "metadataFetched": true
       }
     ]
   },
@@ -3525,7 +5772,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 134,
         "query": "入间同学入魔了",
         "cacheKey": "import-metadata-v1:d5d5d95578d92ce053ff",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "入间同学入魔了",
+        "titleJa": "魔入りました！入間くん",
+        "titleEn": "Mairimashita! Iruma-kun",
+        "description": "无法拒绝任何拜托的老好人铃木入间，是个从1岁开始就踏入社会、为了金钱东奔西走、在修罗场求生的十四岁少年，他的父母为了金钱将他卖给了恶魔！阴差阳错之下他签下了恶魔契约、进入了恶魔学院、成为了特待生，并且即将与学院第一的新生代表决斗——",
+        "cover": "https://lain.bgm.tv/pic/cover/l/6a/b9/273844_JQ26Q.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/6a/b9/273844_JQ26Q.jpg",
+        "year": 2019,
+        "startDate": "2019-10-05",
+        "ratingRank": 5125,
+        "ratingTotal": 3911,
+        "metadataFetched": true
       }
     ]
   },
@@ -3543,7 +5801,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "公主连结",
         "cacheKey": "import-metadata-v1:b5775fdbe92a5e03ddd2",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "公主连结 Re:Dive",
+        "titleJa": "プリンセスコネクト！Re:Dive",
+        "titleEn": "プリンセスコネクト！Re:Dive",
+        "description": "和风吹拂的美丽大地·阿斯特雷亚大陆。\r\n在大陆的一角，失去记忆的少年·佑树醒了过来。\r\n照顾他的小小向导·可可萝。\r\n总是肚子空空的美少女剑士·佩可莉姆。\r\n略显高冷的猫耳魔法少女·凯露。\r\n他们就这么在命运引导下，建立起名为「美食殿」的公会。\r\n现在，佑树与她们的冒险即将开幕——",
+        "cover": "https://lain.bgm.tv/pic/cover/l/b0/09/274646_yTEYw.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/b0/09/274646_yTEYw.jpg",
+        "year": 2020,
+        "startDate": "2020-04-06",
+        "ratingRank": 5445,
+        "ratingTotal": 6273,
+        "metadataFetched": true
       }
     ]
   },
@@ -3561,7 +5830,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "后街女孩",
         "cacheKey": "import-metadata-v1:5d7c3c0fd10abff13940",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "后街女孩",
+        "titleJa": "Back Street Girls -ゴクドルズ-",
+        "titleEn": "Back Street Girls -ゴクドルズ-",
+        "description": "「ヤングマガジン」（講談社）にて大人気連載中の\r\n『Back Street Girls －ゴクドルズ－』（ジャスミン・ギュ著）\r\nがまさかのアニメ化！\r\n極道渡世に身も心も捧げた生粋の極道3人が、\r\n性転換＆全身整形してアイドルデビューすることに！\r\n仁義なきアイドル渡世コメディ！\r\nかわゆいアイドルに姿かたちは変われども、\r\n身にしみついた極道の生き方が行く先々で\r\n嵐を巻き起こす！？\r\n\r\n在《周刊Young Magazine》（讲谈社）超人气连载的\r\n《Back Street Girls－后街女孩－》（Jasmine Gyu 著）\r\n居然宣布动画化！\r\n三位将身心献给黑道事业的纯血极道分子，\r\n竟要通过变性手术&全身整形成为偶像出道！\r\n这部不讲江湖道义的偶像生存喜剧！\r\n虽然外表变成了萌系偶像，\r\n但刻在DNA里的极道作风\r\n每到一处都会引发腥风血雨！？",
+        "cover": "https://lain.bgm.tv/pic/cover/l/5d/10/231278_FrbN1.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/5d/10/231278_FrbN1.jpg",
+        "year": 2018,
+        "startDate": "2018-07-03",
+        "ratingRank": 4976,
+        "ratingTotal": 5826,
+        "metadataFetched": true
       }
     ]
   },
@@ -3579,7 +5859,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "天才王子的赤字国家振兴术",
         "cacheKey": "import-metadata-v1:4463a86d236aa53ef2be",
-        "hintSignature": "[\"天才王子的赤字国家振兴术\"]"
+        "hintSignature": "[\"天才王子的赤字国家振兴术\"]",
+        "titleZh": "天才王子的赤字国家振兴术",
+        "titleJa": "天才王子の赤字国家再生術",
+        "titleEn": "tensaiouji",
+        "description": "暴露在霸权国家威胁下的小国：纳特拉王国。\r\n年纪轻轻就背负国家重担的王子维恩在辅佐官妮妮姆的支持下，发挥自身的天赋，开始施展精明的手段。\r\n可是，这个国家……已经彻底没救了！\r\n想要革新内政却没钱。想要向外夺取却没有军力。靠谱的优秀人才全都流失到了国外。\r\n真想赶紧把国家卖了跑路啊。\r\n维恩的心愿是卖掉国家，尽早退隐，过上悠闲自在的生活。若是能讨好大国，应该就能把国家卖出去。然而外交与军事却向出乎意料的方向发展……\r\n依靠智慧与临机应变影响世界\r\n天才王子运营弱小国家，就此开幕！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/26/e2/326868_Kb630.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/26/e2/326868_Kb630.jpg",
+        "year": 2022,
+        "startDate": "2022-01-11",
+        "ratingRank": 7668,
+        "ratingTotal": 5617,
+        "metadataFetched": true
       }
     ]
   },
@@ -3597,7 +5888,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "装甲重拳",
         "cacheKey": "import-metadata-v1:f6dc644ff8cf5e9e4e21",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "MEGALO BOX",
+        "titleJa": "メガロボクス",
+        "titleEn": "MEGALO BOX",
+        "description": "将肉体与“外骨骼技术”融合的究极格斗技——“MEGALO BOX”，将自己的全部赌在上面的男人们的热血战斗开始！\r\n今天也立于未认可地区的赌博比赛赛场上的MEGALO拳击手“Junk Dog”。虽然具备实力，却只有靠比赛造假赚钱这一条生存之道，他为自己的“现在”感到心焦。\r\n但，他与孤高的冠军·勇利相遇，作为MEGALO拳击手，作为男人，向自己的“现在”发起挑战——。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/50/29/227718_50fU0.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/50/29/227718_50fU0.jpg",
+        "year": 2018,
+        "startDate": "2018-04-05",
+        "ratingRank": 656,
+        "ratingTotal": 9266,
+        "metadataFetched": true
       }
     ]
   },
@@ -3615,7 +5917,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "路人女主的养成方法",
         "cacheKey": "import-metadata-v1:5d89acb4216f3734eec2",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "路人女主的养成方法",
+        "titleJa": "冴えない彼女の育てかた",
+        "titleEn": "Saenai Heroine no Sodatekata",
+        "description": "春假时，为了购买动画蓝光片而打工的御宅族安艺伦也，在开满樱花的坡道上邂逅一位少女，帮她捡一顶被风吹走的帽子。于是有了以该少女为女主角制作同人游戏的构想。一个月后，才知道该少女是他的同班同学，名叫加藤惠。\r\n\r\n为了制作游戏，安艺伦也还要说服同年级美术部的绘画高手泽村·史宾瑟·英梨梨，以及优等生学姐霞之丘诗羽和加藤惠共组同人游戏社团，开始同人游戏的制作。之后又有波岛出海及擅长音乐的冰堂美智留等人的加入。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/6b/01/100403_R8KN2.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/6b/01/100403_R8KN2.jpg",
+        "year": 2015,
+        "startDate": "2015-01-08",
+        "ratingRank": 1684,
+        "ratingTotal": 19600,
+        "metadataFetched": true
       },
       {
         "inputTitle": "fine剧场版",
@@ -3628,7 +5941,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "路人女主的养成方法 Fine",
         "cacheKey": "import-metadata-v1:f025c2ea73159b658ced",
-        "hintSignature": "[\"路人女主的养成方法 Fine\"]"
+        "hintSignature": "[\"路人女主的养成方法 Fine\"]",
+        "titleZh": "路人女主的养成方法 Fine",
+        "titleJa": "冴えない彼女の育てかた Fine",
+        "titleEn": "冴えない彼女の育てかた Fine",
+        "description": "某个春天的日子，安艺伦也决定做一部以在樱花飞舞的坡道上命中注定般相遇的少女——加藤惠为女主角的同人游戏。邀请了加入了美术部、作为同人插画家活动的泽村·斯潘塞·英梨梨，以及学年第一的优等生、作为轻小说作家活跃的霞之丘诗羽，成立了blessing software。终于发表了第一部作品。\r\n英梨梨和诗羽为了开发游戏大作《Fields Chronicle》，来到了人气创作者红坂朱音的身边。blessing software的代表伦也继续进行社团活动，与副代表惠一起开始了新作的开发。启用学妹波岛出海为插画师，委托出海的哥哥——伊织为制作人，和冰堂美智留以及她的乐队——icy tail一起进行新作的开发……\r\n英梨梨和诗羽的大作究竟如何？伦也和惠的关系有什么异变？blessing software究竟将去向何方？围绕路人女主的青春涂鸦，迎来大结局。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/8b/4c/231497_tZxtU.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/8b/4c/231497_tZxtU.jpg",
+        "year": 2019,
+        "startDate": "2019-10-26",
+        "ratingRank": 487,
+        "ratingTotal": 11346,
+        "metadataFetched": true
       }
     ]
   },
@@ -3641,12 +5965,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/183878",
         "platform": "TV",
-        "totalEpisodes": 13,
+        "totalEpisodes": 14,
         "rating": 7.6,
         "confidence": 135,
         "query": "紫罗兰永恒花园",
         "cacheKey": "import-metadata-v1:2d22ebbb7f5f802bbfa2",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "紫罗兰永恒花园",
+        "titleJa": "ヴァイオレット・エヴァーガーデン",
+        "titleEn": "Violet Evergarden",
+        "description": "某个大陆的、某个时代。\r\n大陆南北分割的战争结束了，世界逐渐走向了和平。\r\n在战争中、作为军人而战斗的薇尔莉特·伊芙加登离开了军队，来到了大港口城市。怀抱着战场上一个对她而言比谁都重要的人告诉了她“某个话语”――。\r\n街道上人群踊跃，有轨电车在排列着煤气灯的马路上穿梭着。薇尔莉特在街道上找到了“代写书信”的工作。那是根据委托人的想法来组织出相应语言的工作。\r\n她直面着委托人、触碰着委托人内心深处的坦率感情。与此同时，薇尔莉特在记录书信时，那一天所告知的那句话的意思也逐渐接近了。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/1e/e2/183878_Fef1o.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/1e/e2/183878_Fef1o.jpg",
+        "year": 2018,
+        "startDate": "2018-01-10",
+        "ratingRank": 781,
+        "ratingTotal": 21829,
+        "metadataFetched": true
       }
     ]
   },
@@ -3664,7 +5999,17 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "伪恋",
         "cacheKey": "import-metadata-v1:2db6259eaeebf60f5570",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "伪恋",
+        "titleJa": "ニセコイ",
+        "description": "虽然看上去平凡无奇，但其实是流氓第二代的高中生·一条乐，遇上了转学到班上的美国黑帮大小姐·桐崎千棘。个性合不來的两人，总是天天吵架。但此时，双方的父亲，却要他们为了使双方家族能和平相处，假装成一对恋人？虽然乐其实喜欢同班同学·小野寺，但迫于现实无奈的两人，还是心不甘情不愿地开始了咬牙切齿、动手动脚的「甜蜜」生活…",
+        "cover": "https://lain.bgm.tv/pic/cover/l/98/71/74628_8HHlL.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/98/71/74628_8HHlL.jpg",
+        "year": 2014,
+        "startDate": "2014-01-11",
+        "ratingRank": 2299,
+        "ratingTotal": 11147,
+        "metadataFetched": true
       }
     ]
   },
@@ -3682,7 +6027,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "租借女友",
         "cacheKey": "import-metadata-v1:264b3454484a857f8e88",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "租借女友",
+        "titleJa": "彼女、お借りします",
+        "titleEn": "Kanojo, Okarishimasu",
+        "description": "20岁的废柴大学生——木之下和也。和初恋女友仅接吻了一次，可只过了一个月就被甩了。\r\n“啊……不行了……感觉什么都不行了……”\r\n自暴自弃的和也，使用了“某种方法”，和女孩子去约会了。到了碰头的地点——\r\n“你是和也，对吧？”\r\n一边将飘逸的黑发挂于耳后，一边看着和也的脸的美少女水原千鹤露出了微笑。\r\n在仅有一次的租赁中，有着闪耀光辉的真实！恋爱×心动MAX的冒失恋爱故事，揭幕！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/7a/37/296076_6cP6Q.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/7a/37/296076_6cP6Q.jpg",
+        "year": 2020,
+        "startDate": "2020-07-10",
+        "ratingRank": 8911,
+        "ratingTotal": 6662,
+        "metadataFetched": true
       }
     ]
   },
@@ -3700,7 +6056,17 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "齐木楠雄的灾难",
         "cacheKey": "import-metadata-v1:bf4fa748d7e3bc96cbea",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "齐木楠雄的灾难",
+        "titleJa": "斉木楠雄のΨ難",
+        "description": "高中生·齐木楠雄是超能力者。心灵感应、念动力、透视、预知、瞬间移动、千里眼等，不论任何事情都自由自在。但这任谁都羡慕不已的最强能力，实际上对于本人而言是引来灾难的不幸元凶。因此，他在别人面前封印了超能力，以不起眼、不和他人有所牵扯为信条，默默无闻地过日子。但不知为何，他的身边总是聚集着不可思议的人类（生物），风暴般的灾难接连不断地降临！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/b3/28/181354_smUU3.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/b3/28/181354_smUU3.jpg",
+        "year": 2016,
+        "startDate": "2016-07-10",
+        "ratingRank": 484,
+        "ratingTotal": 15704,
+        "metadataFetched": true
       }
     ]
   },
@@ -3718,7 +6084,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "炎炎消防队",
         "cacheKey": "import-metadata-v1:5fcdb4497f1e060e62ee",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "炎炎消防队",
+        "titleJa": "炎炎ノ消防隊",
+        "titleEn": "Enen no Shouboutai",
+        "description": "全人类恐慌着——\r\n没有任何变异的人突然燃烧起来，变成火炎怪物“焰人”、极尽破坏力的“人体起火现象”。\r\n与火焰之恐怖对抗的特殊消防队，他们的使命是解开现象之谜并拯救人类！\r\n出于某个原因被称为“恶魔”的新入队少年・森罗，以成为“英雄”为目标，与伙伴们一起，投身于与火焰对抗的日子中！！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/e5/f5/266372_2E8SA.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/e5/f5/266372_2E8SA.jpg",
+        "year": 2019,
+        "startDate": "2019-07-05",
+        "ratingRank": 5361,
+        "ratingTotal": 4276,
+        "metadataFetched": true
       }
     ]
   },
@@ -3736,7 +6113,17 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 134,
         "query": "淫乱的青酱不能学习",
         "cacheKey": "import-metadata-v1:73d41900f135d4e2e6f2",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "淫乱的青酱不能学习",
+        "titleJa": "みだらな青ちゃんは勉強ができない",
+        "description": "名字的由来是——\r\n为官能小说家父亲所困扰的女高中生·小青，为了实现一人独居的愿望，以难关大学为目标拼命学习中。“青春？男女交往？那种事情才不知道！”……但这样的小青，却面对班上的人气者“现充王”木岛难以置信的爱的告白。\r\n面对读不懂气氛的木岛不断逼近，小青把学习丢到一边，色色的妄想完全停不下来！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/7d/87/268412_P63Pf.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/7d/87/268412_P63Pf.jpg",
+        "year": 2019,
+        "startDate": "2019-04-05",
+        "ratingRank": 6897,
+        "ratingTotal": 3640,
+        "metadataFetched": true
       }
     ]
   },
@@ -3749,12 +6136,22 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/236020",
         "platform": "TV",
-        "totalEpisodes": 12,
+        "totalEpisodes": 14,
         "rating": 7.6,
         "confidence": 135,
         "query": "游戏三人娘",
         "cacheKey": "import-metadata-v1:99a74c8546826b93b817",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "来玩游戏吧",
+        "titleJa": "あそびあそばせ",
+        "description": "生在日本长在日本、完全不会说英语的金发美少女·奥莉薇，性格认真、知性洋溢、完全不会说英语的短发眼镜娘·香纯，以及虽然性格开朗却无法成为现充的下双马尾少女·华子，三名初中女生创造出来的是“游戏研究会”！？超级可爱有趣、令人捧腹绝倒的JC女生喜剧现在开幕！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/fb/c2/236020_6wt6b.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/fb/c2/236020_6wt6b.jpg",
+        "year": 2018,
+        "startDate": "2018-07-08",
+        "ratingRank": 674,
+        "ratingTotal": 6058,
+        "metadataFetched": true
       }
     ]
   },
@@ -3772,7 +6169,17 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 132,
         "query": "怪物事变",
         "cacheKey": "import-metadata-v1:c102d72a8de51de591e4",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "怪物事变",
+        "titleJa": "怪物事変",
+        "description": "古来よりこの世の影に潜み、人に見つからぬよう、人と関わり合って生きる“怪物”（けもの）という存在。\r\n彼らの多くは人間の世界に適応し、社会に交じり生活していた。\r\nしかし現代では、人と必要以上に深く関わろうとするケースが多数報告されるようになっていた。\r\n\r\n探偵事務所を営む隠神は、そんな“怪物”たちが起こす怪事件のうちの一つを追い、片田舎のとある村を訪れる。そしてそこで夏羽という少年に出会う——。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/6d/7c/296941_j4dd2.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/6d/7c/296941_j4dd2.jpg",
+        "year": 2021,
+        "startDate": "2021-01-10",
+        "ratingRank": 5475,
+        "ratingTotal": 2728,
+        "metadataFetched": true
       }
     ]
   },
@@ -3790,7 +6197,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "无能力者娜娜",
         "cacheKey": "import-metadata-v1:893af22e6b1b1af30384",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "无能的奈奈",
+        "titleJa": "無能なナナ",
+        "titleEn": "Munou na Nana",
+        "description": "“我能够读懂人心！但是我有点不太会看气氛！请多关照！”\r\n位于孤岛上的奇妙学园。出现在学生中岛七男面前的是转校生柊奈奈。奇妙学园是拥有各种能力的少年少女所聚集的设施。有能够操纵火焰或冰的人、有能在空中自由飞翔的人、有能将空气化为利刃实施攻击的人。学生们为和被称为“人类之敌”的怪物战斗而接受训练。但是，这座岛上却隐藏了很多秘密，可怕的陷阱开始露出獠牙。连续发生了怪异事件。潜藏在学园中的杀人鬼。一个又一个消失的同学们。超出预料的发展。竭尽智力和能力极限的头脑战。以及友情。在激烈戏剧点缀之下，与“人类之敌”的死斗开始！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/02/7e/302418_r262i.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/02/7e/302418_r262i.jpg",
+        "year": 2020,
+        "startDate": "2020-10-04",
+        "ratingRank": 2735,
+        "ratingTotal": 6571,
+        "metadataFetched": true
       }
     ]
   },
@@ -3808,7 +6226,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "少女终末旅行",
         "cacheKey": "import-metadata-v1:504ea1e6619fb19d3f88",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "少女终末旅行",
+        "titleJa": "少女終末旅行",
+        "titleEn": "Shoujo Shuumatsu Ryokou",
+        "description": "距离极尽繁荣与荣华的人类文明迎来末日，已经经过了漫长的岁月。人类几乎死绝，就连生物都消失的迎来末日的世界。复杂建造的都市化作宛如迷宫的废墟，无从整备的机械也渐渐停止了动作。是何时结束的呢，是从何时开始结束的呢，就连这种想法也不复存在的终末世界中，有两位少女漫无目的地持续着旅行。千户与尤莉，今天也乘着爱车Kettenkrad，在废墟当中彷徨。\r\n在终末世界中温暖地求生的后启示录幻想剧，就此开幕。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/c5/8b/218707_DBmO2.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/c5/8b/218707_DBmO2.jpg",
+        "year": 2017,
+        "startDate": "2017-10-06",
+        "ratingRank": 163,
+        "ratingTotal": 16506,
+        "metadataFetched": true
       }
     ]
   },
@@ -3821,12 +6250,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/239912",
         "platform": "TV",
-        "totalEpisodes": 24,
+        "totalEpisodes": 25,
         "rating": 6.7,
         "confidence": 135,
         "query": "CAROLE ＆ TUESDAY",
         "cacheKey": "import-metadata-v1:129642f5590837c385b3",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "CAROLE & TUESDAY",
+        "titleJa": "キャロル＆チューズデイ",
+        "titleEn": "CAROLE & TUESDAY",
+        "description": "自人类迁往新的疆域——火星——已过去50年。这里是一个几乎全由AI建立起的文明时代，而人类则成了消极的享乐者。\r\n\r\n有一个女孩，在首都阿尔巴市坚强地生活着，一边打工一边努力实现成为音乐家的梦想。她总感觉缺少些什么。她的名字是卡罗尔。\r\n有一个女孩，出生在省会赫谢尔市一个富裕的家庭中。她渴望着成为音乐家，但身边人都无法理解她。她觉得自己是世界上最孤独的人。她的名字是朱丝蒂。\r\n\r\n两人偶遇了。\r\n她们禁不住要歌唱，她们禁不住要创作音乐。\r\n只要两人一起的话，就感觉能做到。\r\n\r\n或许，她俩只能在这时代里激起微小的涟漪。\r\n然而长此以往，这涟漪迟早会化作滔天的巨浪。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/50/aa/239912_hCaW2.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/50/aa/239912_hCaW2.jpg",
+        "year": 2019,
+        "startDate": "2019-04-10",
+        "ratingRank": 4022,
+        "ratingTotal": 5195,
+        "metadataFetched": true
       }
     ]
   },
@@ -3844,7 +6284,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 133,
         "query": "你与我最后的战场，亦或是世界起始的圣战",
         "cacheKey": "import-metadata-v1:03a91ec25468eca7d297",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "你与我最后的战场，亦或是世界起始的圣战",
+        "titleJa": "キミと僕の最後の戦場、あるいは世界が始まる聖戦",
+        "titleEn": "Kimi to Boku no Saigo no Senjou, Arui wa Sekai ga Hajimaru Seisen",
+        "description": "高度发展科学技术被称为机械驱动的理想乡的“帝国”，以及驱使超自然力量的以“魔女之国”威名受到世人畏惧的“涅比利斯皇厅”。在持续了百年以上战争的两国战场上，有着两位英雄。\r\n以史上最年轻之姿晋升为帝国最强战力的剑士·伊思卡，以及有着“寒冰魔女”称号的涅比利斯皇厅公主·爱丽丝莉洁。\r\n在战场上相遇的两人，以宿敌的身份展开了廝杀。为了保护国家、家人、同伴们，两人都抱有相互无法退让的矜持碰撞到一起。\r\n然而，在激斗过程中两人逐渐地了解对方的内心，都相互地被对方的生存之道和理想信念所吸引。即便两人心中都十分清楚无法并肩而行，能做的唯有战斗至其中一方倒下为止而已。\r\n而世界似乎也在嘲笑两人的残酷命运，两国之间形势逐日变得更加紧张，交织在各种阴谋策略之中。\r\n在这被割裂的世界，少年与少女的心却在不断靠近——",
+        "cover": "https://lain.bgm.tv/pic/cover/l/20/f7/292273_Nxf0x.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/20/f7/292273_Nxf0x.jpg",
+        "year": 2020,
+        "startDate": "2020-10-07",
+        "ratingRank": 9237,
+        "ratingTotal": 3246,
+        "metadataFetched": true
       }
     ]
   },
@@ -3862,7 +6313,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 130,
         "query": "忧国的莫里亚蒂",
         "cacheKey": "import-metadata-v1:4b0f7a18c0c4bc2dd567",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "忧国的莫里亚蒂",
+        "titleJa": "憂国のモリアーティ",
+        "titleEn": "Yuukoku no Moriarty",
+        "description": "19世纪末，由于产业革命的爆发，世界处于混乱和发展之中，英国则稳健地扩充着自己的势力。\r\n然而，与技术的进步和发展相反的是，这个国家从古至今都存在根深蒂固的完全阶级制度，整个国家被不足总人口3%的贵族们所统治。理所当然地享受着特权的贵族，以及不清楚自己的明天在何方的劳动者阶级，人们自出生就会受到已决定好的阶级所限制，并以此生活。\r\n威廉·詹姆士·莫里亚蒂决定要粉碎如此腐败的阶级制度，从而创造出理想国。连夏洛克·福尔摩斯都能玩弄于鼓掌之中的“莫里亚蒂教授”，即将展开通过犯罪所实现的革命，改变整个世界——",
+        "cover": "https://lain.bgm.tv/pic/cover/l/76/c9/297022_37o57.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/76/c9/297022_37o57.jpg",
+        "year": 2020,
+        "startDate": "2020-10-11",
+        "ratingRank": 4835,
+        "ratingTotal": 1905,
+        "metadataFetched": true
       }
     ]
   },
@@ -3880,7 +6342,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "冰海战记",
         "cacheKey": "import-metadata-v1:62a5c06e3773adb547e2",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "冰海战记",
+        "titleJa": "ヴィンランド・サガ",
+        "titleEn": "Vinland Saga",
+        "description": "公元10世纪末期，以战争掠夺为生的最强民族·维京人席卷世界。\r\n被讴歌为最强战士的儿子·托尔芬，自小便生活在战场上，并向往着梦幻大陆“文兰（VINLAND）”——\r\n这是一个发生在激荡时代的，真正的战士物语。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/31/8f/240386_6Q62q.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/31/8f/240386_6Q62q.jpg",
+        "year": 2019,
+        "startDate": "2019-07-07",
+        "ratingRank": 79,
+        "ratingTotal": 12817,
+        "metadataFetched": true
       }
     ]
   },
@@ -3898,7 +6371,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 132,
         "query": "尸体派对",
         "cacheKey": "import-metadata-v1:b6ce60ab102f7311cbd9",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "尸体派对 Tortured Souls",
+        "titleJa": "コープスパーティー Tortured Souls -暴虐された魂の呪叫-",
+        "titleEn": "コープスパーティー Tortured Souls -暴虐された魂の呪叫-",
+        "description": "持田哲志和好朋友们因为准备文化祭而留在学校，他们七人玩起了讲鬼故事的游戏，不久老师带着哲志的妹妹来了，催他们回家。临走前，喜欢鬼故事的班长提议他们用咒符玩“幸福的幸子”，来祈祷他们七人友谊永存，永远在一起。然而当他们举行完仪式，奇怪的事情发生了，教室突然猛烈摇晃起来，一阵巨响后地面轰然坍塌，所有人都掉了进去。 \r\n　　等他们醒来后，发现自己身处一个古旧的小学校舍里，这所废弃学校门窗紧闭，恐怖诡异。直美发现了昏迷的世以子，二人随后一起行动，企图离开这个可怕的校舍。但是更可怕的事情在后面等着她们，受害者一个个地出现。在这所名为“天神小学”的古老学校里，究竟是谁操控着这一切……",
+        "cover": "https://lain.bgm.tv/pic/cover/l/87/45/58957_DbIBi.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/87/45/58957_DbIBi.jpg",
+        "year": 2013,
+        "startDate": "2013-07-24",
+        "ratingRank": 7753,
+        "ratingTotal": 2931,
+        "metadataFetched": true
       }
     ]
   },
@@ -3916,7 +6400,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 85,
         "query": "替身another",
         "cacheKey": "import-metadata-v1:38620c4046f3a6a78ac1",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "Another",
+        "titleJa": "Another",
+        "titleEn": "Another",
+        "description": "26年前夜见山北中学的三年三班里，曾经有一位名叫「misaki」的学生。她不仅是位运动天才还是个优等生，个性平易近人广受众人喜爱的她却在某日突然猝死，极度悲伤的同班同学们无法接受这件事实，众人决定到毕业之前仍想像见崎还活著般度过每一天。因此见崎的座位就这样一大早上课会有人来打招呼，偶而还会有人藉机搭话——但这段美丽的插曲却对三年三班带来某种扭曲的现象。而在1998年春天，转到三年三班的榊原恒一，莫名感到班上的气氛持续著不安感。在这样的班级里，有位行事异于常人，孤高的美少女见崎鸣——一只眼睛遮著眼罩总是独自一人在画画，拥有不可思议的存在感让恒一不禁想试著接近她，但却就此陷入更深的谜团之中。 　　随著故事的进展，班上的气氛越来越紧张，也有越来越多的人不知是巧合还是「诅咒」而意外生亡。在绫辻大师的笔触下，恐怖的气氛越发浓厚。\r\n\r\n\r\n\r\n[简介原文]\r\n死者は、誰――? その学校のそのクラスには、誰にも話してはならない“秘密”がある――1998年、春｡ 夜見山北中学に転校してきた 榊原恒一(15歳)は、何かに怯えているようなクラスの雰囲気に違和感を覚える｡不思議な存在感を放つ美少女、見崎鳴に惹かれ、接触を試みる恒一だが、いっそう謎は深まるばかり｡そんな中、予想もしなかった惨事が!・・・・・・この“世界”ではいったい、何が起こっているのか・・・? “新本格ミステリ”ムーブメントの旗手・綾辻行人がおくる、いまだかつてない学園ミステリ&ホラー｢Another｣驚天動地の学園本格ミステリホラーがついにTVアニメ化!キャラクター原案は｢涼宮ハルヒの憂鬱｣などの大ヒット作品を手掛ける【いとう のいぢ】が担当!監督:水島努、キャラクターデザイン:石井百合子、そして…アニメ制作:P.A.WORKS大ヒットを連発しているスタッフ&スタジオが、超豪華チームを結成し、ホラーアニメの決定版に挑む｡",
+        "cover": "https://lain.bgm.tv/pic/cover/l/d3/39/20851_V4eXe.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/d3/39/20851_V4eXe.jpg",
+        "year": 2012,
+        "startDate": "2012-01-09",
+        "ratingRank": 2878,
+        "ratingTotal": 13969,
+        "metadataFetched": true
       }
     ]
   },
@@ -3934,7 +6429,17 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 77,
         "query": "恶魔之子",
         "cacheKey": "import-metadata-v1:adb852233b76c1fc97a3",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "真女神转生 恶魔之子 光与暗",
+        "titleJa": "真・女神転生Dチルドレン ライト&ダーク",
+        "titleEn": "真・女神転生Dチルドレン ライト&ダーク",
+        "description": "ジン・アキラ・レナの3人は図書室の整理をしていたところ、「悪魔大全」という本を発見する。興味本位でその本に書いてある呪文を唱えると、地上の時間が止まり、ジン達3人はヴァルハラという世界に飛ばされてしまった。そこでジンとアキラは、デビルチルドレンとしての力に目覚める。\r\n\r\n帝国軍の支配するヴァルハラから平和を取り戻すため、元の世界に戻るため、時の巫女である亜美と共にバラバラになった時の鎖のかけらを探すため、ヴァルハラでの冒険が始まる。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/d6/26/35980_6OUxC.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/d6/26/35980_6OUxC.jpg",
+        "year": 2002,
+        "startDate": "2002-10-05",
+        "ratingTotal": 23,
+        "metadataFetched": true
       }
     ]
   },
@@ -3952,7 +6457,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 134,
         "query": "异世界食堂",
         "cacheKey": "import-metadata-v1:0d4b0b8bf13402316a66",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "异世界食堂",
+        "titleJa": "異世界食堂",
+        "titleEn": "Isekai Shokudou",
+        "description": "在商业区附近的某条商店街角落，有栋挂着狗招牌的住商混合大楼，那间店就在那里的地下一楼。门上画了猫咪图案的餐馆──“猫咪西餐厅”。创业五十年以来，一直持续满足商业区上班族们的胃。虽然是西餐厅，但西餐以外的菜单也非常丰富，是间只有这点勉强称得上特征的普通餐厅。这么一间不起眼的小餐厅，在每周六都会对外公休，但是其实在这天都要迎接“异世界客人”的光顾：每到这天，店内的墙上就会出现一道门，这群客人不论是人族、魔族、鬼族、精灵族、蜥蜴人族、吸血鬼族、兽人、传说的魔龙（！？），都会从“门内”光临！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/53/49/192252_L9Ip9.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/53/49/192252_L9Ip9.jpg",
+        "year": 2017,
+        "startDate": "2017-07-03",
+        "ratingRank": 4278,
+        "ratingTotal": 3927,
+        "metadataFetched": true
       }
     ]
   },
@@ -3970,7 +6486,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "relife",
         "cacheKey": "import-metadata-v1:5ca57d8e25fc40e0dc15",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "ReLIFE",
+        "titleJa": "ReLIFE",
+        "titleEn": "ReLIFE",
+        "description": "海崎新太（27岁）在作为新毕业生进入的公司工作了3个月就辞职了。\r\n之后他的就职活动也不顺利。\r\n双亲寄来的生活费也中断了，不得已只好回到乡下。\r\n能够倾听他烦恼的朋友和女友全都没有……\r\n穷途末路的海崎面前出现了一位神秘人物·夜明了。\r\n夜明向海崎提出，要他参加以尼特为对象的社会复归程序“ReLIFE”。\r\n其内容是，利用神秘的秘药，仅仅让外表回复年轻，并在一年内以高中生的身份去读高中——。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/e0/a2/126173_II0Y1.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/e0/a2/126173_II0Y1.jpg",
+        "year": 2016,
+        "startDate": "2016-07-01",
+        "ratingRank": 587,
+        "ratingTotal": 12181,
+        "metadataFetched": true
       }
     ]
   },
@@ -3983,12 +6510,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/18635",
         "platform": "TV",
-        "totalEpisodes": 22,
+        "totalEpisodes": 23,
         "rating": 6.5,
         "confidence": 135,
         "query": "罪恶王冠",
         "cacheKey": "import-metadata-v1:5aabe9df517fcd703809",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "罪恶王冠",
+        "titleJa": "ギルティクラウン",
+        "titleEn": "GC",
+        "description": "时间是2039年，在10年前突然爆发的“末日病毒”使日本陷入无政府的混乱状态，被跨国组织GHQ武力介入并统治。在日后被称为“失落圣诞”（Lost X'mas）的此次事件之后，日本丧失了独立主权，仅剩形式上的自治权，人们得以享受暂时的和平。\r\n10年后，过着平稳生活的天王洲第一高中2年生樱满集，偶然邂逅了所憧憬的网络人气歌姬楪いのり，而她的另一重身份却是“葬仪社”的成员。“葬仪社”是由17岁的年轻首领恙神涯领导的民间反抗组织，致力于从GHQ手中解放日本，为此不惜赌上性命孤独战斗。在いのり和涯的带领下加入葬仪社的集，右手浮现了“王之刻印”，拥有刻印的集可以从他人的身体中唤出名为“Void”的物质，并以此为武器战斗。然而这只是集所背负的“罪恶王冠”的故事的开始……。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/7d/4c/18635_71IIr.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/7d/4c/18635_71IIr.jpg",
+        "year": 2011,
+        "startDate": "2011-10-13",
+        "ratingRank": 5212,
+        "ratingTotal": 16962,
+        "metadataFetched": true
       }
     ]
   },
@@ -4006,7 +6544,17 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 80,
         "query": "实况主的逃脱游戏",
         "cacheKey": "import-metadata-v1:61d2234cecde536cab84",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "中之人基因组【实况中】",
+        "titleJa": "ナカノヒトゲノム【実況中】",
+        "description": "《中之人基因组》，在游戏实况者之间成为话题的神秘免费游戏。通称，失踪游戏。据称，在即将通关之际就消失的玩家源源不断。\r\n失踪的游戏实况者们被人为地与外界隔离，集合到某座岛上。在那里，他们所接受的命令，是通过必须在现实中通关的各种游戏，来达成一亿的播放数。\r\n8名人气实况者所带来的，以能否回归为赌注的真实游戏《中之人基因组》的实况开始了——",
+        "cover": "https://lain.bgm.tv/pic/cover/l/88/88/247548_3SQYx.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/88/88/247548_3SQYx.jpg",
+        "year": 2019,
+        "startDate": "2019-07-07",
+        "ratingRank": 8284,
+        "ratingTotal": 1904,
+        "metadataFetched": true
       }
     ]
   },
@@ -4024,7 +6572,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "赛马娘",
         "cacheKey": "import-metadata-v1:a403ee71463c4c654673",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "赛马娘 Pretty Derby",
+        "titleJa": "ウマ娘 プリティーダービー",
+        "titleEn": "赛马娘 Pretty Derby",
+        "description": "这是从异世界传承下光辉的姓名与竞跑能力的“马娘”、自久以来与人类共存着的世界的故事。\r\n从乡下转学到大都市的训中学园的马娘·特别周，与同学们互相切磋、赌上“日本第一马娘”的称号，目标：在“Twinkle系列”中的胜利！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/91/c0/212003_pPk1M.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/91/c0/212003_pPk1M.jpg",
+        "year": 2018,
+        "startDate": "2018-04-01",
+        "ratingRank": 2651,
+        "ratingTotal": 11503,
+        "metadataFetched": true
       }
     ]
   },
@@ -4037,12 +6596,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/343656",
         "platform": "TV",
-        "totalEpisodes": 12,
+        "totalEpisodes": 30,
         "rating": 6.4,
         "confidence": 135,
         "query": "测不准的阿波连同学",
         "cacheKey": "import-metadata-v1:2892a7d8a8e09613baec",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "测不准的阿波连同学",
+        "titleJa": "阿波連さんははかれない",
+        "titleEn": "Aharen-san wa Hakarenai",
+        "description": "阿波连玲奈是一个身材娇小，安静的女孩子，\r\n有点不太擅长把握与他人之间的距离。\r\n\r\n这让坐在隔壁座位的来堂同学，总觉得到有种距离感。\r\n\r\n有一天，来堂同学捡起了阿波连同学掉在地上的橡皮，\r\n以此为契机两人之间的距离开始急速接近！？\r\n\r\n“时而太远”“时而太近”，阿波连同学难以预测。\r\n\r\n各种意义上“测不准”的紧贴系？\r\n青春恋爱喜剧开幕了！\r\n\r\n\r\n小柄で物静かな女の子、 阿波連れいなさん。\r\n人との距離をはかるのが少し苦手。\r\n\r\nそんな彼女の隣の席に座るライドウくんは、\r\n阿波連さんとの間に距離を感じていた。\r\n\r\nある日、阿波連さんが落としてしまった消しゴムを\r\nライドウくんが拾ったことをキッカケに、ふたりの距離は急接近！？\r\n\r\n「遠すぎたり」「近すぎたり」予測不能な阿波連さん。\r\n\r\n色んな意味で、『はかれない』密着系？\r\n青春ラブコメディの幕が上がる！！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/bd/15/343656_j6eWd.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/bd/15/343656_j6eWd.jpg",
+        "year": 2022,
+        "startDate": "2022-04-01",
+        "ratingRank": 5962,
+        "ratingTotal": 5840,
+        "metadataFetched": true
       }
     ]
   },
@@ -4060,7 +6630,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 130,
         "query": "瓦尼塔斯的手记",
         "cacheKey": "import-metadata-v1:c53b7335f6ed958c41b7",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "瓦尼塔斯的手记",
+        "titleJa": "ヴァニタスの手記",
+        "titleEn": "Vanitas no Karte",
+        "description": "这是逐渐走向毁灭的，吸血鬼们的故事。\r\n\r\n这里是同时存在着人类与吸血鬼的19世纪的法国。\r\n青年吸血鬼诺亚，为了寻找向吸血鬼散布诅咒的魔导书“瓦尼塔斯之书”，而踏上了前往巴黎的旅路。\r\n在路途中的飞船上，事件发生了。\r\n混乱之中，在诺亚面前出现的是，自称专门治疗吸血鬼的人类医生、瓦尼塔斯。\r\n在瓦尼塔斯手中的，正是诺亚在寻找着的书……。\r\n\r\n因两人的相遇，诅咒与拯救的吸血鬼谭、拉开了幕布——",
+        "cover": "https://lain.bgm.tv/pic/cover/l/5a/cf/331692_O6Em2.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/5a/cf/331692_O6Em2.jpg",
+        "year": 2021,
+        "startDate": "2021-07-02",
+        "ratingRank": 5681,
+        "ratingTotal": 1732,
+        "metadataFetched": true
       }
     ]
   },
@@ -4078,7 +6659,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "宝石之国",
         "cacheKey": "import-metadata-v1:9c9aac9d73efaf4fcb43",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "宝石之国",
+        "titleJa": "宝石の国",
+        "titleEn": "Land of the Lustrous",
+        "description": "这是成长的故事——\r\n宝石中最年少的磷叶石，仅有3.5的脆弱硬度，韧性也很弱，因而不适于战斗。此外，也没有对其他工作的适应性。被看做是只会出一张嘴，完完全全的吊车尾。这样的磷叶石，在即将满三百岁时终于被交付了第一件工作。那是，名为编纂博物志的工作。磷叶石对这不起眼的工作感到不满，但他在通过自己的双眼看见世界，经历各种各样事情的同时，接连被巨大的波澜吞没。之后，他终于获得了梦寐以求的“强大”，却并非是以自己所期望的形式——\r\n\r\n这是友情的故事——\r\n拥有比磷叶石更为特殊的体质的辰砂。仅仅是在那里，身体就会散播毒液的辰砂，为了不给周围人添麻烦，而在夜晚独自将自己关在室内，并封锁了心灵。某天，就在即将被月人掳走时被辰砂所救的磷叶石，和他做了“接下来就该我来救你了”的约定。磷叶石一边为编纂博物志而奔走，一边为了将辰砂带往光明的世界而寻找着适合他的工作。究竟磷叶石的想法能否传达给辰砂呢？两人的约定究竟会不会有实现的一天呢——？\r\n\r\n这是战斗的故事——\r\n从月球飞来的神秘敌人“月人”。他们将宝石作为装饰品，特别中意美丽的宝石，将宝石们一个接一个地掳走，真实身份不明。而且被掳走的宝石被加工成为武器，反过来加害于宝石。得到月人的不断改良，变得更加强力。面对接连现身的月人，二十八位宝石能否赢得胜利？他们的真正目的是什么？这场无止境的战斗，能否画下终止符？",
+        "cover": "https://lain.bgm.tv/pic/cover/l/2f/07/214799_tGQ11.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/2f/07/214799_tGQ11.jpg",
+        "year": 2017,
+        "startDate": "2017-10-07",
+        "ratingRank": 671,
+        "ratingTotal": 11504,
+        "metadataFetched": true
       }
     ]
   },
@@ -4096,7 +6688,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "邻家索菲",
         "cacheKey": "import-metadata-v1:7a74125cf1704a225dc5",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "邻家的吸血鬼小妹",
+        "titleJa": "となりの吸血鬼さん",
+        "titleEn": "Tonari no Kyuuketsuki-san",
+        "description": "天野灯偶然得到一位名叫苏菲·托莱特的吸血鬼女孩的帮助，并对她一见钟情。灯不请自来地来到她家，半强迫地开始了同居。苏菲虽是吸血鬼，却从不袭击人类，而是通过订购获得血液以及爱好的动画周边，过着这种现代的平民生活。这是一部与当下的吸血鬼美眉共度的同居喜剧。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/b7/12/241158_H3b25.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/b7/12/241158_H3b25.jpg",
+        "year": 2018,
+        "startDate": "2018-10-05",
+        "ratingRank": 2570,
+        "ratingTotal": 4994,
+        "metadataFetched": true
       }
     ]
   },
@@ -4114,7 +6717,17 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "暗杀教室",
         "cacheKey": "import-metadata-v1:1c5aa444c4fbb57c6bd5",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "暗杀教室",
+        "titleJa": "暗殺教室",
+        "description": "故事讲述了将月球炸掉了七成并扬言要炸掉地球的“杀老师”，赴任椚丘中学3年E班的教师。而以日本为首的各国首脑在得知这一消息后决定将暗杀他的重任交付给3年E班的学生们，寄望他们能在一年之内把老师除掉，成功得手后的报酬为一百亿日元。于是，各路同学想尽办法在不让别人知晓的情况下进行暗杀老师的计划，这场教师与学生之间非日常的授业大戏随即拉开了帷幕……",
+        "cover": "https://lain.bgm.tv/pic/cover/l/f4/91/106818_YJ4JT.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/f4/91/106818_YJ4JT.jpg",
+        "year": 2015,
+        "startDate": "2015-01-09",
+        "ratingRank": 1133,
+        "ratingTotal": 11063,
+        "metadataFetched": true
       }
     ]
   },
@@ -4132,7 +6745,17 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "间谍过家家",
         "cacheKey": "import-metadata-v1:19840825474f2dabec84",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "间谍过家家",
+        "titleJa": "SPY×FAMILY",
+        "description": "每个人都有着不让任何人所看见的一面——\r\n这是一个世界各国在暗地里展开激烈情报战的时代。东国和西国已经处于冷战状态长达十余年之久。\r\n隶属于西国情报局对东科（WISE）的精英间谍“黄昏”，为了调查东国国家统一党总裁多诺万·德斯蒙这一威胁东西和平的危险人物的战争计划，黄昏被指派了一个绝密的任务。\r\n这个任务称之为“枭”作战。\r\n任务的内容是在一周内组建成一个家庭，潜入德斯蒙的儿子就读的名校，并解决掉德斯蒙。\r\n但是，黄昏所遇到的“女儿”是能读懂内心的超能力者，“妻子”则是暗杀者。三人为了彼此的利益而成为了一家人，并决定在隐藏真实身份的情况下共同生活。\r\n世界的和平被托付给了这个意外频出的临时家庭。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/de/4a/329906_hmtVD.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/de/4a/329906_hmtVD.jpg",
+        "year": 2022,
+        "startDate": "2022-04-09",
+        "ratingRank": 1697,
+        "ratingTotal": 22789,
+        "metadataFetched": true
       },
       {
         "inputTitle": "剧场版代号：白",
@@ -4145,7 +6768,17 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "剧场版代号：白",
         "cacheKey": "import-metadata-v1:2cc7ec4f3c28b1a75fc3",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "剧场版 间谍过家家 代号：白",
+        "titleJa": "劇場版 SPY×FAMILY CODE: White",
+        "description": "这是世界各国均于暗地里进行激烈情报战的时代。西国的情报局对东科“WISE”的干练特务“黄昏”在像往常一样作为劳埃德·福杰执行任务时，接到了变更进行中的任务“枭”的负责人的指示。然而被选为新负责人的，却是个无能的男人。与此同时，伊甸学园将开展据说优胜者能被授予“星”的烘焙实习。为了尽可能地展现任务“枭”的进展与向“WISE”交涉继续执行任务、为了进一步守护世界和平，劳埃德向阿尼亚·福杰提议制作担任审查员长的校长喜欢的“弗里吉斯地区”的传统点心“美乐美乐”。为了确认正宗的味道，福杰家决定前往弗里吉斯进行家庭旅行。另一方面，约尔在出发前不小心目击到了劳埃德与谜之女性交谈的整个过程，使得这场家庭旅行蒙上了一抹对临时关系的不安。\r\n在家庭旅行的途中，阿尼亚在列车内发现了奇怪的手提箱，而其中不知为何装有巧克力。在阿尼亚感到不可思议之时，手提箱的主人回来了，吓了一跳的阿尼亚不小心误食了那颗巧克力。然而，那颗巧克力却隐藏着会动摇世界和平的重大秘密。而在旅行的目的地，意外事件也接二连三地发生。世界的命运，再次被托付给这临时一家人。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/ec/82/411428_xwKKP.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/ec/82/411428_xwKKP.jpg",
+        "year": 2023,
+        "startDate": "2023-12-22",
+        "ratingRank": 4232,
+        "ratingTotal": 5905,
+        "metadataFetched": true
       }
     ]
   },
@@ -4163,7 +6796,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "可塑性记忆",
         "cacheKey": "import-metadata-v1:9fc82776d4396b3640ef",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "可塑性记忆",
+        "titleJa": "プラスティック・メモリーズ",
+        "titleEn": "Plastic Memories",
+        "description": "故事发生在一个比现在的科学要进步的世界。18岁的水柿司高考失败，多亏父母找关系得以进入世界大企业SAI社工作。SAI社是制造管理拥有感情的人形智能机器人（通称：Giftia）的企业，司在其中被安排到终端服务部门工作。这个部门其实就是回收即将到期的Giftia，是所谓的“窗边部门（不被重视的部门）”。于是司和打杂的Giftia少女“艾拉”组成搭档，一起开始了工作……",
+        "cover": "https://lain.bgm.tv/pic/cover/l/1d/08/114685_Ege3l.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/1d/08/114685_Ege3l.jpg",
+        "year": 2015,
+        "startDate": "2015-04-04",
+        "ratingRank": 2521,
+        "ratingTotal": 12410,
+        "metadataFetched": true
       }
     ]
   },
@@ -4181,7 +6825,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "邻座的怪同学",
         "cacheKey": "import-metadata-v1:a51b022c977d44b768d0",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "邻座的怪同学",
+        "titleJa": "となりの怪物くん",
+        "titleEn": "Tonari no Kaibutsu-kun",
+        "description": "优等生水谷雫是一个只喜欢学习的女生，性格冷酷，不喜欢惹麻烦，唯一的兴趣是微积分，心中有一个“年收入一千万”的梦想。因为老师答应以新参考书作为报酬，雫才勉强同意送讲义给问题学生——吉田春，而春也是雫的同班同学。正是因为这“送讲义事件”，雫被春误认为成朋友，开始与春有了交集。虽然初次的相处并不愉快，但随着接触的深入，雫发现春其实是一个内心纯洁且渴望朋友的人。这样的两人在一连串的误解中逐渐相互吸引，再加上周围一帮稀奇古怪的损友们，甜蜜又青涩的校园恋爱剧就此拉开序幕。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/a0/ab/40533_SkUil.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/a0/ab/40533_SkUil.jpg",
+        "year": 2012,
+        "startDate": "2012-10-01",
+        "ratingRank": 1830,
+        "ratingTotal": 8953,
+        "metadataFetched": true
       }
     ]
   },
@@ -4199,7 +6854,17 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "萤火之森",
         "cacheKey": "import-metadata-v1:71085ad158147453ba1e",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "萤火之森",
+        "titleJa": "蛍火の杜へ",
+        "description": "某年夏天，6岁小女孩竹川萤来到爷爷家度假，她闯进了传说住满妖怪的山神森林。正当她因为迷路而焦急万分的时候，一个戴着狐狸面具的大男孩出现在她面前，并引领着萤找到回家的路。虽然萤分外感激，可是男孩却禁止她碰触自己的身体，原来这名叫银的男孩并非人类，他一旦被人类碰触就会烟消云散。在此后的日子里，萤和银成为好朋友，他们走遍了森林的每一个角落玩耍。日复一日，年复一年，每到夏天的时候萤就会如约来到森林和好朋友见面。她遵守着和银的约定，无论如何也不碰触银的身体。随着年龄的增长，萤和银对彼此的情感都悄悄发生了变化，他们共同期待相聚的日子，共同期待拥抱对方……",
+        "cover": "https://lain.bgm.tv/pic/cover/l/f4/98/12544_z9MP1.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/f4/98/12544_z9MP1.jpg",
+        "year": 2011,
+        "startDate": "2011-09-17",
+        "ratingRank": 1363,
+        "ratingTotal": 9545,
+        "metadataFetched": true
       }
     ]
   },
@@ -4217,7 +6882,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "埃罗芒阿老师",
         "cacheKey": "import-metadata-v1:d9c37aacac2641256d81",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "埃罗芒阿老师",
+        "titleJa": "エロマンガ先生",
+        "titleEn": "Eromanga-sensei",
+        "description": "高中生兼小说作家的“和泉正宗”（笔名：和泉征宗）有个家里蹲的妹妹“和泉纱雾”。一年前才成为家人的她，却完全不走出居室，并也用力踩踏地板，要我帮她准备食物。为了这段称不上“兄妹”的关系，正宗得想个办法让她自己走出居室才行，因为两人已是目前仅存能相依为命的“家人”……至于正宗的搭挡插画家“情色漫画老师”，是个能够画出非常棒煽情图的可靠伙伴。虽然双方并没见过面，但我一直很感谢他！只是在某一天，正宗突然发现到一个冲击事实，那就是“情色漫画老师”其实就是纱雾！？",
+        "cover": "https://lain.bgm.tv/pic/cover/l/87/bf/172498_wfm40.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/87/bf/172498_wfm40.jpg",
+        "year": 2017,
+        "startDate": "2017-04-08",
+        "ratingRank": 4777,
+        "ratingTotal": 18814,
+        "metadataFetched": true
       }
     ]
   },
@@ -4235,7 +6911,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 132,
         "query": "雾山五行",
         "cacheKey": "import-metadata-v1:8a615a0ac00112119d23",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "雾山五行",
+        "titleJa": "雾山五行",
+        "titleEn": "Fog hills of five elements",
+        "description": "上古时期妖兽纵横，一位神秘道人分别授予了阴阳五行的特殊能力给金木水火土五个家族来抵抗妖兽。他们将妖兽驱赶到神隐雾山之中，设立结界。雾山之中另有强大灵力的麒麟兽常常吸引来那些想要提升妖力突破结界，因此自愿被封印于巨阙神盾之中。火行使者闻人翊悬为救其母私自打开了巨阙神盾，小麒麟趁机偷溜出来，妖兽界将掀起一股腥风血雨……",
+        "cover": "https://lain.bgm.tv/pic/cover/l/a6/fe/305515_ITIZe.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/a6/fe/305515_ITIZe.jpg",
+        "year": 2020,
+        "startDate": "2020-07-26",
+        "ratingRank": 775,
+        "ratingTotal": 5549,
+        "metadataFetched": true
       }
     ]
   },
@@ -4253,7 +6940,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 130,
         "query": "我太受欢迎了该怎么办",
         "cacheKey": "import-metadata-v1:60de3e5cfec1fec25e05",
-        "hintSignature": "[\"我太受欢迎了该怎么办\"]"
+        "hintSignature": "[\"我太受欢迎了该怎么办\"]",
+        "titleZh": "我太受欢迎了该怎么办",
+        "titleJa": "私がモテてどうすんだ",
+        "titleEn": "Watashi ga Motete Dousunda",
+        "description": "高中生芹沼花依，是个看到男生之间的亲密关系就会产生妄想的腐女。\r\n某天，她由于喜爱的动画角色死亡，受到冲击而体重骤减，结果却因此而受到校内4位美男子的约会邀请。\r\n“明明和我在一起什么的一点也不萌，难道我的春天到来了吗！？”",
+        "cover": "https://lain.bgm.tv/pic/cover/l/5b/a4/172492_jU0jo.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/5b/a4/172492_jU0jo.jpg",
+        "year": 2016,
+        "startDate": "2016-10-06",
+        "ratingRank": 7670,
+        "ratingTotal": 1814,
+        "metadataFetched": true
       }
     ]
   },
@@ -4266,12 +6964,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/324295",
         "platform": "TV",
-        "totalEpisodes": 12,
+        "totalEpisodes": 14,
         "rating": 5.7,
         "confidence": 134,
         "query": "式守同学不只可爱而已",
         "cacheKey": "import-metadata-v1:923b00ade613f4cae59f",
-        "hintSignature": "[\"式守同学不只可爱而已\"]"
+        "hintSignature": "[\"式守同学不只可爱而已\"]",
+        "titleZh": "式守同学不只可爱而已",
+        "titleJa": "可愛いだけじゃない式守さん",
+        "titleEn": "Shikimori's Not Just a Cutie",
+        "description": "超级“帅气女友“登场！\r\n\r\n和泉是一名拥有不幸体质的高中男生，他有一个和他同班的女朋友，叫做式守。\r\n式守的笑容十分甜美、温柔，跟和泉在一起的时候脸上总是洋溢着幸福。\r\n\r\n她平时可爱动人，心中满是爱情，\r\n但只要看到和泉遇到危险，她就会……\r\n摇身一变，变成“帅气女友”！\r\n\r\n满是可爱×帅气的式守跟和泉\r\n将与他们的小伙伴一起带来无限愉快的日常！\r\n1000%美好的爱情喜剧，即将开幕！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/6a/7b/324295_Klk2K.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/6a/7b/324295_Klk2K.jpg",
+        "year": 2022,
+        "startDate": "2022-04-09",
+        "ratingRank": 8812,
+        "ratingTotal": 3830,
+        "metadataFetched": true
       }
     ]
   },
@@ -4284,12 +6993,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/9717",
         "platform": "TV",
-        "totalEpisodes": 12,
+        "totalEpisodes": 14,
         "rating": 8.6,
         "confidence": 135,
         "query": "魔法少女小圆",
         "cacheKey": "import-metadata-v1:35c9e9a8624513f5da8d",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "魔法少女小圆",
+        "titleJa": "魔法少女まどか☆マギカ",
+        "titleEn": "Mahou Shoujo Madoka Magica",
+        "description": "大好きな家族がいて、親友がいて、時には笑い、時には泣く、そんなどこにでもある日常。\r\n見滝原中学校に通う、普通の中学二年生・鹿目まどかも、そんな日常の中で暮らす一人。\r\nある日、彼女に不思議な出会いが訪れる。\r\nこの出会いは偶然なのか、必然なのか、彼女はまだ知らない。\r\nそれは、彼女の運命を変えてしまうような出会い――\r\nそれは、新たなる魔法少女物語の始まり――\r\n\r\n\r\n\r\n[中文简介]\r\n出生良好家庭，亲朋好友团聚，时哭时笑，这是谁都拥有的日常生活。\r\n市立见泷原中学的平凡初二女生鹿目圆，就是其中一位。\r\n一天，一个不可思议的人出现在她眼前。\r\n不知是偶然抑或注定，可以肯定的是，这相遇改变了她的命运，一个新的魔法少女故事亦随即开始。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/cb/57/9717_sAVag.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/cb/57/9717_sAVag.jpg",
+        "year": 2011,
+        "startDate": "2011-01-06",
+        "ratingRank": 34,
+        "ratingTotal": 37681,
+        "metadataFetched": true
       },
       {
         "inputTitle": "外传",
@@ -4297,12 +7017,22 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/66140",
         "platform": "TV",
-        "totalEpisodes": 300,
+        "totalEpisodes": 50,
         "rating": 4.9,
         "confidence": 77,
         "query": "外传",
         "cacheKey": "import-metadata-v1:7f20e7c45dff6b3b917c",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "武林外传",
+        "titleJa": "武林外传动画版",
+        "titleEn": "My Own Swordsman",
+        "description": "巨侠之后郭芙蓉，龙门镖局千金佟湘玉，盗圣白展堂，神童吕秀才，厨子李大嘴，衡山掌门莫小贝，邢捕头和邢捕头的徒弟燕小六…这群性情各异的人离奇地聚在同福客栈，一起经历江湖传奇故事，见证成长过程中的酸甜苦辣。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/af/2c/66140_000ps.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/af/2c/66140_000ps.jpg",
+        "year": 2010,
+        "startDate": "2010-05-01",
+        "ratingTotal": 34,
+        "metadataFetched": true
       }
     ]
   },
@@ -4320,7 +7050,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 133,
         "query": "神之塔",
         "cacheKey": "import-metadata-v1:83f37e31653eab26d68b",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "神之塔",
+        "titleJa": "神之塔 -Tower of God-",
+        "titleEn": "神之塔 -Tower of God-",
+        "description": "如果登上塔，一切就都可以得到。\r\n塔顶上有着这世界上的一切，可以得到这个世界……成为神。\r\n为了欣赏星空而登塔的少女·蕾哈尔，以及如果有蕾哈尔这样的女朋友就什么也不需要了的少年·二十五夜，他们之间的故事开始了。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/24/04/300839_Tv41q.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/24/04/300839_Tv41q.jpg",
+        "year": 2020,
+        "startDate": "2020-04-01",
+        "ratingRank": 4866,
+        "ratingTotal": 3194,
+        "metadataFetched": true
       }
     ]
   },
@@ -4333,12 +7074,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/375817",
         "platform": "TV",
-        "totalEpisodes": 13,
+        "totalEpisodes": 15,
         "rating": 6.9,
         "confidence": 135,
         "query": "契约之吻",
         "cacheKey": "import-metadata-v1:74c42518f752677976d1",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "契约之吻",
+        "titleJa": "Engage Kiss",
+        "titleEn": "Engage Kiss",
+        "description": "因为新能源资源的发现而建立的巨型漂浮城市・贝隆城。在那里经营着一家小公司的青年・修，因为平时花钱大手大脚而过着贫穷的生活。\r\n一位少女木更担心着这样的修，因此前往修的事务所兼家里。她在贝隆城里念着高中的同时，也照顾着事务所的工作和家务活。还有一位名叫绫野的是修以前所属公司的前辈同事、同时也是修的前女友，也很在意着修。\r\n漂浮在太平洋上的人工岛上带着略微奇怪关系的3人之间的恋爱喜剧开幕了。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/25/cd/375817_O7LGk.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/25/cd/375817_O7LGk.jpg",
+        "year": 2022,
+        "startDate": "2022-07-02",
+        "ratingRank": 2988,
+        "ratingTotal": 13449,
+        "metadataFetched": true
       }
     ]
   },
@@ -4356,7 +7108,17 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 77,
         "query": "变身成黑辣妹之后就和死党上床了",
         "cacheKey": "import-metadata-v1:2f849810384988c93f10",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "变身！偶像公主",
+        "titleJa": "ひめチェン! おとぎちっくアイドル リルぷりっ",
+        "description": "在世界的另一端，有一个叫“童话王国”的梦幻世界，女王神情忧愁的看着天空上的幸福之星不断消失，知道要是再这样下去，童话王国就要消失了，为了拯救童话王国，女王决定让塞伊等三个魔法宠物带着王子历经艰难阻挠好不容易得到的的魔法石去人间寻找符合条件的三位少女，帮助她们成为万众瞩目的偶像来收集幸福之星……",
+        "cover": "https://lain.bgm.tv/pic/cover/l/98/3a/4530_GN2Q4.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/98/3a/4530_GN2Q4.jpg",
+        "year": 2010,
+        "startDate": "2010-04-04",
+        "ratingRank": 4522,
+        "ratingTotal": 112,
+        "metadataFetched": true
       }
     ]
   },
@@ -4369,12 +7131,22 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/302189",
         "platform": "TV",
-        "totalEpisodes": 11,
+        "totalEpisodes": 12,
         "rating": 7.6,
         "confidence": 135,
         "query": "86-不存在的战区",
         "cacheKey": "import-metadata-v1:b5de07035b8807875b7c",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "86 -不存在的战区-",
+        "titleJa": "86―エイティシックス―",
+        "description": "为了应对吉亚迪所开发出的完全独立无人战斗兵器“军团”的入侵，其邻国圣格诺利亚共和国开发了无人战斗兵器毁灭之力。但是，无人战斗机只是空有名号，实际是没有被认可为”人“的人们——86——驾驶，被当作道具来使用。\r\n由”86“所组成的部队“先锋战队”的队长少年・辛恩，在只能等待着死亡的令人绝望的战场上为了某个目的而战斗着。在那里，共和国军队的精英・蕾娜就任了新任指挥管制官。她小时候有着被86所救助过的经历，因此想把被作为“人形猪”而遭到轻视的他们作为正常人类来对待。\r\n只不过是为了战斗而被作为道具使用的少年以及被寄予了未来期望的精英才女，本不应当有所交集的两人，在激烈的战斗中看到了未来——",
+        "cover": "https://lain.bgm.tv/pic/cover/l/a4/b3/302189_1034v.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/a4/b3/302189_1034v.jpg",
+        "year": 2021,
+        "startDate": "2021-04-10",
+        "ratingRank": 698,
+        "ratingTotal": 16184,
+        "metadataFetched": true
       }
     ]
   },
@@ -4387,12 +7159,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/55113",
         "platform": "TV",
-        "totalEpisodes": 12,
+        "totalEpisodes": 21,
         "rating": 7.3,
         "confidence": 135,
         "query": "玉子市场",
         "cacheKey": "import-metadata-v1:a8879ab96652643286e5",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "玉子市场",
+        "titleJa": "たまこまーけっと",
+        "titleEn": "Tamako Market",
+        "description": "座落某个小镇的兔子商店街上，有一间日式饼店，住着一位十分喜欢饼类小吃的高中一年级女生——玉子。除了偶尔在店铺协助父亲，以及钻研新口味的饼类小吃外，她亦有跟学校的朋友参与羽毛球部活动。而饼店对面是同行的竞争对手，两边的父亲经常都因生意问题而喧哗。不过对方儿子——饼藏却自小跟玉子建立青梅竹马的关系，近日更不断隐约地表达心思，只是玉子没有特别注意，更常常被旁观的朋友拿出来扰攘一番。总而言之，玉子就是在商店街众人的护荫下，如此热闹地渡过每一天，生活可谓过得相当快乐。\r\n　　除夕，也就是玉子的生日，处于商店街年末最繁忙的时刻。庆祝仪式已经成为了商店街上下的惯例，唯独今年的饼藏没有准时来到。直到他带着礼物来到之时……一只光辉灿烂的鸟出现在众人面前。偶然变得越来越热闹的兔子商店街，亦正式开始其稍微不同的新一年。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/f8/7f/55113_TR5Is.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/f8/7f/55113_TR5Is.jpg",
+        "year": 2013,
+        "startDate": "2013-01-09",
+        "ratingRank": 1532,
+        "ratingTotal": 14886,
+        "metadataFetched": true
       },
       {
         "inputTitle": "玉子爱情故事",
@@ -4405,7 +7188,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "玉子市场 玉子爱情故事",
         "cacheKey": "import-metadata-v1:aeb6c65fbd8b881e3be7",
-        "hintSignature": "[\"玉子市场 玉子爱情故事\"]"
+        "hintSignature": "[\"玉子市场 玉子爱情故事\"]",
+        "titleZh": "玉子爱情故事",
+        "titleJa": "たまこラブストーリー",
+        "titleEn": "Tamako Love Story",
+        "description": "时已入春，已经进入高中三年级的北白川玉子仍然总是想着打糕的事情。\r\n春天傍晚的放学路上，玉子好友四人组谈论着关于将来出路的事情。大家虽然对此感到不安，但似乎对将来的事情都有好好地考虑过。玉子也无意中说出自己将来想要继承家业。\r\n同时，住在玉子家的对面、一直和她在一起的饼藏，也下定了某种决心。\r\n周围的各种事物都在逐渐改变着，一点一点地动摇着玉子的心。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/59/8d/90880_NYUDd.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/59/8d/90880_NYUDd.jpg",
+        "year": 2014,
+        "startDate": "2014-04-26",
+        "ratingRank": 289,
+        "ratingTotal": 15778,
+        "metadataFetched": true
       }
     ]
   },
@@ -4423,7 +7217,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 130,
         "query": "想哭的我戴上了猫的面具",
         "cacheKey": "import-metadata-v1:42cc7abbb4dcc84eee5f",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "想哭的我戴上了猫的面具",
+        "titleJa": "泣きたい私は猫をかぶる",
+        "titleEn": "Nakitai Watashi wa Neko wo Kaburu",
+        "description": "2020年4月30日，官方宣布电影将不会在电影院上映，改为于6月18日在Netflix全球独家上架。\r\n\r\n笹木美代是一位性格开朗的初中二年级女生。因其不擅于察言观色的言行而常常让周围的人惊讶，因此被同学们称为“ムゲ（无限大神秘人）”。但是实际上她很在意周围的人、每天都在压抑着自己的感情，和“无限大神秘人”相反。\r\n这样的ムゲ每天都果敢地向爱慕着他的同班同学日之出贤人发起进攻，但却从未赢过。一直不气馁的她有着一个不可告人的秘密。\r\n那就是变成猫的样子去看最喜欢的日之出。\r\n事实上，某个夏日祭的晚上ムゲ从面具点的猫店主处获得了一张“戴上后就能变成猫”的不可思议的面具后，ムゲ以猫太郎的身份去了日之出家。\r\n平日里举止冷酷的日之出，却只对猫太郎坦白了自己的真实心情，不知不觉中猫太郎成了日之出的精神支柱。\r\n虽然两人在身为“人”时会拉开距离，但在身为“猫”的时候两个人的关系却会接近。ムゲ也一样，如果是猫的话就不会为和周围人的关系而烦恼，知道了成为猫的自由后，ムゲ逐渐也感到自在。\r\n作为猫的时间越长，不知不觉中自己和猫的界限就越来越模糊。\r\n有一天，再次出现的猫店主又把猫的“面具”和ムゲ的“脸”换了，ムゲ被迫舍弃“人类”而作为“猫”生活……\r\n我想永远待在他身边。但是我得不能再变回“我”——\r\n你得到了谁的支持？当发现重要的事物时，两个人的世界开始改变。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/05/2e/299202_w72ww.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/05/2e/299202_w72ww.jpg",
+        "year": 2020,
+        "startDate": "2020-06-18",
+        "ratingRank": 6545,
+        "ratingTotal": 3251,
+        "metadataFetched": true
       }
     ]
   },
@@ -4436,12 +7241,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/364450",
         "platform": "TV",
-        "totalEpisodes": 13,
+        "totalEpisodes": 16,
         "rating": 6.3,
         "confidence": 85,
         "query": "lycoris recoil 莉可丽丝 13 小剧场",
         "cacheKey": "import-metadata-v1:89ebb80c04d625cceaaa",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "莉可丽丝",
+        "titleJa": "リコリス・リコイル",
+        "titleEn": "Lycoris Recoil",
+        "description": "平稳的日子――其实暗藏着秘密防范犯罪的秘密组织――“DA（Direct Attack）”。作为特工的少女们“LYCORIS”。有着历代最强的LYCORIS之称的・锦木千束、优秀的LYCORIS・井之上泷奈，在咖啡厅“LycoReco”支部工作。这里接受的订单从订购咖啡和甜点，到照顾小孩、代购、面向外国人的日语老师等请放心交给“LycoReco”自由自在的乐天派、和平主义的千束与沉着冷静系、效率主义的泷奈二人跌宕起伏的混乱日常正式上演！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/65/19/364450_xx2zx.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/65/19/364450_xx2zx.jpg",
+        "year": 2022,
+        "startDate": "2022-07-02",
+        "ratingRank": 6558,
+        "ratingTotal": 19818,
+        "metadataFetched": true
       }
     ]
   },
@@ -4454,12 +7270,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/326895",
         "platform": "TV",
-        "totalEpisodes": 25,
+        "totalEpisodes": 26,
         "rating": 7.5,
         "confidence": 135,
         "query": "夏日重现",
         "cacheKey": "import-metadata-v1:6c09ebc769d8f8946f29",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "夏日重现",
+        "titleJa": "サマータイムレンダ",
+        "titleEn": "Summer Time Rendering",
+        "description": "“潮死了——”\r\n听闻青梅竹马・小舟潮讣告的网代慎平，时隔2年回到了故乡和歌山市・日都岛。\r\n家人和朋友再会，葬礼也顺利进行。然而，好友菱形窗却告诉慎平“潮的死存在可疑之处，有他杀的可能性”。\r\n第二天又发生了邻居一家突然全部消失的事件。随着时间的推移，慎平又听到了一个不祥的传闻。\r\n“看到与自己一样的影子的人会死。会被影子杀死——”并且，潮的妹妹・澪说，“姐姐去世前3天看到了影子”……\r\n在纪淡海峡浮现的夏季小岛上，穿越时空的SF悬疑片，现在拉开帷幕——",
+        "cover": "https://lain.bgm.tv/pic/cover/l/d9/f5/326895_j1S2n.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/d9/f5/326895_j1S2n.jpg",
+        "year": 2022,
+        "startDate": "2022-04-14",
+        "ratingRank": 959,
+        "ratingTotal": 19791,
+        "metadataFetched": true
       }
     ]
   },
@@ -4477,7 +7304,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 132,
         "query": "赛博朋克：边缘行者",
         "cacheKey": "import-metadata-v1:2b8861fdd81a35a0d7e6",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "赛博浪客",
+        "titleJa": "Cyberpunk: Edgerunners",
+        "titleEn": "Cyberpunk: Edgerunners",
+        "description": "《赛博朋克：浪客》是与《赛博朋克2077》共享同一世界观的原创动画项目，为一部十集的独立故事剧集，讲述了一名街头小子尝试在技术高度繁荣、人体改造盛行的未来城市中挣扎求生的故事。冒着失去一切的风险，他选择成为一名浪客 —— 游走于法外的雇佣兵。\r\n\r\n据介绍，该动画剧集将是一个与游戏《赛博朋克2077》剧情完全不同的独立故事，舞台依然是夜之城，但会有新的角色新的剧情，并非将游戏故事再演绎一次。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/39/83/309311_dJU58.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/39/83/309311_dJU58.jpg",
+        "year": 2022,
+        "startDate": "2022-09-13",
+        "ratingRank": 101,
+        "ratingTotal": 25933,
+        "metadataFetched": true
       }
     ]
   },
@@ -4495,7 +7333,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "文豪野犬",
         "cacheKey": "import-metadata-v1:e29eab2728f96603ee23",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "文豪野犬",
+        "titleJa": "文豪ストレイドッグス",
+        "titleEn": "Bungou Stray Dogs",
+        "description": "被赶出孤儿院，濒临饿死的青年·中岛敦所遇到的奇怪男人们——。\r\n光天化日之下忙于跳水自杀，有着自杀嗜好的男人·太宰治。\r\n神经质地翻看着笔记本的眼镜男·国木田独步。\r\n他们，是传闻中将那些军队和警察无法介入的事件解决的“武装侦探社”的职员。\r\n敦在鬼使神差之下被他们要求一同前去惩治扰乱街市的“食人虎”……。\r\n架空的都市·横滨。登场者是，拥有文豪之名的人们。与这些名字相称的异形之力，迸发出火花。\r\n千奇百怪的文豪异能力战斗，就此开幕！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/01/4b/144357_Lg83V.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/01/4b/144357_Lg83V.jpg",
+        "year": 2016,
+        "startDate": "2016-04-06",
+        "ratingRank": 4796,
+        "ratingTotal": 5401,
+        "metadataFetched": true
       },
       {
         "inputTitle": "剧场版 DEAD APPLE",
@@ -4508,7 +7357,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 85,
         "query": "剧场版 DEAD APPLE",
         "cacheKey": "import-metadata-v1:fe3b1ecfc718125c8a18",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "剧场版 空之境界 第一章 俯瞰风景",
+        "titleJa": "劇場版 空の境界 第一章 俯瞰風景",
+        "titleEn": "Gekijouban Kara no Kyoukai: The Garden of Sinners",
+        "description": "“去吧、去吧、去吧、去吧——”\r\n　　我只是这样期望着，\r\n　　期望着这个窗外的世界。\r\n　　只是期望被他带走而已。\r\n　　这是一个发生在夏末，少女们不断飞落跳下相继自杀的故事。少女们，毫无征兆突发性的从废墟大楼的屋顶\r\n　　上跳向天空，随后落下。等待她们的只有死。\r\n　　这些女孩在学校也并无异常，相互间也并非朋友关系。这些一切毫无关联性，连自杀的理由都找不到，完全无法解释的自杀事件逐一被不断报道。但是唯一只有一个人看出了这事件其中的关联性。\r\n　　这个人就是最高位的人偶师、也是一位没有成为魔法使的魔术师 —— 苍崎澄子。\r\n　　或许……“没有理由”就是他们的共通点，其次就是浮游与飞行的差别。\r\n　　而搜索调查这个连续自杀事件的人就是拥有能看见事间万物之死线能力“直死之魔眼”的两仪式。\r\n　　对她而言，有一个与此事件不得不关联起来的理由——\r\n　　与其说自身这种并不想要获得的能力（直死之魔眼），更令她在意的是用她的眼睛就这样捕捉到了在虚空中飞舞的少女们的幽灵，而这些幽灵到底又在想什么呢？\r\n　　假设，这或许是到达相同道路同胞们的哀怜，也或者是同族的嫌恶。\r\n　　假设，这或许是来自威胁某种重要存在之人的敌意。\r\n　　换句话说，这是明确的杀意。\r\n　　式就这样前往了那个可怜的大楼现场，而那里等着她的是谁都不知道的，展开着重重包围圈套的序章。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/e1/65/233_x22mT.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/e1/65/233_x22mT.jpg",
+        "year": 2007,
+        "startDate": "2007-12-01",
+        "ratingRank": 309,
+        "ratingTotal": 11824,
+        "metadataFetched": true
       }
     ]
   },
@@ -4526,7 +7386,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "派对浪客诸葛孔明",
         "cacheKey": "import-metadata-v1:5ff92c6142da5c9844eb",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "派对浪客诸葛孔明",
+        "titleJa": "パリピ孔明",
+        "titleEn": "Paripi Koumei",
+        "description": "五丈原之战中病死的诸葛孔明，以年轻之姿转生到正在举办万圣节游行的现代日本东京都涉谷，并与创作歌手月见英子相遇。于是，为了帮助英子实现她的梦想，孔明发挥他的军事才能，以军师身份在音乐界活跃。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/93/98/356756_ro03P.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/93/98/356756_ro03P.jpg",
+        "year": 2022,
+        "startDate": "2022-04-05",
+        "ratingRank": 2643,
+        "ratingTotal": 11187,
+        "metadataFetched": true
       }
     ]
   },
@@ -4539,12 +7410,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/356774",
         "platform": "TV",
-        "totalEpisodes": 13,
+        "totalEpisodes": 35,
         "rating": 7.4,
         "confidence": 135,
         "query": "彻夜之歌",
         "cacheKey": "import-metadata-v1:9254f9d4de0922f3d718",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "彻夜之歌",
+        "titleJa": "よふかしのうた",
+        "titleEn": "Yofukashi no Uta",
+        "description": "“我第一次在夜里，没跟任何人说就出来了。”\r\n讨厌女生的初中二年级学生夜守光，现在不知为何不去上学了。\r\n而且，每天晚上都睡不着觉。\r\n有一天，小光第一次在夜里没告诉任何人就出去了。 夜风怡人，自由自在，与白天完全不同。小光发现夜晚才是他的归宿。\r\n这时，神秘的美少女七草荠突然出现。 她是夜晚的居民·吸血鬼。 荠告诉小光夜晚的乐趣。\r\n“熬到今天满意为止吧，少年。”\r\n夜晚，被荠迷住的小光向她请求。\r\n“请把我变成吸血鬼。”\r\n荠告诉了他成为吸血鬼的方法。羞怯地说。那就是……\r\n“人类爱上吸血鬼！”\r\n究竟不懂恋爱的小光，会不会和荠恋爱，并成为吸血鬼呢！？\r\n两个人的特别的“约会”开始了——",
+        "cover": "https://lain.bgm.tv/pic/cover/l/dd/cd/356774_zOW55.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/dd/cd/356774_zOW55.jpg",
+        "year": 2022,
+        "startDate": "2022-07-07",
+        "ratingRank": 1211,
+        "ratingTotal": 10677,
+        "metadataFetched": true
       }
     ]
   },
@@ -4562,7 +7444,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 133,
         "query": "她和她的猫",
         "cacheKey": "import-metadata-v1:cbfb568a8489ef144b28",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "她和她的猫 -Everything Flows-",
+        "titleJa": "彼女と彼女の猫 -Everything Flows-",
+        "titleEn": "彼女と彼女の猫 -Everything Flows-",
+        "description": "ある夏の一番暑い日、彼女と、彼女の飼い猫である“僕”の暮らしが始まった。\r\n彼女は、通っている短大の卒業を控え、就職活動に追われる毎日を送っている。いつも頑張っている彼女にとって、“僕”と過ごす時間は、互いにひと時の安らぎを感じられる、とても大切なものだった。しかし、家族のことや、友達のこと、将来のこと…いろいろなことがうまくいかず、彼女は次第に傷つき、立ち止まってしまいそうになる。\r\nそれでも彼女は、背筋を伸ばし、今日も扉を開けて外の世界へと踏み出していく。そんな大好きな彼女のことを、“僕”はいつまでも見守っていたいと思っていた。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/91/32/164649_rn935.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/91/32/164649_rn935.jpg",
+        "year": 2016,
+        "startDate": "2016-03-04",
+        "ratingRank": 2526,
+        "ratingTotal": 3261,
+        "metadataFetched": true
       }
     ]
   },
@@ -4580,7 +7473,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "女高中生的虚度日常",
         "cacheKey": "import-metadata-v1:5d543525f67ca81d0947",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "女高中生的无所事事",
+        "titleJa": "女子高生の無駄づかい",
+        "titleEn": "Wasteful Days of High School Girls",
+        "description": "被浪费的青春——\r\n偏差值差不多的田中（通称“笨蛋”）、沉迷于BL的菊池（通称：“御宅”）、面无表情的才女・鹭宫（通称“机”）。个性十足的女高中生们无所事事的日常校园生活——",
+        "cover": "https://lain.bgm.tv/pic/cover/l/f3/d0/265708_QDkDe.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/f3/d0/265708_QDkDe.jpg",
+        "year": 2019,
+        "startDate": "2019-07-05",
+        "ratingRank": 750,
+        "ratingTotal": 11714,
+        "metadataFetched": true
       }
     ]
   },
@@ -4598,7 +7502,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "从零开始的魔法书",
         "cacheKey": "import-metadata-v1:077a0e1453ffcf6b3b38",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "从零开始的魔法书",
+        "titleJa": "ゼロから始める魔法の書",
+        "titleEn": "Zero kara Hajimeru Mahou no Sho",
+        "description": "教会历526年——。\r\n世界中存在着魔女，并普及了“魔术”。\r\n并且，世界尚未知晓“魔法”。\r\n这样的时代，存在着被人们蔑视为“兽化者”的佣兵。\r\n他每天被魔女觊觎着项上人头，梦想着变成人类，但某天在森林中遇到的美丽魔女，改变了他的命运。\r\n“——想要变回人类吗？那么佣兵，成为吾辈的护卫吧”\r\n自称为零的魔女，其所拥有的视使用方法甚至可能毁灭世界的魔法书《零之书》被某人盗走，而她正在寻找它的旅途中。\r\n佣兵以通过零的力量让自己变成人类为条件，接下了自己最讨厌的魔女的护卫一职，然而围绕着禁断的魔法书，人们的思绪纷繁交错……。\r\n高贵的魔女与温柔的兽人所带来的极上幻想剧。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/7a/f2/194259_CC7nc.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/7a/f2/194259_CC7nc.jpg",
+        "year": 2017,
+        "startDate": "2017-04-10",
+        "ratingRank": 7177,
+        "ratingTotal": 4288,
+        "metadataFetched": true
       }
     ]
   },
@@ -4611,12 +7526,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/359980",
         "platform": "TV",
-        "totalEpisodes": 12,
+        "totalEpisodes": 16,
         "rating": 5.9,
         "confidence": 133,
         "query": "恋爱游戏世界对路人角色很不友好",
         "cacheKey": "import-metadata-v1:835f3fb79112feb03aa2",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "恋爱游戏世界对路人角色很不友好",
+        "titleJa": "乙女ゲー世界はモブに厳しい世界です",
+        "titleEn": "Trapped in a Dating Sim: The World of Otome Games Is Tough for Mobs",
+        "description": "从现代日本转生到“恋爱游戏”世界的里昂，发现这里女尊男卑，对男性很不友好。身为路人角色的他，为了摆脱自己因地位低下而被肆意决定的人生，决定活用从游戏中得到的知识，保持路人角色的身份，取得“失落物品”来改变自己的命运...然而，里昂的爵位越升越高，与游戏中角色的关系也越发拉近，他也离自己原定计划的“悠哉路人生活”越来越远....\r\n\r\n\r\n\r\n[简介原文]\r\n『モブからだって、成り上がってやる――。』\r\nとある剣と魔法の“乙女ゲー”世界に転生した社会人・ リオン。そこは超女尊男卑な世界で、例外はゲーム内で攻略対象だった王太子率いるイケメン軍団のみ。\r\nしかし、虐げられ絶望するリオンにはある一つの武器があった。それは前世で妹に無理矢理攻略させられていたこのゲームの「知識」。\r\nモブとして田舎でのんびり過ごすことを目標にしていたリオンだったが、ゲームの知識を使い、やりたい放題の女たちとイケメン軍団に図らずも反旗を翻してしまうのだった――。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/38/2b/359980_JRjE0.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/38/2b/359980_JRjE0.jpg",
+        "year": 2022,
+        "startDate": "2022-04-03",
+        "ratingRank": 7902,
+        "ratingTotal": 3109,
+        "metadataFetched": true
       }
     ]
   },
@@ -4634,7 +7560,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "恋如雨止",
         "cacheKey": "import-metadata-v1:7a445640808a00063d33",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "恋如雨止",
+        "titleJa": "恋は雨上がりのように",
+        "titleEn": "Koi wa Ameagari no You ni",
+        "description": "“我，喜欢店长——”\r\n曾是田径部的王牌，但由于某个事件而放弃跑步的17岁女高中生·橘晶。\r\n不擅长表现感情，总被人误会成待人冷淡的晶，其视线的前方是自己在打工的家庭餐厅“Garden”的万年店长·近藤正己。\r\n对店长的心意满溢而出的晶，以及对于朝着命途多舛的自己而来的率直好意感到不知所措的近藤——。\r\n这是，在形形色色的雨滴轻柔下落当中，任何人都会联想到“那个时期”的，痛切的恋物语。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/15/36/210458_Cn1uz.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/15/36/210458_Cn1uz.jpg",
+        "year": 2018,
+        "startDate": "2018-01-11",
+        "ratingRank": 995,
+        "ratingTotal": 4953,
+        "metadataFetched": true
       }
     ]
   },
@@ -4647,12 +7584,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/14427",
         "platform": "TV",
-        "totalEpisodes": 12,
+        "totalEpisodes": 14,
         "rating": 6,
         "confidence": 133,
         "query": "blood-c",
         "cacheKey": "import-metadata-v1:b849cb0c20b678a91ff7",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "BLOOD-C",
+        "titleJa": "BLOOD-C",
+        "titleEn": "BLOOD-C",
+        "description": "原创动画《BLOOD》系列之BLOOD-C，由CLAMP负责剧情以及人物原案。\r\n漫画版于《少年エース》7月号（5月26日上市）起连载，漫画作者为琴音らんまる。\r\n故事讲述了更衣小夜是私立三荆学园的高中二年级学生，虽然平常和同学们一起过着普通的学园生活。但是另一方面，她还要接受父亲的命令完成某项“任务”。那就是狩猎被称为“古物”，拥有远超过人类力量，并且以人类为食的东西。小夜作为唯一可以打倒“古物”的人，为了守护他人、为了自己最喜欢的父亲，使用浮岛神社传承下来的御神刀独自战斗着。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/76/fb/14427_w47ht.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/76/fb/14427_w47ht.jpg",
+        "year": 2011,
+        "startDate": "2011-07-07",
+        "ratingRank": 7742,
+        "ratingTotal": 3267,
+        "metadataFetched": true
       }
     ]
   },
@@ -4665,12 +7613,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/328609",
         "platform": "TV",
-        "totalEpisodes": 12,
+        "totalEpisodes": 16,
         "rating": 8.4,
         "confidence": 135,
         "query": "孤独摇滚",
         "cacheKey": "import-metadata-v1:e71b9a1e3da8a21b9435",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "孤独摇滚！",
+        "titleJa": "ぼっち・ざ・ろっく！",
+        "titleEn": "BTR",
+        "description": "作为网络吉他手“吉他英雄”而广受好评的后藤一里，在现实中却是个什么都不会的沟通障碍者。一里有着组建乐队的梦想，但因为不敢向人主动搭话而一直没有成功，直到一天在公园中被伊地知虹夏发现并邀请进入缺少吉他手的“结束乐队”。可是，完全没有和他人合作经历的一里，在人前完全发挥不出原本的实力。为了努力克服沟通障碍，一里与“结束乐队”的成员们一同开始努力……",
+        "cover": "https://lain.bgm.tv/pic/cover/l/e2/e7/328609_2EHLJ.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/e2/e7/328609_2EHLJ.jpg",
+        "year": 2022,
+        "startDate": "2022-10-08",
+        "ratingRank": 71,
+        "ratingTotal": 39276,
+        "metadataFetched": true
       }
     ]
   },
@@ -4683,12 +7642,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/321885",
         "platform": "TV",
-        "totalEpisodes": 12,
+        "totalEpisodes": 14,
         "rating": 6.9,
         "confidence": 135,
         "query": "电锯人",
         "cacheKey": "import-metadata-v1:0dc0b571dc758b7d74c4",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "链锯人",
+        "titleJa": "チェンソーマン",
+        "titleEn": "Chainsaw Man",
+        "description": "电次是个背负了父亲遗留下的庞大债务，因此过着极端贫穷生活的少年，他救了恶魔啵奇塔，并与它一起以恶魔猎人的身份斩杀低阶恶魔来换取酬劳。有一天，流氓骗了电次，让他成为一堆恶魔的祭品，电次在临死之际，啵奇塔牺牲自己，把心脏给了他，让他复活并拥有了恶魔的力量，只要一拉位在心脏那边的链子就能发动。之后电次被公安人员看上，因此成为公安的恶魔猎人……",
+        "cover": "https://lain.bgm.tv/pic/cover/l/26/b4/321885_92uzU.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/26/b4/321885_92uzU.jpg",
+        "year": 2022,
+        "startDate": "2022-10-11",
+        "ratingRank": 3220,
+        "ratingTotal": 18417,
+        "metadataFetched": true
       },
       {
         "inputTitle": "Reze篇",
@@ -4701,7 +7671,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "电锯人 蕾塞篇",
         "cacheKey": "import-metadata-v1:c9fb8f1e7dec16799b1a",
-        "hintSignature": "[\"电锯人 蕾塞篇\"]"
+        "hintSignature": "[\"电锯人 蕾塞篇\"]",
+        "titleZh": "剧场版 链锯人 蕾塞篇",
+        "titleJa": "劇場版 チェンソーマン レゼ篇",
+        "titleEn": "Chainsaw Man: Reze-hen",
+        "description": "世界が熱狂するチェンソーマン、初の映画化！\r\n\r\n絶大な人気を誇るエピソード“レゼ篇”が、ついにスクリーンへ\r\n\r\n原作はシリーズ累計発行部数3,000万部を突破し、\r\n現在「少年ジャンプ+」(集英社)で人気連載中の漫画『チェンソーマン』。\r\n著者は、2024年に大ヒットし、第48回日本アカデミー賞にて、「最優秀アニメーション作品賞」を受賞した\r\n劇場アニメ『ルックバック』も記憶に新しい、鬼才の漫画家・藤本タツキ。\r\n2022年には、アニメスタジオ MAPPA(『呪術廻戦』『進撃の巨人 The Final Season』など)による\r\nTVアニメが放送され、国内だけでなく、世界中で高い評価を獲得。\r\n現在まで200か国以上の国と地域で配信されている。\r\nそして今回、連載当時から熱狂的な人気を博したエピソード“レゼ篇”が映画化。\r\n主人公・デンジが偶然出会った少女・レゼに翻弄されながら\r\n予測不能な運命へと突き進む物語が、\r\nスケールアップした疾走感溢れるバトルアクションと共に描かれる。\r\n主題歌は、世界的ヒットとなったTVアニメのオープニングテーマ「KICK BACK」に続き、\r\n米津玄師が再び競演。本作のために書き下ろした「IRIS OUT」が、レゼ篇の世界に新たな鼓動を与えている。\r\n\r\n恋も欲望も、人間も悪魔も",
+        "cover": "https://lain.bgm.tv/pic/cover/l/e0/d8/470660_uLY5M.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/e0/d8/470660_uLY5M.jpg",
+        "year": 2025,
+        "startDate": "2025-09-19",
+        "ratingRank": 73,
+        "ratingTotal": 12334,
+        "metadataFetched": true
       }
     ]
   },
@@ -4714,12 +7695,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/339326",
         "platform": "TV",
-        "totalEpisodes": 13,
+        "totalEpisodes": 15,
         "rating": 7.6,
         "confidence": 135,
         "query": "奇幻世界舅舅",
         "cacheKey": "import-metadata-v1:a7b160f61f3f3662fdfa",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "异世界舅舅",
+        "titleJa": "異世界おじさん",
+        "titleEn": "Uncle from Another World",
+        "description": "2017年秋，敬文的舅舅17岁时被卡车撞上，从此陷入昏迷，直到17年后他奇迹般苏醒。\r\n敬文去医院探望舅舅，却只见他独自胡言乱语，宣称自己是从大巴哈马鲁异世界归来。\r\n......舅舅的脑袋显然是坏掉了。\r\n敬文不知所措，但舅舅却施展魔法，证明自己的确去过另一个时空。\r\n于是，敬文决定将舅舅接回公寓同住。一方面是没有其他亲戚肯帮忙，另一方面是他觉得可以利用舅舅的能力来赚钱。\r\n两人同住后，敬文也逐渐了解了舅舅奇幻精彩的冒险，以及他对SEGA的痴狂。然而，有时听着舅舅孤单又残酷的遭遇，让敬文在开心的同时，也为他感到难过。\r\n这部新颖刺激的异世界喜剧讲述了不同世代的舅甥俩，在公寓的一角拍摄视频，努力朝着网红之路迈进。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/1a/75/339326_v466V.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/1a/75/339326_v466V.jpg",
+        "year": 2022,
+        "startDate": "2022-07-06",
+        "ratingRank": 632,
+        "ratingTotal": 19014,
+        "metadataFetched": true
       }
     ]
   },
@@ -4737,7 +7729,17 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "散华礼弥",
         "cacheKey": "import-metadata-v1:6c9422b1e8e7116aede9",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "散华礼弥",
+        "titleJa": "さんかれあ",
+        "description": "本作是一个以僵尸为主的搞笑恋爱故事。男主角降谷千纮因一次机缘巧合的情况下，意外令本来已死的女主角散华礼弥因复活术而成为僵尸。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/b3/f7/28230_hnla8.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/b3/f7/28230_hnla8.jpg",
+        "year": 2012,
+        "startDate": "2012-04-05",
+        "ratingRank": 3525,
+        "ratingTotal": 9761,
+        "metadataFetched": true
       }
     ]
   },
@@ -4750,12 +7752,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/378862",
         "platform": "TV",
-        "totalEpisodes": 12,
+        "totalEpisodes": 16,
         "rating": 7.6,
         "confidence": 135,
         "query": "别当欧尼酱了",
         "cacheKey": "import-metadata-v1:0330f2ac8e66552eab71",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "别当欧尼酱了！",
+        "titleJa": "お兄ちゃんはおしまい！",
+        "titleEn": "Onimai: I'm Now Your Sister!",
+        "description": "某天，家里蹲的啃老族绪山真寻一觉醒来发现自己变成了“女孩子”！？正当真寻不知道镜子里的美少女是自己而陷入混乱的时候，跳级进入大学的科学家妹妹绪山美波里出现了。她透露在饮料里加了一种奇怪的药物！\r\n真寻最近2年一直疯狂宅家玩小黄游，偶尔不得已才会工作！突然成为女孩子开始生活的真寻，对于厕所、浴室、裙子、胸罩等女人的生活完全不懂…并且他和美波里中学时期的同学穗月枫和其妹妹穗月椛认识。\r\n真寻的日常生活逐渐热闹起来。在持续的苦难中，到底“前”哥哥的命运会如何...！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/7e/ca/378862_24TnR.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/7e/ca/378862_24TnR.jpg",
+        "year": 2023,
+        "startDate": "2023-01-05",
+        "ratingRank": 714,
+        "ratingTotal": 18296,
+        "metadataFetched": true
       }
     ]
   },
@@ -4773,7 +7786,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "政宗君的复仇",
         "cacheKey": "import-metadata-v1:88d3fad388b9dc71a007",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "政宗君的复仇",
+        "titleJa": "政宗くんのリベンジ",
+        "titleEn": "Masamune-kun no Revenge",
+        "description": "为了复仇，我又回到这座城市了！\r\n8年前，被美少女·安达垣爱姬残忍拒绝的肥胖少年·真壁政宗，变得超瘦又更改了名字，变身成帅哥回来了。没错，一切都是为了让那个号称残虐公主的抖S女生迷上自己，完成最高形式的复仇——。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/05/bf/185762_xyM3h.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/05/bf/185762_xyM3h.jpg",
+        "year": 2017,
+        "startDate": "2017-01-05",
+        "ratingRank": 8643,
+        "ratingTotal": 7102,
+        "metadataFetched": true
       }
     ]
   },
@@ -4791,7 +7815,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "轻音少女",
         "cacheKey": "import-metadata-v1:f46cbf11c0bb2318e066",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "轻音少女",
+        "titleJa": "けいおん！",
+        "titleEn": "K-ON!",
+        "description": "春天，在新生决定社团的时候，田井中律硬拉着青梅竹马的秋山澪参观轻音部让其入部，在得知前辈们毕业后由于人数不足将面临闭部结局，秋山澪与琴吹紬成为了轻音部成员，但离4人指标还差1位名额。这时，一名弄错了部名的少女平泽唯误打误撞之下填补了最后一位空位，但这位少女却是一个连乐谱也看不懂的新人，学习成绩又差。而就是这样的4名少女，却展开了奏响青春的音乐之旅。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/48/9d/1424_q8FMQ.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/48/9d/1424_q8FMQ.jpg",
+        "year": 2009,
+        "startDate": "2009-04-02",
+        "ratingRank": 104,
+        "ratingTotal": 29776,
+        "metadataFetched": true
       },
       {
         "inputTitle": "27 and 剧场版",
@@ -4804,7 +7839,16 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 77,
         "query": "27 and 剧场版",
         "cacheKey": "import-metadata-v1:fbd06ba04e848cbd1884",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "迷幻27",
+        "titleJa": "27",
+        "description": "今日，愛麗絲踏入二十七歲。負擔不起租樓，仍與父母同住；想做愛也找不到私人空間，是最現實問題。迷幻派對後，遇單車意外短暫昏迷，是繼續沉溺幻想，還是省身面對現實？康城最佳短片，剖開年輕一代最赤誠的性告白。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/d0/66/484737_rRdAD.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/d0/66/484737_rRdAD.jpg",
+        "year": 2023,
+        "startDate": "2023-05-26",
+        "ratingTotal": 3,
+        "metadataFetched": true
       }
     ]
   },
@@ -4822,7 +7866,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "强风吹拂",
         "cacheKey": "import-metadata-v1:e66d4088de29d01b25cc",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "强风吹拂",
+        "titleJa": "風が強く吹いている",
+        "titleEn": "Kaze ga Tsuyoku Fuiteiru",
+        "description": "夜晚。如同逃跑一般奔驰在城市中的藏原走。他的侧面，突然有辆自行车冲来。素不相识的男子，对阿走发问了。“喂！你很喜欢跑步吧！”\r\n男子的名字是清濑灰二。 就这样，阿走在灰二的引导下，到达了名为竹青庄的老旧公寓。9名个性丰富的住民住在那里。阿走来到最后的空房间，虽然感到困惑，却仍然被强行留下。他怎么也没有想到，自己会成为这里的“第10个男人”……。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/d0/e0/248154_D8z6D.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/d0/e0/248154_D8z6D.jpg",
+        "year": 2018,
+        "startDate": "2018-10-02",
+        "ratingRank": 76,
+        "ratingTotal": 10399,
+        "metadataFetched": true
       }
     ]
   },
@@ -4835,12 +7890,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/9781",
         "platform": "TV",
-        "totalEpisodes": 24,
+        "totalEpisodes": 28,
         "rating": 7.4,
         "confidence": 135,
         "query": "GOSICK",
         "cacheKey": "import-metadata-v1:c7d3858099539ea25ba1",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "GOSICK",
+        "titleJa": "GOSICK -ゴシック-",
+        "titleEn": "GOSICK -ゴシック-",
+        "description": "由直木赏作家樱庭一树所著、武田日向担当插画的侦探类轻小说作品「GOSICK」，故事主要讲述了就读于拥有悠久庄严历史的圣玛格丽特学园的少年久城一弥某天与在学园图书馆塔上方的房间内一位身穿华丽服饰如洋娃娃般的少女维多利加相遇，之后两人便遭遇到了种种离奇事件，种种难题正等着洞察力灵敏的维多利加与一弥。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/9d/3d/9781_Kkik8.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/9d/3d/9781_Kkik8.jpg",
+        "year": 2011,
+        "startDate": "2011-01-07",
+        "ratingRank": 1246,
+        "ratingTotal": 9907,
+        "metadataFetched": true
       }
     ]
   },
@@ -4858,7 +7924,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "通往夏天的隧道，再见的出口",
         "cacheKey": "import-metadata-v1:78af40b299a08b3ad587",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "通往夏天的隧道，再见的出口",
+        "titleJa": "夏へのトンネル、さよならの出口",
+        "titleEn": "The Tunnel to Summer, the Exit of Goodbyes",
+        "description": "「你知道浦岛隧道吗？据说只要进入那条隧道，就能得到任何想要的事物；但相对地也会变老——」\r\n高中生塔野薰听说了这样的都市传说，碰巧就在当天夜晚，发现了疑似传言所指的隧道。只要进入这条隧道，或许就能救回五年前过世的妹妹。\r\n放学后，薰开始独自探勘隧道，却被转学生花城杏子发现。两人为了得到彼此想要的东西而携手合作。充满前所未有体验的惊奇夏天，即将开始。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/80/d9/362575_v9kT3.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/80/d9/362575_v9kT3.jpg",
+        "year": 2022,
+        "startDate": "2022-09-09",
+        "ratingRank": 7233,
+        "ratingTotal": 5319,
+        "metadataFetched": true
       }
     ]
   },
@@ -4876,7 +7953,17 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "蜘蛛侠：平行世界",
         "cacheKey": "import-metadata-v1:f43a1882b11558473428",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "蜘蛛侠：平行宇宙",
+        "titleJa": "Spider-Man: Into the Spider-Verse",
+        "description": "蜘蛛侠不止一个！漫威首部超英动画巨制《蜘蛛侠：平行宇宙》将经典漫画与CGI技术完美呈现，讲述了普通高中生迈尔斯·莫拉斯如何师从蜘蛛侠彼得·帕克，成长为新一代超级英雄的故事。影片中迈尔斯和从其它平行宇宙中穿越而来的彼得、女蜘蛛侠格温、暗影蜘蛛侠、潘妮·帕克和蜘猪侠集结成团，六位蜘蛛侠首次同框大银幕，对抗蜘蛛侠宇宙最强反派。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/51/80/232067_h3t8A.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/51/80/232067_h3t8A.jpg",
+        "year": 2018,
+        "startDate": "2018-12-14",
+        "ratingRank": 354,
+        "ratingTotal": 6183,
+        "metadataFetched": true
       },
       {
         "inputTitle": "纵横宇宙",
@@ -4889,7 +7976,17 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 85,
         "query": "纵横宇宙",
         "cacheKey": "import-metadata-v1:fb35ccab24dd0dede777",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "蜘蛛侠：纵横宇宙",
+        "titleJa": "Spider-Man: Across the Spider-Verse",
+        "description": "影片讲述了新生代蜘蛛侠迈尔斯（沙梅克·摩尔 Shameik Moore 配音）携手蜘蛛格温（海莉·斯坦菲尔德 Hailee Steinfeld 配音），穿越多元宇宙踏上更宏大的冒险征程的故事。面临每个蜘蛛侠都会失去至亲的宿命，迈尔斯誓言打破命运魔咒，找到属于自己的英雄之路。而这个决定和蜘蛛侠2099（奥斯卡·伊萨克 Oscar Is aac 配音）所领军的蜘蛛联盟产生了极大冲突，一场以一敌百的蜘蛛侠大内战即将拉响！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/82/57/282413_CX6cl.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/82/57/282413_CX6cl.jpg",
+        "year": 2023,
+        "startDate": "2023-06-02",
+        "ratingRank": 346,
+        "ratingTotal": 5182,
+        "metadataFetched": true
       }
     ]
   },
@@ -4907,7 +8004,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 134,
         "query": "久保同学不放过我",
         "cacheKey": "import-metadata-v1:cbf6c15055c9de24b475",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "久保同学不放过我",
+        "titleJa": "久保さんは僕を許さない",
+        "titleEn": "Kubo-san wa Mob wo Yurusanai",
+        "description": "高中一年级的白石纯太， 是一个零存在感的“路人”男生。同班的“女主角级”美少女·久保同学居然是唯一能找到他的人，并且总是戏弄他。无法成为特别存在的“路人”男生，和出现在他面前的“女主角”女生。在教室的一角，青春的色彩开始逐渐丰富——\r\n无论是谁，都可以成为某个人“特别”的存在。但是这份感情对尚且稚嫩的两人来说，还不能被称为“爱”。距离“恋爱喜剧”两步之遥，女主角女生×路人男生的青春期甜蜜喜剧拉开序幕。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/12/39/381793_oNshs.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/12/39/381793_oNshs.jpg",
+        "year": 2023,
+        "startDate": "2023-01-10",
+        "ratingRank": 6285,
+        "ratingTotal": 3542,
+        "metadataFetched": true
       }
     ]
   },
@@ -4925,7 +8033,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 85,
         "query": "やがて君になる 终将成为你",
         "cacheKey": "import-metadata-v1:a26567ae8a0e58e0af59",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "终将成为你",
+        "titleJa": "やがて君になる",
+        "titleEn": "Yagate Kimi ni Naru",
+        "description": "不明白与人恋爱的心情，为此感到烦恼的小糸侑，在初中毕业时被要好的男生告白，却无法给予回应。\r\n她在此时邂逅的学生会成员七海灯子，不论被谁告白，都无法喜欢上对方。\r\n与灯子感到共鸣的侑，将自己的烦恼坦诚相告，却反而从灯子那里听到了意想不到的话语——\r\n“我好像会喜欢上你。”",
+        "cover": "https://lain.bgm.tv/pic/cover/l/bc/72/243981_J20I2.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/bc/72/243981_J20I2.jpg",
+        "year": 2018,
+        "startDate": "2018-10-05",
+        "ratingRank": 391,
+        "ratingTotal": 10545,
+        "metadataFetched": true
       }
     ]
   },
@@ -4938,12 +8057,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/386809",
         "platform": "TV",
-        "totalEpisodes": 11,
+        "totalEpisodes": 15,
         "rating": 7.4,
         "confidence": 135,
         "query": "我推的孩子",
         "cacheKey": "import-metadata-v1:af1cc56807e0cdb98f04",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "【我推的孩子】",
+        "titleJa": "【推しの子】",
+        "titleEn": "Oshi no Ko",
+        "description": "“在演艺圈里，谎言就是武器。 ”\r\n在小城市工作的妇产科医生・五郎，有一天他所推的偶像“B小町”出现在了他的面前。“B小町”有着一个禁忌的秘密。\r\n如此这般的两人实现了最糟糕的相遇，从此命运的齿轮开始转动——",
+        "cover": "https://lain.bgm.tv/pic/cover/l/98/5e/386809_1yR81.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/98/5e/386809_1yR81.jpg",
+        "year": 2023,
+        "startDate": "2023-04-12",
+        "ratingRank": 1248,
+        "ratingTotal": 20597,
+        "metadataFetched": true
       }
     ]
   },
@@ -4956,12 +8086,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/389571",
         "platform": "TV",
-        "totalEpisodes": 12,
+        "totalEpisodes": 14,
         "rating": 5.8,
         "confidence": 134,
         "query": "物理魔法使马修",
         "cacheKey": "import-metadata-v1:7b48d669b50bfa7a3b04",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "物理魔法使马修",
+        "titleJa": "マッシュル-MASHLE-",
+        "titleEn": "マッシュル-MASHLE-",
+        "description": "这里是人人都理所当然地可以使用魔法的世界。在这魔法界的森林深处，有一位刻苦锻炼肌肉的少年。他叫马修·班迪德，他的秘密是——无法使用魔法。\r\n他想要与家人过安宁的生活，却在某一天突然被人盯上性命，被迫进入魔法学校就读，目标是成为最优秀学生“神觉者”。\r\n在精锐的魔法使面前，他那千锤百炼的肌肉能否派上用场？！\r\n用千锤百炼的力量粉碎一切魔法，异乎寻常的魔法奇幻故事隆重开幕！！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/72/c3/389571_2T0OF.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/72/c3/389571_2T0OF.jpg",
+        "year": 2023,
+        "startDate": "2023-04-07",
+        "ratingRank": 8568,
+        "ratingTotal": 3905,
+        "metadataFetched": true
       }
     ]
   },
@@ -4979,7 +8120,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 85,
         "query": "柑橘味香气",
         "cacheKey": "import-metadata-v1:9e7c37ec13b42d4cfd43",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "citrus～柑橘味香气～",
+        "titleJa": "citrus",
+        "titleEn": "citrus",
+        "description": "虽是辣妹却未经历初恋的女高中生·柚子，由于父母再婚的原因而进入了女子高中。因无法交到男友而不满爆发的转学第一天，她与黑发的美人学生会长·芽衣以最糟糕的形式相遇了。不仅如此，她与成为义理姐妹的芽衣开始在同一个房间里生活……！？\r\n完全相反的两位女高中生，互相排斥又互相吸引。\r\n姐妹的love affair，就此展开！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/8e/45/198098_g44Mz.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/8e/45/198098_g44Mz.jpg",
+        "year": 2018,
+        "startDate": "2018-01-06",
+        "ratingRank": 6567,
+        "ratingTotal": 6714,
+        "metadataFetched": true
       }
     ]
   },
@@ -4997,7 +8149,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 130,
         "query": "亡骸游戏",
         "cacheKey": "import-metadata-v1:69289bd6880c1aead839",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "亡骸游戏",
+        "titleJa": "デッドマウント・デスプレイ",
+        "titleEn": "Dead Mount Death Play",
+        "description": "此処とは違う異世界――。\r\n歴戦の兵士・『災厄潰し』と希代の死霊使い・『屍神殿』の、\r\n世界と自身の生死を賭けた勝負が決した。\r\n――そして、舞台は新宿へ。\r\n\r\n衝撃の異世界転生ノワールファンタジー、開幕!!",
+        "cover": "https://lain.bgm.tv/pic/cover/l/67/45/408013_5Z5Q3.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/67/45/408013_5Z5Q3.jpg",
+        "year": 2023,
+        "startDate": "2023-04-10",
+        "ratingRank": 7731,
+        "ratingTotal": 1973,
+        "metadataFetched": true
       }
     ]
   },
@@ -5015,7 +8178,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "日常系的异能战斗",
         "cacheKey": "import-metadata-v1:5d73155f0cc5e33c946b",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "日常系的异能战斗",
+        "titleJa": "異能バトルは日常系のなかで",
+        "titleEn": "Inou Battle wa Nichijou-kei no Naka de",
+        "description": "作品以总是憧憬能去使用异能力战斗的世界的高中生安藤寿为原点，没想到某天真正的超能力在他身上觉醒，于是他便有机会成为了学园异能战斗的主角。——虽然可以这么想，但生活在和平的每一天里，既没有毁灭世界的秘密机关、异能战争之类的设定，也没有勇者、魔王等角色的存在。当包括主角在内的 文艺部全员都成为了最强异能持有者，围绕着他们荒谬绝伦的超能力的故事就此上演。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/e2/1e/99538_khe3t.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/e2/1e/99538_khe3t.jpg",
+        "year": 2014,
+        "startDate": "2014-10-06",
+        "ratingRank": 4709,
+        "ratingTotal": 5513,
+        "metadataFetched": true
       }
     ]
   },
@@ -5028,12 +8202,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/10380",
         "platform": "TV",
-        "totalEpisodes": 25,
+        "totalEpisodes": 26,
         "rating": 8.8,
         "confidence": 135,
         "query": "命运石之门",
         "cacheKey": "import-metadata-v1:264a798aef94b10de5ce",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "命运石之门",
+        "titleJa": "STEINS;GATE",
+        "titleEn": "STEINS;GATE",
+        "description": "故事发生在「CHAOS;HEAD」的“涩谷崩坏”事件一年半之后的世界，而舞台则从涩谷转移到了秋叶原。主角冈部伦太郎是一位深度中二病的大学生，时常幻想自己身肩重任，并自称“狂气的疯狂科学家・凤凰院凶真”，不过说到底其作为不过就是在名为“未来道具研究所”中与两个伙伴开发着奇奇怪怪又不切实际的东西。然而，这样的他们却在偶然间发明出可以把电子讯息传送过去的时间机器。在他们对未来及过去知道得越多的同时，却不知道危难正渐渐临到自己身上……",
+        "cover": "https://lain.bgm.tv/pic/cover/l/a9/79/10380_YwP4R.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/a9/79/10380_YwP4R.jpg",
+        "year": 2011,
+        "startDate": "2011-04-06",
+        "ratingRank": 8,
+        "ratingTotal": 39184,
+        "metadataFetched": true
       },
       {
         "inputTitle": "ova",
@@ -5046,7 +8231,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "ova",
         "cacheKey": "import-metadata-v1:a5e6245f893a6e4d7bf1",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "皇家国教骑士团 OVA",
+        "titleJa": "HELLSING OVA",
+        "titleEn": "Hellsing Ultimate",
+        "description": "在一次对治某村庄食尸鬼的超自然事件时，平凡女警女警西洛斯·维多利亚遭到袭击，奄奄一息，关键时刻吸血鬼杀手阿尔卡特出现，铲除食尸鬼，并将西洛斯变成了吸血鬼的一员，她顺理成章也接触到了阿尔卡特背后的神秘组织，即为维护英国基督新教、与反基督怪物作战的皇家国教骑士团（Hellsing），在现任当家伊塔古拉·方布鲁克·维英格茨·赫尔辛的率领下，他们接手一桩桩危险且阴谋重重的任务。在这一过程中，与食尸鬼有关的事件层出不穷，死后背后有另一个神秘组织正在策划惊天阴谋。梵蒂冈特务局第十三课Iscariot机关局长安利哥·马克斯威尔、安德鲁森神父等重要人物相继现身，为了保护英国本土和基督新教，第九次十字军成立，而他们的对手则是纳粹余孽少校所率领的1000头食尸鬼组建的千禧年大军。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/2f/55/493_zK3f5.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/2f/55/493_zK3f5.jpg",
+        "year": 2006,
+        "startDate": "2006-02-10",
+        "ratingRank": 151,
+        "ratingTotal": 6954,
+        "metadataFetched": true
       },
       {
         "inputTitle": "web",
@@ -5059,7 +8255,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 124,
         "query": "web",
         "cacheKey": "import-metadata-v1:4a4df3a18b174807defb",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "阿滋漫画Web大王",
+        "titleJa": "あずまんがWeb大王",
+        "titleEn": "あずまんがWeb大王",
+        "description": "『あずまんがWeb大王』は、2000年12月28日よりキャラクター・アンド・アニメ・ドット・コム（キャラアニ.com）でストリーミング有料配信された実質日本初のWeb専用アニメーション。内容は、タイムカプセル用にビデオで映した映像というカメラ視点での映像となっている。\r\n\r\n開始時より当初の予定よりはるかに多いアクセスが殺到し、たびたびサーバーダウンが続きまた配信画質の低下も招き、2001年1月19日には一時配信休止、その後2001年3月にダウンロード販売に切り替え期間限定配信された。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/e3/59/49979_2ZJzR.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/e3/59/49979_2ZJzR.jpg",
+        "year": 2000,
+        "startDate": "2000-12-28",
+        "ratingRank": 5225,
+        "ratingTotal": 139,
+        "metadataFetched": true
       },
       {
         "inputTitle": "sp",
@@ -5072,7 +8279,17 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 127,
         "query": "sp",
         "cacheKey": "import-metadata-v1:f58369df7b8440568ef2",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "战国无双SP 真田之章",
+        "titleJa": "戦国無双SP 真田の章",
+        "description": "2013年12月6日、コーエーテクモゲームスの人気タイトル『戦国無双』シリーズの10周年を記念した発表会が開催。このイベント中に、『戦国無双』のアニメ化が発表された。2014年3月に放送予定。約1時間のオリジナルアニメとなるようだ。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/28/3b/89942_N52cj.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/28/3b/89942_N52cj.jpg",
+        "year": 2014,
+        "startDate": "2014-03-21",
+        "ratingRank": 7792,
+        "ratingTotal": 99,
+        "metadataFetched": true
       }
     ]
   },
@@ -5090,7 +8307,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 130,
         "query": "其实，我乃最强",
         "cacheKey": "import-metadata-v1:b58627d6843a7c227d68",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "其实，我是最强的？",
+        "titleJa": "実は俺、最強でした？",
+        "titleEn": "Jitsu wa Ore, Saikyou deshita?",
+        "description": "家里蹲的我，某日转生到异世界成为了一国王子，但由于魔力值低下……出生第一天就要被杀掉了！？\r\n\r\n就在我被抛弃在远方森林之中时，遭遇了一只巨大魔兽……\r\n\r\n为求自保，我尝试发动魔法进行反击，但魔兽不知为何变成了美少女，还成为了我的从者。\r\n\r\n稀里糊涂成为“魔王”的我，开启了左拥右抱的新生活！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/7f/27/400215_FYkZe.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/7f/27/400215_FYkZe.jpg",
+        "year": 2023,
+        "startDate": "2023-07-01",
+        "ratingRank": 9316,
+        "ratingTotal": 1954,
+        "metadataFetched": true
       }
     ]
   },
@@ -5108,7 +8336,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "利兹与青鸟",
         "cacheKey": "import-metadata-v1:02a0d8840bd25c3dd80c",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "莉兹与青鸟",
+        "titleJa": "リズと青い鳥",
+        "titleEn": "Liz und ein Blauer Vogel",
+        "description": "铠塚霙，高中3年级，双簧管演奏者。\r\n伞木希美，高中3年级，长笛演奏者。\r\n\r\n初中时，是希美牵起了霙的手，带领她走出了孤独。\r\n自那以后，希美就占据了霙的整个世界。\r\n只有与希美在一起的生活，才令霙感到幸福。\r\n可在高中一年级，希美一度退出了吹奏部。而她的归来，也始终未能抹去霙心中的不安。\r\n——是否有一天，希美会再次消失在自己面前呢？\r\n\r\n就这样，二人迎来了高中最后的竞演会。\r\n参赛的自由曲是「莉兹与青鸟」。\r\n在这首以童话为蓝本创作的乐曲当中，有一段双簧管与长笛交相呼应的章节。\r\n\r\n「故事的结局，还是越美满越好啦。」\r\n虽然希美如此认为，霙却依然对终将到来的离别心怀恐惧。\r\n\r\n——请永远，永远，留在我身边吧——\r\n\r\n在继续着日常生活的同时，两人总是情不自禁地将自己投影到童话当中。\r\n霙是莉兹，希美是青鸟。\r\n但是……\r\n两枚略有嫌隙的齿轮，仍不停地转动，寻找着与彼此相契合的那个瞬间。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/1d/35/216371_5926R.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/1d/35/216371_5926R.jpg",
+        "year": 2018,
+        "startDate": "2018-04-21",
+        "ratingRank": 27,
+        "ratingTotal": 19696,
+        "metadataFetched": true
       }
     ]
   },
@@ -5121,12 +8360,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/428735",
         "platform": "TV",
-        "totalEpisodes": 13,
+        "totalEpisodes": 14,
         "rating": 8,
         "confidence": 85,
         "query": "BanG It's MyGO",
         "cacheKey": "import-metadata-v1:f0005403e74a87c9fa9b",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "BanG Dream! It's MyGO!!!!!",
+        "titleJa": "BanG Dream! It's MyGO!!!!!",
+        "titleEn": "BanG Dream! It's MyGO!!!!!",
+        "description": "「能一辈子和我搞乐队吗？」\r\n\r\n在高一的春季即将结束之时，羽丘女子学园里人人都在参加乐队活动。\r\n入学较晚的爱音，也为了尽快融入班级，急忙寻找乐队成员。\r\n在寻找时，她发现被称为「羽丘的不可思议少女」的灯还没有参加乐队，\r\n于是爱音不由得向她发出邀请…\r\n\r\n我们的，伤痕累累而充满狼狈。\r\n迷茫也无所谓，迷茫也要前进。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/e7/a7/428735_1v11n.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/e7/a7/428735_1v11n.jpg",
+        "year": 2023,
+        "startDate": "2023-06-29",
+        "ratingRank": 264,
+        "ratingTotal": 30611,
+        "metadataFetched": true
       }
     ]
   },
@@ -5144,7 +8394,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 130,
         "query": "皇家国教骑士团",
         "cacheKey": "import-metadata-v1:a73b1fa3289d87e08f4d",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "皇家国教骑士团",
+        "titleJa": "HELLSING",
+        "titleEn": "HELLSING",
+        "description": "故事延续著[Bram Stoker]的《吸血鬼德古拉》，HELLSING教授打倒了不死的德古拉之后，时间过了约100年，英国王立国教骑士团是专门歼灭对抗大英帝国和英国国教的反基督怪物的特殊机关，而其中的王牌是拿着常人无法使用的大口径手枪的吸血鬼阿尔卡特，在一次任务中转化了被狭持的女警西洛斯，之后两人就以主仆的关系进行任务。\r\n　　但是潜伏在历史阴影中的敌人也正在重整旗鼓，一连串不寻常的人造吸血鬼肆虐事件指向了一个秘密的组织“千禧年”，这个组织由躲藏在南美的纳粹残党所建立，在领导人少校的指挥之下，许多加入组织的党卫军老兵接受了改造成了不死的吸血鬼军团“最后的大队”，另外，少校手下的“狼人部队”拥有超乎知识的超自然能力以及杀戮的意志，也成了相当恐 怖的敌人。\r\n　　他们的目标是：消灭阿尔卡特以及Hellsing，毁灭英国，将无尽的战火再度带到这世界上。\r\n　　Hellsing不得已与平时在政教上为敌对关系，却又同为消灭异端怪物的机关，法王厅十三课合作。但是拥有强大军团的 法王厅却有着自己的打算，使得情形更加复杂。\r\n　　此时，最后的大队以及狼人部队终于对伦敦发动歼灭战，潜伏的吸血鬼支持者也倾巢而出。英国各处死伤惨重，Hellsing也元气大伤，法王厅十三课课长马克斯威尔趁机发动第九次十字军登陆战，企图作收渔翁之利，让国教徒永远从英国消失。英国女王也宣布在最后手段下，将动用核武攻击已为死城的伦敦。\r\n　　在阿尔卡特发动死河之后，最后的大队以及十字军迅速溃败，法王厅十三课也近乎毁灭。血腥的黎明来到之前，三方的战力已剩下最后的底牌，然而少校似乎有着更大的阴谋……\r\n　　这场地狱之战中，谁会是最后一个活下来的人？",
+        "cover": "https://lain.bgm.tv/pic/cover/l/59/38/2216_TclUH.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/59/38/2216_TclUH.jpg",
+        "year": 2001,
+        "startDate": "2001-10-18",
+        "ratingRank": 4141,
+        "ratingTotal": 1746,
+        "metadataFetched": true
       },
       {
         "inputTitle": "ova",
@@ -5157,7 +8418,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "ova",
         "cacheKey": "import-metadata-v1:0f3c0de3af2fc1aad1d9",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "皇家国教骑士团 OVA",
+        "titleJa": "HELLSING OVA",
+        "titleEn": "Hellsing Ultimate",
+        "description": "在一次对治某村庄食尸鬼的超自然事件时，平凡女警女警西洛斯·维多利亚遭到袭击，奄奄一息，关键时刻吸血鬼杀手阿尔卡特出现，铲除食尸鬼，并将西洛斯变成了吸血鬼的一员，她顺理成章也接触到了阿尔卡特背后的神秘组织，即为维护英国基督新教、与反基督怪物作战的皇家国教骑士团（Hellsing），在现任当家伊塔古拉·方布鲁克·维英格茨·赫尔辛的率领下，他们接手一桩桩危险且阴谋重重的任务。在这一过程中，与食尸鬼有关的事件层出不穷，死后背后有另一个神秘组织正在策划惊天阴谋。梵蒂冈特务局第十三课Iscariot机关局长安利哥·马克斯威尔、安德鲁森神父等重要人物相继现身，为了保护英国本土和基督新教，第九次十字军成立，而他们的对手则是纳粹余孽少校所率领的1000头食尸鬼组建的千禧年大军。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/2f/55/493_zK3f5.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/2f/55/493_zK3f5.jpg",
+        "year": 2006,
+        "startDate": "2006-02-10",
+        "ratingRank": 151,
+        "ratingTotal": 6954,
+        "metadataFetched": true
       }
     ]
   },
@@ -5170,12 +8442,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/210864",
         "platform": "TV",
-        "totalEpisodes": 24,
+        "totalEpisodes": 25,
         "rating": 7.2,
         "confidence": 134,
         "query": "魔法使的新娘",
         "cacheKey": "import-metadata-v1:b469de1df5b5e0110132",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "魔法使的新娘",
+        "titleJa": "魔法使いの嫁",
+        "titleEn": "Mahoutsukai no Yome",
+        "description": "羽鸟智世是15岁的少女。\r\n不论是能够回去的地方，还是生存的理由，亦或是活下去的手段，她都一无所有。除了一种她与生俱来的特别力量之外。\r\n将这样的智世收为弟子，以及迎作未来新娘的是，异形的魔法使·艾利亚斯。\r\n在融入自然、生活了悠久时日的魔法使生活当中，智世一点一点地取回她所重视的某些东西……\r\n这是一个为了知晓世间美丽，而编织的故事。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/7c/ba/210864_W0Teb.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/7c/ba/210864_W0Teb.jpg",
+        "year": 2017,
+        "startDate": "2017-10-07",
+        "ratingRank": 1791,
+        "ratingTotal": 3943,
+        "metadataFetched": true
       },
       {
         "inputTitle": "剧场版：等待繁星之人",
@@ -5188,7 +8471,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 85,
         "query": "剧场版：等待繁星之人",
         "cacheKey": "import-metadata-v1:1eaf5b88ce7d97b48b3a",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "剧场版 空之境界 第一章 俯瞰风景",
+        "titleJa": "劇場版 空の境界 第一章 俯瞰風景",
+        "titleEn": "Gekijouban Kara no Kyoukai: The Garden of Sinners",
+        "description": "“去吧、去吧、去吧、去吧——”\r\n　　我只是这样期望着，\r\n　　期望着这个窗外的世界。\r\n　　只是期望被他带走而已。\r\n　　这是一个发生在夏末，少女们不断飞落跳下相继自杀的故事。少女们，毫无征兆突发性的从废墟大楼的屋顶\r\n　　上跳向天空，随后落下。等待她们的只有死。\r\n　　这些女孩在学校也并无异常，相互间也并非朋友关系。这些一切毫无关联性，连自杀的理由都找不到，完全无法解释的自杀事件逐一被不断报道。但是唯一只有一个人看出了这事件其中的关联性。\r\n　　这个人就是最高位的人偶师、也是一位没有成为魔法使的魔术师 —— 苍崎澄子。\r\n　　或许……“没有理由”就是他们的共通点，其次就是浮游与飞行的差别。\r\n　　而搜索调查这个连续自杀事件的人就是拥有能看见事间万物之死线能力“直死之魔眼”的两仪式。\r\n　　对她而言，有一个与此事件不得不关联起来的理由——\r\n　　与其说自身这种并不想要获得的能力（直死之魔眼），更令她在意的是用她的眼睛就这样捕捉到了在虚空中飞舞的少女们的幽灵，而这些幽灵到底又在想什么呢？\r\n　　假设，这或许是到达相同道路同胞们的哀怜，也或者是同族的嫌恶。\r\n　　假设，这或许是来自威胁某种重要存在之人的敌意。\r\n　　换句话说，这是明确的杀意。\r\n　　式就这样前往了那个可怜的大楼现场，而那里等着她的是谁都不知道的，展开着重重包围圈套的序章。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/e1/65/233_x22mT.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/e1/65/233_x22mT.jpg",
+        "year": 2007,
+        "startDate": "2007-12-01",
+        "ratingRank": 309,
+        "ratingTotal": 11824,
+        "metadataFetched": true
       },
       {
         "inputTitle": "西之少年与青岚的骑士",
@@ -5201,7 +8495,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 128,
         "query": "西之少年与青岚的骑士",
         "cacheKey": "import-metadata-v1:00389ed7c67c5ef68103",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "魔法使的新娘 西之少年与青岚的骑士",
+        "titleJa": "魔法使いの嫁 西の少年と青嵐の騎士",
+        "titleEn": "The Ancient Magus' Bride: The Boy from the West and the Knight of the Blue Storm",
+        "description": "“その猟団に、ひかれてはならぬ。\"\r\n\r\nカルタフィルスがひとときの午睡につき、チセが学院の聴講生となる少し前。\r\n\r\n学院への招待が届き、不安ながらも準備を進めるチセと手伝うエリアス達。\r\n久しくなかった日常の最中、不気味な馬を連れたスプリガンが邸宅を訪れる。\r\n『今回の亡霊猟団の様子がおかしい』という言葉と共に。\r\n\r\n――倫敦から移り住んできた普通の少年・ガブリエルは退屈していた。\r\n自身の境遇、友人との別離、不慣れな土地、すべてに。\r\nそれらから逃れるように眺めた窓の先、一瞬見えた紫煙を追いかけて家を抜け出た、その時。\r\n本来なら交わらぬはずの少年の世界は、厚いベールの裏側に生きる魔法使い達の世界と交わり始める……。\r\n\r\n原作漫画16~18卷特装版附OAD。描述智世成为学院旁听生之前的事情，故事从带着令人感到害怕的马匹来到宅邸的斯普利甘，表示亡灵猎团的状况有点奇怪而展开。另一边，因为自己的生活、与朋友的别离、不习惯的土地等，对一切感到无趣的普通少年加百列（ガブリエル）也与魔法的世界相遇……",
+        "cover": "https://lain.bgm.tv/pic/cover/l/f3/fc/330394_86w68.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/f3/fc/330394_86w68.jpg",
+        "year": 2021,
+        "startDate": "2021-09-10",
+        "ratingRank": 4677,
+        "ratingTotal": 552,
+        "metadataFetched": true
       }
     ]
   },
@@ -5214,12 +8519,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/115908",
         "platform": "TV",
-        "totalEpisodes": 14,
+        "totalEpisodes": 21,
         "rating": 8.3,
         "confidence": 135,
         "query": "吹响吧，上低音号",
         "cacheKey": "import-metadata-v1:4765064da4647b165eac",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "吹响吧！上低音号",
+        "titleJa": "響け！ユーフォニアム",
+        "titleEn": "Hibike! Euphonium",
+        "description": "进入北宇治高中就读的主人公黄前久美子，在同班同学加藤叶月的热烈影响下加入了该校的吹奏部。北宇治高中吹奏部直到5年前还是关西大会的常客，并且过去还是全国大会出场过的强校代表，然而自从顾问换了之后，该吹奏部就再也没有挺进过关西大会。之后以新顾问的赴任为契机，怀揣着高远目标的部员们挥洒着奋斗的青春，过着波澜万丈的每一天。终于，比赛的日子也即将到来……",
+        "cover": "https://lain.bgm.tv/pic/cover/l/37/df/115908_c0uQj.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/37/df/115908_c0uQj.jpg",
+        "year": 2015,
+        "startDate": "2015-04-07",
+        "ratingRank": 91,
+        "ratingTotal": 21763,
+        "metadataFetched": true
       },
       {
         "inputTitle": "剧场版：誓言的终章",
@@ -5232,7 +8548,17 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 85,
         "query": "剧场版：誓言的终章",
         "cacheKey": "import-metadata-v1:817e642fab14d7c0758f",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "剧场版 吹响吧！上低音号～誓言的终章～",
+        "titleJa": "劇場版 響け！ユーフォニアム～誓いのフィナーレ～",
+        "description": "北宇治高中吹奏乐部去年顺利地在全日本吹奏乐竞演会中出场。升入二年级的黄前久美子，和三年级的加部友惠一起开始负责指导从四月开始新加入的一年级生们。\r\n由于身为全国大赛的出场学校，而有很多一年级生入部。其中，有四名新生来到了低音部。\r\n乍一看似乎毫无问题的久石奏。不融入周围的铃木美玲。想要和美玲做朋友的铃木五月。不提及自身事情的月永求。\r\nSunrise祭、选拔赛、以及竞演赛。以“全国大赛金奖”为目标的吹奏乐部，却接连发生问题……！？\r\n北宇治高中吹奏乐部，风波不断的日子开始了！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/2c/ca/216372_QR0Wp.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/2c/ca/216372_QR0Wp.jpg",
+        "year": 2019,
+        "startDate": "2019-04-19",
+        "ratingRank": 201,
+        "ratingTotal": 10733,
+        "metadataFetched": true
       },
       {
         "inputTitle": "合奏篇",
@@ -5245,7 +8571,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 85,
         "query": "合奏篇",
         "cacheKey": "import-metadata-v1:2755b691a69e229b3e3d",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "特别篇 吹响吧！上低音号～合奏比赛～",
+        "titleJa": "特別編 響け！ユーフォニアム～アンサンブルコンテスト～",
+        "titleEn": "特别篇 吹响！悠风号～Ensemble Contest～",
+        "description": "新世代，开启！\r\n这是由京都动画所描绘的、 将梦想寄托于吹奏乐上的高中生们那微不足道却又“无比特别\"的青春篇章！\r\n本次中篇动画改编自武田绫乃所著小说「吹响吧！上低音号 北宇治高中吹奏部的真实故事」（宝岛社出版）中的人气章节！\r\n吹奏乐强校的吹奏部新部长所接到的第一份工作竟是部内“调整\"！？\r\n北宇治吹奏部，共计65人。\r\n故事就在主人公——久美子作为部长，处理部员们接连不断的咨询和突然爆发的矛盾中拉开帷幕。\r\n她能顺利地完成这第一份工作吗——？\r\n调音，完成！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/d0/d0/386195_E67b7.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/d0/d0/386195_E67b7.jpg",
+        "year": 2023,
+        "startDate": "2023-08-04",
+        "ratingRank": 895,
+        "ratingTotal": 6542,
+        "metadataFetched": true
       }
     ]
   },
@@ -5258,12 +8595,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/413741",
         "platform": "TV",
-        "totalEpisodes": 13,
+        "totalEpisodes": 14,
         "rating": 5.5,
         "confidence": 135,
         "query": "16bit的感动",
         "cacheKey": "import-metadata-v1:d126309b6823e047df30",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "16bit的感动 ANOTHER LAYER",
+        "titleJa": "16bitセンセーション ANOTHER LAYER",
+        "titleEn": "16bitセンセーション ANOTHER LAYER",
+        "description": "秋里木叶是个热爱美少女和美少女游戏的画师。\r\n她梦想成为超人气画师，来到美少女游戏制作公司就职，但现实却并不如意……\r\n在手机游戏风靡的现代，公司也不景气。\r\n木叶作为一个底层画师，每天的工作就是给路人角色的背影上色。\r\n某天，她偶然从游戏商店的老板那里获赠了过去的美少女游戏名作。\r\n怀着对美少女游戏黄金时代的怀念之情，她打开了『同级生』的盒子。\r\n突然她被耀眼的光芒包裹，等她回过神来，木叶发现她穿越到了过去！\r\n她来到的是 1992 年！当时正是美少女游戏的黎明期！\r\n来到一家叫 Alcohol Soft 的公司工作的木叶，她能想象出、描绘出、并创作出美少女吗！？\r\n接下来为您献上的，是对美少女的爱超乎一切的，一位少女的故事——\r\n『那么，开始咯！』",
+        "cover": "https://lain.bgm.tv/pic/cover/l/a7/73/413741_39Urq.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/a7/73/413741_39Urq.jpg",
+        "year": 2023,
+        "startDate": "2023-10-04",
+        "ratingRank": 9138,
+        "ratingTotal": 7922,
+        "metadataFetched": true
       }
     ]
   },
@@ -5281,7 +8629,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 85,
         "query": "僕の心ろのやばいやつ（我心危！）",
         "cacheKey": "import-metadata-v1:bde18ad0deb3d089d662",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "我心里危险的东西",
+        "titleJa": "僕の心のヤバイやつ",
+        "titleEn": "The Dangers in My Heart",
+        "description": "有着重度中二病的阴沉少年市川京太郎，因为很看不惯位于学校金字塔顶端的阳角美少女山田杏奈，每天都在妄想着要怎么结束掉她的性命。没想到在一次偶然情况下，京太郎撞见了杏奈不为人知的一面，爱吃零食的她常躲进京太郎的圣地图书室偷吃零食，就这样图书室变成了他们两个交集的秘密基地。随着市川的一步步观察，他发现平时以“清高、阳光”等性格示人的山田有着不为人知的一面…… 阴暗少年京太郎的初恋，萌芽了！阳角美少女×阴角男子，原本不可能缩短距离的两人，会发生奇迹吗？极甜的青涩校园爱情喜剧开始——！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/01/ee/394260_VMqvV.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/01/ee/394260_VMqvV.jpg",
+        "year": 2023,
+        "startDate": "2023-04-01",
+        "ratingRank": 373,
+        "ratingTotal": 15282,
+        "metadataFetched": true
       }
     ]
   },
@@ -5294,12 +8653,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/400602",
         "platform": "TV",
-        "totalEpisodes": 28,
+        "totalEpisodes": 36,
         "rating": 8.5,
         "confidence": 135,
         "query": "葬送的芙莉莲",
         "cacheKey": "import-metadata-v1:96d9ccf22d3ccf5c162f",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "葬送的芙莉莲",
+        "titleJa": "葬送のフリーレン",
+        "titleEn": "Frieren: Beyond Journey's End",
+        "description": "魔法使芙莉莲和勇者辛美尔等人一起，历经十年的冒险之后击败了魔王，为世界带来了和平。\r\n身为能活上一千多年的精灵族，她于是和辛美尔等人约定再次相见后，踏上了独自一人的旅途。\r\n自那以后，50年过去，芙莉莲又前往拜访辛美尔，相比于和50年前一点没变的她来说，辛美尔已经年迈体衰，进入了风烛残年。\r\n之后，她目睹了辛美尔迎来他的死亡，痛感自己以往没能“知晓人心\"，陷入后悔的芙莉莲，为了“知晓人心\"，踏上了旅途。\r\n这趟旅途会邂逅各种各样的人，也有各种各样的事情在等待着她。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/13/c5/400602_ZI8Y9.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/13/c5/400602_ZI8Y9.jpg",
+        "year": 2023,
+        "startDate": "2023-09-29",
+        "ratingRank": 40,
+        "ratingTotal": 34766,
+        "metadataFetched": true
       }
     ]
   },
@@ -5317,7 +8687,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "不死不幸",
         "cacheKey": "import-metadata-v1:764e544a55128951141a",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "不死不幸",
+        "titleJa": "アンデッドアンラック",
+        "titleEn": "Undead Unluck",
+        "description": "「不运要来了。不错哦，太棒了！！」\r\n风子是会使触碰到她的人遭遇不幸事故的「不运」少女。拥有绝对不会死的不死之身的「不死」的安迪，出现在因为自己的特异体质而一度打算寻短的风子面前。他为了借由风子的力量获得「真正的死」，决定与她一起行动。\r\n然而，锁定像安迪和风子这种拥有异能之力的「否定者」下手的神秘组织「UNION」，却出现在他们的面前，试图将他们带回组织。安迪为了完成心愿，带着风子展开逃亡，他们的命运将会如何？那个组织又是什么来头？\r\n这是，两人找寻着最棒的死亡的故事。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/eb/e9/397808_m3g00.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/eb/e9/397808_m3g00.jpg",
+        "year": 2023,
+        "startDate": "2023-10-06",
+        "ratingRank": 5996,
+        "ratingTotal": 5140,
+        "metadataFetched": true
       }
     ]
   },
@@ -5335,7 +8716,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "你想活出怎样的人生",
         "cacheKey": "import-metadata-v1:61bca92ada6d25b481fc",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "你想活出怎样的人生",
+        "titleJa": "君たちはどう生きるか",
+        "titleEn": "The Boy and the Heron",
+        "description": "1944年的太平洋战争期间，在东京大空袭中，牧真人的母亲因病住院并去世，为了避难，真人和他的家人以及他父亲的战斗机工厂一起被疏开到市郊。然而，真人对于父亲再婚的新婚妻子（他母亲的妹妹）无法接受，并且在转校后的新学校中感到孤立无援。有一天，真人在疏散地的宅邸里发现了一本名为《你想活出怎样的人生》的书籍。\r\n\r\n在宅邸庭院的树林中有一座已经荒废的洋馆。这座洋馆是真人的“大叔父”所建造的，而他本身也是一个传奇人物。惊奇的是，一只能说人话的蓝鹭突然出现在真人面前，告诉他：“你的母亲在等着你，她并没有离开”，然后引导他进入洋馆的内部。\r\n\r\n在与大叔父的对话中，他传达给真人这样的讯息：“你要用自己的双手创造一个没有争斗的世界”。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/5e/0f/228715_pzZdJ.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/5e/0f/228715_pzZdJ.jpg",
+        "year": 2023,
+        "startDate": "2023-07-14",
+        "ratingRank": 1892,
+        "ratingTotal": 7387,
+        "metadataFetched": true
       }
     ]
   },
@@ -5353,7 +8745,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "梦想成为魔法少女",
         "cacheKey": "import-metadata-v1:732877348848f1c5113b",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "梦想成为魔法少女",
+        "titleJa": "魔法少女にあこがれて",
+        "titleEn": "Mahou Shoujo ni Akogarete",
+        "description": "柊舞缇娜是非常喜欢魔法少女的普通女孩。有一天，一个奇怪的吉祥物给了她变身的能力，于是她学会了神奇的魔法，如此一来她就能成为魔法少女了。\r\n“咦，这到底是什么装扮？”\r\n“邪恶组织的女干部又是什么意思！？接下来我会变得怎么样啊！！？”\r\n心地善良且腼腆的魔法少女粉变成虐待狂，正义与邪恶的激烈SM Play就此开始。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/96/d1/424663_mM5GN.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/96/d1/424663_mM5GN.jpg",
+        "year": 2024,
+        "startDate": "2024-01-03",
+        "ratingRank": 2439,
+        "ratingTotal": 12814,
+        "metadataFetched": true
       }
     ]
   },
@@ -5366,12 +8769,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/390980",
         "platform": "TV",
-        "totalEpisodes": 25,
+        "totalEpisodes": 26,
         "rating": 6.4,
         "confidence": 135,
         "query": "香格里拉边境",
         "cacheKey": "import-metadata-v1:6ab0d6eead2665a26040",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "香格里拉边境",
+        "titleJa": "シャングリラ・フロンティア～クソゲーハンター、神ゲーに挑まんとす～",
+        "titleEn": "Shangri-La Frontier: Kusogee Hunter, Kamige ni Idoman to Su",
+        "description": "你是为了什么而玩游戏的？\r\n如果世上有100部神作，那么也存在着1000部粪作。这是喜爱粪作，同时也被粪作所爱的男人“阳务乐郎”，向粪作的对立面——神作「香格里拉边境」发起挑战的故事。\r\n原作网络小说的总阅览数超过5亿，并少见的跳过书籍出版直接在「周刊少年MAGAZINE」上改编成漫画开始连载。在这本拥有60年以上历史的漫画杂志上，赢得了读者问卷评比有史以来第一次的四冠王！\r\n本作品通过每个人都能拥有的游戏体验来描绘出一种新的幻想世界，为沉浸在过去记忆中的大人和生活在科技最前沿的年轻人都带来了新的冒险与刺激。\r\n一名“粪作猎人”向神作发起挑战，至高无上的\"游戏x幻想 \"的冒险故事，开幕！！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/ed/01/390980_3u0Bb.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/ed/01/390980_3u0Bb.jpg",
+        "year": 2023,
+        "startDate": "2023-10-01",
+        "ratingRank": 5817,
+        "ratingTotal": 6988,
+        "metadataFetched": true
       }
     ]
   },
@@ -5389,7 +8803,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "跃动青春",
         "cacheKey": "import-metadata-v1:69c12775facf2cb7adce",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "跃动青春",
+        "titleJa": "スキップとローファー",
+        "titleEn": "Skip to Loafer",
+        "description": "岩仓美津未从乡下的小初中，以第一名的成绩考入了东京的高升学率高中。\r\n这位乡村神童心怀完美的人生蓝图、独自来到东京。她成绩优异，却与他人有着独特的距离感，稍显格格不入。\r\n她虽然偶尔会失败，但还是凭借天真的性格一点点打动班上的同学，使他们那各不相同的性格逐渐交叠。\r\n相遇、相知、最终心意相通。\r\n人人都会有心烦和焦躁之时。而无可替代的朋友，定将带来互相理解的契机。\r\n这是个偶有杂音却能让人不知不觉快乐起来的校园生活喜剧！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/63/4e/357961_RtPiz.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/63/4e/357961_RtPiz.jpg",
+        "year": 2023,
+        "startDate": "2023-04-04",
+        "ratingRank": 506,
+        "ratingTotal": 10860,
+        "metadataFetched": true
       }
     ]
   },
@@ -5402,12 +8827,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/231722",
         "platform": "TV",
-        "totalEpisodes": 12,
+        "totalEpisodes": 13,
         "rating": 7,
         "confidence": 135,
         "query": "邪神与厨二病少女",
         "cacheKey": "import-metadata-v1:58a5569546520b297022",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "邪神与厨二病少女",
+        "titleJa": "邪神ちゃんドロップキック",
+        "titleEn": "Jashin-chan Dropkick",
+        "description": "魔界的恶魔，通称“邪神酱”某天突然被召唤到了人间界。召唤她的人是住在神保町破旧公寓的略有些腹黑的女大学生“花园百合铃”。虽然召唤了邪神酱，却不知道让她？回到魔界的方法。邪神酱和百合铃迫不得已开始一起生活，但根据邪神酱所说，“如果召唤者死掉我就能回到魔界了”。于是邪神酱所采取的行动是……！？",
+        "cover": "https://lain.bgm.tv/pic/cover/l/49/c0/231722_1DDIx.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/49/c0/231722_1DDIx.jpg",
+        "year": 2018,
+        "startDate": "2018-07-09",
+        "ratingRank": 2433,
+        "ratingTotal": 6462,
+        "metadataFetched": true
       }
     ]
   },
@@ -5420,12 +8856,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/207195",
         "platform": "TV",
-        "totalEpisodes": 12,
+        "totalEpisodes": 22,
         "rating": 8.2,
         "confidence": 135,
         "query": "摇曳露营",
         "cacheKey": "import-metadata-v1:dfdd977f2c0bdcc3808c",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "摇曳露营△",
+        "titleJa": "ゆるキャン△",
+        "titleEn": "Yuru Camp",
+        "description": "这是，某个冬日的故事。\r\n从静冈搬家到山梨的女高中生·抚子，为了观赏“在千圆纸币上都有图案的富士山”而骑着自行车来到本栖湖，但不巧天气是阴天。没能看到富士山，十分疲倦的抚子当场进入了梦乡。当她醒来的时候，时间已是深夜。在这初来乍到的地方，连回去的路都不知道。拯救了不安而害怕的抚子的是，一位爱好露营的女孩子·凛。为了让寒冷的身体取暖而点燃篝火的两人。噼啪噼啪的柴火爆音，沁入湖畔的静寂之中。围着篝火，一边啜着咖喱面一边对话的抚子和凛。终于，两人期盼已久的瞬间到来。\r\n“看到了……富士山……”\r\n抚子与凛，从这两人的相遇开始的户外系Girls Story。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/18/bc/207195_2Cp3o.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/18/bc/207195_2Cp3o.jpg",
+        "year": 2018,
+        "startDate": "2018-01-04",
+        "ratingRank": 116,
+        "ratingTotal": 17050,
+        "metadataFetched": true
       },
       {
         "inputTitle": "sp",
@@ -5438,7 +8885,17 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 127,
         "query": "sp",
         "cacheKey": "import-metadata-v1:136f04a05cb2828d8dc9",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "战国无双SP 真田之章",
+        "titleJa": "戦国無双SP 真田の章",
+        "description": "2013年12月6日、コーエーテクモゲームスの人気タイトル『戦国無双』シリーズの10周年を記念した発表会が開催。このイベント中に、『戦国無双』のアニメ化が発表された。2014年3月に放送予定。約1時間のオリジナルアニメとなるようだ。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/28/3b/89942_N52cj.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/28/3b/89942_N52cj.jpg",
+        "year": 2014,
+        "startDate": "2014-03-21",
+        "ratingRank": 7792,
+        "ratingTotal": 99,
+        "metadataFetched": true
       },
       {
         "inputTitle": "剧场版",
@@ -5451,7 +8908,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "剧场版",
         "cacheKey": "import-metadata-v1:6946b6bd1276bf1b444f",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "剧场版 空之境界 第一章 俯瞰风景",
+        "titleJa": "劇場版 空の境界 第一章 俯瞰風景",
+        "titleEn": "Gekijouban Kara no Kyoukai: The Garden of Sinners",
+        "description": "“去吧、去吧、去吧、去吧——”\r\n　　我只是这样期望着，\r\n　　期望着这个窗外的世界。\r\n　　只是期望被他带走而已。\r\n　　这是一个发生在夏末，少女们不断飞落跳下相继自杀的故事。少女们，毫无征兆突发性的从废墟大楼的屋顶\r\n　　上跳向天空，随后落下。等待她们的只有死。\r\n　　这些女孩在学校也并无异常，相互间也并非朋友关系。这些一切毫无关联性，连自杀的理由都找不到，完全无法解释的自杀事件逐一被不断报道。但是唯一只有一个人看出了这事件其中的关联性。\r\n　　这个人就是最高位的人偶师、也是一位没有成为魔法使的魔术师 —— 苍崎澄子。\r\n　　或许……“没有理由”就是他们的共通点，其次就是浮游与飞行的差别。\r\n　　而搜索调查这个连续自杀事件的人就是拥有能看见事间万物之死线能力“直死之魔眼”的两仪式。\r\n　　对她而言，有一个与此事件不得不关联起来的理由——\r\n　　与其说自身这种并不想要获得的能力（直死之魔眼），更令她在意的是用她的眼睛就这样捕捉到了在虚空中飞舞的少女们的幽灵，而这些幽灵到底又在想什么呢？\r\n　　假设，这或许是到达相同道路同胞们的哀怜，也或者是同族的嫌恶。\r\n　　假设，这或许是来自威胁某种重要存在之人的敌意。\r\n　　换句话说，这是明确的杀意。\r\n　　式就这样前往了那个可怜的大楼现场，而那里等着她的是谁都不知道的，展开着重重包围圈套的序章。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/e1/65/233_x22mT.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/e1/65/233_x22mT.jpg",
+        "year": 2007,
+        "startDate": "2007-12-01",
+        "ratingRank": 309,
+        "ratingTotal": 11824,
+        "metadataFetched": true
       }
     ]
   },
@@ -5469,7 +8937,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "迷宫饭",
         "cacheKey": "import-metadata-v1:ad7e52eb06a76b425e9a",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "迷宫饭",
+        "titleJa": "ダンジョン飯",
+        "titleEn": "Dungeon Meshi",
+        "description": "迷宫饭，不是吃就是被吃…\r\n莱欧斯是一名冒险者，在一次探险中，迷宫深处的赤龙吃掉了他的妹妹，他侥幸逃过一命传送回到了地面。莱欧斯想要立马重新挑战迷宫，营救妹妹，但是钱和食物都留在了迷宫深处… 想到妹妹随时都有可能会被赤龙消化，导致无法复活，莱欧斯下定了决心：「食物要在迷宫内就地取材」\r\n史莱姆、巴西利斯克、宝箱怪、还有龙！\r\n冒险者啊，以袭来的魔物为食，通关迷宫吧！\r\n\r\n\r\n[简介原文]\r\nダンジョン飯。　それは、“食う”か“食われる”か―――\r\nダンジョン深奥で、レッドドラゴンに妹が喰われた！\r\n命からがら地上へ生還した冒険者のライオス。\r\n再びダンジョンへ挑もうとするも、お金や食糧は迷宮の奥底……。\r\n妹が消化されてしまうかもしれない危機的な状況の中、ライオスは決意する。\r\n「食糧は、迷宮内で自給自足する！」\r\nスライム、バジリスク、ミミック、そしてドラゴン！\r\n襲い来る魔物たちを食べながらダンジョン踏破を目指せ、冒険者よ！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/c5/88/395378_jztpO.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/c5/88/395378_jztpO.jpg",
+        "year": 2024,
+        "startDate": "2024-01-04",
+        "ratingRank": 361,
+        "ratingTotal": 17210,
+        "metadataFetched": true
       }
     ]
   },
@@ -5487,7 +8966,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "GIRLS BAND CRY",
         "cacheKey": "import-metadata-v1:079301e4f2d4d2f6edbc",
-        "hintSignature": "[\"GIRLS BAND CRY\",\"ガールズバンドクライ\"]"
+        "hintSignature": "[\"GIRLS BAND CRY\",\"ガールズバンドクライ\"]",
+        "titleZh": "少女乐队的呐喊",
+        "titleJa": "ガールズバンドクライ",
+        "titleEn": "GIRLS BAND CRY",
+        "description": "无论是愤怒、喜悦还是悲伤，全都倾注其中。\r\n高中二年级，从学校退学，只身在东京以大学为目标的主人公。被同伴背叛，不知如何是好的少女。被父母抛弃，一个人在大城市里打工维生的女孩子。\r\n虽然这个世界总是背叛我们。虽然什么都不能称心如意。但是，因为我们想要喜欢某个东西。因为我们相信自己的容身之处就在某个地方。\r\n所以，我们歌唱。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/75/c1/431767_bX7FZ.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/75/c1/431767_bX7FZ.jpg",
+        "year": 2024,
+        "startDate": "2024-04-05",
+        "ratingRank": 649,
+        "ratingTotal": 23729,
+        "metadataFetched": true
       }
     ]
   },
@@ -5505,7 +8995,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "BanG Dream! Ave Mujica",
         "cacheKey": "import-metadata-v1:683a2a5f73cbec6d8911",
-        "hintSignature": "[\"BanG Dream! Ave Mujica\"]"
+        "hintSignature": "[\"BanG Dream! Ave Mujica\"]",
+        "titleZh": "BanG Dream! Ave Mujica",
+        "titleJa": "BanG Dream! Ave Mujica",
+        "titleEn": "BanG Dream! Ave Mujica",
+        "description": "「言ったでしょう？残りの人生、わたくしに下さいと」\r\n\r\n豊川祥子がメンバーを招き入れたバンド・Ave Mujicaは、\r\nライブやメディア露出など、商業的な成功を収めていた。\r\n\r\n運命をともにすると誓った仲間も、生まれ育った家も失った少女。\r\n彼女は何のために他人の一生を背負い、バンドを続けるのか。\r\n\r\n過去も素顔も仮面で覆い隠し、今宵も完璧な箱庭に降り立つ。\r\n\r\n「我说过了吧？请你们将剩余的人生交给我」\r\n\r\n丰川祥子招募组建的乐队・Ave Mujica取得了演唱会和媒体曝光等商业上的成功。\r\n\r\n少女失去了曾发誓命运与共的友人，又失去了自己出生长大的家庭。 她为什么要背负他人的一生，将乐队坚持下去呢？\r\n\r\n将过往与真容都以假面遮掩，今夜亦降临于完美的箱庭。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/77/c3/454684_ZH5tU.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/77/c3/454684_ZH5tU.jpg",
+        "year": 2025,
+        "startDate": "2025-01-02",
+        "ratingRank": 9984,
+        "ratingTotal": 20973,
+        "metadataFetched": true
       }
     ]
   },
@@ -5523,7 +9024,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "夜晚的水母不会游泳",
         "cacheKey": "import-metadata-v1:7a43058a559aba522b07",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "夜晚的水母不会游泳",
+        "titleJa": "夜のクラゲは泳げない",
+        "titleEn": "Yoru no Kurage wa Oyogenai",
+        "description": "「我」也想像某个人一样闪耀光辉！\r\n明天要聊的话题，这周要买的衣服，这些手机（流行趋势）都会告诉我们答案。想成为不一样的存在──然而这忙碌的世界却连让我们怀有这种愿望的时间都没有。\r\n活动停止中的插画家「海月夜」、想靠歌声重新争口气的前任偶像「橘乃乃香」、自称最强Vtuber的「龙崎诺克斯」、想支持喜欢的偶像的神秘作曲家「木村酱」。这些与世界有些格格不入的少女们组成了匿名艺术家团体「JELEE」。如果成为不是自己的「我们」──也许就能够闪耀光辉。\r\n没错，这是一部以涩谷为舞台的青春群像剧，描绘着夜晚流连在涩谷的我们所展开的物语！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/f2/8f/425909_M7W7T.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/f2/8f/425909_M7W7T.jpg",
+        "year": 2024,
+        "startDate": "2024-04-06",
+        "ratingRank": 9578,
+        "ratingTotal": 10096,
+        "metadataFetched": true
       }
     ]
   },
@@ -5541,7 +9053,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 77,
         "query": "恋与轻唱",
         "cacheKey": "import-metadata-v1:aa0f23a0857bcb1683ad",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "恋与制作人",
+        "titleJa": "恋とプロデューサー～EVOL×LOVE～",
+        "titleEn": "恋とプロデューサー～EVOL×LOVE～",
+        "description": "“为了留住公司，必须全力以赴”\r\n跟随着已故父亲的脚步，我担任了小型影视公司“奇迹娱乐”的社长兼制作人，制作了节目《发现奇迹》并为了做好节目每日奋斗着。\r\n出现在我面前的是立场和性格都不同的4人“Evolver（超进化人类）”。被称为天才科学家的许墨、人气绝顶的偶像周棋洛、在Evolver犯罪对策局担任警察的白起、以及我公司的投资人兼华锐集团CEO李泽言。\r\n通过与Evolver的相遇，我逐渐了解了父亲死亡的真相以及自己所失去的记忆，并被卷入了巨大的阴谋中。我和他们全力以赴着，最后所得到的真相是……",
+        "cover": "https://lain.bgm.tv/pic/cover/l/f5/ae/260736_Ged8M.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/f5/ae/260736_Ged8M.jpg",
+        "year": 2020,
+        "startDate": "2020-07-15",
+        "ratingRank": 9451,
+        "ratingTotal": 161,
+        "metadataFetched": true
       },
       {
         "inputTitle": "2特别场",
@@ -5554,7 +9077,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 77,
         "query": "恋与轻唱 2特别场",
         "cacheKey": "import-metadata-v1:c14304a257347b489545",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "恋与制作人",
+        "titleJa": "恋とプロデューサー～EVOL×LOVE～",
+        "titleEn": "恋とプロデューサー～EVOL×LOVE～",
+        "description": "“为了留住公司，必须全力以赴”\r\n跟随着已故父亲的脚步，我担任了小型影视公司“奇迹娱乐”的社长兼制作人，制作了节目《发现奇迹》并为了做好节目每日奋斗着。\r\n出现在我面前的是立场和性格都不同的4人“Evolver（超进化人类）”。被称为天才科学家的许墨、人气绝顶的偶像周棋洛、在Evolver犯罪对策局担任警察的白起、以及我公司的投资人兼华锐集团CEO李泽言。\r\n通过与Evolver的相遇，我逐渐了解了父亲死亡的真相以及自己所失去的记忆，并被卷入了巨大的阴谋中。我和他们全力以赴着，最后所得到的真相是……",
+        "cover": "https://lain.bgm.tv/pic/cover/l/f5/ae/260736_Ged8M.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/f5/ae/260736_Ged8M.jpg",
+        "year": 2020,
+        "startDate": "2020-07-15",
+        "ratingRank": 9451,
+        "ratingTotal": 161,
+        "metadataFetched": true
       }
     ]
   },
@@ -5572,7 +9106,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "鹿乃子乃子乃子虎视眈眈",
         "cacheKey": "import-metadata-v1:40bafa97d595158fe5d9",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "鹿乃子乃子乃子虎视眈眈",
+        "titleJa": "しかのこのこのここしたんたん",
+        "titleEn": "Shikanoko Nokonoko Koshitantan",
+        "description": "「虎视虎子」是一位就读于日野南高中的女子高中生。某天她上学时，感觉有个冰冷的东西打到自己的脸。结果抬头一看，竟发现有一位留着鼻涕、鹿角卡在电线杆上而无法动弹的女孩子——！ ？在她不小心帮助了那位长着『鹿角』的奇怪少女「鹿乃子乃子」后，（批着）优等生（的皮）的虎视虎子的人生将完全被打乱……！\r\n当一位少女（前不良）遇到一位鹿（？），荒诞的校园爆笑故事即将揭幕！ ！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/b1/7b/484761_r83E8.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/b1/7b/484761_r83E8.jpg",
+        "year": 2024,
+        "startDate": "2024-07-07",
+        "ratingRank": 9616,
+        "ratingTotal": 7099,
+        "metadataFetched": true
       }
     ]
   },
@@ -5590,7 +9135,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 85,
         "query": "不時轻声以俄语遮羞的邻座艾莉同學",
         "cacheKey": "import-metadata-v1:1dbfac2fffd290ede7af",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "不时轻声地以俄语遮羞的邻座艾莉同学",
+        "titleJa": "時々ボソッとロシア語でデレる隣のアーリャさん",
+        "titleEn": "Tokidoki Bosotto Russiago de Dereru Tonari no Alya-",
+        "description": "久世政近的邻座坐着一位名叫艾莉莎的女孩，她总是对他投以冰冷的目光。\r\n然而，她偶尔会小声地用俄语对他撒娇……\r\n政近当然不会错过这些话。\r\n因为他竟然拥有着母语级别的俄语听力！\r\n\r\n艾莉莎误以为政近听不懂俄语，所以才偶尔在他面前流露出真实的自己。\r\n而政近虽然明白她话中的意思，却装作毫不知情的样子。\r\n\r\n两人之间弥漫着掩饰不住的甜蜜气氛，他们的恋情将会何去何从——！？",
+        "cover": "https://lain.bgm.tv/pic/cover/l/7c/8e/424883_5X5X2.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/7c/8e/424883_5X5X2.jpg",
+        "year": 2024,
+        "startDate": "2024-07-03",
+        "ratingRank": 9115,
+        "ratingTotal": 12683,
+        "metadataFetched": true
       }
     ]
   },
@@ -5608,7 +9164,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "义妹生活",
         "cacheKey": "import-metadata-v1:b292081becd5af0526ef",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "义妹生活",
+        "titleJa": "義妹生活",
+        "titleEn": "Days with My Stepsister",
+        "description": "高中生浅村悠太因父亲太一再婚，将与同龄少女绫濑沙季及其母亲亚季子在同一屋檐下生活。\r\n\r\n由于双方都经历过父母不和与离婚，\r\n对男女关系都很谨慎，他们约定以义兄妹的身份保持适当的距离。\r\n\r\n我对你没有任何期待，\r\n也请你不要对我抱有任何期待。\r\n\r\n悠太和沙季通过彼此交流想法、反复磨合，逐渐互相了解。\r\n\r\n正当两人开始感受到新生活的舒适时，\r\n他们的关系也慢慢地，但也确实地开始发生了变化……",
+        "cover": "https://lain.bgm.tv/pic/cover/l/40/01/393037_I7mvN.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/40/01/393037_I7mvN.jpg",
+        "year": 2024,
+        "startDate": "2024-07-04",
+        "ratingRank": 1183,
+        "ratingTotal": 11016,
+        "metadataFetched": true
       }
     ]
   },
@@ -5626,7 +9193,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "深夜 PUNCH",
         "cacheKey": "import-metadata-v1:ae7208cda7a895254ac5",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "深夜重拳",
+        "titleJa": "真夜中ぱんチ",
+        "titleEn": "深夜 Punch",
+        "description": "全世界最多觀看次數的影片分享平台「NewTube」。\r\n\r\n三人組NewTuber「活力姐妹」中的「真吉」真咲真希，\r\n由於直播中的問題行為引發炎上，\r\n最終被頻道開除並趕了出來。\r\n\r\n為了絕地反擊，真咲遇到了對她有命運感應的吸血鬼利布。\r\n有了利布那超凡的壓倒性身體能力，\r\n達到目標的一百萬訂閱者也不再是夢想！\r\n\r\n真咲向被她的血吸引的利布提出了影片合作的請求。\r\n作為報酬，她提出的條件是……。\r\n「如果達到一百萬訂閱，可以哦，你可以吃掉我。」\r\n\r\n將與利布所居住的「晚杯莊」的夥伴們也拖下水，\r\n絕對要實現夢想的影片投稿少女×絕對想要吃掉她的吸血鬼，\r\n這場拼死的影片拍攝開始了！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/0c/cf/477207_0lA1U.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/0c/cf/477207_0lA1U.jpg",
+        "year": 2024,
+        "startDate": "2024-07-08",
+        "ratingRank": 1379,
+        "ratingTotal": 7016,
+        "metadataFetched": true
       }
     ]
   },
@@ -5644,7 +9222,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "魔法少女与恶曾是敌人",
         "cacheKey": "import-metadata-v1:57959cb66f158b257228",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "魔法少女与邪恶曾经敌对。",
+        "titleJa": "かつて魔法少女と悪は敵対していた。",
+        "titleEn": "Katsute Mahou Shoujo to Aku wa Tekitai Shite Ita.",
+        "description": "邪恶组织侵犯任何事物、毁灭一切，\r\n在这个残忍又狡猾的组织中，有位邪恶之王的左右手——邪恶参谋。\r\n面临地表受到侵略的危机，苦命的魔法少女——白夜挺身应战，\r\n与她对峙的邪恶参谋——米勒居然对她一见钟情……\r\n相爱不相杀的两人，最后会有什么样的结局呢？\r\n\r\n\r\n\r\n[简介原文]\r\n悪の組織――あらゆるものを侵略し、あらゆるものを滅ぼす。\r\n残忍にして狡猾なその組織のブレーンには、王の片腕たる悪の参謀がいた。\r\n地上侵略の危機に立ち上がる、薄幸の魔法少女・白夜。\r\n彼女と対峙した悪の参謀・ミラは、なんと一目ボレしてしまい……。\r\n魔法少女と悪が敵対していたのは、かつての話。\r\n殺し愛（あ）わない、ふたりの行く末は――？",
+        "cover": "https://lain.bgm.tv/pic/cover/l/c9/4f/465884_fqZbB.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/c9/4f/465884_fqZbB.jpg",
+        "year": 2024,
+        "startDate": "2024-07-09",
+        "ratingRank": 2333,
+        "ratingTotal": 4894,
+        "metadataFetched": true
       }
     ]
   },
@@ -5662,7 +9251,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "败犬女主太多了",
         "cacheKey": "import-metadata-v1:14c4673156a6272b0c59",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "败犬女主太多了！",
+        "titleJa": "負けヒロインが多すぎる！",
+        "titleEn": "Make Heroine ga Oosugiru!",
+        "description": "没能赢得心上人恋情的女孩——“败犬女主”。\r\n爱吃的青梅竹马系女主·八奈见杏菜。\r\n活力充沛的运动系女主·烧盐柠檬。\r\n怕生的小动物系女主·小鞠知花。\r\n被有点缺憾的败犬女主——败女们环绕，新感觉、乱糟糟的败走系青春故事就此揭幕。\r\n因失败而更加闪耀吧，败女们！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/e4/dc/464376_NsZRw.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/e4/dc/464376_NsZRw.jpg",
+        "year": 2024,
+        "startDate": "2024-07-13",
+        "ratingRank": 259,
+        "ratingTotal": 26940,
+        "metadataFetched": true
       }
     ]
   },
@@ -5680,7 +9280,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 133,
         "query": "蓝色监狱",
         "cacheKey": "import-metadata-v1:b6b2074488e59463e2b8",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "蓝色监狱",
+        "titleJa": "ブルーロック",
+        "titleEn": "BLUE LOCK",
+        "description": "2018年日本在世界杯又败在16强赛，为了培养出能打破这个僵局的「攻击手」，日本足球联盟决定采用一个大胆的计画：召集300名高中生FW（前锋），放在名叫「蓝色监狱（BLUE LOCK）」的宿舍内练蛊！即使会因此牺牲掉299个人的前途，也要让独一无二的世界级前锋诞生！无名的高中生前锋‧洁世一，也毅然决定参加这场挤掉所有竞争对手的生存战！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/b4/db/341163_l525N.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/b4/db/341163_l525N.jpg",
+        "year": 2022,
+        "startDate": "2022-10-08",
+        "ratingRank": 6223,
+        "ratingTotal": 3307,
+        "metadataFetched": true
       },
       {
         "inputTitle": "凪 剧场版",
@@ -5693,7 +9304,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 133,
         "query": "蓝色监狱 凪",
         "cacheKey": "import-metadata-v1:c15c153d45e7686caa3c",
-        "hintSignature": "[\"蓝色监狱 凪\"]"
+        "hintSignature": "[\"蓝色监狱 凪\"]",
+        "titleZh": "蓝色监狱",
+        "titleJa": "ブルーロック",
+        "titleEn": "BLUE LOCK",
+        "description": "2018年日本在世界杯又败在16强赛，为了培养出能打破这个僵局的「攻击手」，日本足球联盟决定采用一个大胆的计画：召集300名高中生FW（前锋），放在名叫「蓝色监狱（BLUE LOCK）」的宿舍内练蛊！即使会因此牺牲掉299个人的前途，也要让独一无二的世界级前锋诞生！无名的高中生前锋‧洁世一，也毅然决定参加这场挤掉所有竞争对手的生存战！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/b4/db/341163_l525N.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/b4/db/341163_l525N.jpg",
+        "year": 2022,
+        "startDate": "2022-10-08",
+        "ratingRank": 6223,
+        "ratingTotal": 3307,
+        "metadataFetched": true
       }
     ]
   },
@@ -5711,7 +9333,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 130,
         "query": "dddd 恶魔的破坏",
         "cacheKey": "import-metadata-v1:ac01a57aaed091c74500",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "DDDD 恶魔的破坏",
+        "titleJa": "デッドデッドデーモンズデデデデデストラクション",
+        "titleEn": "DDDD 恶魔的破坏",
+        "description": "3年前の8月31日、巨大な宇宙船「母艦」が突如として東京に襲来し、世界は終わりを迎えるかに見えた。その後、絶望的な状況は次第に日常に溶け込み、上空に母艦が浮遊する異様な光景が当たり前となっていた。そんな中、女子高生の小山門出と「おんたん」こと中川凰蘭は、担任教師の渡良瀬や仲の良い友人たちとともに何気ない学生生活を送っていたが……。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/f5/85/495562_onpMR.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/f5/85/495562_onpMR.jpg",
+        "year": 2024,
+        "startDate": "2024-05-24",
+        "ratingRank": 719,
+        "ratingTotal": 3343,
+        "metadataFetched": true
       }
     ]
   },
@@ -5729,7 +9362,20 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 127,
         "query": "ATRI -My Dear Moments-",
         "cacheKey": "import-metadata-v1:ffa7b4b8e0ba934d71b2",
-        "hintSignature": "[\"ATRI -My Dear Moments-\",\"亚托莉 -我挚爱的时光-\"]"
+        "hintSignature": "[\"ATRI -My Dear Moments-\",\"亚托莉 -我挚爱的时光-\"]",
+        "titleZh": "ATRI -My Dear Moments-",
+        "titleJa": "ATRI -My Dear Moments-",
+        "titleEn": "ATRI -My Dear Moments-",
+        "description": "In the near future, a sudden and unexplained sea rise has left much of human civilization underwater. Ikaruga Natsuki, a boy who lost his mother and one of his legs in an accident some years earlier, returns disillusioned from a harsh life in the big city to find his old countryside home half-swallowed by the sea. Left without a family, all he has to his name is the ship and submarine left to him by his oceanologist grandmother, and her debts. His only hope to restore the dreams for the future that he has lost is to take up an opportunity presented to him by the suspicious debt collector Catherine. They set sail to search the sunken ruins of his grandmother's laboratory in order to find a treasure rumor says she left there. But what they find is not riches or jewels; it is a strange girl lying asleep in a coffin at the bottom of the sea, Atri. Atri is a robot, but her appearance and her wealth of emotions would fool anyone into thinking she's a living, breathing human being. In gratitude for being salvaged, she makes a declaration to Natsuki.\n(Source: Crunchyroll)",
+        "descriptionEn": "In the near future, a sudden and unexplained sea rise has left much of human civilization underwater. Ikaruga Natsuki, a boy who lost his mother and one of his legs in an accident some years earlier, returns disillusioned from a harsh life in the big city to find his old countryside home half-swallowed by the sea. Left without a family, all he has to his name is the ship and submarine left to him by his oceanologist grandmother, and her debts. His only hope to restore the dreams for the future that he has lost is to take up an opportunity presented to him by the suspicious debt collector Catherine. They set sail to search the sunken ruins of his grandmother's laboratory in order to find a treasure rumor says she left there. But what they find is not riches or jewels; it is a strange girl lying asleep in a coffin at the bottom of the sea, Atri. Atri is a robot, but her appearance and her wealth of emotions would fool anyone into thinking she's a living, breathing human being. In gratitude for being salvaged, she makes a declaration to Natsuki.\n(Source: Crunchyroll)",
+        "cover": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx154963-Ju6Ey3P5YHs2.jpg",
+        "banner": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/154963-sDMgZTrrsT70.jpg",
+        "accent": "#3578f1",
+        "year": 2024,
+        "startDate": "2024-07-14",
+        "ratingTotal": 70,
+        "popularity": 30365,
+        "metadataFetched": true
       }
     ]
   },
@@ -5742,12 +9388,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/390353",
         "platform": "TV",
-        "totalEpisodes": 12,
+        "totalEpisodes": 13,
         "rating": 6.5,
         "confidence": 135,
         "query": "我独自升级",
         "cacheKey": "import-metadata-v1:767ecaeb19412cf15a35",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "我独自升级",
+        "titleJa": "俺だけレベルアップな件",
+        "titleEn": "Solo Leveling",
+        "description": "连接异次元和现世界的通道“门”突然出现十来年后，世界上出现觉醒了超能力被称为“猎人”之人。\r\n猎人使用力量以攻占门内地下城并获得报酬为生，但在强者齐聚的猎人们中，“水篠旬”作为被称为人类最弱兵器的低等猎人而艰难生活。\r\n某日，水篠旬遭遇某个被隐藏在低等级迷宫中的高等级重迷宫，在身负濒死重伤的水篠旬面前出现了神秘的探索窗口。\r\n他在临死之际，决定接受任务之际，成为唯一能“升级”之人。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/f5/2e/390353_07vz7.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/f5/2e/390353_07vz7.jpg",
+        "year": 2024,
+        "startDate": "2024-01-06",
+        "ratingRank": 5115,
+        "ratingTotal": 9979,
+        "metadataFetched": true
       }
     ]
   },
@@ -5760,12 +9417,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/100449",
         "platform": "TV",
-        "totalEpisodes": 12,
+        "totalEpisodes": 18,
         "rating": 7.8,
         "confidence": 135,
         "query": "月刊少女野崎君",
         "cacheKey": "import-metadata-v1:32372a4a1266e257b03f",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "月刊少女野崎君",
+        "titleJa": "月刊少女野崎くん",
+        "titleEn": "Gekkan Shoujo Nozaki-kun",
+        "description": "高中女生佐仓千代好不容易提起勇气向同年级的野崎梅太郎告白，得到的却是野崎的亲笔签名，和“要不要来我家？”的邀请。佐仓虽然对意料之外的展开感到困惑，却还是带着期待来到野崎家，没想到等着她的却是漫画原稿，不知不觉间就顺着野崎的指示开始进行涂黑作业。到这时佐仓才发现野崎是知名少女漫画家梦野咲子。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/a0/20/100449_d101j.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/a0/20/100449_d101j.jpg",
+        "year": 2014,
+        "startDate": "2014-07-06",
+        "ratingRank": 418,
+        "ratingTotal": 21882,
+        "metadataFetched": true
       }
     ]
   },
@@ -5783,7 +9451,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "期待在地下城邂逅有错吗",
         "cacheKey": "import-metadata-v1:ff7816da1d470212f8f9",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "在地下城寻求邂逅是否搞错了什么",
+        "titleJa": "ダンジョンに出会いを求めるのは間違っているだろうか",
+        "titleEn": "Dungeon ni Deai o Motomeru no wa Machigatte Iru Darouka: Familia Myth",
+        "description": "迷宫都市欧拉丽——是一座拥有雄伟地下迷宫（通称“地下城”）的巨大都市。\r\n想成为冒险者并且向往像英雄冒险谭中那样的“与异性命运的邂逅”的贝尔·克朗尼，在这个地方遇见了一位小小的“神明”赫斯缇雅，而她正四处寻找自己“眷族”的成员。\r\n吃了不少“眷族”闭门羹的贝尔在听了其劝诱后，立马就决定加入。\r\n这是少年所走过的，女神所记录的——【眷族物语（Familiar Myth）】——",
+        "cover": "https://lain.bgm.tv/pic/cover/l/3e/74/116287_EqO1e.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/3e/74/116287_EqO1e.jpg",
+        "year": 2015,
+        "startDate": "2015-04-03",
+        "ratingRank": 3475,
+        "ratingTotal": 9276,
+        "metadataFetched": true
       },
       {
         "inputTitle": "ova",
@@ -5796,7 +9475,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "ova",
         "cacheKey": "import-metadata-v1:cbb32cea96aebd5602f8",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "皇家国教骑士团 OVA",
+        "titleJa": "HELLSING OVA",
+        "titleEn": "Hellsing Ultimate",
+        "description": "在一次对治某村庄食尸鬼的超自然事件时，平凡女警女警西洛斯·维多利亚遭到袭击，奄奄一息，关键时刻吸血鬼杀手阿尔卡特出现，铲除食尸鬼，并将西洛斯变成了吸血鬼的一员，她顺理成章也接触到了阿尔卡特背后的神秘组织，即为维护英国基督新教、与反基督怪物作战的皇家国教骑士团（Hellsing），在现任当家伊塔古拉·方布鲁克·维英格茨·赫尔辛的率领下，他们接手一桩桩危险且阴谋重重的任务。在这一过程中，与食尸鬼有关的事件层出不穷，死后背后有另一个神秘组织正在策划惊天阴谋。梵蒂冈特务局第十三课Iscariot机关局长安利哥·马克斯威尔、安德鲁森神父等重要人物相继现身，为了保护英国本土和基督新教，第九次十字军成立，而他们的对手则是纳粹余孽少校所率领的1000头食尸鬼组建的千禧年大军。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/2f/55/493_zK3f5.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/2f/55/493_zK3f5.jpg",
+        "year": 2006,
+        "startDate": "2006-02-10",
+        "ratingRank": 151,
+        "ratingTotal": 6954,
+        "metadataFetched": true
       },
       {
         "inputTitle": "外传",
@@ -5804,12 +9494,22 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/66140",
         "platform": "TV",
-        "totalEpisodes": 300,
+        "totalEpisodes": 50,
         "rating": 4.9,
         "confidence": 77,
         "query": "外传",
         "cacheKey": "import-metadata-v1:50b09ddd2ae3f28475db",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "武林外传",
+        "titleJa": "武林外传动画版",
+        "titleEn": "My Own Swordsman",
+        "description": "巨侠之后郭芙蓉，龙门镖局千金佟湘玉，盗圣白展堂，神童吕秀才，厨子李大嘴，衡山掌门莫小贝，邢捕头和邢捕头的徒弟燕小六…这群性情各异的人离奇地聚在同福客栈，一起经历江湖传奇故事，见证成长过程中的酸甜苦辣。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/af/2c/66140_000ps.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/af/2c/66140_000ps.jpg",
+        "year": 2010,
+        "startDate": "2010-05-01",
+        "ratingTotal": 34,
+        "metadataFetched": true
       }
     ]
   },
@@ -5827,7 +9527,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 130,
         "query": "漩涡",
         "cacheKey": "import-metadata-v1:0fd32d7fdaf610fc2b7f",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "漩涡",
+        "titleJa": "うずまき",
+        "titleEn": "Uzumaki",
+        "description": "“我们一起离开这个小镇吧。” 斋藤秀一对他的老同学五岛桐绘说道。桐绘是从小在黑涡镇长大的女高中生。而如今，小镇的一切都在变得诡异：离奇的旋风，火葬场里翻腾的浓烟，甚至镇上的居民都开始变为漩涡。人们眼球开始旋转，舌头卷成螺旋形，身体也扭曲成了无法理解的形状。为了逃离漩涡的诅咒，桐绘决心逃离黑涡镇，但她真的能彻底摆脱从这场混乱吗？\r\n\r\n“Let’s leave this town together,” asks Shuichi Saito, a former classmate of Kirie Goshima, a high school girl who was born and grew up in Kurouzu-cho. Everything from a strange whirlwind, billowing smoke from the crematorium, and the residents is turning into spirals. People’s eyes spin in whirls, a tongue spirals, and the bodies twist unnaturally. In an attempt to escape the curse of the spirals, Kirie decides to flee from Kurouzu-cho, but can she get away from this turmoil?",
+        "cover": "https://lain.bgm.tv/pic/cover/l/12/51/289854_x58Kd.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/12/51/289854_x58Kd.jpg",
+        "year": 2024,
+        "startDate": "2024-09-28",
+        "ratingRank": 9178,
+        "ratingTotal": 1925,
+        "metadataFetched": true
       }
     ]
   },
@@ -5845,7 +9556,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 85,
         "query": "超超超超喜欢你的100个女朋友",
         "cacheKey": "import-metadata-v1:8828c77a133ea5d54207",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "超超超超超喜欢你的100个女朋友",
+        "titleJa": "君のことが大大大大大好きな100人の彼女",
+        "titleEn": "Kimi no Koto ga Dai Dai Dai Dai Daisuki na Hyakunin no Kanojo",
+        "description": "爱城恋太郎在初中的失恋次数达到了100次的大关，他抱着高中一定要交到女朋友的心愿造访神社。出现在那里的恋爱之神告诉他「你会在高中遇见的真命天女有100人」。\r\n然而神表示，和命中注定的人相遇的人，如果不和那个人彼此相爱并获得幸福的话就会死掉……。\r\n面对一个又一个等待着他的真命天女的相遇——恋太郎该怎么办！？100个女朋友又将何去何从！？\r\n\r\n\r\n[简介原文]\r\n中学で失恋100回を達成した愛城恋太郎は、高校でこそ彼女を！と願い訪れた神社で、現れた恋の神様から「高校で出会う運命の人は100人いる」と告げられる。\r\nしかし神様いわく、運命の人と出会った人間は、その相手と愛し合って幸せになれなければ死んでしまうという……。\r\n次々に待ち受ける運命の人との出会い──どうする恋太郎？どうなる100人の彼女！？",
+        "cover": "https://lain.bgm.tv/pic/cover/l/37/03/424379_UfMuk.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/37/03/424379_UfMuk.jpg",
+        "year": 2023,
+        "startDate": "2023-10-08",
+        "ratingRank": 1420,
+        "ratingTotal": 10281,
+        "metadataFetched": true
       }
     ]
   },
@@ -5863,7 +9585,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "胆大党",
         "cacheKey": "import-metadata-v1:0490bb759e16f3ec8143",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "胆大党",
+        "titleJa": "ダンダダン",
+        "titleEn": "DAN DA DAN",
+        "description": "出生于灵媒师家族的女高中生·小桃，与她同年级的超自然爱好者·厄卡伦。\r\n小桃在厄卡伦遭到班上同学欺凌时保护了他，两人以此为契机开始有了交流。“相信幽灵存在但否定外星人存在”的小桃，和“相信外星人存在但否定幽灵存在”的厄卡伦争论不休。\r\n为了让对方相信外星人和幽灵的存在，小桃去了被称为UFO圣地的废弃医院，厄卡伦去了闹鬼的隧道。\r\n在那里，他们遇到了无法理解的极其怪异的现象。\r\n在绝境中，小桃觉醒了体内潜藏的力量，厄卡伦获得了诅咒之力，二人开始挑战接连逼近的怪异！\r\n也开始了命运之恋！？\r\n超能力战斗&青春故事，开幕！\r\n\r\n霊媒師の家系に生まれた女子高生・モモ＜綾瀬桃＞と、\r\n同級生でオカルトマニアのオカルン＜高倉健＞。\r\n\r\nモモがクラスのいじめっ子からオカルンを助けたことをきっかけに\r\n話すようになった2人だったが、\r\n「幽霊は信じているが宇宙人否定派」のモモと、\r\n「宇宙人は信じているが幽霊否定派」のオカルンで口論に。\r\n\r\n互いに否定する宇宙人と幽霊を信じさせるため、\r\nモモはUFOスポットの病院廃墟へ、\r\nオカルンは心霊スポットのトンネルへ。\r\n\r\nそこで2人は、理解を超越した圧倒的怪奇に出会う。\r\n\r\n窮地の中で秘めた力を覚醒させるモモと、呪いの力を手にしたオカルンが、\r\n迫りくる怪奇に挑む！\r\n\r\n運命の恋も始まる！？\r\n\r\nオカルティックバトル＆青春物語、開幕！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/44/7d/467461_HHw4K.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/44/7d/467461_HHw4K.jpg",
+        "year": 2024,
+        "startDate": "2024-10-03",
+        "ratingRank": 955,
+        "ratingTotal": 15855,
+        "metadataFetched": true
       }
     ]
   },
@@ -5881,7 +9614,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 85,
         "query": "空之境界 全册四系列",
         "cacheKey": "import-metadata-v1:08b9b751ef78321aa9b3",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "剧场版 空之境界 第一章 俯瞰风景",
+        "titleJa": "劇場版 空の境界 第一章 俯瞰風景",
+        "titleEn": "Gekijouban Kara no Kyoukai: The Garden of Sinners",
+        "description": "“去吧、去吧、去吧、去吧——”\r\n　　我只是这样期望着，\r\n　　期望着这个窗外的世界。\r\n　　只是期望被他带走而已。\r\n　　这是一个发生在夏末，少女们不断飞落跳下相继自杀的故事。少女们，毫无征兆突发性的从废墟大楼的屋顶\r\n　　上跳向天空，随后落下。等待她们的只有死。\r\n　　这些女孩在学校也并无异常，相互间也并非朋友关系。这些一切毫无关联性，连自杀的理由都找不到，完全无法解释的自杀事件逐一被不断报道。但是唯一只有一个人看出了这事件其中的关联性。\r\n　　这个人就是最高位的人偶师、也是一位没有成为魔法使的魔术师 —— 苍崎澄子。\r\n　　或许……“没有理由”就是他们的共通点，其次就是浮游与飞行的差别。\r\n　　而搜索调查这个连续自杀事件的人就是拥有能看见事间万物之死线能力“直死之魔眼”的两仪式。\r\n　　对她而言，有一个与此事件不得不关联起来的理由——\r\n　　与其说自身这种并不想要获得的能力（直死之魔眼），更令她在意的是用她的眼睛就这样捕捉到了在虚空中飞舞的少女们的幽灵，而这些幽灵到底又在想什么呢？\r\n　　假设，这或许是到达相同道路同胞们的哀怜，也或者是同族的嫌恶。\r\n　　假设，这或许是来自威胁某种重要存在之人的敌意。\r\n　　换句话说，这是明确的杀意。\r\n　　式就这样前往了那个可怜的大楼现场，而那里等着她的是谁都不知道的，展开着重重包围圈套的序章。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/e1/65/233_x22mT.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/e1/65/233_x22mT.jpg",
+        "year": 2007,
+        "startDate": "2007-12-01",
+        "ratingRank": 309,
+        "ratingTotal": 11824,
+        "metadataFetched": true
       }
     ]
   },
@@ -5899,7 +9643,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "蓦然回首",
         "cacheKey": "import-metadata-v1:ca1203ff7a99a87c3420",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "蓦然回首",
+        "titleJa": "ルックバック",
+        "titleEn": "Look Back",
+        "description": "在年级报纸上连载着四格漫画的小学四年级学生藤野。被同班同学高度评价、对自己的画工抱有绝对的自信的藤野，她在某天看到了不去上学的同级生京本于年级报纸上首次发表的4格漫画，并对其高超的画工感到震惊。从那时起，只顾着继续专心画漫画的藤野被完全无法企及的与京本之间的画工差距所压倒、放弃了画漫画的念头。\r\n然而，在小学毕业的那天，受老师的委托去为京本递送毕业证书的藤野却被第一次见面的京本告知“我一直都是你的粉丝”。\r\n以曾经一度放弃画漫画为契机的京本与这次一起开始画漫画的藤野。将两名少女联系在一起的，是她们对于漫画的执着。然而在某天，却发生了粉碎一切的事件……",
+        "cover": "https://lain.bgm.tv/pic/cover/l/fa/a8/480441_6o9oX.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/fa/a8/480441_6o9oX.jpg",
+        "year": 2024,
+        "startDate": "2024-06-28",
+        "ratingRank": 357,
+        "ratingTotal": 12265,
+        "metadataFetched": true
       }
     ]
   },
@@ -5917,7 +9672,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 132,
         "query": "双城之战",
         "cacheKey": "import-metadata-v1:6b1311661e3d9d3b0004",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "英雄联盟：双城之战",
+        "titleJa": "Arcane",
+        "titleEn": "Arcane",
+        "description": "《英雄联盟：双城之战》是英雄联盟官方动画剧集，讲述的是在充满蒸汽朋克气息的乌托邦-皮尔特沃夫和由化学品驱动的地下城-祖安中，蔚和金克丝两姐妹，她们在一场激烈的冲突后发现两个人站在了彼此的对立面。她们从此分开，走上不同的道路，朝着不同的命运终点走去，但心中的羁绊又无时不刻地让姐妹二人想要破镜重圆。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/cd/dd/335036_e2Kg2.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/cd/dd/335036_e2Kg2.jpg",
+        "year": 2021,
+        "startDate": "2021-11-07",
+        "ratingRank": 69,
+        "ratingTotal": 11860,
+        "metadataFetched": true
       }
     ]
   },
@@ -5930,12 +9696,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/93545",
         "platform": "TV",
-        "totalEpisodes": 14,
+        "totalEpisodes": 21,
         "rating": 7,
         "confidence": 135,
         "query": "甘城光辉游乐园",
         "cacheKey": "import-metadata-v1:879efbe64e4e98c12fa9",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "甘城光辉游乐园",
+        "titleJa": "甘城ブリリアントパーク",
+        "titleEn": "Amagi Brilliant Park",
+        "description": "被谜之转校生——千斗五十铃强迫而接受游乐园约会的可儿江西也，不知何故被拉到的地方，却是一个充满了破旧游乐设施的日本第一的遗憾游乐园——甘城辉煌游乐园。这座游乐园建立于泡沫经济全盛期，近年假日来客人数不超过3000人，同时也是臭名远播的最糟约会地点代名词，现在最大的问题是，三个月内来客人数如不满25万人就得关闭。被引荐给了游乐园的管理者，“真正的”公主——拉媞珐的西也，不知为何突然被托付了重建这个陷入闭园危机的游乐园的重任。原来，这里不是游乐园？！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/69/e5/93545_zYRKK.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/69/e5/93545_zYRKK.jpg",
+        "year": 2014,
+        "startDate": "2014-10-06",
+        "ratingRank": 2629,
+        "ratingTotal": 14998,
+        "metadataFetched": true
       },
       {
         "inputTitle": "SP",
@@ -5948,7 +9725,17 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 127,
         "query": "SP",
         "cacheKey": "import-metadata-v1:153dbd0cad70ffb90151",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "战国无双SP 真田之章",
+        "titleJa": "戦国無双SP 真田の章",
+        "description": "2013年12月6日、コーエーテクモゲームスの人気タイトル『戦国無双』シリーズの10周年を記念した発表会が開催。このイベント中に、『戦国無双』のアニメ化が発表された。2014年3月に放送予定。約1時間のオリジナルアニメとなるようだ。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/28/3b/89942_N52cj.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/28/3b/89942_N52cj.jpg",
+        "year": 2014,
+        "startDate": "2014-03-21",
+        "ratingRank": 7792,
+        "ratingTotal": 99,
+        "metadataFetched": true
       }
     ]
   },
@@ -5966,7 +9753,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 132,
         "query": "和山田谈场lv999的恋爱",
         "cacheKey": "import-metadata-v1:7c9ff514bb4d65716e7c",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "和山田谈场Lv999的恋爱",
+        "titleJa": "山田くんとLv999の恋をする",
+        "titleEn": "山田くんとLv999の恋をする",
+        "description": "女大学生木之下茜面临着男朋友和在网上认识的女性出轨，被告知分手的最糟糕的事情。为了配合话题，茜开始始玩网络游戏。留在她身边的，只有和男友的爱一起孕育的角色……。\r\n为了纾解压力，茜在网络游戏的狩猎场发狂，偶然遇到了同一公会的“山田”。茜向他抱怨失恋的事，却被他冷淡地回答“没兴趣”。但是，为了变漂亮后重新认识前男友而参加的线下活动中，茜再次听到了这句话。\r\n那是和“山田”命中注定的相遇——！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/c7/25/395684_Ojam4.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/c7/25/395684_Ojam4.jpg",
+        "year": 2023,
+        "startDate": "2023-04-01",
+        "ratingRank": 5248,
+        "ratingTotal": 2919,
+        "metadataFetched": true
       }
     ]
   },
@@ -5984,7 +9782,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "青之箱",
         "cacheKey": "import-metadata-v1:94ea6772be1495b89516",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "青之箱",
+        "titleJa": "アオのハコ",
+        "titleEn": "Blue Box",
+        "description": "每天早上都想见到她——\r\n\r\n荣明高中是初高中一体的体育强校。猪股大喜是就读荣明高中的高一学生，也是男子羽毛球社成员。\r\n大喜喜欢上了每天晨练时见到的高二学姐鹿野千夏。\r\n千夏是女子篮球社的王牌选手，更是校内外憧憬的校花。\r\n兼顾着社团活动、恋爱、和学习，大喜忙碌的高中生活拉开了帷幕，突然有一天——\r\n\r\n\r\n[简介原文]\r\n毎朝一番に会いたい人がいる——\r\n\r\n中高一貫のスポーツ強豪校・栄明高校に入学する、男子バドミントン部の一年生・猪股大喜。\r\n大喜は毎朝、朝練で顔を合わせる一つ上の先輩、鹿野千夏に恋をする。\r\n千夏は女子バスケットボール部のエースで、校内外問わず人気の高嶺の花。\r\n部活に恋に勉強に、大喜にとって忙しい高校生活がはじまる、そんなある日――",
+        "cover": "https://lain.bgm.tv/pic/cover/l/ab/e5/460306_s7Y8n.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/ab/e5/460306_s7Y8n.jpg",
+        "year": 2024,
+        "startDate": "2024-10-03",
+        "ratingRank": 3647,
+        "ratingTotal": 6352,
+        "metadataFetched": true
       }
     ]
   },
@@ -6002,7 +9811,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "药屋少女的呢喃",
         "cacheKey": "import-metadata-v1:b594d275e85e9e787bb2",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "药屋少女的呢喃",
+        "titleJa": "薬屋のひとりごと",
+        "titleEn": "Kusuriya no Hitorigoto",
+        "description": "大陆的中央有个大国，在那个国家的后宫之中有一位少女，其名为“猫猫”。她以前在花街做药师，现在在后宫做事。某天，她得知皇子们皆早夭，而现在的两个皇子都因为生病而逐渐衰弱。于是，在好奇心的驱使下，她开始调查事情的真相，就好像在说世上不可能存在诅咒。壬氏是一位外表俊美的宦官，他让猫猫当皇帝宠妃的试毒人。猫猫对人没有兴趣，却异常钟情毒和药，就是这样一位在花街长大的药师，被卷入了宫中的传闻事件。美丽的玫瑰长有刺，女人的庭院里到处都是毒，流言和阴谋更是不缺。虽然不断地被壬氏委托麻烦事，但猫猫还是照常处理。罕见的嗜毒姑娘今天也在后宫里奔走。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/fe/31/420628_2ZEz0.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/fe/31/420628_2ZEz0.jpg",
+        "year": 2023,
+        "startDate": "2023-10-21",
+        "ratingRank": 964,
+        "ratingTotal": 11099,
+        "metadataFetched": true
       }
     ]
   },
@@ -6015,12 +9835,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/72941",
         "platform": "TV",
-        "totalEpisodes": 24,
+        "totalEpisodes": 25,
         "rating": 8.1,
         "confidence": 135,
         "query": "斩服少女",
         "cacheKey": "import-metadata-v1:03d9d9cfd066773db6cb",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "斩服少女",
+        "titleJa": "キルラキル",
+        "titleEn": "KLK",
+        "description": "本故事以被武力和恐怖支配的本能字学院为舞台，以为父报仇的转校生少女为中心， 围绕着在学园中“执牛耳者”的学生及学生会四大天王间的激战故事展开。\r\n\r\n缠流子和鬼龙院皋月，两人为本作的主人公。在本作中，皋月用极制服的力量支配着学园， 而流子为查明父亲死亡的真相而与皋月对抗。\r\n\r\n在这由力量支配的学园中，由于手持片太刀铗的转校生的到来，引起了动乱， 这一场各个能力者均被打倒的故事因此而开始！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/d5/d7/72941_q1DiW.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/d5/d7/72941_q1DiW.jpg",
+        "year": 2013,
+        "startDate": "2013-10-03",
+        "ratingRank": 189,
+        "ratingTotal": 17478,
+        "metadataFetched": true
       }
     ]
   },
@@ -6038,7 +9869,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "岁月流逝饭菜依旧美味",
         "cacheKey": "import-metadata-v1:ce7a5025c65ea853429c",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "时光流逝，饭菜依旧美味",
+        "titleJa": "日々は過ぎれど飯うまし",
+        "titleEn": "PA飯",
+        "description": "可爱×美味=最强美食\r\n五名刚刚成为大学生的女孩们共同演绎的日常故事。\r\n热爱美食，想和大家一起尽情玩耍，学习也要稍加努力，如此这般，尽情享受大学生活吧！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/d3/5d/531159_BayD9.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/d3/5d/531159_BayD9.jpg",
+        "year": 2025,
+        "startDate": "2025-04-12",
+        "ratingRank": 574,
+        "ratingTotal": 10791,
+        "metadataFetched": true
       }
     ]
   },
@@ -6056,7 +9898,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 85,
         "query": "mono しょうじょ",
         "cacheKey": "import-metadata-v1:ff7cb9d7ad81d04860c7",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "mono女孩",
+        "titleJa": "mono",
+        "titleEn": "mono",
+        "description": "这个周末要怎么度过呢？\r\n高中摄影社社员·雨宫纱月，因为最喜欢的社长毕业而变得意志消沉，纱月在另一位社员，同时也是她的好友的雾山杏的鼓励下，决定再次投入社团活动好好努力。\r\n然而，纱月干劲十足地在网拍买下的360度相机却迟迟没有送来。\r\n杏在调查卖家后，发现对方就住在学校附近。\r\n纱月和杏造访卖家的住所，发现那里是一间糖果店。两人在那里遇见了漫画家秋山春乃，并答应她“想请你们当漫画的模特儿”的请求。\r\n在前电影研究社的敷岛樱子的加入下，电影研究社和摄影社合并成为“电影摄影研究社”，并开始协助春乃进行取材。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/a6/39/485936_y0bX8.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/a6/39/485936_y0bX8.jpg",
+        "year": 2025,
+        "startDate": "2025-04-12",
+        "ratingRank": 2065,
+        "ratingTotal": 7790,
+        "metadataFetched": true
       }
     ]
   },
@@ -6069,12 +9922,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/329114",
         "platform": "TV",
-        "totalEpisodes": 20,
+        "totalEpisodes": 22,
         "rating": 7.1,
         "confidence": 135,
         "query": "想要成为影之实力者",
         "cacheKey": "import-metadata-v1:872ec040fdb730111872",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "想要成为影之实力者！",
+        "titleJa": "陰の実力者になりたくて！",
+        "titleEn": "The Eminence in shadow",
+        "description": "主人公最强×压倒的中二病×因误会造成的严肃喜剧！？\r\n“影之实力者”\r\n既不是主人公，也不是终极大BOSS，而是平日里彻底隐藏自己的实力、在暗中介入事件并施展自身实力的存在。\r\n憧憬着“影之实力者”、每天过着不起眼的生活、为了追求力量而修行的少年，在事故中丧生，转生到了异世界。\r\n重生为希德·卡盖诺的少年庆幸地在异世界享受着“影之实力者”这个设定，为了打倒“妄想”出来的“黑暗教团”（开玩笑）而暗中活动的时候，却发现“黑暗教团”似乎真的存在……？\r\n收为部下的少女们由于会错意误把希德作为影而崇拜，希德在一无所知的情况下成为了真正的“影之实力者”，他们一行人建立所起来的“暗影庭园”将毁灭这个世界上的黑暗――。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/39/96/329114_mB55b.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/39/96/329114_mB55b.jpg",
+        "year": 2022,
+        "startDate": "2022-10-05",
+        "ratingRank": 2034,
+        "ratingTotal": 13121,
+        "metadataFetched": true
       }
     ]
   },
@@ -6092,7 +9956,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 129,
         "query": "避难所",
         "cacheKey": "import-metadata-v1:41bc089bbc6955d2e5f5",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "避难所",
+        "titleJa": "SHELTER",
+        "titleEn": "SHELTER",
+        "description": "活在未来模拟器中的17岁孤独少女・凛，每天都在时光无限的美丽虚拟世界中醒来，每天都用手上的平板设计只属于自己的新世界。\r\n\r\n某天，凛发现了自己在虚拟世界中生存的原因……",
+        "cover": "https://lain.bgm.tv/pic/cover/l/a7/39/195249_z2Uuu.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/a7/39/195249_z2Uuu.jpg",
+        "year": 2016,
+        "startDate": "2016-10-18",
+        "ratingRank": 845,
+        "ratingTotal": 2932,
+        "metadataFetched": true
       }
     ]
   },
@@ -6110,7 +9985,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "亚人",
         "cacheKey": "import-metadata-v1:f6a5b4b077f53fd07198",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "亚人",
+        "titleJa": "亜人",
+        "titleEn": "Ajin",
+        "description": "17年前，非洲的战场上出现了绝对不会死的人，人们将这种未知的新生物称为“亚人”。在暑假即将到来之时，日本普通高中生永井圭在放学途中遭遇了交通事故而当场死亡，不过又随即复活，正因如此，其“亚人”的身份暴露，并被投以高额的悬赏。就这样，身为众人类敌人的少年逃避之旅开始了……",
+        "cover": "https://lain.bgm.tv/pic/cover/l/0b/17/146093_LATHF.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/0b/17/146093_LATHF.jpg",
+        "year": 2016,
+        "startDate": "2016-01-15",
+        "ratingRank": 1443,
+        "ratingTotal": 6402,
+        "metadataFetched": true
       }
     ]
   },
@@ -6123,12 +10009,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/105075",
         "platform": "TV",
-        "totalEpisodes": 12,
+        "totalEpisodes": 14,
         "rating": 7.4,
         "confidence": 135,
         "query": "血界战线",
         "cacheKey": "import-metadata-v1:9c79d3cb3bfe2a10f6d4",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "血界战线",
+        "titleJa": "血界戦線",
+        "titleEn": "KEKKAI SENSEN",
+        "description": "从古以来，在暗夜的世界里有一种种族他们被称为“血界之族”这个种族拥有超乎于常人的力量！\r\n\r\n因此对人类的生存造成了威胁而对这一种族也出现了为了保护人类而存在的猎人们，他们通常被称为“獠牙狩猎者”……\r\n\r\n现时的纽约变成了歪曲的异界与人类的交界处，笼罩着浓浓的雾霭，众多势力与众多种族相互制约，取得了危险的平衡。\r\n\r\n克劳斯率领的“秘密结社LIBRA”，为了守护这个危险的平衡而挑战种种困难的事件。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/f9/2c/105075_iNy58.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/f9/2c/105075_iNy58.jpg",
+        "year": 2015,
+        "startDate": "2015-04-04",
+        "ratingRank": 1077,
+        "ratingTotal": 9489,
+        "metadataFetched": true
       }
     ]
   },
@@ -6146,7 +10043,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "花开伊吕波",
         "cacheKey": "import-metadata-v1:039e5d92ba9f91deee51",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "花开伊吕波",
+        "titleJa": "花咲くいろは",
+        "titleEn": "Hanasaku Iroha",
+        "description": "16岁少女松前緒花，平凡的日常生活在某天迎来了戏剧化的改变。\r\n生于东京的她离开熟悉的环境，来到祖母所经营的拥有大正浪漫氛围的山间温泉旅馆——喜翠庄打工，展开了崭新的生活。\r\n如同阳光下盛开的鲜花一般，相信梦想终有一天一定会开花……",
+        "cover": "https://lain.bgm.tv/pic/cover/l/56/2d/22759_A5N6H.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/56/2d/22759_A5N6H.jpg",
+        "year": 2011,
+        "startDate": "2011-04-03",
+        "ratingRank": 915,
+        "ratingTotal": 12566,
+        "metadataFetched": true
       },
       {
         "inputTitle": "剧场版-Home Sweet Home",
@@ -6159,7 +10067,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "剧场版-Home Sweet Home",
         "cacheKey": "import-metadata-v1:9b604981825a98eea21f",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "剧场版 花开伊吕波 HOME SWEET HOME",
+        "titleJa": "劇場版 花咲くいろは HOME SWEET HOME",
+        "titleEn": "劇場版 花咲くいろは HOME SWEET HOME",
+        "description": "东京出身的女子高中生 松前绪花 入住了祖母经营的温泉旅馆“喜翠庄”。在与见习厨师鹤来民子和见习仲居押水菜子度过的日子中，习惯了喜翠庄生活的绪花渐渐开始注意到的自身的变化。\r\n\r\n深秋的某天，同班同学、竞争对手“福屋”旅馆的女儿 和仓结名来到了喜翠庄进行女将修行。\r\n\r\n一边被自由奔放的结名弄的不知所措、又一边照顾她的绪花，在打扫的时候，在杂物柜中发现的某个东西。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/c5/55/49892_0wfrB.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/c5/55/49892_0wfrB.jpg",
+        "year": 2013,
+        "startDate": "2013-03-09",
+        "ratingRank": 765,
+        "ratingTotal": 4356,
+        "metadataFetched": true
       }
     ]
   },
@@ -6177,7 +10096,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 85,
         "query": "我們不可能成為戀人！絕對不行。",
         "cacheKey": "import-metadata-v1:5326d71b2cbcad765795",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "我们不可能成为恋人！绝对不行。 (※似乎可行？) 〜再次闪耀！〜",
+        "titleJa": "わたしが恋人になれるわけないじゃん、ムリムリ!（※ムリじゃなかった!?）〜ネクストシャイン！〜",
+        "titleEn": "我們不可能成為戀人！絕對不行。 (※似乎可行？) ～Next Shine！～",
+        "description": "わたしはわたしを、好きになりたいから！\r\n陰キャでダメダメだった過去を捨て、高校デビューを果たした少女、 甘織れな子。\r\n運よくカーストトップの陽キャグループに\r\n入ったと思いきや、\r\n何とその中の二人から告白されちゃった！？\r\n\r\n学園のスパダリ・王塚真唯と、\r\n\r\n学園の天使・瀬名紫陽花さん。\r\n\r\nそんな二人の愛を受け止めるなんて、ムリムリ！\r\n\r\n返事に悩んでいたら、\r\n香穂ちゃんと一緒にコスプレイベント\r\nに出ることに。\r\n\r\n友達の頼みを聞くという形で、\r\n告白の返事を保留にするれな子。\r\n\r\nでもコスプレを通して香穂ちゃんの『好き』に触れたら、\r\nなにかが自分の中で\r\n変わるような気がして……！\r\n\r\nわたしが本当に欲しかったものって、なんだろう。\r\n\r\n果たして恋人はムリなのか！？\r\n\"ムリじゃなかった\"のか！？",
+        "cover": "https://lain.bgm.tv/pic/cover/l/a1/ea/587454_1KdKJ.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/a1/ea/587454_1KdKJ.jpg",
+        "year": 2026,
+        "startDate": "2026-01-01",
+        "ratingRank": 1375,
+        "ratingTotal": 5625,
+        "metadataFetched": true
       }
     ]
   },
@@ -6195,7 +10125,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 133,
         "query": "光死去的夏天",
         "cacheKey": "import-metadata-v1:f77931a2ddcbe54187b0",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "光死去的夏天",
+        "titleJa": "光が死んだ夏",
+        "titleEn": "Hikaru ga Shinda Natsu",
+        "description": "とある集落で\r\n幼い頃からずっと一緒に育ってきた\r\n同い年のよしきと光\r\n\r\n照りつける太陽\r\n耳にこびりつくクマゼミの声\r\n帰り道に食べるアイス\r\n\r\n他愛もないことで笑い合う\r\nいつもと変わらない夏のある日\r\n\r\n「……お前、やっぱ光ちゃうやろ」\r\n\r\n半年前、山で行方不明になった光は\r\n一週間後ふらりと帰ってきた\r\n声も姿も光に見えるモノ\r\nその中に蠢いていたのは――\r\n\r\n「光はもうおらんのや……それやったら」\r\n\r\n友人の姿をした〝ナニカ〟と歩みだす、\r\n“いつもと変わらない”日常\r\nだが、時を同じくして\r\n奇怪な事件が集落を襲い始める\r\n\r\n未知の〝ナニカ〟へ墜ちていく\r\n青春ホラー物語の幕が、今、上がる――",
+        "cover": "https://lain.bgm.tv/pic/cover/l/c6/a6/496086_2tPPi.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/c6/a6/496086_2tPPi.jpg",
+        "year": 2025,
+        "startDate": "2025-07-05",
+        "ratingRank": 3599,
+        "ratingTotal": 3363,
+        "metadataFetched": true
       }
     ]
   },
@@ -6213,7 +10154,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 132,
         "query": "章鱼哔的原罪",
         "cacheKey": "import-metadata-v1:e34120a52df4c968cd4c",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "章鱼哔的原罪",
+        "titleJa": "タコピーの原罪",
+        "titleEn": "章鱼P的原罪",
+        "description": "来自HAPPY星的外星人章鱼哔，目的是在地球散播HAPPY。结果出师不利，一来到地球他就差点饿死，此时救了他一命的是平凡的少女小静。然而章鱼哔发现，小静却始终没有笑容。为了让小静找回遗失的笑容，章鱼哔努力奔走，但小静所处的环境却是远超乎章鱼哔所能想象的严苛。在这样的情况下，章鱼哔究竟犯下了什么样的大罪......？ \r\n\r\n\r\n[简介原文]\r\nハッピーを広めるため地球に降り立ったハッピー星人のタコピーは人間の女の子しずかと出会う。\r\nピンチを救ってもらったタコピーはしずかの笑顔を取り戻すため不思議な力を持つハッピー道具で奔走する。\r\nしかし、しずかはおうちと学校で何か事情を抱えているようで…。\r\nこれは、ぼくときみの最高にハッピーな物語——",
+        "cover": "https://lain.bgm.tv/pic/cover/l/57/d4/527620_SBgdi.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/57/d4/527620_SBgdi.jpg",
+        "year": 2025,
+        "startDate": "2025-06-28",
+        "ratingRank": 3414,
+        "ratingTotal": 10334,
+        "metadataFetched": true
       }
     ]
   },
@@ -6231,7 +10183,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "末日后酒店",
         "cacheKey": "import-metadata-v1:3f6b9f98d3fde22f5d05",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "末日后酒店",
+        "titleJa": "アポカリプスホテル",
+        "titleEn": "Apocalypse Hotel",
+        "description": "人类离开后，地球经历了漫长的岁月。\r\n位于日本首都东京银座的「银河楼」酒店，至今仍在营业中。\r\n工作人员是以酒店机器人八千代为中心，在各个部门工作的员工机器人们。\r\n它们一边等待老板的归来和再次迎接人类的时刻，一边在没有住客的酒店里专心致志地工作，这样的日子仿佛永无止境。\r\n而对于这样的八千代等人，现在，小小的奇迹即将发生——",
+        "cover": "https://lain.bgm.tv/pic/cover/l/6e/1a/509986_99qsc.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/6e/1a/509986_99qsc.jpg",
+        "year": 2025,
+        "startDate": "2025-04-08",
+        "ratingRank": 140,
+        "ratingTotal": 15062,
+        "metadataFetched": true
       }
     ]
   },
@@ -6244,12 +10207,23 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "source": "bangumi",
         "sourceUrl": "https://bgm.tv/subject/506677",
         "platform": "TV",
-        "totalEpisodes": 13,
+        "totalEpisodes": 14,
         "rating": 6.6,
         "confidence": 135,
         "query": "沉默魔女的秘密",
         "cacheKey": "import-metadata-v1:10774df4bfcb89b0e9fe",
-        "hintSignature": "[\"沉默魔女的秘密\",\"Silent Witch\"]"
+        "hintSignature": "[\"沉默魔女的秘密\",\"Silent Witch\"]",
+        "titleZh": "Silent Witch 沉默魔女的秘密",
+        "titleJa": "サイレント・ウィッチ 沈黙の魔女の隠しごと",
+        "titleEn": "Silent Witch 沉默魔女的秘密",
+        "description": "人类必须通过咏唱，才能使用魔法。\r\n但有一个少女，却打破了这个定律。\r\n“七贤人”，是里迪尔王国的七位最强魔法师，其中之一是人称“沉默魔女”的莫妮卡·埃瓦雷特。\r\n她是有史以来第一个创造出无咏唱魔法的年轻天才。\r\n\r\n然而……\r\n她其实极度怕生，和一只黑猫使魔蜗居在深山之中，在无数公式书籍的包围下，默默地进行着魔法研究。\r\n但天不遂人愿，她的同事、另一位七贤人“结界魔法师”路易斯·米拉上门拜访。\r\n他向迷茫的莫妮卡传达了国王的旨意。\r\n那便是——潜入贵族云集的名门学校，执行保护第二王子的绝密任务……\r\n\r\n\r\n人類は詠唱をなくして、魔術を使うことができない。 \r\nところが、その不可能を可能にしてしまった、ひとりの少女がいた。 \r\n\r\nリディル王国における魔術師の頂点・七賢人がひとり〈沈黙の魔女〉モニカ・エヴァレット。\r\n史上、初めて無詠唱魔術を生み出した若き天才である。\r\n\r\nしかし…\r\n\r\n極度の人見知りであがり症の彼女は、使い魔の黒猫と山奥に引きこもり、\r\n数式の本に囲まれて、ひっそりと魔術の研究に打ち込んでいた。\r\n\r\nそんな彼女のもとに、七賢人の同僚である〈結界の魔術師〉ルイス・ミラーが訪ねてくる。\r\n戸惑う彼女にルイスはひとつの王命を告げた。\r\nそれは――貴族の集う名門校に潜入し、第二王子を護衛する極秘任務だった……。\r\n\r\n『小説家になろう』でシリーズ累計1.3億PV、累計発行部数60万部を超える、\r\n人気ハイファンタジー作品がついにアニメ化。\r\n魔術と数字を偏愛する〈沈黙の魔女〉モニカのひそやかな活躍が始まる！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/a0/60/506677_B74d5.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/a0/60/506677_B74d5.jpg",
+        "year": 2025,
+        "startDate": "2025-07-04",
+        "ratingRank": 4461,
+        "ratingTotal": 6902,
+        "metadataFetched": true
       }
     ]
   },
@@ -6267,7 +10241,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "魔女守护者",
         "cacheKey": "import-metadata-v1:c12fbbd661caeea18311",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "魔女与使魔",
+        "titleJa": "ウィッチウォッチ",
+        "titleEn": "WITCH WATCH",
+        "description": "她的魔法，远远超乎想像。\r\n拥有鬼之力的高中生·乙木守仁，将成为正在进行魔女修行的儿时玩伴·妮可的使魔，和她一起同居。\r\n与儿时玩伴久违的重逢使妮可内心充满欣喜，但守仁其实有以使魔身份从预言的灾难中守护妮可的使命在身。\r\n妮可的魔法引起的无法预测的各种麻烦，年轻男女的两人生活，前途多灾多难又充满不可思议的日子即将开始。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/5e/4f/506672_K9EQT.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/5e/4f/506672_K9EQT.jpg",
+        "year": 2025,
+        "startDate": "2025-04-06",
+        "ratingRank": 2854,
+        "ratingTotal": 6200,
+        "metadataFetched": true
       }
     ]
   },
@@ -6285,7 +10270,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "薰香花朵凛然绽放",
         "cacheKey": "import-metadata-v1:b3a71f5767d32eb81b71",
-        "hintSignature": "[\"薰香花朵凛然绽放\",\"薫る花は凛と咲く\"]"
+        "hintSignature": "[\"薰香花朵凛然绽放\",\"薫る花は凛と咲く\"]",
+        "titleZh": "薰香花朵凛然绽放",
+        "titleJa": "薫る花は凛と咲く",
+        "titleEn": "Kaoru Hana wa Rin to Saku",
+        "description": "“窗帘的另一头，是和我永远没有交集的世界”\r\n差生云集的底层男校千鸟高中，一直被历史悠久的贵族女校桔梗女校所鄙视。\r\n尽管两校的校舍相邻，但桔梗女校从来都是将窗帘拉得严严实实，不让千鸟高中的人看到人影。\r\n在千鸟高中上学的䌷凛太郎，因为长相问题，经常被人误以为是一个可怕的人不敢接近，因此也习惯了和他人保持距离。\r\n而在某一天，在给家里的蛋糕店帮忙时，一个名叫薰子的顾客对他说：“我从来不觉得凛太郎很可怕啊？”\r\n薰子对凛太郎没有半点偏见，和她一起度过的时光既让凛太郎感到困惑，也感到惬意。\r\n但他很快就发现，薰子是桔梗女校的学生……\r\n这是一段“近在咫尺却又遥不可及”的二人编织的、为青春染上绚丽色彩的校园故事。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/b8/0d/513345_jv4wM.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/b8/0d/513345_jv4wM.jpg",
+        "year": 2025,
+        "startDate": "2025-07-05",
+        "ratingRank": 2813,
+        "ratingTotal": 5798,
+        "metadataFetched": true
       }
     ]
   },
@@ -6303,7 +10299,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 134,
         "query": "前桥魔女",
         "cacheKey": "import-metadata-v1:b9b0257cf64d202e8cfd",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "前桥魔女",
+        "titleJa": "前橋ウィッチーズ",
+        "titleEn": "Maebashi Witches",
+        "description": "在本地（前桥）做魔女也太心动了吧。\r\n群马县前桥市。 高中一年级学生・赤城结奈马马虎虎无法满足的日常……\r\n“那你来做魔女试试吧。”因为神秘青蛙呱洛贝的出现而完全改变。房间里的衣柜与不可思议的空间连了起来——\r\n新里杏珠：“你想当魔女的决心不够！”\r\n北原镜华：“……别吵架了，一起实现客人的愿望吧？”\r\n三俣巧可：“心怀梦想是很棒的！快乐快乐巧可哦！”\r\n上泉舞衣：“我这人很服强者的♪”\r\n有5个人感觉会发生很开心的事情。最刺激的魔女，我们前桥魔女，会实现你的心愿。\r\n赤城结奈 ：“这里是只属于你的花店。是让你内心深处的花朵绽放的地方。”\r\n唱歌跳舞的魔法花店（in商店街）、奇迹OPEN。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/a8/e1/511207_gAoK3.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/a8/e1/511207_gAoK3.jpg",
+        "year": 2025,
+        "startDate": "2025-04-06",
+        "ratingRank": 1842,
+        "ratingTotal": 3944,
+        "metadataFetched": true
       }
     ]
   },
@@ -6321,7 +10328,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "小城日常",
         "cacheKey": "import-metadata-v1:1fe2740e2c4151777df8",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "小城日常",
+        "titleJa": "CITY THE ANIMATION",
+        "titleEn": "CITY THE ANIMATION",
+        "description": "この街、ただの街にあらず。\r\n\r\n笑いあり プププッ\r\nラブあり キュンキュン\r\nホロリあり ホロリホロリ\r\n\r\n住人たちが織りなす\r\n予測不能な平凡ライフ！\r\n\r\nワクワクが連鎖する\r\nCITYへようこそ。\r\n\r\n\r\n\r\n[中文简介]\r\n这座城镇，绝非寻常之地。\r\n有欢笑（噗嗤嗤！） 有心跳（怦怦♡） 有泪光（扑簌扑簌......）\r\n居民们编织出无法预料的\"平凡\"日常！\r\n欢迎来到心跳连发的奇妙CITY！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/b2/c2/514358_oRoZH.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/b2/c2/514358_oRoZH.jpg",
+        "year": 2025,
+        "startDate": "2025-07-06",
+        "ratingRank": 820,
+        "ratingTotal": 8022,
+        "metadataFetched": true
       }
     ]
   },
@@ -6339,7 +10357,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 135,
         "query": "金牌得主",
         "cacheKey": "import-metadata-v1:d73278917286c5e01a22",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "金牌得主",
+        "titleJa": "メダリスト",
+        "titleEn": "Medalist",
+        "description": "作为滑冰者遭遇挫折的青年·明浦路司遇到了对花样滑冰世界充满憧憬的少女·结束祈。\r\n在对冰场怀有执念的祈的推动下，司决定亲自担任教练。\r\n随着祈逐渐展现出自己的才能，司也作为指导者不断成长。\r\n两人组成搭档，目标是荣耀的“金牌得主”——！",
+        "cover": "https://lain.bgm.tv/pic/cover/l/ce/3c/430699_hsj90.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/ce/3c/430699_hsj90.jpg",
+        "year": 2025,
+        "startDate": "2025-01-04",
+        "ratingRank": 225,
+        "ratingTotal": 13000,
+        "metadataFetched": true
       }
     ]
   },
@@ -6357,7 +10386,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 134,
         "query": "你的颜色",
         "cacheKey": "import-metadata-v1:ebf3aa98cfa46924b5f2",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "你的颜色",
+        "titleJa": "きみの色",
+        "titleEn": "The Colors Within",
+        "description": "高中生日暮窦子（铃川纱由 配音）拥有看见其他人内心颜色的能力，她憧憬着同学作永君（高石明里 配音）身上亮丽的色彩。作永退学后，窦子在小镇的旧书店找到了她，并结识了同样拥有明亮色彩的少年影平路易（木户大圣 配音）。在窦子的提议下三人组成了乐队，开始创作起属于自己的歌曲。因音乐结缘的三人关系逐渐拉进，却也各怀心事：窦子一直隐瞒着自己“能够看见他人颜色”的秘密；作永向家人隐瞒了自己退学的事实，路易则瞒着母亲搞起了乐队……\r\n随着校园庆典的临近，从音乐中获得安慰与力量的三人，在日吉子老师（新垣结衣 配音）等人的帮助下，决定用人生的第一场演唱会直面真实的自己。\r\n\r\n\r\n\r\n[简介原文]\r\n高校生のトツ子は、人が「色」で見える。嬉しい色、楽しい色、穏やかな色。そして、自分の好きな色。 \r\nそんなトツ子は、同じ学校に通っていた美しい色を放つ少女・きみと、 街の片隅にある古書店で出会った音楽好きの少年・ルイとバンドを組むことに。 \r\n学校に行かなくなってしまったことを、家族に打ち明けられていないきみ。母親に医者になることを期待され、隠れて音楽活動をしているルイ。トツ子をはじめ、それぞれが誰にも言えない悩みを抱えていた。\r\nバンドの練習場所は離島の古教会。音楽で心を通わせていく三人のあいだに、友情とほのかな恋のような感情が生まれ始める。周りに合わせ過ぎたり、ひとりで傷ついたり、自分を偽ったり― やがて訪れる学園祭、そして初めてのライブ。 会場に集まった観客の前で見せた三人の「色」とは。",
+        "cover": "https://lain.bgm.tv/pic/cover/l/4b/e6/409576_Q13qt.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/4b/e6/409576_Q13qt.jpg",
+        "year": 2024,
+        "startDate": "2024-08-30",
+        "ratingRank": 3909,
+        "ratingTotal": 3820,
+        "metadataFetched": true
       }
     ]
   },
@@ -6375,7 +10415,18 @@ export const importMetadataRecords: ImportMetadataRecord[] = [
         "confidence": 85,
         "query": "lain 玲音",
         "cacheKey": "import-metadata-v1:cb8945c5b408f47eff36",
-        "hintSignature": "[]"
+        "hintSignature": "[]",
+        "titleZh": "玲音",
+        "titleJa": "Serial Experiments Lain",
+        "titleEn": "Serial Experiments Lain",
+        "description": "岩仓玲音的同学四方田千砂自杀了。没有任何前兆的自杀事件让同学们不知所措，一周后，玲音收到了千砂的短信。明明已死的千砂居然以手机短信和玲音开始了交流。回到家，玲音用爸爸给她的电脑开始与千砂联系。当谈及为何自杀时，千砂回答说“因为我已经不需要身体了，没有身体，我可以在wired网络之间继续活着。”不解的玲音继续调查千砂的事件，发现wired网络之中隐藏的巨大秘密，玲音自己的身世也出现了谜团。玲音面对网络世界中的真相，耳边不断响起千砂的话“我生存在wired中，因为神在那里。”",
+        "cover": "https://lain.bgm.tv/pic/cover/l/7e/83/2582_9JJ3u.jpg",
+        "banner": "https://lain.bgm.tv/pic/cover/l/7e/83/2582_9JJ3u.jpg",
+        "year": 1998,
+        "startDate": "1998-07-06",
+        "ratingRank": 406,
+        "ratingTotal": 6712,
+        "metadataFetched": true
       }
     ]
   }

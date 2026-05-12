@@ -31,6 +31,8 @@ export type AnimeEntry = ProgressInput & {
   status: WatchStatus;
   watchedParts?: string;
   year?: number;
+  source?: "bangumi" | "anilist";
+  sourceUrl?: string;
   platform: string;
   cover: string;
   banner: string;
@@ -44,6 +46,8 @@ export type SeriesEntry = {
   slug: string;
   title: LocalizedText;
   entrySlugs: string[];
+  year?: number;
+  years?: number[];
   cover: string;
   banner: string;
   accent: string;

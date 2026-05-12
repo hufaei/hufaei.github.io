@@ -1,9 +1,17 @@
 export const siteCopy = {
-  brand: "hufaei / 番剧手帐",
-  title: {
-    zh: "番剧手帐",
-    ja: "アニメ手帳",
-    en: "Anime Logbook"
+  brand: {
+    zh: "Mirune",
+    ja: "ミルネ",
+    en: "Mirune"
   },
-  subtitle: "anime watch archive"
+  title: {
+    zh: "Mirune",
+    ja: "ミルネ",
+    en: "Mirune"
+  },
+  subtitle: {
+    zh: "月見冊 / ミルネ",
+    ja: "月見冊",
+    en: "anime watch archive"
+  }
 } as const;

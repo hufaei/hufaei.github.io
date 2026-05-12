@@ -1,9 +1,11 @@
-import type { AnimeEntry, SeriesEntry } from "../data/types";
+import type { AnimeEntry, LocalizedText, SeriesEntry } from "../data/types";
 
 export type SearchRecord = {
   type: "anime" | "series";
   slug: string;
   title: string;
+  localizedTitle: LocalizedText;
+  year?: number;
   haystack: string;
 };
 
@@ -12,6 +14,8 @@ export function buildSearchIndex(input: { anime: AnimeEntry[]; series: SeriesEnt
     type: "anime" as const,
     slug: entry.slug,
     title: entry.title.zh,
+    localizedTitle: entry.title,
+    year: entry.year,
     haystack: [
       entry.title.zh,
       entry.title.ja,
@@ -29,6 +33,8 @@ export function buildSearchIndex(input: { anime: AnimeEntry[]; series: SeriesEnt
     type: "series" as const,
     slug: series.slug,
     title: series.title.zh,
+    localizedTitle: series.title,
+    year: series.year,
     haystack: [series.title.zh, series.title.ja, series.title.en, ...series.tags].join(" ").toLowerCase()
   }));
 
@@ -44,4 +50,3 @@ export function searchArchive(index: SearchRecord[], query: string): SearchRecor
 
   return index.filter((item) => item.haystack.includes(normalizedQuery));
 }
-

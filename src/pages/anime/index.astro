@@ -1,17 +1,25 @@
 ---
 import AnimeCard from "../../components/AnimeCard.astro";
+import LocalizedText from "../../components/LocalizedText.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { animeEntries } from "../../data/mockArchive";
+import { siteCopy } from "../../data/siteCopy";
+
+const pageTitle = {
+  zh: "番剧档案",
+  ja: "アニメアーカイブ",
+  en: "Anime archive"
+};
 ---
 
-<BaseLayout title="番剧档案">
+<BaseLayout title={`${pageTitle.zh} - ${siteCopy.title.zh}`}>
   <main class="page">
     <section class="section">
-      <h1 class="page-title">番剧<br />档案</h1>
+      <h1 class="page-title"><LocalizedText text={pageTitle} /></h1>
     </section>
 
     <section class="section">
-      <input class="search-box" type="search" placeholder="搜索标题、别名、标签..." data-filter-input />
+      <input class="search-box" type="search" placeholder="搜索标题、别名、标签..." data-i18n-placeholder="archiveSearchPlaceholder" data-filter-input />
     </section>
 
     <section class="section">

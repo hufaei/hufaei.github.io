@@ -1,0 +1,14 @@
+---
+import type { LocalizedText } from "../data/types";
+
+type Props = {
+  text: LocalizedText;
+  class?: string;
+};
+
+const { text, class: className } = Astro.props;
+---
+
+<span class={className} data-text-zh>{text.zh}</span>
+<span class={className} data-text-ja>{text.ja}</span>
+<span class={className} data-text-en>{text.en}</span>

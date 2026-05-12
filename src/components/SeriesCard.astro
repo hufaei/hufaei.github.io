@@ -1,6 +1,9 @@
 ---
 import type { AnimeEntry, SeriesEntry } from "../data/types";
+import { localizedCopy } from "../i18n/dictionary";
+import { formatLocalizedTags } from "../i18n/localizedTag";
 import { calculateSeriesProgress } from "../lib/progress";
+import LocalizedText from "./LocalizedText.astro";
 import ProgressBar from "./ProgressBar.astro";
 
 type Props = {
@@ -10,6 +13,12 @@ type Props = {
 
 const { series, entries } = Astro.props;
 const progress = calculateSeriesProgress(entries);
+const years = series.years?.length ? { zh: `${Math.min(...series.years)}-${Math.max(...series.years)}`, ja: `${Math.min(...series.years)}-${Math.max(...series.years)}`, en: `${Math.min(...series.years)}-${Math.max(...series.years)}` } : localizedCopy("yearPending");
+const entryCount = {
+  zh: `${entries.length} 个条目`,
+  ja: `${entries.length}件`,
+  en: `${entries.length} entries`
+};
 ---
 
 <article class="card series-card">
@@ -19,10 +28,11 @@ const progress = calculateSeriesProgress(entries);
   <div class="card-body">
     <div class="card-kicker">
       <span data-i18n="series">系列</span>
-      <span>{entries.length} entries</span>
+      <span><LocalizedText text={entryCount} /></span>
+      <span><LocalizedText text={years} /></span>
     </div>
-    <h3><a href={`/series/${series.slug}/`}>{series.title.zh}</a></h3>
-    <p>{series.tags.join(" / ")}</p>
+    <h3><a href={`/series/${series.slug}/`}><LocalizedText text={series.title} /></a></h3>
+    <p><LocalizedText text={formatLocalizedTags(series.tags)} /></p>
     <ProgressBar percent={progress.percent} watched={progress.watched} total={progress.total} />
   </div>
 </article>
