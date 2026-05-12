@@ -10,5 +10,4 @@ The site is designed as a dark, multilingual archive for anime viewing progress:
 - Build-time metadata sync from Bangumi and AniList.
 - No personal reviews or personal scores; external public ratings may be shown with source attribution.
 
-See [the design spec](docs/superpowers/specs/2026-05-12-anime-watch-archive-design.md).
-
+Architecture document: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
