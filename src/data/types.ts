@@ -29,7 +29,7 @@ export type AnimeEntry = ProgressInput & {
   title: LocalizedText;
   aliases: string[];
   status: WatchStatus;
-  year: number;
+  year?: number;
   platform: string;
   cover: string;
   banner: string;
@@ -57,4 +57,3 @@ export type WatchEvent = {
   watchedEpisodes?: number;
   progressPercent?: number;
 };
-

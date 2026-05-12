@@ -29,12 +29,14 @@ const index = buildSearchIndex({ anime: animeEntries, series: seriesEntries });
   <script>
     const input = document.querySelector("[data-search-input]");
     const items = [...document.querySelectorAll("[data-search-item]")];
-    input?.addEventListener("input", () => {
+    function applySearchFilter() {
       const query = (input as HTMLInputElement).value.trim().toLowerCase();
       for (const item of items) {
         const haystack = item.getAttribute("data-search-item") ?? "";
         item.toggleAttribute("hidden", Boolean(query && !haystack.includes(query)));
       }
-    });
+    }
+    input?.addEventListener("input", applySearchFilter);
+    if (input) applySearchFilter();
   </script>
 </BaseLayout>

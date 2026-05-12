@@ -6,8 +6,8 @@ import { animeEntries, getSeriesEntries, seriesEntries } from "../data/mockArchi
 import { siteCopy } from "../data/siteCopy";
 
 const featured = animeEntries[0];
-const watching = animeEntries.filter((entry) => entry.status === "watching");
-const completed = animeEntries.filter((entry) => entry.status === "completed");
+const visibleRecords = animeEntries.slice(0, 12);
+const visibleSeries = seriesEntries.slice(0, 6);
 ---
 
 <BaseLayout title={siteCopy.title.zh}>
@@ -20,11 +20,11 @@ const completed = animeEntries.filter((entry) => entry.status === "completed");
         <div class="eyebrow">番剧观看档案 / mock demo / no runtime API</div>
         <h1>{siteCopy.title.zh}</h1>
         <p>
-          一个暗色二次元风格的全静态观看档案。这里先用 mock 数据展示系列、进度、公开评分、搜索和多语言/主题切换的页面壳。
+          一个暗色二次元风格的全静态观看档案。这里已经接入你的原始观看列表，详情、封面和公开评分后续再逐步补全。
         </p>
         <div class="hero-actions">
           <a class="button primary" href="/anime/">进入番剧档案</a>
-          <a class="button" href="/series/frieren/">查看系列页</a>
+          {visibleSeries[0] && <a class="button" href={`/series/${visibleSeries[0].slug}/`}>查看系列页</a>}
           <a class="button" href="/search/">搜索 demo</a>
         </div>
       </div>
@@ -32,31 +32,21 @@ const completed = animeEntries.filter((entry) => entry.status === "completed");
 
     <section class="section">
       <div class="section-head">
-        <h2>当前在看</h2>
-        <span class="section-note">{watching.length} active item</span>
+        <h2>观看清单</h2>
+        <span class="section-note">{animeEntries.length} records</span>
       </div>
-      <div class="grid">
-        {watching.map((entry) => <AnimeCard entry={entry} />)}
+      <div class="grid cards">
+        {visibleRecords.map((entry) => <AnimeCard entry={entry} />)}
       </div>
     </section>
 
     <section class="section">
       <div class="section-head">
         <h2>系列索引</h2>
-        <span class="section-note">系列聚合进度</span>
+        <span class="section-note">{seriesEntries.length} multi-part records</span>
       </div>
       <div class="grid cards">
-        {seriesEntries.map((series) => <SeriesCard series={series} entries={getSeriesEntries(series)} />)}
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-head">
-        <h2>最近完成</h2>
-        <span class="section-note">{completed.length} completed items</span>
-      </div>
-      <div class="grid two">
-        {completed.map((entry) => <AnimeCard entry={entry} />)}
+        {visibleSeries.map((series) => <SeriesCard series={series} entries={getSeriesEntries(series)} />)}
       </div>
     </section>
   </main>

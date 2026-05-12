@@ -15,7 +15,7 @@ import { animeEntries } from "../../data/mockArchive";
     </section>
 
     <section class="section">
-      <div class="grid">
+      <div class="grid cards">
         {animeEntries.map((entry) => <AnimeCard entry={entry} />)}
       </div>
     </section>
@@ -24,12 +24,14 @@ import { animeEntries } from "../../data/mockArchive";
   <script>
     const input = document.querySelector("[data-filter-input]");
     const cards = [...document.querySelectorAll("[data-search-card]")];
-    input?.addEventListener("input", () => {
+    function applyArchiveFilter() {
       const query = (input as HTMLInputElement).value.trim().toLowerCase();
       for (const card of cards) {
         const haystack = card.getAttribute("data-title")?.toLowerCase() ?? "";
         card.toggleAttribute("hidden", Boolean(query && !haystack.includes(query)));
       }
-    });
+    }
+    input?.addEventListener("input", applyArchiveFilter);
+    if (input) applyArchiveFilter();
   </script>
 </BaseLayout>

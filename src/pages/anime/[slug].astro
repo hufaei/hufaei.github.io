@@ -26,7 +26,7 @@ const series = entry.seriesSlug ? getSeriesBySlug(entry.seriesSlug) : undefined;
         <img src={entry.banner} alt="" loading="eager" />
       </picture>
       <div class="hero-content">
-        <div class="eyebrow">{entry.year} / {entry.platform} / {entry.status}</div>
+        <div class="eyebrow">{entry.year ?? "年份待补"} / {entry.platform} / {entry.status}</div>
         <h1>{entry.title.zh}</h1>
         <p>{entry.description.zh}</p>
         <div class="hero-actions">

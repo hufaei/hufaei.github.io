@@ -13,7 +13,9 @@ const progress = calculateSeriesProgress(entries);
 ---
 
 <article class="card series-card">
-  <a class="banner" href={`/series/${series.slug}/`} style={`background-image:url('${series.banner}')`} aria-label={series.title.zh}></a>
+  <a class="banner" href={`/series/${series.slug}/`} aria-label={series.title.zh}>
+    <img src={series.banner} alt="" loading="lazy" />
+  </a>
   <div class="card-body">
     <div class="card-kicker">
       <span data-i18n="series">系列</span>
@@ -24,4 +26,3 @@ const progress = calculateSeriesProgress(entries);
     <ProgressBar percent={progress.percent} watched={progress.watched} total={progress.total} />
   </div>
 </article>
-

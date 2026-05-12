@@ -13,11 +13,13 @@ const progress = calculateEntryProgress(entry);
 ---
 
 <article class="card anime-card" data-search-card data-title={`${entry.title.zh} ${entry.title.ja} ${entry.title.en} ${entry.aliases.join(" ")} ${entry.tags.join(" ")}`}>
-  <a class="cover" href={`/anime/${entry.slug}/`} style={`background-image:url('${entry.cover}')`} aria-label={entry.title.zh}></a>
+  <a class="cover" href={`/anime/${entry.slug}/`} aria-label={entry.title.zh}>
+    <img src={entry.cover} alt="" loading="lazy" />
+  </a>
   <div class="card-body">
     <div class="card-kicker">
       <span class="status" data-i18n={entry.status}>{entry.status}</span>
-      <span>{entry.year}</span>
+      <span>{entry.year ?? "年份待补"}</span>
       <span>{entry.platform}</span>
     </div>
     <h3><a href={`/anime/${entry.slug}/`}>{entry.title.zh}</a></h3>
@@ -29,4 +31,3 @@ const progress = calculateEntryProgress(entry);
     <ProgressBar percent={progress.percent} watched={progress.watched} total={progress.total} />
   </div>
 </article>
-

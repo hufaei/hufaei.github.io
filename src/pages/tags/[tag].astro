@@ -21,7 +21,7 @@ const { tag, entries } = Astro.props;
     <section class="section">
       <h1 class="page-title">{tag}</h1>
     </section>
-    <section class="section grid">
+    <section class="section grid cards">
       {entries.map((entry) => <AnimeCard entry={entry} />)}
     </section>
   </main>
