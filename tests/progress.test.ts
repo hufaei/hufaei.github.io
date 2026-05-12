@@ -30,5 +30,25 @@ describe("progress calculations", () => {
       percent: 75
     });
   });
-});
 
+  it("does not show a partial episode total when one series entry is missing totals", () => {
+    expect(
+      calculateSeriesProgress([
+        { progressPercent: 100 },
+        { watchedEpisodes: 13, totalEpisodes: 13 }
+      ])
+    ).toEqual({
+      watched: null,
+      total: null,
+      percent: 100
+    });
+  });
+
+  it("keeps empty series progress neutral", () => {
+    expect(calculateSeriesProgress([])).toEqual({
+      watched: null,
+      total: null,
+      percent: 0
+    });
+  });
+});

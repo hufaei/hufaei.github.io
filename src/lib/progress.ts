@@ -31,34 +31,35 @@ export function calculateEntryProgress(input: ProgressInput): CalculatedProgress
 }
 
 export function calculateSeriesProgress(entries: ProgressInput[]): CalculatedProgress {
+  const everyEntryHasEpisodeTotals = entries.length > 0 && entries.every((entry) =>
+    typeof entry.watchedEpisodes === "number" &&
+    typeof entry.totalEpisodes === "number" &&
+    entry.totalEpisodes > 0
+  );
+
+  if (!everyEntryHasEpisodeTotals) {
+    const percentages = entries.map((entry) => calculateEntryProgress(entry).percent);
+
+    return {
+      watched: null,
+      total: null,
+      percent: percentages.length
+        ? clampPercent(percentages.reduce((sum, value) => sum + value, 0) / percentages.length)
+        : 0
+    };
+  }
+
   let watched = 0;
   let total = 0;
 
   for (const entry of entries) {
-    if (typeof entry.watchedEpisodes === "number" && typeof entry.totalEpisodes === "number") {
-      watched += entry.watchedEpisodes;
-      total += entry.totalEpisodes;
-    }
+    watched += entry.watchedEpisodes!;
+    total += entry.totalEpisodes!;
   }
-
-  if (total > 0) {
-    return {
-      watched,
-      total,
-      percent: clampPercent((watched / total) * 100)
-    };
-  }
-
-  const percentages = entries
-    .map((entry) => entry.progressPercent)
-    .filter((value): value is number => typeof value === "number");
 
   return {
-    watched: null,
-    total: null,
-    percent: percentages.length
-      ? clampPercent(percentages.reduce((sum, value) => sum + value, 0) / percentages.length)
-      : 0
+    watched,
+    total,
+    percent: clampPercent((watched / total) * 100)
   };
 }
-

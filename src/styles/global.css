@@ -291,17 +291,19 @@ input:focus-visible {
 }
 
 .anime-card {
-  display: flex;
-  min-height: 440px;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: clamp(150px, 44%, 218px) minmax(0, 1fr);
+  min-height: 320px;
 }
 
 .cover {
   display: block;
-  flex: 0 0 230px;
-  height: 230px;
+  align-self: stretch;
+  width: 100%;
+  height: 100%;
   min-height: 0;
   overflow: hidden;
+  background: var(--panel);
   filter: saturate(0.74) contrast(1.03);
 }
 
@@ -310,7 +312,7 @@ input:focus-visible {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .card-body {
@@ -405,9 +407,11 @@ input:focus-visible {
 .series-card .banner {
   position: relative;
   display: block;
-  flex: 0 0 180px;
-  height: 180px;
+  flex: 0 0 auto;
+  aspect-ratio: 16 / 9;
+  height: auto;
   overflow: hidden;
+  background: var(--panel);
   filter: saturate(0.65) contrast(1.04);
 }
 
@@ -442,18 +446,19 @@ input:focus-visible {
 
 .series-row {
   display: grid;
-  grid-template-columns: 72px 1fr auto;
-  gap: 12px;
+  grid-template-columns: 88px minmax(0, 1fr) auto;
+  gap: 14px;
   align-items: center;
   border: 1px solid var(--line);
   background: var(--bg-soft);
-  padding: 10px;
+  padding: 12px;
 }
 
 .series-row img {
-  width: 72px;
+  width: 88px;
   aspect-ratio: 3 / 4;
-  object-fit: cover;
+  object-fit: contain;
+  background: var(--panel);
 }
 
 .series-row h3 {
@@ -564,9 +569,8 @@ input:focus-visible {
     font-size: clamp(38px, 11vw, 56px);
   }
 
-  .cover {
-    flex-basis: 260px;
-    height: 260px;
+  .anime-card {
+    grid-template-columns: minmax(136px, 44%) minmax(0, 1fr);
   }
 
   .section-head {
@@ -575,11 +579,11 @@ input:focus-visible {
   }
 
   .series-row {
-    grid-template-columns: 56px 1fr;
+    grid-template-columns: 72px 1fr;
   }
 
   .series-row img {
-    width: 56px;
+    width: 72px;
   }
 
   .series-row .button {

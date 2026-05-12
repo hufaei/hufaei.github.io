@@ -1,13 +1,10 @@
 ---
-import AnimeCard from "../../components/AnimeCard.astro";
 import LocalizedText from "../../components/LocalizedText.astro";
-import ProgressBar from "../../components/ProgressBar.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getSeriesEntries, seriesEntries } from "../../data/mockArchive";
 import { siteCopy } from "../../data/siteCopy";
 import { localizedCopy } from "../../i18n/dictionary";
 import { localizePlatform } from "../../i18n/localizedTag";
-import { calculateSeriesProgress } from "../../lib/progress";
 
 export function getStaticPaths() {
   return seriesEntries.map((series) => ({
@@ -17,7 +14,6 @@ export function getStaticPaths() {
 }
 
 const { series, entries } = Astro.props;
-const progress = calculateSeriesProgress(entries);
 const years = entries.map((entry) => entry.year).filter((year): year is number => Boolean(year));
 const yearRange = years.length ? `${Math.min(...years)}-${Math.max(...years)}` : "年份待补";
 const yearRangeText = years.length
@@ -29,14 +25,14 @@ const entryCount = {
   en: `${entries.length} entries`
 };
 const heroMeta = {
-  zh: `${yearRangeText.zh} / ${entryCount.zh} / 季、剧场版、OVA`,
-  ja: `${yearRangeText.ja} / ${entryCount.ja} / シーズン・劇場版・OVA`,
-  en: `${yearRangeText.en} / ${entryCount.en} / seasons, movies, OVA`
+  zh: `${yearRangeText.zh} / ${entryCount.zh}`,
+  ja: `${yearRangeText.ja} / ${entryCount.ja}`,
+  en: `${yearRangeText.en} / ${entryCount.en}`
 };
 const heroDescription = {
-  zh: "这个系列由原始列表拆分后整理成多个子条目。每一季、剧场版、OVA 或外传都可以继续进入详情页查看简介、年份、封面和公开评分。",
-  ja: "このシリーズは元の視聴リストを分割して整理したものです。各シーズン、劇場版、OVA、外伝から詳細ページへ進めます。",
-  en: "This series is split from the original watch list into child entries. Each season, movie, OVA, or spin-off links to its own detail page."
+  zh: "同一个作品脉络收在这里，按看过的季、剧场版或外传展开。",
+  ja: "同じ作品の流れをここにまとめ、視聴したシーズンや劇場版を並べています。",
+  en: "One title thread, grouped by the seasons, movies, and side stories already watched."
 };
 ---
 
@@ -50,7 +46,6 @@ const heroDescription = {
         <div class="eyebrow"><LocalizedText text={heroMeta} /></div>
         <h1><LocalizedText text={series.title} /></h1>
         <p><LocalizedText text={heroDescription} /></p>
-        <ProgressBar percent={progress.percent} watched={progress.watched} total={progress.total} />
       </div>
     </section>
 
@@ -83,16 +78,6 @@ const heroDescription = {
             <span class="button"><LocalizedText text={localizedCopy("details")} /></span>
           </a>
         ))}
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-head">
-        <h2><LocalizedText text={localizedCopy("seriesEntries")} /></h2>
-        <span class="section-note"><LocalizedText text={entryCount} /></span>
-      </div>
-      <div class="grid">
-        {entries.map((entry) => <AnimeCard entry={entry} />)}
       </div>
     </section>
   </main>

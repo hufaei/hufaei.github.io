@@ -43,6 +43,30 @@ const metadata: ImportMetadataRecord[] = [
   }
 ];
 
+const coarseSeasonMetadata: ImportMetadataRecord[] = [
+  {
+    raw: "魔王学院的不适任者二季 24",
+    parts: [
+      {
+        inputTitle: "魔王学院的不适任者",
+        matchedTitle: "魔王学院的不适任者～史上最强的魔王始祖，转生就读子孙们的学校～ 第二季",
+        titleZh: "魔王学院的不适任者～史上最强的魔王始祖，转生就读子孙们的学校～ 第二季",
+        titleJa: "魔王学院の不適合者 ～史上最強の魔王の始祖、転生して子孫たちの学校へ通う～ Ⅱ",
+        titleEn: "Maou Gakuin no Futekigousha II: Shijou Saikyou no Maou no Shiso, Tensei Shite Shison-tachi no Gakkou e Kayou",
+        description: "公开简介：第二季。",
+        cover: "https://example.com/maou-s2.jpg",
+        source: "bangumi",
+        sourceUrl: "https://bgm.tv/subject/330054",
+        platform: "TV",
+        totalEpisodes: 13,
+        rating: 5.8,
+        year: 2023,
+        confidence: 120
+      }
+    ]
+  }
+];
+
 describe("archive metadata merge", () => {
   it("splits multi-part raw records into a compact series with child entries", () => {
     const archive = createArchiveFromRawRecords(["刀剑神域二季+爱丽丝篇三季"], metadata);
@@ -67,5 +91,18 @@ describe("archive metadata merge", () => {
     expect(entry.year).toBe(2012);
     expect(entry.totalEpisodes).toBe(25);
     expect(entry.ratings.bangumi?.score).toBe(7.4);
+  });
+
+  it("expands coarse season counts without using a later season as the series title", () => {
+    const archive = createArchiveFromRawRecords(["魔王学院的不适任者二季 24"], coarseSeasonMetadata);
+    const [series] = archive.seriesEntries;
+    const entries = series.entrySlugs.map((slug) => archive.animeEntries.find((entry) => entry.slug === slug)!);
+
+    expect(series.title.zh).toBe("魔王学院的不适任者～史上最强的魔王始祖，转生就读子孙们的学校 系列");
+    expect(series.title.zh).not.toContain("第二季");
+    expect(entries).toHaveLength(2);
+    expect(entries[0].title.zh).toBe("魔王学院的不适任者～史上最强的魔王始祖，转生就读子孙们的学校");
+    expect(entries[1].title.zh).toContain("第二季");
+    expect(entries[1].year).toBe(2023);
   });
 });

@@ -1,4 +1,4 @@
-import type { AnimeEntry, SeriesEntry, WatchEvent } from "./types";
+import type { AnimeEntry, LocalizedText, SeriesEntry, WatchEvent } from "./types";
 import { coverVisuals } from "./coverVisuals";
 import type { ImportMetadataPart, ImportMetadataRecord } from "./importMetadata";
 
@@ -38,6 +38,12 @@ const visualPool = [
     accent: "#9fd7ff"
   }
 ];
+
+type ArchivePart = {
+  title: string;
+  localizedTitle?: LocalizedText;
+  metadata?: ImportMetadataPart;
+};
 
 function isCasualNote(value: string): boolean {
   return /垃圾|烂|沒動靜|没动静|延期|wait|老神作|かみだ|漫画|至少.*看完|似乎可行|前后半|β线/i.test(value)
@@ -107,6 +113,11 @@ function parseSmallCount(value: string): number | undefined {
   }
 
   return undefined;
+}
+
+function chineseOrdinal(value: number): string {
+  const digits = ["", "一", "二", "三", "四", "五", "六", "七", "八", "九", "十"];
+  return digits[value] ?? String(value);
 }
 
 function extractWatchedParts(line: string): string | undefined {
@@ -220,10 +231,121 @@ function uniqueValues(values: Array<string | undefined>): string[] {
 
 function createFallbackDescription(title: string) {
   return {
-    zh: `${title} 已从原始观看列表归档，公开简介仍待补充。`,
-    ja: `${title} は元の視聴リストから取り込んだ記録です。公開データの概要は未補完です。`,
-    en: `${title} was imported from the raw watch list. Public metadata is still pending.`
+    zh: `${title} 的公开简介还没补到，先作为已看条目收在 Mirune。`,
+    ja: `${title} の公開概要はまだ未補完です。視聴済みの記録として Mirune に残しています。`,
+    en: `${title} does not have a public summary yet, so it stays in Mirune as a completed entry.`
   };
+}
+
+function stripSeasonSuffix(value: string | undefined): string | undefined {
+  if (!value) return undefined;
+
+  const stripped = value
+    .replace(/\s*(?:第\s*)?[一二两三四五六七八九十\d]+\s*(?:季|期)\s*$/u, "")
+    .replace(/\s*(?:第\s*)?[一二两三四五六七八九十\d]+\s*(?:シーズン)\s*$/u, "")
+    .replace(/\s*(?:第\s*)?\d+\s*(?:期|シーズン)\s*$/u, "")
+    .replace(/\s*(?:season\s*)?\d+\s*$/iu, "")
+    .replace(/\s*\d+(?:st|nd|rd|th)\s+season\s*$/iu, "")
+    .replace(/\s*(?:second|third|fourth|fifth)\s+season\s*$/iu, "")
+    .replace(/\s+\b(?:II|III|IV|V)\b(?::.*)?$/u, "")
+    .replace(/\s*[ⅡⅢⅣⅤ]\s*$/u, "")
+    .replace(/[~～\s]+$/u, "")
+    .trim();
+
+  return stripped || value.trim();
+}
+
+function detectSeasonNumberFromText(value: string): number | undefined {
+  const cjkSeason = value.match(/(?:第\s*)?([一二两三四五六七八九十]|\d+)\s*(?:季|期|シーズン)/u);
+  if (cjkSeason) {
+    return parseSmallCount(cjkSeason[1]);
+  }
+
+  const japaneseRomanSeason = value.match(/[ⅡⅢⅣⅤ]/u)?.[0];
+  if (japaneseRomanSeason) {
+    return { "Ⅱ": 2, "Ⅲ": 3, "Ⅳ": 4, "Ⅴ": 5 }[japaneseRomanSeason];
+  }
+
+  const englishSeason = value.match(/\b(?:season|part)\s*(\d+)\b/iu)
+    ?? value.match(/\b(\d+)(?:st|nd|rd|th)\s+season\b/iu);
+  if (englishSeason) {
+    return Number(englishSeason[1]);
+  }
+
+  const englishOrdinal = value.match(/\b(second|third|fourth|fifth)\s+season\b/iu)?.[1]?.toLowerCase();
+  if (englishOrdinal) {
+    return { second: 2, third: 3, fourth: 4, fifth: 5 }[englishOrdinal];
+  }
+
+  const romanSeason = value.match(/\b(II|III|IV|V)\b/u)?.[1];
+  if (romanSeason) {
+    return { II: 2, III: 3, IV: 4, V: 5 }[romanSeason];
+  }
+
+  return undefined;
+}
+
+function detectMetadataSeasonNumber(metadata: ImportMetadataPart): number | undefined {
+  return detectSeasonNumberFromText(
+    uniqueValues([metadata.titleZh, metadata.titleJa, metadata.titleEn, metadata.matchedTitle]).join(" ")
+  );
+}
+
+function getWatchedSeasonCount(record: ParsedWatchRecord): number | undefined {
+  const [, count] = record.watchedParts?.match(/^已看(\d+)季$/u) ?? [];
+  return count ? Number(count) : undefined;
+}
+
+function hasExplicitPartSeparator(record: ParsedWatchRecord): boolean {
+  return /[+＋]/u.test(record.raw);
+}
+
+function seasonTitle(base: string, seasonNumber: number, language: keyof LocalizedText): string {
+  if (seasonNumber === 1) return base;
+  if (language === "ja") return `${base} 第${seasonNumber}期`;
+  if (language === "en") return `${base} Season ${seasonNumber}`;
+  return `${base} 第${chineseOrdinal(seasonNumber)}季`;
+}
+
+function expandCoarseSeasonRecord(record: ParsedWatchRecord, metadata?: ImportMetadataRecord): ArchivePart[] {
+  const parts = record.parts.map((title, partIndex) => ({
+    title,
+    metadata: metadata?.parts?.[partIndex]
+  }));
+  const seasonCount = getWatchedSeasonCount(record);
+
+  if (!seasonCount || seasonCount < 2 || record.parts.length !== 1 || hasExplicitPartSeparator(record)) {
+    return parts;
+  }
+
+  const primaryMetadata = metadata?.parts?.[0];
+  const baseTitle: LocalizedText = {
+    zh: stripSeasonSuffix(primaryMetadata?.titleZh ?? primaryMetadata?.matchedTitle ?? record.title) ?? record.title,
+    ja: stripSeasonSuffix(primaryMetadata?.titleJa ?? primaryMetadata?.matchedTitle ?? record.title) ?? record.title,
+    en: stripSeasonSuffix(primaryMetadata?.titleEn ?? primaryMetadata?.matchedTitle ?? record.aliases.find((alias) => /[a-z]/i.test(alias)) ?? record.title) ?? record.title
+  };
+  const expanded: ArchivePart[] = Array.from({ length: seasonCount }, (_, seasonIndex) => {
+    const seasonNumber = seasonIndex + 1;
+
+    return {
+      title: seasonTitle(baseTitle.zh, seasonNumber, "zh"),
+      localizedTitle: {
+        zh: seasonTitle(baseTitle.zh, seasonNumber, "zh"),
+        ja: seasonTitle(baseTitle.ja, seasonNumber, "ja"),
+        en: seasonTitle(baseTitle.en, seasonNumber, "en")
+      }
+    };
+  });
+
+  if (primaryMetadata) {
+    const metadataSeason = Math.min(
+      seasonCount,
+      Math.max(1, detectMetadataSeasonNumber(primaryMetadata) ?? 1)
+    );
+    expanded[metadataSeason - 1].metadata = primaryMetadata;
+  }
+
+  return expanded;
 }
 
 function createRatings(metadata?: ImportMetadataPart) {
@@ -253,14 +375,15 @@ function createEntryFromPart(
   part: string,
   partIndex: number,
   metadata: ImportMetadataPart | undefined,
-  seriesSlug: string | undefined
+  seriesSlug: string | undefined,
+  localizedTitle?: LocalizedText
 ): AnimeEntry {
   const partCount = record.parts.length;
   const slug = slugifyPart(metadata?.titleZh ?? metadata?.matchedTitle ?? part, index, partIndex, partCount);
   const visual = coverVisuals[index + partIndex] ?? coverVisuals[index] ?? visualPool[(index + partIndex) % visualPool.length];
-  const titleZh = metadata?.titleZh ?? metadata?.matchedTitle ?? part;
-  const titleJa = metadata?.titleJa ?? metadata?.matchedTitle ?? titleZh;
-  const titleEn = metadata?.titleEn ?? record.aliases.find((alias) => /[a-z]/i.test(alias)) ?? metadata?.matchedTitle ?? titleZh;
+  const titleZh = metadata?.titleZh ?? metadata?.matchedTitle ?? localizedTitle?.zh ?? part;
+  const titleJa = metadata?.titleJa ?? metadata?.matchedTitle ?? localizedTitle?.ja ?? titleZh;
+  const titleEn = metadata?.titleEn ?? record.aliases.find((alias) => /[a-z]/i.test(alias)) ?? metadata?.matchedTitle ?? localizedTitle?.en ?? titleZh;
   const totalEpisodes = metadata?.totalEpisodes ?? (partCount === 1 ? record.totalEpisodes : undefined);
   const year = metadata?.year;
   const description = metadata?.description
@@ -305,6 +428,16 @@ function createEntryFromPart(
   };
 }
 
+function createSeriesTitle(primaryEntry: AnimeEntry, metadata?: ImportMetadataRecord): LocalizedText {
+  const primaryMetadata = metadata?.parts?.[0];
+
+  return {
+    zh: `${stripSeasonSuffix(primaryMetadata?.titleZh ?? primaryMetadata?.matchedTitle ?? primaryEntry.title.zh) ?? primaryEntry.title.zh} 系列`,
+    ja: `${stripSeasonSuffix(primaryMetadata?.titleJa ?? primaryEntry.title.ja) ?? primaryEntry.title.ja} シリーズ`,
+    en: `${stripSeasonSuffix(primaryMetadata?.titleEn ?? primaryEntry.title.en) ?? primaryEntry.title.en} Series`
+  };
+}
+
 export function parseWatchRecordLine(line: string, _index: number): ParsedWatchRecord {
   const raw = line.trim();
   const title = cleanTitle(raw);
@@ -339,12 +472,17 @@ export function createArchiveFromRawRecords(lines: string[], metadataRecords: Im
 
   for (const [index, record] of records.entries()) {
     const metadata = metadataByRaw.get(record.raw);
-    const isSeries = record.isSeries || record.parts.length > 1;
-    const primaryPart = record.parts[0];
+    const parts = expandCoarseSeasonRecord(record, metadata);
+    const hydratedRecord = {
+      ...record,
+      parts: parts.map((part) => part.title)
+    };
+    const isSeries = record.isSeries || parts.length > 1;
+    const primaryPart = parts[0].title;
     const primaryMetadata = metadata?.parts?.[0];
-    const seriesSlug = isSeries ? `${slugify(primaryMetadata?.titleZh ?? primaryMetadata?.matchedTitle ?? primaryPart, index)}-series` : undefined;
-    const entries = record.parts.map((part, partIndex) =>
-      createEntryFromPart(record, index, part, partIndex, metadata?.parts?.[partIndex], seriesSlug)
+    const seriesSlug = isSeries ? `${slugify(stripSeasonSuffix(primaryMetadata?.titleZh ?? primaryMetadata?.matchedTitle) ?? primaryPart, index)}-series` : undefined;
+    const entries = parts.map((part, partIndex) =>
+      createEntryFromPart(hydratedRecord, index, part.title, partIndex, part.metadata, seriesSlug, part.localizedTitle)
     );
 
     animeEntries.push(...entries);
@@ -354,11 +492,7 @@ export function createArchiveFromRawRecords(lines: string[], metadataRecords: Im
       const years = uniqueValues(entries.map((entry) => entry.year?.toString())).map(Number).filter(Boolean);
       seriesEntries.push({
         slug: seriesSlug,
-        title: {
-          zh: `${primaryEntry.title.zh} 系列`,
-          ja: `${primaryEntry.title.ja} シリーズ`,
-          en: `${primaryEntry.title.en} Series`
-        },
+        title: createSeriesTitle(primaryEntry, metadata),
         entrySlugs: entries.map((entry) => entry.slug),
         year: years[0],
         years,
