@@ -1,4 +1,5 @@
 import type { AnimeEntry, SeriesEntry, WatchEvent } from "./types";
+import { coverVisuals } from "./coverVisuals";
 
 export type ParsedWatchRecord = {
   raw: string;
@@ -151,7 +152,7 @@ export function createArchiveFromRawRecords(lines: string[]) {
 
   const animeEntries: AnimeEntry[] = records.map((record, index) => {
     const slug = slugify(record.title, index);
-    const visual = visualPool[index % visualPool.length];
+    const visual = coverVisuals[index] ?? visualPool[index % visualPool.length];
 
     return {
       slug,
@@ -196,14 +197,7 @@ export function createArchiveFromRawRecords(lines: string[]) {
       tags: entry.tags
     }));
 
-  const watchEvents: WatchEvent[] = animeEntries.map((entry, index) => ({
-    id: `${entry.slug}-logged`,
-    entrySlug: entry.slug,
-    type: "completed",
-    date: `2026-05-${String((index % 12) + 1).padStart(2, "0")}`,
-    watchedEpisodes: entry.watchedEpisodes,
-    progressPercent: entry.progressPercent
-  }));
+  const watchEvents: WatchEvent[] = [];
 
   return { animeEntries, seriesEntries, watchEvents };
 }

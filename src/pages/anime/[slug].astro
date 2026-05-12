@@ -2,7 +2,7 @@
 import ExternalRating from "../../components/ExternalRating.astro";
 import ProgressBar from "../../components/ProgressBar.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { animeEntries, getEventsForEntry, getSeriesBySlug } from "../../data/mockArchive";
+import { animeEntries, getSeriesBySlug } from "../../data/mockArchive";
 import { siteCopy } from "../../data/siteCopy";
 import { calculateEntryProgress } from "../../lib/progress";
 
@@ -15,7 +15,6 @@ export function getStaticPaths() {
 
 const { entry } = Astro.props;
 const progress = calculateEntryProgress(entry);
-const events = getEventsForEntry(entry.slug);
 const series = entry.seriesSlug ? getSeriesBySlug(entry.seriesSlug) : undefined;
 ---
 
@@ -53,20 +52,5 @@ const series = entry.seriesSlug ? getSeriesBySlug(entry.seriesSlug) : undefined;
       </div>
     </section>
 
-    <section class="section">
-      <div class="section-head">
-        <h2>观看事件</h2>
-        <span class="section-note">结构化记录，不含短评</span>
-      </div>
-      <div class="timeline">
-        {events.map((event) => (
-          <article class="event">
-            <strong>{event.date}</strong>
-            <span>{event.type}</span>
-            <span>{event.watchedEpisodes ? `EP ${event.watchedEpisodes}` : ""}</span>
-          </article>
-        ))}
-      </div>
-    </section>
   </main>
 </BaseLayout>

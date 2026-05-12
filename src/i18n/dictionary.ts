@@ -21,7 +21,6 @@ export const translations: Record<Language, Record<string, string>> = {
     series: "系列",
     status: "状态",
     theme: "主题",
-    timeline: "时间线",
     watching: "在看"
   },
   ja: {
@@ -40,7 +39,6 @@ export const translations: Record<Language, Record<string, string>> = {
     series: "シリーズ",
     status: "状態",
     theme: "テーマ",
-    timeline: "タイムライン",
     watching: "視聴中"
   },
   en: {
@@ -59,7 +57,6 @@ export const translations: Record<Language, Record<string, string>> = {
     series: "Series",
     status: "Status",
     theme: "Theme",
-    timeline: "Timeline",
     watching: "Watching"
   }
 };
@@ -67,4 +64,3 @@ export const translations: Record<Language, Record<string, string>> = {
 export function t(language: Language, key: string): string {
   return translations[language][key] ?? translations[defaultLanguage][key] ?? key;
 }
-

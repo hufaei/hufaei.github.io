@@ -396,21 +396,6 @@ input:focus-visible {
   background: linear-gradient(180deg, transparent, var(--bg-soft));
 }
 
-.timeline {
-  display: grid;
-  gap: 10px;
-}
-
-.event {
-  display: grid;
-  grid-template-columns: 120px 1fr auto;
-  gap: 12px;
-  align-items: center;
-  border: 1px solid var(--line);
-  background: var(--panel);
-  padding: 13px;
-}
-
 .search-box {
   width: 100%;
   min-height: 48px;
@@ -477,9 +462,6 @@ input:focus-visible {
     grid-template-columns: 100px 1fr;
   }
 
-  .event {
-    grid-template-columns: 1fr;
-  }
 }
 
 @media (max-width: 560px) {

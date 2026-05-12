@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { parseWatchRecordLine } from "../src/data/watchRecordParser";
+import { rawWatchRecords } from "../src/data/watchRecords";
+import { createArchiveFromRawRecords, parseWatchRecordLine } from "../src/data/watchRecordParser";
 
 describe("watch record parser", () => {
   it("keeps aliases while extracting a trailing episode count", () => {
@@ -22,5 +23,18 @@ describe("watch record parser", () => {
 
     expect(record.title).toBe("咒文禁忌");
     expect(record.aliases.join(" ")).not.toContain("垃圾");
+  });
+
+  it("uses a broad cover set for the imported watch archive", () => {
+    const { animeEntries } = createArchiveFromRawRecords(rawWatchRecords);
+    const uniqueCovers = new Set(animeEntries.map((entry) => entry.cover));
+
+    expect(uniqueCovers.size).toBeGreaterThan(150);
+  });
+
+  it("does not invent watch events for raw imported records", () => {
+    const { watchEvents } = createArchiveFromRawRecords(rawWatchRecords);
+
+    expect(watchEvents).toEqual([]);
   });
 });

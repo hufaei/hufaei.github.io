@@ -5,6 +5,5 @@ export const siteCopy = {
     ja: "アニメ手帳",
     en: "Anime Logbook"
   },
-  subtitle: "anime archive demo"
+  subtitle: "anime watch archive"
 } as const;
-
