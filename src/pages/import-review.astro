@@ -1,0 +1,345 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { importMetadataRecords } from "../data/importMetadata";
+import { createArchiveFromRawRecords, parseWatchRecordLine } from "../data/watchRecordParser";
+import { rawWatchRecords } from "../data/watchRecords";
+import { formatRemoteProgress, needsManualMetadataReview } from "../lib/importMetadata";
+
+const parsedRecords = rawWatchRecords.map(parseWatchRecordLine);
+const archive = createArchiveFromRawRecords(rawWatchRecords);
+const entriesBySlug = new Map(archive.animeEntries.map((entry) => [entry.slug, entry]));
+const seriesBySlug = new Map(archive.seriesEntries.map((series) => [series.slug, series]));
+const metadataByRaw = new Map(importMetadataRecords.map((record) => [record.raw, record]));
+
+const rows = parsedRecords.map((record, index) => {
+  const entry = archive.animeEntries[index];
+  const series = entry.seriesSlug ? seriesBySlug.get(entry.seriesSlug) : undefined;
+  const metadata = metadataByRaw.get(record.raw);
+  const progress = record.totalEpisodes
+    ? `${record.totalEpisodes} / ${record.totalEpisodes} 集`
+    : record.watchedParts ?? "待补集数";
+
+  return {
+    index: index + 1,
+    record,
+    entry,
+    series,
+    metadata,
+    progress
+  };
+});
+
+const summary = {
+  total: rows.length,
+  series: rows.filter((row) => row.record.isSeries).length,
+  singles: rows.filter((row) => !row.record.isSeries).length,
+  episodeTotal: rows.filter((row) => row.record.totalEpisodes).length,
+  roughProgress: rows.filter((row) => row.record.watchedParts).length,
+  needsCount: rows.filter((row) => row.record.tags.includes("待补集数")).length,
+  remoteParts: importMetadataRecords.flatMap((record) => record.parts).length,
+  remoteMatched: importMetadataRecords.flatMap((record) => record.parts).filter((part) => !needsManualMetadataReview(part)).length,
+  remoteNeedsReview: importMetadataRecords.flatMap((record) => record.parts).filter(needsManualMetadataReview).length
+};
+
+const unresolvedParts = rows.flatMap((row) =>
+  (row.metadata?.parts ?? [])
+    .filter(needsManualMetadataReview)
+    .map((part) => ({
+      row,
+      part
+    }))
+);
+---
+
+<BaseLayout title="导入解析审核">
+  <main class="page import-review">
+    <section class="section">
+      <div class="section-head">
+        <h1 class="page-title">导入解析<br />审核</h1>
+        <span class="section-note">local review</span>
+      </div>
+      <div class="review-stats">
+        <span>{summary.total} 条原始记录</span>
+        <span>{summary.series} 个系列候选</span>
+        <span>{summary.singles} 个单条目</span>
+        <span>{summary.episodeTotal} 条有明确集数</span>
+        <span>{summary.roughProgress} 条粗略季/部数</span>
+        <span>{summary.needsCount} 条待补集数</span>
+        <span>{summary.remoteMatched} 个远程命中</span>
+        <span>{summary.remoteNeedsReview} 个需确认</span>
+      </div>
+    </section>
+
+    {
+      unresolvedParts.length > 0 && (
+        <section class="section">
+          <div class="section-head">
+            <h2>需人工确认</h2>
+            <span class="section-note">{unresolvedParts.length} items</span>
+          </div>
+          <div class="needs-review-list">
+            {unresolvedParts.map(({ row, part }) => (
+              <article>
+                <strong>#{row.index} {part.inputTitle}</strong>
+                <span>{row.record.raw}</span>
+              </article>
+            ))}
+          </div>
+        </section>
+      )
+    }
+
+    <section class="section">
+      <div class="section-head">
+        <h2>系列候选分组</h2>
+        <span class="section-note">{archive.seriesEntries.length} groups</span>
+      </div>
+      <div class="review-groups">
+        {
+          archive.seriesEntries.map((series) => {
+            const entries = series.entrySlugs
+              .map((slug) => entriesBySlug.get(slug))
+              .filter(Boolean);
+
+            return (
+              <details class="review-group">
+                <summary>
+                  <span>{series.title.zh}</span>
+                  <b>{entries.length} item</b>
+                </summary>
+                <ul>
+                  {entries.map((entry) => <li>{entry!.title.zh}</li>)}
+                </ul>
+              </details>
+            );
+          })
+        }
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>逐行解析结果</h2>
+        <span class="section-note">{rows.length} rows</span>
+      </div>
+      <div class="review-table-wrap">
+        <table class="review-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>分组</th>
+              <th>清理后标题</th>
+              <th>进度</th>
+              <th>平台</th>
+              <th>远程候选</th>
+              <th>别名</th>
+              <th>标签</th>
+              <th>原始行</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              rows.map((row) => (
+                <tr>
+                  <td>{row.index}</td>
+                  <td>
+                    {row.series ? (
+                      <a href={`/series/${row.series.slug}/`}>{row.series.title.zh}</a>
+                    ) : (
+                      <span>单条目</span>
+                    )}
+                  </td>
+                  <td><a href={`/anime/${row.entry.slug}/`}>{row.record.title}</a></td>
+                  <td>{row.progress}</td>
+                  <td>{row.record.platform}</td>
+                  <td>
+                    {row.metadata ? (
+                      <div class="remote-parts">
+                        {row.metadata.parts.map((part) => (
+                          <div class:list={["remote-part", { "needs-review": needsManualMetadataReview(part) }]}>
+                            <strong>{part.inputTitle}</strong>
+                            <span>
+                              {part.matchedTitle ? (
+                                <a href={part.sourceUrl} target="_blank" rel="noreferrer">{part.matchedTitle}</a>
+                              ) : (
+                                "未命中"
+                              )}
+                            </span>
+                            <small>
+                              {[
+                                part.source ?? "manual",
+                                part.platform,
+                                formatRemoteProgress(part),
+                                part.rating ? `rating ${part.rating.toFixed(1)}` : undefined
+                              ].filter(Boolean).join(" / ")}
+                            </small>
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <span>未生成</span>
+                    )}
+                  </td>
+                  <td>{row.record.aliases.join(" / ") || "-"}</td>
+                  <td>{row.record.tags.join(" / ")}</td>
+                  <td>{row.record.raw}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .import-review {
+    --review-border: color-mix(in oklab, var(--text) 16%, transparent);
+  }
+
+  .review-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .review-stats span,
+  .review-group summary b {
+    border: 1px solid var(--review-border);
+    border-radius: 999px;
+    color: var(--muted);
+    font-size: 0.82rem;
+    padding: 7px 10px;
+  }
+
+  .review-groups {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+
+  .review-group {
+    border: 1px solid var(--review-border);
+    border-radius: 8px;
+    background: color-mix(in oklab, var(--surface) 82%, transparent);
+    padding: 12px;
+  }
+
+  .review-group summary {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+  }
+
+  .review-group summary span {
+    font-weight: 700;
+  }
+
+  .review-group ul {
+    color: var(--muted);
+    margin: 12px 0 0;
+    padding-left: 18px;
+  }
+
+  .review-table-wrap {
+    border: 1px solid var(--review-border);
+    border-radius: 8px;
+    overflow: auto;
+  }
+
+  .review-table {
+    border-collapse: collapse;
+    font-size: 0.86rem;
+    min-width: 1280px;
+    width: 100%;
+  }
+
+  .review-table th,
+  .review-table td {
+    border-bottom: 1px solid var(--review-border);
+    padding: 10px 12px;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  .review-table th {
+    background: color-mix(in oklab, var(--surface) 88%, var(--text) 6%);
+    color: var(--muted);
+    font-size: 0.75rem;
+    letter-spacing: 0;
+    position: sticky;
+    text-transform: uppercase;
+    top: 0;
+    z-index: 1;
+  }
+
+  .review-table td:nth-child(1),
+  .review-table td:nth-child(4),
+  .review-table td:nth-child(5) {
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  .review-table td:nth-child(2),
+  .review-table td:nth-child(3) {
+    min-width: 180px;
+  }
+
+  .review-table td:nth-child(9) {
+    color: var(--muted);
+    min-width: 360px;
+  }
+
+  .needs-review-list {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  .needs-review-list article {
+    border: 1px solid color-mix(in oklab, #fca5a5 48%, transparent);
+    border-radius: 8px;
+    display: grid;
+    gap: 6px;
+    padding: 12px;
+  }
+
+  .needs-review-list strong {
+    color: #fca5a5;
+  }
+
+  .needs-review-list span {
+    color: var(--muted);
+    font-size: 0.86rem;
+  }
+
+  .remote-parts {
+    display: grid;
+    gap: 8px;
+    min-width: 320px;
+  }
+
+  .remote-part {
+    border-left: 3px solid color-mix(in oklab, var(--accent) 72%, transparent);
+    display: grid;
+    gap: 2px;
+    padding-left: 9px;
+  }
+
+  .remote-part.needs-review {
+    border-left-color: #fca5a5;
+  }
+
+  .remote-part strong {
+    color: var(--text);
+    font-size: 0.8rem;
+  }
+
+  .remote-part span,
+  .remote-part small {
+    color: var(--muted);
+  }
+</style>
