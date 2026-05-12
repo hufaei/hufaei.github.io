@@ -3,13 +3,13 @@ import type { ExternalRatings } from "../data/types";
 
 type Props = {
   ratings: ExternalRatings;
+  provider?: "all" | "bangumi";
 };
 
-const { ratings } = Astro.props;
+const { ratings, provider = "all" } = Astro.props;
 ---
 
 <div class="meta-line">
   {ratings.bangumi && <span class="rating">Bangumi {ratings.bangumi.score}{ratings.bangumi.rank ? ` / #${ratings.bangumi.rank}` : ""}</span>}
-  {ratings.anilist?.averageScore && <span class="rating">AniList {ratings.anilist.averageScore}</span>}
+  {provider === "all" && ratings.anilist?.averageScore && <span class="rating">AniList {ratings.anilist.averageScore}</span>}
 </div>
-

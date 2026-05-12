@@ -292,15 +292,16 @@ input:focus-visible {
 
 .anime-card {
   display: grid;
-  grid-template-columns: clamp(150px, 44%, 218px) minmax(0, 1fr);
-  min-height: 320px;
+  grid-template-columns: clamp(176px, 48%, 228px) minmax(0, 1fr);
+  align-items: stretch;
 }
 
 .cover {
   display: block;
-  align-self: stretch;
+  align-self: start;
   width: 100%;
-  height: 100%;
+  aspect-ratio: 2 / 3;
+  height: auto;
   min-height: 0;
   overflow: hidden;
   background: var(--panel);
@@ -308,11 +309,12 @@ input:focus-visible {
 }
 
 .cover img,
-.series-card .banner img {
+.series-card .series-cover img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: contain;
+  object-position: center;
 }
 
 .card-body {
@@ -392,9 +394,9 @@ input:focus-visible {
 }
 
 .series-card {
-  display: flex;
-  flex-direction: column;
-  min-height: 360px;
+  display: grid;
+  grid-template-columns: clamp(176px, 48%, 228px) minmax(0, 1fr);
+  align-items: stretch;
   position: relative;
   background: var(--bg-soft);
 }
@@ -404,22 +406,14 @@ input:focus-visible {
   flex: 1;
 }
 
-.series-card .banner {
-  position: relative;
+.series-card .series-cover {
   display: block;
-  flex: 0 0 auto;
-  aspect-ratio: 16 / 9;
-  height: auto;
+  align-self: start;
+  width: 100%;
+  aspect-ratio: 2 / 3;
   overflow: hidden;
   background: var(--panel);
-  filter: saturate(0.65) contrast(1.04);
-}
-
-.series-card .banner::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, transparent, var(--bg-soft));
+  filter: saturate(0.76) contrast(1.04);
 }
 
 .search-box {
@@ -569,8 +563,9 @@ input:focus-visible {
     font-size: clamp(38px, 11vw, 56px);
   }
 
-  .anime-card {
-    grid-template-columns: minmax(136px, 44%) minmax(0, 1fr);
+  .anime-card,
+  .series-card {
+    grid-template-columns: minmax(154px, 50%) minmax(0, 1fr);
   }
 
   .section-head {

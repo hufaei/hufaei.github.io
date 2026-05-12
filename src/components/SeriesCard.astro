@@ -22,8 +22,8 @@ const entryCount = {
 ---
 
 <article class="card series-card" data-series-card data-title={`${series.title.zh} ${series.title.ja} ${series.title.en} ${series.tags.join(" ")} ${entries.map((entry) => `${entry.title.zh} ${entry.title.ja} ${entry.title.en} ${entry.aliases.join(" ")}`).join(" ")}`}>
-  <a class="banner" href={`/series/${series.slug}/`} aria-label={series.title.zh}>
-    <img src={series.banner} alt="" loading="lazy" />
+  <a class="series-cover" href={`/series/${series.slug}/`} aria-label={series.title.zh}>
+    <img src={series.cover} alt="" loading="lazy" />
   </a>
   <div class="card-body">
     <div class="card-kicker">
