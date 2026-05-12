@@ -11,7 +11,7 @@ function sleep(ms) {
 }
 
 function isCasualNote(value) {
-  return /垃圾|烂|沒動靜|没动静|延期|wait|老神作|かみだ/i.test(value)
+  return /垃圾|烂|沒動靜|没动静|延期|wait|老神作|かみだ|漫画|至少.*看完|似乎可行|前后半|β线/i.test(value)
     || /^(完|[？！?!]+)$/u.test(value.trim());
 }
 
@@ -29,12 +29,22 @@ function extractAliases(line) {
 
 function cleanTitle(line) {
   const withoutNotes = stripCasualNotes(line)
+    .replace(/➕/gu, "+")
     .replace(/^\+\s*/u, "")
-    .replace(/\s*(?:--|－|—)\s*完结\s*$/u, "")
-    .replace(/\s*(?:--|－|—)\s*完\s*$/u, "")
+    .replace(/\s*(?:--|－|—)\s*完(?:结)?\s*/gu, " ")
+    .replace(/\s*\d{2,8}\s*部/gu, "")
+    .replace(/\s*[一二两三四五六七八九十]\s*部/gu, "")
+    .replace(/\s*(?:第\s*)?[一二两三四五六七八九十]\s*季/gu, "")
+    .replace(/\s*(?:第\s*)?\d+\s*季/gu, "")
+    .replace(/\s*\d+\s*part\b/giu, "")
+    .replace(/\s+(?:约\s*)?\d{1,3}\s*(?:集|话|話)?(?=\s*(?:$|[+＋]))/gu, "")
+    .replace(/(?<=\D)\d{2,8}(?=\s*(?:$|[+＋]))/gu, "")
     .replace(/\s*\d{1,3}\s*-\s*？\s*$/u, "")
     .replace(/\s*(?:约\s*)?\d{1,3}\s*(?:集|话|話)?\s*$/u, "")
     .replace(/\s*\.\.\.\s*$/u, "")
+    .replace(/\s*([+＋])\s*/gu, " $1 ")
+    .replace(/\s{2,}/gu, " ")
+    .replace(/\s*[+＋]\s*$/u, "")
     .trim();
 
   return withoutNotes || line.trim();

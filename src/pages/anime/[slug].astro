@@ -43,7 +43,7 @@ const series = entry.seriesSlug ? getSeriesBySlug(entry.seriesSlug) : undefined;
           <span>{entry.title.en}</span>
         </div>
         <h2 class="section-title">详情档案</h2>
-        <p>{entry.aliases.join(" / ")}</p>
+        {entry.aliases.length > 0 && <p>{entry.aliases.join(" / ")}</p>}
         <div class="tags">
           {entry.tags.map((tag) => <a class="tag" href={`/tags/${encodeURIComponent(tag)}/`}>{tag}</a>)}
         </div>

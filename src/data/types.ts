@@ -29,6 +29,7 @@ export type AnimeEntry = ProgressInput & {
   title: LocalizedText;
   aliases: string[];
   status: WatchStatus;
+  watchedParts?: string;
   year?: number;
   platform: string;
   cover: string;

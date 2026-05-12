@@ -7,6 +7,7 @@ export type ParsedWatchRecord = {
   aliases: string[];
   totalEpisodes?: number;
   watchedEpisodes?: number;
+  watchedParts?: string;
   progressPercent: number;
   isSeries: boolean;
   platform: string;
@@ -37,7 +38,7 @@ const visualPool = [
 ];
 
 function isCasualNote(value: string): boolean {
-  return /垃圾|烂|沒動靜|没动静|延期|wait|老神作|かみだ/i.test(value)
+  return /垃圾|烂|沒動靜|没动静|延期|wait|老神作|かみだ|漫画|至少.*看完|似乎可行|前后半|β线/i.test(value)
     || /^(完|[？！?!]+)$/u.test(value.trim());
 }
 
@@ -75,14 +76,83 @@ function extractEpisodeCandidates(line: string): number[] {
   return candidates;
 }
 
+function parseSmallCount(value: string): number | undefined {
+  const normalized = value.trim();
+  const digitMap: Record<string, number> = {
+    一: 1,
+    二: 2,
+    两: 2,
+    三: 3,
+    四: 4,
+    五: 5,
+    六: 6,
+    七: 7,
+    八: 8,
+    九: 9,
+    十: 10
+  };
+
+  if (/^\d+$/u.test(normalized)) {
+    return Number(normalized);
+  }
+
+  if (digitMap[normalized]) {
+    return digitMap[normalized];
+  }
+
+  if (/^十[一二三四五六七八九]$/u.test(normalized)) {
+    return 10 + digitMap[normalized.at(1)!];
+  }
+
+  return undefined;
+}
+
+function extractWatchedParts(line: string): string | undefined {
+  const withoutNotes = stripCasualNotes(line).replace(/➕/gu, "+");
+  const compactCompleted = withoutNotes.match(/([1-9]{2,8})\s*(?:--|－|—)\s*完(?:结)?/u);
+  if (compactCompleted) {
+    return `已看${compactCompleted[1].length}季`;
+  }
+
+  const seasonCounts = [...withoutNotes.matchAll(/(?:第\s*)?([一二两三四五六七八九十]|\d+)\s*季/gu)]
+    .map((match) => (/^\d{2,8}$/u.test(match[1]) ? match[1].length : parseSmallCount(match[1])))
+    .filter((count): count is number => Boolean(count));
+  if (seasonCounts.length) {
+    return `已看${Math.max(...seasonCounts)}季`;
+  }
+
+  const compactParts = withoutNotes.match(/([1-9]{2,8})\s*部/u);
+  if (compactParts) {
+    return `已看${compactParts[1].length}部`;
+  }
+
+  const parts = withoutNotes.match(/([一二两三四五六七八九十]|\d+)\s*部/u);
+  if (parts) {
+    const count = parseSmallCount(parts[1]);
+    if (count) return `已看${count}部`;
+  }
+
+  return undefined;
+}
+
 function cleanTitle(line: string): string {
   const withoutNotes = stripCasualNotes(line)
+    .replace(/➕/gu, "+")
     .replace(/^\+\s*/u, "")
-    .replace(/\s*(?:--|－|—)\s*完结\s*$/u, "")
-    .replace(/\s*(?:--|－|—)\s*完\s*$/u, "")
+    .replace(/\s*(?:--|－|—)\s*完(?:结)?\s*/gu, " ")
+    .replace(/\s*\d{2,8}\s*部/gu, "")
+    .replace(/\s*[一二两三四五六七八九十]\s*部/gu, "")
+    .replace(/\s*(?:第\s*)?[一二两三四五六七八九十]\s*季/gu, "")
+    .replace(/\s*(?:第\s*)?\d+\s*季/gu, "")
+    .replace(/\s*\d+\s*part\b/giu, "")
+    .replace(/\s+(?:约\s*)?\d{1,3}\s*(?:集|话|話)?(?=\s*(?:$|[+＋]))/gu, "")
+    .replace(/(?<=\D)\d{2,8}(?=\s*(?:$|[+＋]))/gu, "")
     .replace(/\s*\d{1,3}\s*-\s*？\s*$/u, "")
     .replace(/\s*(?:约\s*)?\d{1,3}\s*(?:集|话|話)?\s*$/u, "")
     .replace(/\s*\.\.\.\s*$/u, "")
+    .replace(/\s*([+＋])\s*/gu, " $1 ")
+    .replace(/\s{2,}/gu, " ")
+    .replace(/\s*[+＋]\s*$/u, "")
     .trim();
 
   return withoutNotes || line.trim();
@@ -101,13 +171,14 @@ function detectPlatform(line: string): string {
   return "TV";
 }
 
-function buildTags(line: string, hasTotal: boolean, isSeries: boolean): string[] {
+function buildTags(line: string, hasTotal: boolean, isSeries: boolean, watchedParts?: string): string[] {
   const tags = ["观看记录", "已看完"];
 
   if (isSeries) tags.push("系列");
+  if (watchedParts) tags.push(watchedParts);
   if (/剧场版|映画|movie/i.test(line)) tags.push("含剧场版");
   if (/OVA|ova|SP|sp|番外|小剧场/u.test(line)) tags.push("含OVA-SP");
-  if (!hasTotal) tags.push("待补集数");
+  if (!hasTotal && !watchedParts) tags.push("待补集数");
 
   return [...new Set(tags)];
 }
@@ -133,6 +204,7 @@ export function parseWatchRecordLine(line: string, _index: number): ParsedWatchR
   const episodeCandidates = extractEpisodeCandidates(raw);
   const totalEpisodes = episodeCandidates.at(-1);
   const isSeries = detectSeries(raw);
+  const watchedParts = extractWatchedParts(raw);
 
   return {
     raw,
@@ -140,10 +212,11 @@ export function parseWatchRecordLine(line: string, _index: number): ParsedWatchR
     aliases,
     totalEpisodes,
     watchedEpisodes: totalEpisodes,
+    watchedParts,
     progressPercent: 100,
     isSeries,
     platform: detectPlatform(raw),
-    tags: buildTags(raw, Boolean(totalEpisodes), isSeries)
+    tags: buildTags(raw, Boolean(totalEpisodes), isSeries, watchedParts)
   };
 }
 
@@ -162,8 +235,9 @@ export function createArchiveFromRawRecords(lines: string[]) {
         ja: record.title,
         en: record.aliases.find((alias) => /[a-z]/i.test(alias)) ?? record.title
       },
-      aliases: [...record.aliases, record.raw],
+      aliases: record.aliases,
       status: "completed",
+      watchedParts: record.watchedParts,
       watchedEpisodes: record.watchedEpisodes,
       totalEpisodes: record.totalEpisodes,
       progressPercent: record.progressPercent,
