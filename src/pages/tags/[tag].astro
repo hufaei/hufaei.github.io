@@ -1,0 +1,28 @@
+---
+import AnimeCard from "../../components/AnimeCard.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { animeEntries } from "../../data/mockArchive";
+import { siteCopy } from "../../data/siteCopy";
+
+export function getStaticPaths() {
+  const tags = [...new Set(animeEntries.flatMap((entry) => entry.tags))];
+
+  return tags.map((tag) => ({
+    params: { tag },
+    props: { tag, entries: animeEntries.filter((entry) => entry.tags.includes(tag)) }
+  }));
+}
+
+const { tag, entries } = Astro.props;
+---
+
+<BaseLayout title={`${tag} - ${siteCopy.title.zh}`}>
+  <main class="page">
+    <section class="section">
+      <h1 class="page-title">{tag}</h1>
+    </section>
+    <section class="section grid">
+      {entries.map((entry) => <AnimeCard entry={entry} />)}
+    </section>
+  </main>
+</BaseLayout>

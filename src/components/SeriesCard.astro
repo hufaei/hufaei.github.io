@@ -1,0 +1,27 @@
+---
+import type { AnimeEntry, SeriesEntry } from "../data/types";
+import { calculateSeriesProgress } from "../lib/progress";
+import ProgressBar from "./ProgressBar.astro";
+
+type Props = {
+  series: SeriesEntry;
+  entries: AnimeEntry[];
+};
+
+const { series, entries } = Astro.props;
+const progress = calculateSeriesProgress(entries);
+---
+
+<article class="card series-card">
+  <a class="banner" href={`/series/${series.slug}/`} style={`background-image:url('${series.banner}')`} aria-label={series.title.zh}></a>
+  <div class="card-body">
+    <div class="card-kicker">
+      <span data-i18n="series">系列</span>
+      <span>{entries.length} entries</span>
+    </div>
+    <h3><a href={`/series/${series.slug}/`}>{series.title.zh}</a></h3>
+    <p>{series.tags.join(" / ")}</p>
+    <ProgressBar percent={progress.percent} watched={progress.watched} total={progress.total} />
+  </div>
+</article>
+

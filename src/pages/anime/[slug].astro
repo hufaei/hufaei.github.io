@@ -1,0 +1,72 @@
+---
+import ExternalRating from "../../components/ExternalRating.astro";
+import ProgressBar from "../../components/ProgressBar.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { animeEntries, getEventsForEntry, getSeriesBySlug } from "../../data/mockArchive";
+import { siteCopy } from "../../data/siteCopy";
+import { calculateEntryProgress } from "../../lib/progress";
+
+export function getStaticPaths() {
+  return animeEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry }
+  }));
+}
+
+const { entry } = Astro.props;
+const progress = calculateEntryProgress(entry);
+const events = getEventsForEntry(entry.slug);
+const series = entry.seriesSlug ? getSeriesBySlug(entry.seriesSlug) : undefined;
+---
+
+<BaseLayout title={`${entry.title.zh} - ${siteCopy.title.zh}`}>
+  <main class="page">
+    <section class="hero">
+      <picture class="hero-visual">
+        <img src={entry.banner} alt="" loading="eager" />
+      </picture>
+      <div class="hero-content">
+        <div class="eyebrow">{entry.year} / {entry.platform} / {entry.status}</div>
+        <h1>{entry.title.zh}</h1>
+        <p>{entry.description.zh}</p>
+        <div class="hero-actions">
+          {series && <a class="button" href={`/series/${series.slug}/`}>所属系列：{series.title.zh}</a>}
+          <a class="button" href="/anime/">返回档案</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section card detail-header">
+      <div class="detail-cover" style={`background-image:url('${entry.cover}')`}></div>
+      <div>
+        <div class="meta-line">
+          <span>{entry.title.ja}</span>
+          <span>{entry.title.en}</span>
+        </div>
+        <h2 class="section-title">详情档案</h2>
+        <p>{entry.aliases.join(" / ")}</p>
+        <div class="tags">
+          {entry.tags.map((tag) => <a class="tag" href={`/tags/${encodeURIComponent(tag)}/`}>{tag}</a>)}
+        </div>
+        <ExternalRating ratings={entry.ratings} />
+        <ProgressBar percent={progress.percent} watched={progress.watched} total={progress.total} />
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>观看事件</h2>
+        <span class="section-note">结构化记录，不含短评</span>
+      </div>
+      <div class="timeline">
+        {events.map((event) => (
+          <article class="event">
+            <strong>{event.date}</strong>
+            <span>{event.type}</span>
+            <span>{event.watchedEpisodes ? `EP ${event.watchedEpisodes}` : ""}</span>
+          </article>
+        ))}
+      </div>
+    </section>
+  </main>
+</BaseLayout>

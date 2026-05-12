@@ -1,0 +1,63 @@
+---
+import AnimeCard from "../components/AnimeCard.astro";
+import SeriesCard from "../components/SeriesCard.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { animeEntries, getSeriesEntries, seriesEntries } from "../data/mockArchive";
+import { siteCopy } from "../data/siteCopy";
+
+const featured = animeEntries[0];
+const watching = animeEntries.filter((entry) => entry.status === "watching");
+const completed = animeEntries.filter((entry) => entry.status === "completed");
+---
+
+<BaseLayout title={siteCopy.title.zh}>
+  <main class="page">
+    <section class="hero">
+      <picture class="hero-visual">
+        <img src={featured.banner} alt="" loading="eager" />
+      </picture>
+      <div class="hero-content">
+        <div class="eyebrow">番剧观看档案 / mock demo / no runtime API</div>
+        <h1>{siteCopy.title.zh}</h1>
+        <p>
+          一个暗色二次元风格的全静态观看档案。这里先用 mock 数据展示系列、进度、公开评分、搜索和多语言/主题切换的页面壳。
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="/anime/">进入番剧档案</a>
+          <a class="button" href="/series/frieren/">查看系列页</a>
+          <a class="button" href="/search/">搜索 demo</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>当前在看</h2>
+        <span class="section-note">{watching.length} active item</span>
+      </div>
+      <div class="grid">
+        {watching.map((entry) => <AnimeCard entry={entry} />)}
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>系列索引</h2>
+        <span class="section-note">系列聚合进度</span>
+      </div>
+      <div class="grid cards">
+        {seriesEntries.map((series) => <SeriesCard series={series} entries={getSeriesEntries(series)} />)}
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>最近完成</h2>
+        <span class="section-note">{completed.length} completed items</span>
+      </div>
+      <div class="grid two">
+        {completed.map((entry) => <AnimeCard entry={entry} />)}
+      </div>
+    </section>
+  </main>
+</BaseLayout>

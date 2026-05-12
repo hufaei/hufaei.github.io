@@ -1,0 +1,21 @@
+---
+type Props = {
+  percent: number;
+  watched: number | null;
+  total: number | null;
+};
+
+const { percent, watched, total } = Astro.props;
+const label = watched !== null && total !== null ? `${watched} / ${total}` : `${percent}%`;
+---
+
+<div class="progress" data-testid="progress-bar">
+  <div class="progress-row">
+    <span data-i18n="progress">进度</span>
+    <strong>{label} · {percent}%</strong>
+  </div>
+  <div class="progress-track" aria-label={`Progress ${percent}%`}>
+    <div class="progress-fill" style={`width:${percent}%`}></div>
+  </div>
+</div>
+

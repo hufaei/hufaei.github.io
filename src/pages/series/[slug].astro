@@ -1,0 +1,44 @@
+---
+import AnimeCard from "../../components/AnimeCard.astro";
+import ProgressBar from "../../components/ProgressBar.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getSeriesEntries, seriesEntries } from "../../data/mockArchive";
+import { siteCopy } from "../../data/siteCopy";
+import { calculateSeriesProgress } from "../../lib/progress";
+
+export function getStaticPaths() {
+  return seriesEntries.map((series) => ({
+    params: { slug: series.slug },
+    props: { series, entries: getSeriesEntries(series) }
+  }));
+}
+
+const { series, entries } = Astro.props;
+const progress = calculateSeriesProgress(entries);
+---
+
+<BaseLayout title={`${series.title.zh} - ${siteCopy.title.zh}`}>
+  <main class="page">
+    <section class="hero">
+      <picture class="hero-visual">
+        <img src={series.banner} alt="" loading="eager" />
+      </picture>
+      <div class="hero-content">
+        <div class="eyebrow">系列页 / seasons, movies, OVA</div>
+        <h1>{series.title.zh}</h1>
+        <p>这个页面展示系列卡片展开后的结构。第二季、第三季、剧场版和 OVA 都作为子条目继续进入详情页。</p>
+        <ProgressBar percent={progress.percent} watched={progress.watched} total={progress.total} />
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>系列条目</h2>
+        <span class="section-note">{entries.length} items</span>
+      </div>
+      <div class="grid">
+        {entries.map((entry) => <AnimeCard entry={entry} />)}
+      </div>
+    </section>
+  </main>
+</BaseLayout>

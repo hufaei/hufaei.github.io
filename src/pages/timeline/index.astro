@@ -1,0 +1,25 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getAnimeBySlug, watchEvents } from "../../data/mockArchive";
+---
+
+<BaseLayout title="观看时间线">
+  <main class="page">
+    <section class="section">
+      <h1 class="page-title">观看<br />时间线</h1>
+    </section>
+
+    <section class="section timeline">
+      {watchEvents.map((event) => {
+        const entry = getAnimeBySlug(event.entrySlug);
+        return (
+          <article class="event">
+            <strong>{event.date}</strong>
+            <span>{entry?.title.zh ?? event.entrySlug}</span>
+            <span>{event.type}{event.watchedEpisodes ? ` · EP ${event.watchedEpisodes}` : ""}</span>
+          </article>
+        );
+      })}
+    </section>
+  </main>
+</BaseLayout>
