@@ -10,6 +10,7 @@ const { ratings, provider = "all" } = Astro.props;
 ---
 
 <div class="meta-line">
-  {ratings.bangumi && <span class="rating">Bangumi {ratings.bangumi.score}{ratings.bangumi.rank ? ` / #${ratings.bangumi.rank}` : ""}</span>}
+  {ratings.bangumi && <span class="rating">Bangumi {ratings.bangumi.score.toFixed(1)}</span>}
+  {ratings.bangumi?.rank && <span class="rating">#{ratings.bangumi.rank}</span>}
   {provider === "all" && ratings.anilist?.averageScore && <span class="rating">AniList {ratings.anilist.averageScore}</span>}
 </div>

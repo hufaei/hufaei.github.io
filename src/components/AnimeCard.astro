@@ -3,22 +3,50 @@ import type { AnimeEntry } from "../data/types";
 import { localizedCopy } from "../i18n/dictionary";
 import { localizePlatform } from "../i18n/localizedTag";
 import { calculateEntryProgress } from "../lib/progress";
-import ExternalRating from "./ExternalRating.astro";
 import LocalizedText from "./LocalizedText.astro";
 import ProgressBar from "./ProgressBar.astro";
 
 type Props = {
   entry: AnimeEntry;
+  entryIndex?: number;
+  initiallyHidden?: boolean;
 };
 
-const { entry } = Astro.props;
+const { entry, entryIndex, initiallyHidden = false } = Astro.props;
 const progress = calculateEntryProgress(entry);
 const yearLabel = entry.year ? { zh: String(entry.year), ja: String(entry.year), en: String(entry.year) } : localizedCopy("yearPending");
 const platformLabel = localizePlatform(entry.platform);
 const seriesLabel = localizedCopy("series");
+const bangumiRating = entry.ratings.bangumi;
+const scoreLabel = bangumiRating
+  ? {
+      zh: `评分 ${bangumiRating.score.toFixed(1)}`,
+      ja: `評価 ${bangumiRating.score.toFixed(1)}`,
+      en: `Score ${bangumiRating.score.toFixed(1)}`
+    }
+  : undefined;
+const rankLabel = bangumiRating?.rank
+  ? {
+      zh: `排名 #${bangumiRating.rank}`,
+      ja: `順位 #${bangumiRating.rank}`,
+      en: `Rank #${bangumiRating.rank}`
+    }
+  : undefined;
+const formatLabel = /OVA|OAD|SP|剧场版|映画|movie/i.test(entry.platform) ? platformLabel : undefined;
+const hasMetaTags = Boolean(entry.seriesSlug || formatLabel || scoreLabel || rankLabel);
 ---
 
-<article class="card anime-card" data-search-card data-title={`${entry.title.zh} ${entry.title.ja} ${entry.title.en} ${entry.aliases.join(" ")} ${entry.tags.join(" ")}`}>
+<article
+  class="card anime-card"
+  data-search-card
+  data-title={`${entry.title.zh} ${entry.title.ja} ${entry.title.en} ${entry.aliases.join(" ")} ${entry.tags.join(" ")}`}
+  data-title-sort={entry.title.zh}
+  data-entry-index={entryIndex}
+  data-score={bangumiRating?.score}
+  data-rank={bangumiRating?.rank}
+  data-year={entry.year}
+  hidden={initiallyHidden}
+>
   <a class="cover" href={`/anime/${entry.slug}/`} aria-label={entry.title.zh}>
     <img src={entry.cover} alt="" loading="lazy" />
   </a>
@@ -29,12 +57,14 @@ const seriesLabel = localizedCopy("series");
     </div>
     <h3><a href={`/anime/${entry.slug}/`}><LocalizedText text={entry.title} /></a></h3>
     <p><LocalizedText text={entry.description} /></p>
-    {entry.seriesSlug && (
-      <div class="tags compact-tags">
-        <a class="tag" href={`/series/${entry.seriesSlug}/`}><LocalizedText text={seriesLabel} /></a>
+    {hasMetaTags && (
+      <div class="tags compact-tags meta-tags">
+        {entry.seriesSlug && <a class="tag" href={`/series/${entry.seriesSlug}/`}><LocalizedText text={seriesLabel} /></a>}
+        {formatLabel && <span class="tag format-tag"><LocalizedText text={formatLabel} /></span>}
+        {scoreLabel && <span class="tag rating-tag"><LocalizedText text={scoreLabel} /></span>}
+        {rankLabel && <span class="tag rank-tag"><LocalizedText text={rankLabel} /></span>}
       </div>
     )}
-    <ExternalRating ratings={entry.ratings} provider="bangumi" />
     <ProgressBar percent={progress.percent} watched={progress.watched} total={progress.total} />
   </div>
 </article>

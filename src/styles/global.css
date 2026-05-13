@@ -403,6 +403,19 @@ input:focus-visible {
   line-height: 1.08;
 }
 
+.anime-card h3 {
+  margin: 8px 0 7px;
+  font-size: 18px;
+  line-height: 1.18;
+}
+
+.anime-card h3 a {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
 .card p {
   margin: 0;
   color: var(--muted);
@@ -414,11 +427,22 @@ input:focus-visible {
   -webkit-line-clamp: 3;
 }
 
+.anime-card p {
+  -webkit-line-clamp: 2;
+}
+
 .tags {
   display: flex;
   flex-wrap: wrap;
   gap: 7px;
   margin-top: 14px;
+}
+
+.meta-tags {
+  max-height: 52px;
+  margin-top: 10px;
+  overflow: hidden;
+  align-content: flex-start;
 }
 
 .tag,
@@ -429,6 +453,18 @@ input:focus-visible {
   background: var(--panel);
   padding: 5px 7px;
   font-size: 12px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.rating-tag {
+  color: var(--text);
+  background: color-mix(in srgb, var(--accent) 18%, var(--panel));
+}
+
+.rank-tag,
+.format-tag {
+  color: color-mix(in srgb, var(--text) 78%, var(--muted));
 }
 
 .progress {
@@ -489,6 +525,21 @@ input:focus-visible {
   padding: 0 14px;
 }
 
+.archive-tools {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: center;
+}
+
+.archive-sort {
+  justify-self: end;
+}
+
+.archive-sort button {
+  min-width: 52px;
+}
+
 .pagination {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr) auto;
@@ -516,11 +567,13 @@ input:focus-visible {
   background: color-mix(in srgb, var(--bg-soft) 88%, var(--text) 3%);
   color: var(--muted);
   font-size: 13px;
+  cursor: pointer;
 }
 
 .page-step {
   min-width: 72px;
   padding: 0 12px;
+  border-radius: 6px;
 }
 
 .page-number.is-current {
@@ -528,7 +581,9 @@ input:focus-visible {
   background: var(--text);
 }
 
-.page-step.is-disabled {
+.page-step.is-disabled,
+.page-step:disabled,
+.page-number:disabled {
   pointer-events: none;
   opacity: 0.42;
 }
@@ -702,6 +757,15 @@ input:focus-visible {
   .section-head {
     align-items: start;
     flex-direction: column;
+  }
+
+  .archive-tools {
+    grid-template-columns: 1fr;
+  }
+
+  .archive-sort {
+    justify-self: stretch;
+    overflow-x: auto;
   }
 
   .pagination {

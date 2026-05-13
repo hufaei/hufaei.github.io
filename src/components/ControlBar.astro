@@ -47,6 +47,7 @@ import LocalizedText from "./LocalizedText.astro";
       const value = translations[language]?.[key];
       if (value) element.setAttribute("placeholder", value);
     });
+    document.dispatchEvent(new CustomEvent("mirune:languagechange", { detail: { language } }));
   }
 
   function applyTheme(theme) {
