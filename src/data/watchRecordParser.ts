@@ -287,7 +287,14 @@ function detectSeasonNumberFromText(value: string): number | undefined {
 
 function detectMetadataSeasonNumber(metadata: ImportMetadataPart): number | undefined {
   return detectSeasonNumberFromText(
-    uniqueValues([metadata.titleZh, metadata.titleJa, metadata.titleEn, metadata.matchedTitle]).join(" ")
+    uniqueValues([
+      metadata.inputTitle,
+      metadata.query,
+      metadata.titleZh,
+      metadata.titleJa,
+      metadata.titleEn,
+      metadata.matchedTitle
+    ]).join(" ")
   );
 }
 
@@ -337,12 +344,17 @@ function expandCoarseSeasonRecord(record: ParsedWatchRecord, metadata?: ImportMe
     };
   });
 
-  if (primaryMetadata) {
-    const metadataSeason = Math.min(
-      seasonCount,
-      Math.max(1, detectMetadataSeasonNumber(primaryMetadata) ?? 1)
-    );
-    expanded[metadataSeason - 1].metadata = primaryMetadata;
+  if (metadata?.parts?.length) {
+    const usedSeasonIndexes = new Set<number>();
+
+    for (const [metadataIndex, partMetadata] of metadata.parts.entries()) {
+      const seasonNumber = detectMetadataSeasonNumber(partMetadata) ?? metadataIndex + 1;
+      const seasonIndex = Math.min(seasonCount - 1, Math.max(0, seasonNumber - 1));
+
+      if (usedSeasonIndexes.has(seasonIndex)) continue;
+      expanded[seasonIndex].metadata = partMetadata;
+      usedSeasonIndexes.add(seasonIndex);
+    }
   }
 
   return expanded;
