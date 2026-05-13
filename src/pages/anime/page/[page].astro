@@ -1,18 +1,31 @@
 ---
-import AnimeCard from "../../components/AnimeCard.astro";
-import ArchivePagination from "../../components/ArchivePagination.astro";
-import LocalizedText from "../../components/LocalizedText.astro";
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import { animeEntries } from "../../data/mockArchive";
-import { siteCopy } from "../../data/siteCopy";
-import { paginateItems } from "../../lib/pagination";
+import AnimeCard from "../../../components/AnimeCard.astro";
+import ArchivePagination from "../../../components/ArchivePagination.astro";
+import LocalizedText from "../../../components/LocalizedText.astro";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { animeEntries } from "../../../data/mockArchive";
+import { siteCopy } from "../../../data/siteCopy";
+import { paginateItems } from "../../../lib/pagination";
 
 const pageTitle = {
   zh: "番剧档案",
   ja: "アニメアーカイブ",
   en: "Anime archive"
 };
-const pageData = paginateItems(animeEntries, 1, 24);
+
+export function getStaticPaths() {
+  const firstPage = paginateItems(animeEntries, 1, 24);
+
+  return Array.from({ length: firstPage.totalPages - 1 }, (_, index) => {
+    const currentPage = index + 2;
+    return {
+      params: { page: String(currentPage) },
+      props: { pageData: paginateItems(animeEntries, currentPage, 24) }
+    };
+  });
+}
+
+const { pageData } = Astro.props;
 const pageSummary = {
   zh: `${pageData.totalItems} 部作品 · 第 ${pageData.currentPage} / ${pageData.totalPages} 页`,
   ja: `${pageData.totalItems}作品 · ${pageData.currentPage} / ${pageData.totalPages}ページ`,
@@ -20,7 +33,7 @@ const pageSummary = {
 };
 ---
 
-<BaseLayout title={`${pageTitle.zh} - ${siteCopy.title.zh}`}>
+<BaseLayout title={`${pageTitle.zh} ${pageData.currentPage} - ${siteCopy.title.zh}`}>
   <main class="page">
     <section class="section">
       <div class="section-head listing-head">
@@ -30,7 +43,7 @@ const pageSummary = {
     </section>
 
     <section class="section">
-      <input class="search-box" type="search" placeholder="搜索标题、别名、标签..." data-i18n-placeholder="archiveSearchPlaceholder" data-filter-input />
+      <input class="search-box" type="search" placeholder="搜索本页标题、别名、标签..." data-i18n-placeholder="archiveSearchPlaceholder" data-filter-input />
     </section>
 
     <section class="section">

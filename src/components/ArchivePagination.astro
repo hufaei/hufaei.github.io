@@ -1,0 +1,46 @@
+---
+import { localizedCopy } from "../i18n/dictionary";
+import { buildPageHref } from "../lib/pagination";
+import LocalizedText from "./LocalizedText.astro";
+
+type Props = {
+  basePath: string;
+  currentPage: number;
+  totalPages: number;
+};
+
+const { basePath, currentPage, totalPages } = Astro.props;
+const pages = Array.from({ length: totalPages }, (_, index) => index + 1);
+const previousPage = Math.max(1, currentPage - 1);
+const nextPage = Math.min(totalPages, currentPage + 1);
+---
+
+{totalPages > 1 && (
+  <nav class="pagination" aria-label="Pagination">
+    <a
+      class:list={["page-step", { "is-disabled": currentPage === 1 }]}
+      href={buildPageHref(basePath, previousPage)}
+      aria-disabled={currentPage === 1 ? "true" : undefined}
+    >
+      <LocalizedText text={localizedCopy("previousPage")} />
+    </a>
+    <div class="page-numbers">
+      {pages.map((page) => (
+        <a
+          class:list={["page-number", { "is-current": page === currentPage }]}
+          href={buildPageHref(basePath, page)}
+          aria-current={page === currentPage ? "page" : undefined}
+        >
+          {page}
+        </a>
+      ))}
+    </div>
+    <a
+      class:list={["page-step", { "is-disabled": currentPage === totalPages }]}
+      href={buildPageHref(basePath, nextPage)}
+      aria-disabled={currentPage === totalPages ? "true" : undefined}
+    >
+      <LocalizedText text={localizedCopy("nextPage")} />
+    </a>
+  </nav>
+)}

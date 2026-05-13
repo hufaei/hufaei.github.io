@@ -8,19 +8,26 @@ import { siteCopy } from "../data/siteCopy";
 import { localizedCopy } from "../i18n/dictionary";
 import { buildSearchIndex } from "../lib/search";
 
-const featured = animeEntries[0];
 const visibleRecords = animeEntries.slice(0, 12);
 const visibleSeries = seriesEntries.slice(0, 6);
+const heroCovers = animeEntries
+  .filter((entry) => !entry.cover.startsWith("data:image"))
+  .slice(0, 18);
 const searchIndex = buildSearchIndex({ anime: animeEntries, series: seriesEntries });
 const heroEyebrow = {
-  zh: "Mirune = 見るね",
-  ja: "ミルネ = 見るね",
-  en: "Mirune = miru ne"
+  zh: `${animeEntries.length} 部作品 · ${seriesEntries.length} 个系列`,
+  ja: `${animeEntries.length}作品 · ${seriesEntries.length}シリーズ`,
+  en: `${animeEntries.length} works · ${seriesEntries.length} series`
+};
+const heroTitle = {
+  zh: "番剧观看档案",
+  ja: "視聴アニメ記録",
+  en: "Anime Watch Archive"
 };
 const heroBody = {
-  zh: "「見る」是看，「ね」像句尾轻轻落下的“呢”。Mirune 就是把看过的番、电影和系列慢慢收好，偶尔回头看一眼。",
-  ja: "「見る」に、少しやわらかい「ね」を添えて。見たアニメ、映画、シリーズを静かに残して、ふと思い出せる場所。",
-  en: "Mirune comes from miru, to watch, with the soft note of ne. A quiet place for anime, films, and series already seen."
+  zh: "把看过的番、电影和系列按作品、系列、进度与公开评分收好。想找哪一部，直接搜；想回看脉络，就进系列。",
+  ja: "見たアニメ、映画、シリーズを作品・シリーズ・進捗・公開評価で整理。探す時は検索、流れを見る時はシリーズへ。",
+  en: "A static archive for watched anime, films, and series, organized by title, series, progress, and public ratings."
 };
 const searchCount = {
   zh: `${searchIndex.length} 条可检索`,
@@ -41,13 +48,20 @@ const seriesCount = {
 
 <BaseLayout title={siteCopy.title.zh}>
   <main class="page">
-    <section class="hero">
-      <picture class="hero-visual">
-        <img src={featured.banner} alt="" loading="eager" />
-      </picture>
+    <section class="hero archive-hero">
+      <div class="hero-mosaic" aria-hidden="true">
+        {heroCovers.map((entry, index) => (
+          <img
+            class={`mosaic-cover mosaic-cover-${(index % 6) + 1}`}
+            src={entry.cover}
+            alt=""
+            loading={index < 8 ? "eager" : "lazy"}
+          />
+        ))}
+      </div>
       <div class="hero-content">
         <div class="eyebrow"><LocalizedText text={heroEyebrow} /></div>
-        <h1><LocalizedText text={siteCopy.title} /></h1>
+        <h1><LocalizedText text={heroTitle} /></h1>
         <p><LocalizedText text={heroBody} /></p>
         <div class="hero-actions">
           <a class="button primary" href="/anime/"><LocalizedText text={localizedCopy("openArchive")} /></a>

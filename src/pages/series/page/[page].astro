@@ -1,18 +1,31 @@
 ---
-import LocalizedText from "../../components/LocalizedText.astro";
-import ArchivePagination from "../../components/ArchivePagination.astro";
-import SeriesCard from "../../components/SeriesCard.astro";
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import { getSeriesEntries, seriesEntries } from "../../data/mockArchive";
-import { siteCopy } from "../../data/siteCopy";
-import { paginateItems } from "../../lib/pagination";
+import LocalizedText from "../../../components/LocalizedText.astro";
+import ArchivePagination from "../../../components/ArchivePagination.astro";
+import SeriesCard from "../../../components/SeriesCard.astro";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { getSeriesEntries, seriesEntries } from "../../../data/mockArchive";
+import { siteCopy } from "../../../data/siteCopy";
+import { paginateItems } from "../../../lib/pagination";
 
 const pageTitle = {
   zh: "系列总览",
   ja: "シリーズ一覧",
   en: "Series index"
 };
-const pageData = paginateItems(seriesEntries, 1, 24);
+
+export function getStaticPaths() {
+  const firstPage = paginateItems(seriesEntries, 1, 24);
+
+  return Array.from({ length: firstPage.totalPages - 1 }, (_, index) => {
+    const currentPage = index + 2;
+    return {
+      params: { page: String(currentPage) },
+      props: { pageData: paginateItems(seriesEntries, currentPage, 24) }
+    };
+  });
+}
+
+const { pageData } = Astro.props;
 const pageSummary = {
   zh: `${pageData.totalItems} 个系列 · 第 ${pageData.currentPage} / ${pageData.totalPages} 页`,
   ja: `${pageData.totalItems}シリーズ · ${pageData.currentPage} / ${pageData.totalPages}ページ`,
@@ -20,7 +33,7 @@ const pageSummary = {
 };
 ---
 
-<BaseLayout title={`${pageTitle.zh} - ${siteCopy.title.zh}`}>
+<BaseLayout title={`${pageTitle.zh} ${pageData.currentPage} - ${siteCopy.title.zh}`}>
   <main class="page">
     <section class="section">
       <div class="section-head listing-head">
