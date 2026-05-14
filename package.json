@@ -8,7 +8,14 @@
     "build": "astro build && node scripts/prune-private-pages.mjs",
     "preview": "astro preview",
     "check": "astro check && tsc --noEmit",
-    "test": "vitest run"
+    "test": "vitest run",
+    "verify": "npm run check && npm test && npm run build",
+    "data:metadata": "node scripts/enrich-import-metadata.mjs",
+    "data:metadata:refresh": "node scripts/enrich-import-metadata.mjs --refresh",
+    "data:backfill": "node scripts/backfill-missing-metadata.mjs --write",
+    "data:covers": "node scripts/enrich-cover-visuals.mjs",
+    "data:update": "npm run data:metadata && npm run data:backfill",
+    "data:update:refresh": "npm run data:metadata:refresh && npm run data:backfill"
   },
   "dependencies": {
     "@astrojs/check": "latest",

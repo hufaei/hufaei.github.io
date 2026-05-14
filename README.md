@@ -12,15 +12,43 @@ The site is designed as a dark, multilingual archive for anime viewing progress:
 
 Architecture document: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
-## Demo
+## Local workflow
 
-This repository currently contains a mocked Astro shell demo. It does not call
-Bangumi or AniList at runtime; all displayed anime data is local mock data.
+The deployed site does not call Bangumi or AniList at runtime. Add or edit watch
+records locally, enrich the local metadata, then build and push the static site.
 
 ```bash
 npm install
 npm run dev
-npm run test
-npm run check
-npm run build
+npm run verify
+```
+
+## Add watch records
+
+1. Append new entries in `src/data/watchRecords.ts`.
+2. Run metadata enrichment:
+
+```bash
+npm run data:update
+```
+
+3. If an existing match looks stale or wrong, refresh cached metadata:
+
+```bash
+npm run data:update:refresh
+```
+
+4. If fallback cover visuals need to be regenerated:
+
+```bash
+npm run data:covers
+```
+
+5. Verify and deploy through the normal git flow:
+
+```bash
+npm run verify
+git add src/data
+git commit -m "Update watch records"
+git push origin main
 ```

@@ -234,19 +234,19 @@ npm run dev
 同步番剧元数据：
 
 ```bash
-npm run sync:metadata
+npm run data:update
 ```
 
-生成静态数据：
+刷新已缓存元数据：
 
 ```bash
-npm run build:data
+npm run data:update:refresh
 ```
 
-构建站点：
+验证并构建站点：
 
 ```bash
-npm run build
+npm run verify
 ```
 
 发布目标：
